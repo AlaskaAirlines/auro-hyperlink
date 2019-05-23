@@ -3,7 +3,7 @@
     "Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license",
     "See LICENSE in the project root for license information."
   ],
-  
+
   "//": [
     "================================================================================",
     "This is the file that drives the shape of the component as defined in component specific Design Tokens.",
@@ -18,15 +18,37 @@
     "================================================================================"
   ],
 
-  "host": {
-    "display": {"value": "flex"},
-    "borderRadius": {"value": "var(--size-border-radius-default)"}
-  },
-
-  "ods-[name]": {
-    "display": {"value": "inline-block"},
-    "background": {
-      "color": {"value": "var(--color-brand-blue-atlas-base)"}
+  "ods-hyperlink": {
+    "color": {"value": "var(--color-type-theme-light-link)"},
+    "padding": {"value": "0 var(--size-scale-sml)"},
+    "decoration": {"value": "none"},
+    "visited": {
+      "color": {"value": "var(--color-type-theme-light-link)"}
+    },
+    "darktheme": {
+      "color": {"value": "var(--color-type-theme-dark-link)"},
+      "visited": {
+        "color": {"value": "var(--color-type-theme-dark-link)"}
+      },
+      "hover": {
+        "color": {"value": "var(--color-type-theme-dark-link-hover)"}
+      }
+    },
+    "hover": {
+      "color": {"value": "var(--color-type-theme-light-link-hover)"},
+      "decoration": {"value": "underline"}
+    },
+    "inline": {
+      "padding": {"value": "0"},
+      "decoration": {"value": "underline"},
+      "hover": {
+        "decoration": {"value": "none"}
+      }
+    },
+    "svg": {
+      "margin": {
+        "left": { "value": "var(--size-scale-micro)"}
+      }
     }
   }
 }

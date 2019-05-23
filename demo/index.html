@@ -6,13 +6,13 @@
       name="viewport"
       content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
     />
-    <title>Orion Design System | ods-[name] element</title>
+    <title>Orion Design System | ods-hyperlink element</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script type="module">
       import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
       import "@polymer/iron-demo-helpers/demo-snippet";
     </script>
-    <script type="module" src="../src/ods-button.js"></script>
+    <script type="module" src="../src/ods-hyperlink.js"></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
       import '../node_modules/@polymer/iron-icons/hardware-icons.js';
@@ -25,7 +25,7 @@
   </head>
   <body>
     <div class="vertical-section-container">
-      <h1>ods-[name]</h1>
+      <h1>ods-hyperlink</h1>
 
       <p>Component description ...</p>
 
@@ -46,23 +46,135 @@
 
       <demo-snippet>
         <template>
-          <ods-button string="Default state"></ods-button>
+            <ods-hyperlink href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
         </template>
       </demo-snippet>
 
-      <h2>Element &#60;ods-[name]&#62;</h2>
+      <demo-snippet>
+        <template>
+          <a class="hyperlink" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+        </template>
+      </demo-snippet>
 
-      <pre><code>class Ods[name] extends LitElement</code></pre>
+      <demo-snippet>
+        <template>
+          <a class="hyperlink is-touching" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+            <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
+              <ods-hyperlink darktheme href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
+            </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+            <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
+              <a class="hyperlink hyperlink--darktheme" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+            </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <ods-hyperlink href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
+            <ods-hyperlink darktheme href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
+          </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <p>
+            These are words with a link to <ods-hyperlink href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
+          </p>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+            <p>
+              These are words with a link to <a class="hyperlink hyperlink--inline" href="http://www.alaskaair.com">Go to Alaska Airlines!</a> and then show more words!
+            </p>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <p>
+            These are words with a link to <ods-hyperlink target="_blank" href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
+          </p>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <ods-hyperlink download href="assets/thing.pdf">Download thing.pdf</ods-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <ods-hyperlink rel="nofollow" href="/">SEO nofollow</ods-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <ods-hyperlink role="button">Cancel</ods-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <a class="ods-roleButton" tabindex="0" role="button">Cancel</a>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <div role="tablist" class="ods-tablist">
+            <ods-hyperlink tabisactive="true" role="tab">Tab One</ods-hyperlink>
+            <ods-hyperlink role="tab">Tab Two</ods-hyperlink>
+            <ods-hyperlink role="tab">Tab Three</ods-hyperlink>
+          </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <div role="tablist" class="ods-tablist">
+            <a class="ods-roleTab is-active" tabindex="0" role="tab">Tab One</a>
+            <a class="ods-roleTab" tabindex="0" role="tab">Tab Two</a>
+            <a class="ods-roleTab" tabindex="0" role="tab">Tab Three</a>
+          </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <ods-hyperlink>no attrs</ods-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <h2>Element &#60;ods-hyperlink&#62;</h2>
+
+      <pre><code>class OdsHyperlink extends LitElement</code></pre>
 
       <h3>Styling:</h3>
-      <p>Info ...</p>
+      <p>No custom styling options</p>
 
       <h3>Responsive state:</h3>
-      <p>Info ...</p>
-
-      <h3>Properties:</h3>
-      <code><strong>string:</strong> string</code>
-      <p>Info ...</p>
+      <p>Supports natural responsivness of text</p>
     </div>
   </body>
 </html>

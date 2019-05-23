@@ -25,11 +25,12 @@ const gulp = require('gulp'),
   removeSelectors = require("postcss-remove-selectors"),
   StyleDictionary = require('style-dictionary'),
   copyfiles = require('copyfiles');
+  selectorReplace = require('postcss-selector-replace');
 
 // task to copy font files from the OWCSS npm to the local project
 // resources are NOT to be committed to version control
 gulp.task('copyFonts', function(cb) {
-  copyfiles(['./node_modules/@alaskaairux/orion-web-core-style-sheets/fonts/*.*', './demo/fonts/'], true, cb);
+  copyfiles(['./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.*', './demo/fonts/'], true, cb);
   cb();
 });
 
@@ -76,7 +77,7 @@ gulp.task('processSrc', function() {
     }))
 
     // Post Sass to CSS process for addressing proprietary prefixes
-    .pipe(gulpautoprefixer({ browsers: ['last 4 versions'], cascade: false }))
+    .pipe(gulpautoprefixer({ overrideBrowserslist: ['last 4 versions'], cascade: false }))
 
     // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
     .pipe(postcss([
@@ -125,7 +126,7 @@ gulp.task('processImportsCanonical', function() {
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./src/altImportsCanonical/'));
+    .pipe(gulp.dest('./altImports/canonical/'));
 });
 
 // task for Production Sass processing and legacy support
@@ -151,7 +152,7 @@ gulp.task('processImportsVariable', function() {
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./src/altImportsVariable/'));
+    .pipe(gulp.dest('./altImports/variable/'));
 });
 
 // task for Development Sass processing
@@ -175,6 +176,24 @@ gulp.task('processDev', function() {
 
     // Output final CSS in destination
     .pipe(gulp.dest('./src/'));
+});
+
+// task for Development Sass processing
+gulp.task('reprocessClean', function() {
+  // set path to where Sass files are located to be processed
+  return gulp.src('./altImports/**/*.scss')
+
+    // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
+    .pipe(postcss([
+
+      selectorReplace({
+        before: [":host", "&(:not(.is-touching))", "&(.focus-visible)"],
+        after: ["&", "&:not(.is-touching)", "&.focus-visible"],
+      })
+    ]))
+
+    // Output final CSS in destination
+    .pipe(gulp.dest('./altImports/'));
 });
 
 // Sass watcher

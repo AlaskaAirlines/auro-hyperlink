@@ -1,202 +1,131 @@
-# Web Component Boilerplate directory
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
 
-The intent of this directory is to use as a boilerplate/springboard to create new Orion Design System [stateless components](/docs/ods-stateless-components.md). 
+[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink)
+![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?color=orange)
+![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-hyperlink.svg?color=blue)
 
-The Orion Web Component development environment is built using the [Polymer CLI](https://polymer-library.polymer-project.org/3.0/docs/tools/polymer-cli-commands). Although, you can create a new component directory by running `polymer init` [(read more)](https://polymer-library.polymer-project.org/3.0/docs/tools/create-element-polymer-cli) there are a considerable number of customizations that have been done to this development environment.
+# \<ods-hyperlink>
 
-## New component repo
+\<ods-hyperlink> is a wrapper component for a HTML \<a> element containing styling and behavior.
 
-The creation of a new component repository within the Orion Design System requires admin access to the Alaska Airlines / Orion Design System Github account. Once this repository has been created, please fork the repo into your personal Github account and clone to your local machine for development. 
+## Docs
 
-Once the new component work has been completed, please submit a Pull Request to the original component repository for review and merging. 
+All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
 
-## New component config - root
+## Install
 
-There are a number of files that will need to be updated to in order to build the new component. 
-
-### ./package.json
-
-Update the following lines:
-
-```
-"name": "@alaskaairux/ods-[name]",
-
-"description": "Orion Design System [name] element",
+```shell
+$ npm i @alaskaairux/ods-hyperlink
 ```
 
-### ./index.html
+### Design Token CSS Custom Property dependency
 
-Update the following line:
+The use of any ODS Component has a dependency on the [ODS Design Tokens](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
 
-```
-<title>Orion Design System | ods-[name] element</title>
-```
+For additional details in regards to using Orion Design Tokens with components, please see [./docs/TECH_DETAILS.md](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/TECH_DETAILS.md)
 
-### ./README.md
+### CSS Custom Property fallbacks
 
-Once the new component setup is complete, run the following command to replace the `README.md` with the `README.template`.
+CSS Custom Properties are not supported in older browsers. For this, fallback properties are pre-generated and included with the npm. Any update to the Orion Design Tokens will be immediately reflected with browsers that support CSS Custom Properties, legacy browsers will require updated components with pre-generated fallback properties.
 
-```
-mv README.temp README.md
-```
+### Define dependency in project component
 
-### ./.travis.yml
+Define the component dependency within each component that is using the \<ods-hyperlink> component.
 
-Run the following command to allow Travis CI to see the new repository. 
-
-```
-mv .travis.temp .travis.yml
+```javascript
+import "@alaskaairux/ods-hyperlink/dist/ods-hyperlink";
 ```
 
-## New component config - ./demo
+**Reference component in HTML**
 
-### ./demo/index.html
-
-This file is the page served up when running `polymer serve`. Please customize this file to fit the needs that best demonstrate the usefulness of the component being created. 
-
-For initial configuration, please update the following lines:
-
-```
-<title>Orion Design System | ods-[name] element</title>
-
-<script type="module" src="../src/ods-[name].js"></script>
-
-<h1>ods-[name]</h1>
-
-<demo-snippet>
-  <template>
-    <ods-[name]></ods-[name]>
-  </template>
-</demo-snippet>
-
-<h2>Element &#60;ods-[name]&#62;</h2>
-
-<pre><code>class Ods[name] extends LitElement</code></pre>
+```html
+<ods-hyperlink>Hello World!</ods-hyperlink>
 ```
 
-## New component config - ./test
+## Element \<ods-hyperlink>
 
-### ./test/index.html
-
-Please update the following:
-
-```
-<script>
-  // Load and run all tests (.html, .js):
-  WCT.loadSuites([
-    'ods-[name]_test.html'
-  ]);
-</script>
+```javascript
+class OdsHyperlink extends LitElement
 ```
 
-### ./test/ods-[name]_test.html
+### hyperlink use cases
 
-Please update the name of this file to represent the new ODS component being created. 
+The \<ods-hyperlink> element should be used in situations where users may:
 
-```
-ods-[name]_test.html
-```
+* stand-alone link element for navigation
+* inline link element for navigation
+* optional role as button when hyperlink UI is needed for submit action
+* optional role as tab when hyperlink UI is needed for a tablist
 
-In the file please update the following line:
+### Properties:
 
-```
-<title>ods-[name]test</title>
+| Attribute | value type | Description |
+|----|----|----|
+| download | boolean | Specifies that the target will be downloaded when a user clicks on the hyperlink |
+| darktheme | boolean | Specifies dark theme use of hyperlink |
+| inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
+| tabisactive | string | Indicates if tab is to be displayed as active state (true, false)† |
+| href | string | Specifies the URL of the page the link goes to |
+| rel | string | Specifies the relationship between the current document and the linked document |
+| role | string | Use for aria roles |
+| target | string | Specifies where to open the linked document |
+| type | string | Specifies the media type of the linked document |
+| anchorCallback | function | Function callback hook |
 
-<script type="module" src="../src/ods-[name].js"></script>
-```
+† See `role="tab"` use example below for further details about this feature
 
-Following the example of passing a string into a component, update this file to address the component's test scenario:
+### API Code Examples
 
-```
-<test-fixture id="BasicTestFixture">
-  <template>
-    <ods-[name]></ods-[name]>
-  </template>
-</test-fixture>
+**Default hyperlink**
 
-<test-fixture id="ChangedPropertyTestFixture">
-  <template>
-    <ods-[name] string="foo"></ods-[name]>
-  </template>
-</test-fixture>
-
-<script type="module">
-  suite("ods-[name]", () => {
-    test("it's a test", () => {
-      assert.equal(1, 1);
-    });
-    test("instantiating the element with default properties works", () => {
-      const element = fixture("BasicTestFixture");
-      assert.equal(element.string, "");
-    });
-
-    test("setting a property on the element works", () => {
-      // Create a test fixture
-      const element = fixture("ChangedPropertyTestFixture");
-      assert.equal(element.string, "foo");
-    });
-  });
-</script>
+```html
+<ods-hyperlink href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
 ```
 
-## New component config - ./src
+**Inline hyperlink**
 
-Within the `./src` directory are all the core files that will be used to generate the component. The example for the boilerplate is a simple component that can accept a string. Please use the structure of this example to build additional components. 
-
-### ./src/ods-[name].js
-
-This is the component file. Please review the template file for any common build instructions. Please update the following lines:
-
-```
-import ods[name]Css from "./ods-[name]-css.js";
-
-class Ods[name] extends LitElement {}
-
-customElements.define("ods-[name]", Ods[name]);
+```html
+These are words with a link to <ods-hyperlink href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
 ```
 
-**Variables** will refer to Sass variables being generated by the Design Tokens in the build process. 
+**Hyperlink with `download` option**
 
-**Properties** will refer to CSS Custom Properties that are required for the generation of the custom component. 
-
-### ./src/shape.json
-
-This is the file that drives the shape of the component as defined in component specific Design Tokens. 
-
-The shape of a component is to be described using JSON. The intent behind this is to drive the creation of component specific design tokens, as well to communicate the full shape of the component in an other than CSS construct.
-
-Please review the example below that illustrates a common pattern use. When creating shape definitions, it's best to create a local component reference, then when referencing a global value, please use the CSS Custom Selector as reference.
-
-```
-{
-  "host": {
-    "display": {"value": "flex"},
-    "borderRadius": {"value": "var(--size-border-radius-default)"}
-  },
-
-  "ods-[name]": {
-    "display": {"value": "inline-block"},
-    "background": {
-      "color": {"value": "var(--color-brand-blue-atlas-base)"}
-    }
-  }
-}
+```html
+<ods-hyperlink download href="assets/thing.pdf">Download thing.pdf</ods-hyperlink>
 ```
 
-### ./src/styles.scss
+**Hyperlink with `role` option**
 
-Please review the template file for any common build instructions. 
-
-**Variables** will refer to Sass variables being generated by the Design Tokens in the build process. 
-
-**Properties** will refer to CSS Custom Properties that are required for the generation of the custom component. 
-
-### ./src/package.json
-
-Definition of the npm package that will be created for this custom element. Please update the following lines:
-
+```html
+<ods-hyperlink role="button">Cancel</ods-hyperlink>
 ```
-"name": "@alaskaair/ods-[name]",
 
-"description": "Orion Design System [name] element",
+When using the `role="button"` option, \<ods-hyperlink> will auto address a11y `aria-pressed` status when using the mouse, return key or spacebar.
+
+```html
+<div role="tablist" class="ods-tablist">
+  <ods-hyperlink tabisactive="true" role="tab">Tab One</ods-hyperlink>
+  <ods-hyperlink role="tab">Tab Two</ods-hyperlink>
+</div>
 ```
+
+When using the `role="tab"` option, \<ods-hyperlink> is required to be wrapped in a container with `role="tablist"` in order to be a11y compliant. The use of `class="ods-tablist"` will address the desired UI experince. This CSS selector has a dependency on The Orion Web Code Style Sheet library.
+
+**Hyperlink with `rel` option**
+
+```html
+<ods-hyperlink rel="nofollow" href="http://www.somewhere.com">SEO nofollow</ods-hyperlink>
+```
+
+**Hyperlink with `target` option**
+
+```html
+<ods-hyperlink href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
+```
+
+When using the `target` option and the string `_blank`, the \<ods-hyperlink> component will address the necessary [vulnerability issues](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/) without additional effort from the user of the component.
+
+##
+
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.

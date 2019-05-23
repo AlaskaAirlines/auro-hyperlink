@@ -3,29 +3,95 @@
 
 // ---------------------------------------------------------------------
 
-// Creates ods-[name] CSS UI definition of shape
+// Creates ods-hyperlink CSS UI definition of shape
 
 // Boilerplate Sass imports
-@import "./generated/tokenVariables";
-@import "./generated/componentShapeVariables";
+@import "./tokens/tokenVariables";
+@import "./tokens/componentShapeVariables";
 
-@import "./generated/tokenProperties";
-@import "./generated/componentShapeProperties";
+@import "./tokens/tokenProperties";
+@import "./tokens/componentShapeProperties";
 
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/breakpoints";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/baselineLTE";
-// @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/animation";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleTab";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
 
-// container styles - defines the look of the outer custom componet 
-:host {
-  ...
+$iconMap: (
+  stepout: true
+);
+
+@import "./node_modules/@alaskaairux/orion-icons/dist/orion-icons";
+
+
+:host(.focus-visible) {
+  .hyperlink,
+  .hyperlink--button,
+  .hyperlink--tab {
+    @include focus(css);
+  }
+}
+
+:host([role=tab]) {
+  margin-right: calc(var(--size-scale-micro) * -1);
 }
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element ouside the scope of this component
 
-
 // component shape styles
-.[selector-name] {
-  ...
+.hyperlink {
+  color: var(--ods-hyperlink-color);
+  padding: var(--ods-hyperlink-padding);
+  text-decoration: var(--ods-hyperlink-decoration);
+
+  &:visited {
+    color: var(--ods-hyperlink-visited-color);
+  }
+
+  :host(:not(.is-touching)) & {
+    &:hover {
+      color: var(--ods-hyperlink-hover-color);
+      text-decoration: var(--ods-hyperlink-hover-decoration);
+    }
+
+    &--inline {
+      &:hover {
+        text-decoration: var(--ods-hyperlink-inline-hover-decoration)
+      }
+    }
+
+    &--darktheme {
+      &:hover {
+        color: var(--ods-hyperlink-darktheme-hover-color);
+      }
+    }
+  }
+
+  &--inline {
+    padding: var(--ods-hyperlink-inline-padding);
+    text-decoration: var(--ods-hyperlink-inline-decoration);
+  }
+
+  &--darktheme {
+    color: var(--ods-hyperlink-darktheme-color);
+
+    &:visited {
+      color: var(--ods-hyperlink-darktheme-visited-color);
+    }
+  }
+}
+
+svg {
+  margin-left: var(--ods-hyperlink-svg-margin-left);
+}
+
+// class to support role=button
+.hyperlink--button {
+  @include anchorButton(css, component);
+}
+
+// class to support role=tab
+.hyperlink--tab {
+  @include anchorTab(css, component);
 }
