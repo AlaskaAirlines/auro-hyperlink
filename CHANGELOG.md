@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.0...v1.0.1) (2019-06-24)
+
+
+### Bug Fixes
+
+* update orion packages ([3d7bcfc](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/3d7bcfc))
+
 # 1.0.0 (2019-06-14)
 
 
