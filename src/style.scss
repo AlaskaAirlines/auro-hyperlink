@@ -28,7 +28,7 @@ $iconMap: (
   .hyperlink,
   .hyperlink--button,
   .hyperlink--tab {
-    @include focus(css);
+    @include focus-hyperlink(css);
   }
 }
 
