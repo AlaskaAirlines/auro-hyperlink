@@ -18,7 +18,7 @@ import stepout from '@alaskaairux/orion-icons/dist/icons/stepout_es6.js';
 class OdsHyperlink extends LitElement {
   constructor() {
     super();
-    this.ariaPressed = 'false';
+    this.ariapressed = 'false';
     this.tabisactive = 'false';
 
     /*
@@ -93,7 +93,7 @@ class OdsHyperlink extends LitElement {
     }
   }
 
-  ariaPressedState(ariaPressed) {
+  ariaPressedState(ariapressed) {
 
     const ariaToggle = function (event) {
       const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
@@ -127,7 +127,7 @@ class OdsHyperlink extends LitElement {
     this.addEventListener('mouseup', ariaToggle, false);
     this.addEventListener('keyup', ariaToggle, false);
 
-    return ariaPressed
+    return ariapressed
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -137,7 +137,7 @@ class OdsHyperlink extends LitElement {
       ${styleCss}
 
       <a
-        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariaPressed) : undefined)}"
+        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
         aria-selected="${ifDefined(this.tabisactive === 'true' ? this.tabisactive : undefined)}"
         ?download="${this.download}"
         role="${ifDefined(this.role === 'button' || this.role === 'tab' ? this.role : undefined)}"
