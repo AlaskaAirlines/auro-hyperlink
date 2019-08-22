@@ -8,7 +8,7 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 // Import touch detection lib
 import 'focus-visible/dist/focus-visible.min.js';
 import hyperlinkProperties from './tokens/componentShapeProperties-css.js';
-import iconProperties from '../node_modules/@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties-css.js';
+import iconProperties from '@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties-css.js';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
