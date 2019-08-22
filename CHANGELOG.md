@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.4](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.3...v1.0.4) (2019-08-22)
+
+
+### Bug Fixes
+
+* update WC to support new icon Tokens ([60d9099](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/60d9099))
+
 ## [1.0.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.2...v1.0.3) (2019-06-26)
 
 
