@@ -74,6 +74,17 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 † See `role="tab"` use example below for further details about this feature
 
+### Custom style support 
+
+The default \<ods-hyperlink> has padding on the LEFT and the RIGHT of the element. If this padding is not required, the following CSS classes are supported:
+
+| Class | Description |
+|---|---|
+| util_paddingLeft--none | Removes the padding on the LEFT of the element |
+| util_paddingRight--none | Removes the padding on the RIGHT of the element |
+
+No additional dependency on Orion Web Core Style Sheets is required.
+
 ### API Code Examples
 
 **Default hyperlink**
@@ -86,6 +97,12 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 ```html
 These are words with a link to <ods-hyperlink href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
+```
+
+**Hyperlink with `utility class` option**
+
+```html
+<ods-hyperlink class="util_paddingLeft--none" href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
 ```
 
 **Hyperlink with `download` option**

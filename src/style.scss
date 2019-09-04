@@ -32,6 +32,19 @@ $iconMap: (
   }
 }
 
+// Supported utility classes
+:host(.util_paddingLeft--none) {
+  .hyperlink {
+    padding-left: 0;
+  }
+}
+
+:host(.util_paddingRight--none) {
+  .hyperlink {
+    padding-right: 0;
+  }
+}
+
 :host([role=tab]) {
   margin-right: calc(var(--size-scale-micro) * -1);
 }
