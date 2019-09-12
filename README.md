@@ -142,7 +142,36 @@ When using the `role="tab"` option, \<ods-hyperlink> is required to be wrapped i
 
 When using the `target` option and the string `_blank`, the \<ods-hyperlink> component will address the necessary [vulnerability issues](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/) without additional effort from the user of the component.
 
+## Alternate build solutions
+
+Why would you need this? With all Orion custom elements the CSS for the element is embedded within the shadow DOM of the custom element. If your development environment is not allowing for the use of shadow DOM elements, the CSS for each element is distributed via additional resources within the npm package.
+
+[Read more about how to use alternate CSS build resources](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/ALT_BUILD.md)
+
+## Development
+
+In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
+
+Please be sure to review the [contribution guidelines](.github/CONTRIBUTING.md) for this project. Please make sure to **pay special attention** to the [conventional commits](.github/CONTRIBUTING.md#conventional-commits) section of the document.
+
+### Start development environment
+
+Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open three different shell sessions. One is for the Gulp tasks, the second is for a series of npm tasks and the last is to run the Polymer server.
+
+```shell
+// shell terminal one
+$ gulp dev
+
+// shell terminal two
+$ npm run dev
+
+// shell terminal three
+polymer serve
+```
+
 ##
 
+<footer>
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>
