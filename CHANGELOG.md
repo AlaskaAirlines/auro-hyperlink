@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.7](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.6...v1.0.7) (2019-09-12)
+
+
+### Bug Fixes
+
+* update line height issue in relation to other buttons ([51dc977](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/51dc977))
+
 ## [1.0.6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.5...v1.0.6) (2019-09-04)
 
 
