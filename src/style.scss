@@ -13,9 +13,12 @@
 @import "./tokens/componentShapeProperties";
 
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleTab";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+@import "./node_modules/@alaskaairux/ods-button/dist/shared_style";
 
 $iconMap: (
   stepout: true
@@ -29,6 +32,11 @@ $iconMap: (
   .hyperlink--button,
   .hyperlink--tab {
     @include focus-hyperlink(css);
+  }
+
+  .hyperlink--cta {
+    @include focus-button(css);
+    outline: none;
   }
 }
 
@@ -57,6 +65,11 @@ $iconMap: (
   color: var(--ods-hyperlink-color);
   padding: var(--ods-hyperlink-padding);
   text-decoration: var(--ods-hyperlink-decoration);
+
+  // includes mixin to bring in ods-button defualt style
+  &--cta {
+    @include sharedButton(true);
+  }
 
   &:visited {
     color: var(--ods-hyperlink-visited-color);

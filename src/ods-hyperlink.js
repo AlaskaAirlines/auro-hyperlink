@@ -8,6 +8,7 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 // Import touch detection lib
 import 'focus-visible/dist/focus-visible.min.js';
 import hyperlinkProperties from './tokens/componentShapeProperties-css.js';
+import buttonProperties from '@alaskaairux/ods-button/dist/tokens/componentProperties-css.js';
 import iconProperties from '@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties-css.js';
 
 // import the processed CSS file into the scope of the component
@@ -41,6 +42,7 @@ class OdsHyperlink extends LitElement {
   // function to define props used within the scope of thie component
   static get properties() {
     return {
+      cta:              { type: Boolean },
       download:         { type: Boolean },
       darktheme:        { type: Boolean },
       inline:           { type: Boolean },
@@ -64,6 +66,10 @@ class OdsHyperlink extends LitElement {
 
   getTheme(darktheme) {
     return darktheme ? "hyperlink--darktheme" : 'hyperlink--lighttheme'
+  }
+
+  getCta(cta) {
+    return cta ? "hyperlink--cta" : ''
   }
 
   getTabState(tabisactive) {
@@ -135,6 +141,7 @@ class OdsHyperlink extends LitElement {
   render() {
     return html`
       ${hyperlinkProperties}
+      ${buttonProperties}
       ${iconProperties}
       ${styleCss}
 
@@ -144,7 +151,7 @@ class OdsHyperlink extends LitElement {
         ?download="${this.download}"
         role="${ifDefined(this.role === 'button' || this.role === 'tab' ? this.role : undefined)}"
         rel="${ifDefined(this.target || this.rel ? this.getReltype(this.target, this.rel) : undefined)}"
-        class="${this.getAnchortype(this.role, this.href)} ${this.getContext(this.inline)} ${this.getTheme(this.darktheme)} ${this.getTabState(this.tabisactive)}"
+        class="${this.getAnchortype(this.role, this.href)} ${this.getContext(this.inline)} ${this.getTheme(this.darktheme)} ${this.getCta(this.cta)} ${this.getTabState(this.tabisactive)}"
         href="${ifDefined(this.href ? this.href : undefined)}"
         target="${ifDefined(this.target ? this.target : undefined)}"
         @click=${ifDefined(this.role === 'button' || this.role === 'tab' ? this.anchorCallback : undefined)}"
