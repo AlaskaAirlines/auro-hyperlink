@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.9](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.8...v1.0.9) (2019-10-06)
+
+
+### Bug Fixes
+
+* update peerDependencies ([cfde3b0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/cfde3b0))
+
 ## [1.0.8](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.7...v1.0.8) (2019-10-06)
 
 
