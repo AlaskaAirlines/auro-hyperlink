@@ -61,6 +61,7 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 | Attribute | value type | Description |
 |----|----|----|
+| cta | boolean | Specifies the style of the hyperlink to appear as a CTA button |
 | download | boolean | Specifies that the target will be downloaded when a user clicks on the hyperlink |
 | darktheme | boolean | Specifies dark theme use of hyperlink |
 | inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
@@ -138,6 +139,12 @@ When using the `role="tab"` option, \<ods-hyperlink> is required to be wrapped i
 
 ```html
 <ods-hyperlink href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
+```
+
+**Hyperlink with `cta` option**
+
+```html
+<ods-hyperlink href="http://www.alaskaair.com" target="_blank" cta>Go to Alaska Airlines!</ods-hyperlink>
 ```
 
 When using the `target` option and the string `_blank`, the \<ods-hyperlink> component will address the necessary [vulnerability issues](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/) without additional effort from the user of the component.
