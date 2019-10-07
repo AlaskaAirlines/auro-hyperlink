@@ -46,6 +46,7 @@ class OdsHyperlink extends LitElement {
       download:         { type: Boolean },
       darktheme:        { type: Boolean },
       inline:           { type: Boolean },
+      reverse:          { type: Boolean },
       href:             { type: String },
       rel:              { type: String },
       role:             { type: String },

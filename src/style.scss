@@ -57,6 +57,16 @@ $iconMap: (
   margin-right: calc(var(--size-scale-micro) * -1);
 }
 
+:host([responsive]) {
+  display: flex;
+}
+
+:host([reverse]) {
+  @include breakpoint-narrow {
+    flex-direction: row-reverse;
+  }
+}
+
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element ouside the scope of this component
 
@@ -69,6 +79,8 @@ $iconMap: (
   // includes mixin to bring in ods-button defualt style
   &--cta {
     @include sharedButton(true);
+
+    display: block;
   }
 
   &:visited {
