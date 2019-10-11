@@ -69,7 +69,6 @@ The \<ods-hyperlink> element should be used in situations where users may:
 | inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
 | rel | string | Specifies the relationship between the current document and the linked document |
 | responsive | boolean | used with `cta` button style; sets button to have automatic responsive layout properties | 
-| reverse | boolean | used with `cta` and `responsive` to have reverse placement in natural layout |
 | role | string | Use for aria roles |
 | tabisactive | string | Indicates if tab is to be displayed as active state (true, false)† |
 | target | string | Specifies where to open the linked document |
