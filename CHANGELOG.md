@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.0.10](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.9...v1.0.10) (2019-10-11)
+
+
+### Bug Fixes
+
+* add ciBuild and devBuild scripts for dev purposes ([88a396a](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/88a396a))
+* update responsive styles for CTA button ([2e82e5c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/2e82e5c))
+
 ## [1.0.9](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.8...v1.0.9) (2019-10-06)
 
 
