@@ -61,17 +61,19 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 | Attribute | value type | Description |
 |----|----|----|
+| anchorCallback | function | Function callback hook |
 | cta | boolean | Specifies the style of the hyperlink to appear as a CTA button |
 | download | boolean | Specifies that the target will be downloaded when a user clicks on the hyperlink |
 | darktheme | boolean | Specifies dark theme use of hyperlink |
-| inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
-| tabisactive | string | Indicates if tab is to be displayed as active state (true, false)† |
 | href | string | Specifies the URL of the page the link goes to |
+| inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
 | rel | string | Specifies the relationship between the current document and the linked document |
+| responsive | boolean | used with `cta` button style; sets button to have automatic responsive layout properties | 
+| reverse | boolean | used with `cta` and `responsive` to have reverse placement in natural layout |
 | role | string | Use for aria roles |
+| tabisactive | string | Indicates if tab is to be displayed as active state (true, false)† |
 | target | string | Specifies where to open the linked document |
 | type | string | Specifies the media type of the linked document |
-| anchorCallback | function | Function callback hook |
 
 † See `role="tab"` use example below for further details about this feature
 
