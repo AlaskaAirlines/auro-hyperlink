@@ -59,11 +59,13 @@ $iconMap: (
 
 :host([responsive]) {
   display: flex;
+  width: fit-content;
 }
 
 :host([reverse]) {
   @include breakpoint-narrow {
     flex-direction: row-reverse;
+    width: initial;
   }
 }
 
