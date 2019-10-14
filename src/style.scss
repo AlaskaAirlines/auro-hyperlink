@@ -58,8 +58,10 @@ $iconMap: (
 }
 
 :host([responsive]) {
-  display: flex;
-  width: fit-content;
+  @include breakpoint-medium {
+    display: flex;
+    width: fit-content;
+  }
 }
 
 :host([reverse]) {
