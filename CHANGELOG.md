@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.11](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.10...v1.0.11) (2019-10-14)
+
+
+### Bug Fixes
+
+* update responsove option for CTAs ([4d0fe78](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/4d0fe78))
+
 ## [1.0.10](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.9...v1.0.10) (2019-10-11)
 
 
