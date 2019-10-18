@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.12](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.11...v1.0.12) (2019-10-18)
+
+
+### Bug Fixes
+
+* add barrel file to simplify import statements ([e45aa8f](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/e45aa8f))
+
 ## [1.0.11](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.10...v1.0.11) (2019-10-14)
 
 
