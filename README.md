@@ -33,7 +33,7 @@ CSS Custom Properties are not supported in older browsers. For this, fallback pr
 Define the component dependency within each component that is using the \<ods-hyperlink> component.
 
 ```javascript
-import "@alaskaairux/ods-hyperlink/dist/ods-hyperlink";
+import "@alaskaairux/ods-hyperlink";
 ```
 
 **Reference component in HTML**
@@ -68,7 +68,7 @@ The \<ods-hyperlink> element should be used in situations where users may:
 | href | string | Specifies the URL of the page the link goes to |
 | inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
 | rel | string | Specifies the relationship between the current document and the linked document |
-| responsive | boolean | used with `cta` button style; sets button to have automatic responsive layout properties | 
+| responsive | boolean | used with `cta` button style; sets button to have automatic responsive layout properties |
 | role | string | Use for aria roles |
 | tabisactive | string | Indicates if tab is to be displayed as active state (true, false)† |
 | target | string | Specifies where to open the linked document |
@@ -76,7 +76,7 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 † See `role="tab"` use example below for further details about this feature
 
-### Custom style support 
+### Custom style support
 
 The default \<ods-hyperlink> has padding on the LEFT and the RIGHT of the element. If this padding is not required, the following CSS classes are supported:
 
