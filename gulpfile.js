@@ -156,29 +156,6 @@ gulp.task('processImportsVariable', function() {
 });
 
 // task for Development Sass processing
-gulp.task('processDev', function() {
-  // set path to where Sass files are located to be processed
-  return gulp.src('./src/*.scss')
-
-    // Sass pipeline
-    .pipe(gulpSass({
-      errLogToConsole: true,
-      outputStyle: 'expanded', //alt options: nested, compact, compressed
-    }))
-
-    // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
-    .pipe(postcss([
-
-      removeSelectors({
-        selectors: [":root"]}
-      )
-    ]))
-
-    // Output final CSS in destination
-    .pipe(gulp.dest('./src/'));
-});
-
-// task for Development Sass processing
 gulp.task('reprocessClean', function() {
   // set path to where Sass files are located to be processed
   return gulp.src('./altImports/**/*.scss')
@@ -198,11 +175,11 @@ gulp.task('reprocessClean', function() {
 
 // Sass watcher
 gulp.task('sassWatch', function() {
-  gulp.watch('./**/*.{scss,sass}', gulp.series(gulp.parallel('processDemo', 'processDev')));
+  gulp.watch('./**/*.{scss,sass}', gulp.series(gulp.parallel('processDemo', 'processSrc')));
 });
 
 // Task(s)
 // Gulp Sequence is used to force Gulp to address tasks in specific build order
 gulp.task('build', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processSrc')));
 
-gulp.task('dev', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processDev', 'sassWatch')));
+gulp.task('dev', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processSrc', 'sassWatch')));
