@@ -41,7 +41,7 @@
     "focus-visible": "^4.1.5"
   },
   "devDependencies": {
-    "@alaskaairux/ods-button": "^3.0.1",
+    "@alaskaairux/ods-button": "^3.0.2",
     "@alaskaairux/orion-design-tokens": "^2.7.3",
     "@alaskaairux/orion-icons": "^1.7.3",
     "@alaskaairux/orion-web-core-style-sheets": "^2.6.13",
