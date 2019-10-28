@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.13](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.12...v1.0.13) (2019-10-28)
+
+
+### Bug Fixes
+
+* [#6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/issues/6) address IE fallback styles ([2e66c24](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/2e66c24998e6bf671a502decbc21d54ee1c9e0b1))
+
 ## [1.0.12](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.11...v1.0.12) (2019-10-18)
 
 
