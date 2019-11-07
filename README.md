@@ -61,7 +61,6 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 | Attribute | value type | Description |
 |----|----|----|
-| anchorCallback | function | Function callback hook |
 | cta | boolean | Specifies the style of the hyperlink to appear as a CTA button |
 | download | boolean | Specifies that the target will be downloaded when a user clicks on the hyperlink |
 | darktheme | boolean | Specifies dark theme use of hyperlink |

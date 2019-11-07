@@ -52,13 +52,8 @@ class OdsHyperlink extends LitElement {
       role:             { type: String },
       tabisactive:      { type: String },
       target:           { type: String },
-      type:             { type: String },
-      anchorCallback:   { type: Function }
+      type:             { type: String }
     };
-  }
-
-  anchorCallback() {
-    alert('Alert: Event not bound to anchor')
   }
 
   getContext(inline) {
@@ -155,7 +150,6 @@ class OdsHyperlink extends LitElement {
         class="${this.getAnchortype(this.role, this.href)} ${this.getContext(this.inline)} ${this.getTheme(this.darktheme)} ${this.getCta(this.cta)} ${this.getTabState(this.tabisactive)}"
         href="${ifDefined(this.href ? this.href : undefined)}"
         target="${ifDefined(this.target ? this.target : undefined)}"
-        @click=${ifDefined(this.role === 'button' || this.role === 'tab' ? this.anchorCallback : undefined)}"
         tabindex="${ifDefined(this.role === 'button' || this.role === 'tab' ? '0' : undefined)}"
       ><slot></slot>${this.targetIcon(this.target)}</a>
     `;
