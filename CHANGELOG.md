@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.13...v1.1.0) (2019-11-18)
+
+
+### Features
+
+* updated icon version to use new name ([c47247b](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/c47247ba0a4c32753ffe9812d4a57c9ff51bd3d5))
+
 ## [1.0.13](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.12...v1.0.13) (2019-10-28)
 
 
