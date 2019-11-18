@@ -43,7 +43,7 @@
   "devDependencies": {
     "@alaskaairux/ods-button": "^3.0.2",
     "@alaskaairux/orion-design-tokens": "^2.7.3",
-    "@alaskaairux/orion-icons": "^1.7.3",
+    "@alaskaairux/orion-icons": "^1.8.1",
     "@alaskaairux/orion-web-core-style-sheets": "^2.6.13",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
