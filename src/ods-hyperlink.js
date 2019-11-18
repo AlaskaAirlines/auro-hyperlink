@@ -14,7 +14,7 @@ import iconProperties from '@alaskaairux/orion-icons/dist/tokens/CSSTokenPropert
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
 
-import stepout from '@alaskaairux/orion-icons/dist/icons/stepout_es6.js';
+import stepout from '@alaskaairux/orion-icons/dist/icons/step-out_es6.js';
 
 // build the component class
 class OdsHyperlink extends LitElement {
