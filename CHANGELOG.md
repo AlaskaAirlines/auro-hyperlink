@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.2.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.1.0...v1.2.0) (2019-11-19)
+
+
+### Features
+
+* removed anchorCallback prop ([62e2e2c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/62e2e2cf3a1851717a8f907f5071f43159836c5d))
+
 # [1.1.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.0.13...v1.1.0) (2019-11-18)
 
 
