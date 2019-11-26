@@ -42,44 +42,47 @@ class OdsHyperlink extends LitElement {
   // function to define props used within the scope of thie component
   static get properties() {
     return {
-      cta:              { type: Boolean },
-      download:         { type: Boolean },
-      darktheme:        { type: Boolean },
-      inline:           { type: Boolean },
-      reverse:          { type: Boolean },
+      cta:              { type: Boolean },  // Style prop
+      download:         { type: Boolean },  // Style prop
+      darktheme:        { type: Boolean },  // Style prop
+      inline:           { type: Boolean },  // Style prop
+      tabisactive:      { type: Boolean },  // Style prop
+      buttontype:       { type: String },   // Style prop
       href:             { type: String },
       rel:              { type: String },
-      role:             { type: String },
-      tabisactive:      { type: String },
-      target:           { type: String },
-      type:             { type: String }
+      role:             { type: String },   // Style prop
+      target:           { type: String }
     };
   }
 
-  getContext(inline) {
-    return inline ? "hyperlink--inline" : 'hyperlink--no-inline'
-  }
+  getStyles() {
+    if (this.cta && this.buttontype === 'secondary') {
+      return 'hyperlink hyperlink--cta hyperlink--secondaryCta'
+    }
 
-  getTheme(darktheme) {
-    return darktheme ? "hyperlink--darktheme" : 'hyperlink--lighttheme'
-  }
+    if (this.cta) {
+      return 'hyperlink hyperlink--cta'
+    }
 
-  getCta(cta) {
-    return cta ? "hyperlink--cta" : ''
+    if (this.darktheme) {
+      return 'hyperlink hyperlink--darktheme'
+    }
+
+    if (this.inline) {
+      return 'hyperlink hyperlink--inline'
+    }
+
+    if (this.role === 'button') {
+      return 'hyperlink--button'
+    } else if (this.role === 'tab') {
+      return 'hyperlink--tab'
+    } else {
+      return 'hyperlink'
+    }
   }
 
   getTabState(tabisactive) {
-    return tabisactive === 'true' ? "is-active" : ''
-  }
-
-  getAnchortype(role, href) {
-    if (role === 'button') {
-      return 'hyperlink--button'
-    } else if (role === 'tab') {
-      return 'hyperlink--tab'
-    } else if (href) {
-      return 'hyperlink'
-    }
+    return tabisactive === true ? "is-active" : ''
   }
 
   getReltype(target, rel) {
@@ -97,7 +100,6 @@ class OdsHyperlink extends LitElement {
   }
 
   ariaPressedState(ariapressed) {
-
     const ariaToggle = function (event) {
       const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
 
@@ -147,7 +149,7 @@ class OdsHyperlink extends LitElement {
         ?download="${this.download}"
         role="${ifDefined(this.role === 'button' || this.role === 'tab' ? this.role : undefined)}"
         rel="${ifDefined(this.target || this.rel ? this.getReltype(this.target, this.rel) : undefined)}"
-        class="${this.getAnchortype(this.role, this.href)} ${this.getContext(this.inline)} ${this.getTheme(this.darktheme)} ${this.getCta(this.cta)} ${this.getTabState(this.tabisactive)}"
+        class="${this.getStyles()} ${this.getTabState(this.tabisactive)}"
         href="${ifDefined(this.href ? this.href : undefined)}"
         target="${ifDefined(this.target ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' || this.role === 'tab' ? '0' : undefined)}"
