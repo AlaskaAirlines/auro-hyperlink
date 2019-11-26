@@ -14,6 +14,7 @@
 
 @import "./node_modules/@alaskaairux/ods-button/dist/tokens/componentProperties";
 @import "./node_modules/@alaskaairux/ods-button/dist/sassPartials/shared_style";
+@import "./node_modules/@alaskaairux/ods-button/dist/sassPartials/shared_style--secondary";
 
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
@@ -40,6 +41,16 @@ $iconMap: (
   .hyperlink--cta {
     @include focus-button(css);
     outline: none;
+  }
+
+  // REFACTOR: this is duplicated from OWCSS to support additional use
+  .hyperlink--secondaryCta {
+    box-shadow:
+      inset 0 0 0 2px var(--color-brand-blue-atlas-base),
+      inset 0 0 0 5px var(--color-base-white),
+      inset 0 0 0 8px var(--color-brand-blue-atlas-base);
+    outline: none;
+    background-color: var(--color-base-white);
   }
 }
 
@@ -86,8 +97,11 @@ $iconMap: (
   // includes mixin to bring in ods-button defualt style
   &--cta {
     @include sharedButton(true);
-
     display: block;
+  }
+
+  &--secondaryCta {
+    @include sharedButtonSecondary(true)
   }
 
   &:visited {
