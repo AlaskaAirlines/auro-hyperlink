@@ -58,6 +58,12 @@
 
       <demo-snippet>
         <template>
+            <ods-hyperlink cta buttontype="secondary" href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
             <ods-hyperlink cta responsive href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
         </template>
       </demo-snippet>
@@ -154,7 +160,10 @@
 
       <demo-snippet>
         <template>
-          <ods-hyperlink role="button">Cancel</ods-hyperlink>
+            <ods-hyperlink id="cancel" role="button">Cancel</ods-hyperlink>
+            <script>
+              document.querySelector('#cancel').addEventListener('click', () => alert('cancel clicked'));
+            </script>
         </template>
       </demo-snippet>
 
@@ -166,42 +175,16 @@
 
       <demo-snippet>
         <template>
-          <div role="tablist" class="ods-tablist">
-            <ods-hyperlink tabisactive="true" role="tab">Tab One</ods-hyperlink>
-            <ods-hyperlink role="tab">Tab Two</ods-hyperlink>
-            <ods-hyperlink role="tab">Tab Three</ods-hyperlink>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div role="tablist" class="ods-tablist">
-            <a class="ods-roleTab is-active" tabindex="0" role="tab">Tab One</a>
-            <a class="ods-roleTab" tabindex="0" role="tab">Tab Two</a>
-            <a class="ods-roleTab" tabindex="0" role="tab">Tab Three</a>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-hyperlink>no attrs</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
           <div role="tablist" class="ods-tablist" id="working-tabs">
-              <ods-hyperlink tabisactive="true" role="tab">Tab One</ods-hyperlink>
+              <ods-hyperlink tabisactive role="tab">Tab One</ods-hyperlink>
               <ods-hyperlink role="tab">Tab Two</ods-hyperlink>
               <ods-hyperlink role="tab">Tab Three</ods-hyperlink>
           </div>
           <script>
-            const tabs = [...document.querySelectorAll('#working-tabs ods-hyperlink')];
+            const tabs = [...document.querySelectorAll('.ods-tablist ods-hyperlink')];
             const removeActive = () => {
               tabs.forEach(tab => {
-                tab.setAttribute('tabisactive', false);
+                tab.removeAttribute('tabisactive');
               });
             };
 
@@ -210,19 +193,17 @@
                 removeActive();
                 tab.setAttribute('tabisactive', true);
               });
+
+              tab.addEventListener('keyup', (e) => {
+                if (e.keyCode === 13) {
+                  removeActive();
+                  tab.setAttribute('tabisactive', true);
+                }
+              });
             });
             </script>
         </template>
       </demo-snippet>
-
-    <demo-snippet>
-      <template>
-          <ods-hyperlink id="cancel" role="button">Cancel</ods-hyperlink>
-          <script>
-            document.querySelector('#cancel').addEventListener('click', () => alert('cancel clicked'));
-          </script>
-      </template>
-    </demo-snippet>
 
       <h2>Element &#60;ods-hyperlink&#62;</h2>
 
