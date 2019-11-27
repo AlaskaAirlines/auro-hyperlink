@@ -61,6 +61,7 @@ The \<ods-hyperlink> element should be used in situations where users may:
 
 | Attribute | value type | Description |
 |----|----|----|
+| buttontype | string | Type of button defines the visual styling. Option: `secondary` |
 | cta | boolean | Specifies the style of the hyperlink to appear as a CTA button |
 | download | boolean | Specifies that the target will be downloaded when a user clicks on the hyperlink |
 | darktheme | boolean | Specifies dark theme use of hyperlink |
@@ -69,9 +70,8 @@ The \<ods-hyperlink> element should be used in situations where users may:
 | rel | string | Specifies the relationship between the current document and the linked document |
 | responsive | boolean | used with `cta` button style; sets button to have automatic responsive layout properties |
 | role | string | Use for aria roles |
-| tabisactive | string | Indicates if tab is to be displayed as active state (true, false)† |
+| tabisactive | boolean | Indicates if tab is to be displayed as active state (true, false)† |
 | target | string | Specifies where to open the linked document |
-| type | string | Specifies the media type of the linked document |
 
 † See `role="tab"` use example below for further details about this feature
 
