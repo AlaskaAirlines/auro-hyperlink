@@ -2,7 +2,7 @@
 name: General support
 about: Suggestions that are not related to bugs or new features
 title: ''
-labels: question
+labels: 'Type: Question'
 assignees: blackfalcon
 
 ---
