@@ -159,4 +159,6 @@ class OdsHyperlink extends LitElement {
 }
 
 // define the name of the custom component
-customElements.define("ods-hyperlink", OdsHyperlink);
+if(!customElements.get("ods-hyperlink")) {
+  customElements.define("ods-hyperlink", OdsHyperlink);
+}
