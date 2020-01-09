@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.3.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.0...v1.3.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* element only defines itself if the element is not already defined ([502c522](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/502c5227461eb4e851d5bf8761ca5afc536dd492))
+
 # [1.3.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.2.0...v1.3.0) (2019-11-27)
 
 
