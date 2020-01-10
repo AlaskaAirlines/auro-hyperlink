@@ -1,4 +1,7 @@
 
+// Import Auro tokens
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+
 // Import generated Design Token variables
 @import "./demo/sass/tokenVariables";
 @import "./demo/sass/tokenProperties";

@@ -5,6 +5,9 @@
 
 // Creates ods-hyperlink CSS UI definition of shape
 
+// Import Auro tokens
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+
 // Boilerplate Sass imports
 @import "./tokens/tokenVariables";
 @import "./tokens/componentShapeVariables";
@@ -24,11 +27,8 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
 
 
-$iconMap: (
-  stepout: true
-);
-
-@import "./node_modules/@alaskaairux/orion-icons/dist/orion-icons";
+// Import tokens selectors
+@import "./node_modules/@alaskaairux/orion-icons/dist/icons";
 
 
 :host(.focus-visible) {
