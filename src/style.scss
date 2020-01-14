@@ -5,25 +5,31 @@
 
 // Creates ods-hyperlink CSS UI definition of shape
 
-// Import Auro tokens
+// Import Auro Sass variables
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+// Import Auro CSS Properties as Sass file
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
 
-// Boilerplate Sass imports
-@import "./tokens/tokenVariables";
+// Import Orion Sass variables
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables";
+// Import Orion CSS Properties as Sass file
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenProperties";
+
+// Boilerplate shape Sass variables and properties
 @import "./tokens/componentShapeVariables";
-
-@import "./tokens/tokenProperties";
 @import "./tokens/componentShapeProperties";
 
+// ods-button UI support
 @import "./node_modules/@alaskaairux/ods-button/dist/tokens/componentProperties";
 @import "./node_modules/@alaskaairux/ods-button/dist/sassPartials/shared_style";
 @import "./node_modules/@alaskaairux/ods-button/dist/sassPartials/shared_style--secondary";
 
+// general WCSS imports
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleTab";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
 
 
