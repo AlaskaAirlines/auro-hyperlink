@@ -19,11 +19,11 @@
   ],
 
   "ods-hyperlink": {
-    "color": {"value": "var(--color-type-theme-light-link)"},
+    "color": {"value": "var(--auro-color-text-link-on-light)"},
     "padding": {"value": "0 var(--size-scale-sml)"},
     "decoration": {"value": "none"},
     "visited": {
-      "color": {"value": "var(--color-type-theme-light-link)"}
+      "color": {"value": "var(--auro-color-text-link-on-light)"}
     },
     "darktheme": {
       "color": {"value": "var(--color-type-theme-dark-link)"},
