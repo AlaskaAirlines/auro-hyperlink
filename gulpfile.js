@@ -24,16 +24,7 @@ const gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   removeSelectors = require("postcss-remove-selectors"),
   StyleDictionary = require('style-dictionary'),
-  copyfiles = require('copyfiles');
   selectorReplace = require('postcss-selector-replace');
-
-// task to copy font files from the OWCSS npm to the local project
-// resources are NOT to be committed to version control
-gulp.task('copyFonts', function(cb) {
-  copyfiles(['./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.*', './demo/fonts/'], true, cb);
-  cb();
-});
-
 
 // task to build CSS/Sass resources from Token JSON files
 gulp.task('buildTokens', function(cb) {
@@ -180,6 +171,6 @@ gulp.task('sassWatch', function() {
 
 // Task(s)
 // Gulp Sequence is used to force Gulp to address tasks in specific build order
-gulp.task('build', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processSrc')));
+gulp.task('build', gulp.series(gulp.parallel('buildTokens', 'processDemo', 'processSrc')));
 
-gulp.task('dev', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processSrc', 'sassWatch')));
+gulp.task('dev', gulp.series(gulp.parallel('buildTokens', 'processDemo', 'processSrc', 'sassWatch')));
