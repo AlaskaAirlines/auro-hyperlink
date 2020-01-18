@@ -160,9 +160,24 @@
 
       <demo-snippet>
         <template>
-            <ods-hyperlink id="cancel" role="button">Cancel</ods-hyperlink>
+            <ods-hyperlink id="cancel" role="button" onClick="clickMe(event)" onKeyPress="keyPress(event)">Cancel update!</ods-hyperlink>
+
             <script>
-              document.querySelector('#cancel').addEventListener('click', () => alert('cancel clicked'));
+              function clickMe(e) {
+                console.log('You clicked me');
+              }
+
+              function keyPress(e) {
+                if(event.keyCode === 13) {
+                  e.preventDefault();
+                  console.log('You pressed either the RETURN key!');
+                }
+
+                if(event.keyCode === 32) {
+                  e.preventDefault();
+                  console.log('You pressed either the SPACEBAR key!');
+                }
+              }
             </script>
         </template>
       </demo-snippet>

@@ -113,14 +113,12 @@ class OdsHyperlink extends LitElement {
 
       if(event.type == 'keydown') {
         if(event.keyCode === 13 || event.keyCode === 32) {
-          event.preventDefault();
           ariaPressedNode.setAttribute("aria-pressed", 'true')
         }
       }
 
       if(event.type == 'keyup') {
         if(event.keyCode === 13 || event.keyCode === 32) {
-          event.preventDefault();
           ariaPressedNode.setAttribute("aria-pressed", 'false')
         }
       }

@@ -69,13 +69,41 @@ The \<ods-hyperlink> element should be used in situations where users may:
 | inline | boolean | Displays an element as an inline element. Any height and width properties will have no effect |
 | rel | string | Specifies the relationship between the current document and the linked document |
 | responsive | boolean | used with `cta` button style; sets button to have automatic responsive layout properties |
-| role | string | Use for aria roles |
+| role | string | Use for aria roles; currently support `tab` and `button` for extended experiences |
 | tabisactive | boolean | Indicates if tab is to be displayed as active state (true, false)† |
 | target | string | Specifies where to open the linked document |
 
 † See `role="tab"` use example below for further details about this feature
 
-### Custom style support
+## Role button, keyboard support and accessibility
+
+When using the `role="button"` attribute, ods-hyperlink has pre-configured support for `aria-pressed` rules. There is no need to code this outside the scope of the WC. 
+
+Managing `onclick` and `onkeypress` events are the responsibility of the user. See the following example for how to use ods-hyperlink in concert with keyboard events to meet accessibility standards. 
+
+```html
+<ods-hyperlink id="cancel" role="button" onclick="clickMe(event)" onkeypress="keyPress(event)">Cancel update!</ods-hyperlink>
+
+<script>
+  function clickMe(e) {
+    console.log('You clicked me');
+  }
+
+  function keyPress(e) {
+    if(event.keyCode === 13) {
+      e.preventDefault();
+      console.log('You pressed either the RETURN key!');
+    }
+
+    if(event.keyCode === 32) {
+      e.preventDefault();
+      console.log('You pressed either the SPACEBAR key!');
+    }
+  }
+</script>
+```
+
+## Custom style support
 
 The default \<ods-hyperlink> has padding on the LEFT and the RIGHT of the element. If this padding is not required, the following CSS classes are supported:
 
@@ -86,7 +114,7 @@ The default \<ods-hyperlink> has padding on the LEFT and the RIGHT of the elemen
 
 No additional dependency on Orion Web Core Style Sheets is required.
 
-### API Code Examples
+## API Code Examples
 
 **Default hyperlink**
 
