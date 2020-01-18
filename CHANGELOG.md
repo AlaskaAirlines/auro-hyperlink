@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.3.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.1...v1.3.2) (2020-01-18)
+
+
+### Bug Fixes
+
+* [#19](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/issues/19) issue regadring preventDefault() functions ([f995f53](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/f995f53f0ac5bce23012ca99f2cfb822f69c48e6))
+
 ## [1.3.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.0...v1.3.1) (2020-01-09)
 
 
