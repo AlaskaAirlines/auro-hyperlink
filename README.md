@@ -1,16 +1,22 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
-
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-hyperlink.svg?color=blue)
 
 # \<ods-hyperlink>
 
-\<ods-hyperlink> is a wrapper component for a HTML \<a> element containing styling and behavior.
+`<ods-hyperlink>` and `<auro-hyperlink>` are wrapper components for an HTML `<a>` element containing styling and behavior.
 
 ## Docs
 
 All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
+
+## Deprecation
+
+During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources. 
+
+1. `<ods-hyperlink>` will continue to be supported until an official EOL has been communicated
+1. A new component `<auro-hyperlink>` is available that only consumes Auro resources to ensure a minimum weight and clean transition process for engineers 
+1. Review [API differences](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/blob/master/README.md#auro-properties) between the Orion and Auro components 
 
 ## Install
 
@@ -57,7 +63,7 @@ The \<ods-hyperlink> element should be used in situations where users may:
 * optional role as button when hyperlink UI is needed for submit action
 * optional role as tab when hyperlink UI is needed for a tablist
 
-### Properties:
+### Orion Properties:
 
 | Attribute | value type | Description |
 |----|----|----|
@@ -74,6 +80,18 @@ The \<ods-hyperlink> element should be used in situations where users may:
 | target | string | Specifies where to open the linked document |
 
 † See `role="tab"` use example below for further details about this feature
+
+### Auro Properties:
+
+| Attribute | value type | Description |
+|----|----|----|
+| download | boolean | Specifies that the target will be downloaded when a user clicks on the hyperlink |
+| onDark | boolean | Specifies on-dark use of hyperlink |
+| href | string | Specifies the URL of the page the link goes to |
+| nav | boolean | Display option for when hyperlink is to appear as a form of navigation. <br>Default display is `inline` to appear within copy. |
+| rel | string | Specifies the relationship between the current document and the linked document |
+| role | string | Use for aria roles; currently support `tab` and `button` for extended experiences |
+| target | string | Specifies where to open the linked document |
 
 ## Role button, keyboard support and accessibility
 
