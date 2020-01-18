@@ -30,6 +30,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
+    "chalk": "^3.0.0",
     "copyfiles": "^2.1.1",
     "lit-element": "^2.2.1"
   },
@@ -90,13 +91,14 @@
   },
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
+    "postinstall": "node ./scripts/postinstall.js",
     "buildTokens": "node scripts/tokenScript.js",
     "cssLint": "stylelint './src/style.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
     "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
     "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
-    "jsonLint": "jsonlint -q ./src/shape.json",
+    "jsonLint": "jsonlint -q ./src/ods-shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
     "sassRender-w": "sass-render -w src/**/*.{scss,css}",
     "stylefluxCanonical": "styleflux -o ./altImports/canonical/*.css",
@@ -114,7 +116,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "npm-run-all test postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
