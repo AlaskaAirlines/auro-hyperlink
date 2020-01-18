@@ -1,12 +1,12 @@
 {
-  "source": [ "./src/shape.json" ],
+  "source": [ "./src/ods-shape.json" ],
   "platforms": {
     "css": {
       "transformGroup": "css",
       "buildPath": "./src/tokens/",
       "files": [
         {
-          "destination": "componentShapeProperties.scss",
+          "destination": "ods-componentShapeProperties.scss",
           "format": "custom/css/variables"
         }
       ]
