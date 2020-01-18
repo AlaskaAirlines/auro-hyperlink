@@ -14,8 +14,8 @@
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenProperties";
 
 // Boilerplate shape Sass variables and properties
-@import "./tokens/componentShapeVariables";
-@import "./tokens/componentShapeProperties";
+@import "./tokens/ods-componentShapeVariables";
+@import "./tokens/ods-componentShapeProperties";
 
 // ods-button UI support
 @import "./node_modules/@alaskaairux/ods-button/dist/tokens/componentProperties";

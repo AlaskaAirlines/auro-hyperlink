@@ -31,7 +31,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "chalk": "^3.0.0",
-    "copyfiles": "^2.1.1",
+    "copyfiles": "^2.2.0",
     "lit-element": "^2.2.1"
   },
   "peerDependencies": {
@@ -44,9 +44,9 @@
   },
   "devDependencies": {
     "@alaskaairux/ods-button": "^4.2.0",
-    "@alaskaairux/orion-design-tokens": "^2.10.4",
-    "@alaskaairux/orion-icons": "^2.0.2",
-    "@alaskaairux/orion-web-core-style-sheets": "^2.8.4",
+    "@alaskaairux/orion-design-tokens": "^2.10.5",
+    "@alaskaairux/orion-icons": "^2.0.4",
+    "@alaskaairux/orion-web-core-style-sheets": "^2.8.6",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@polymer/iron-demo-helpers": "^3.1.0",
@@ -66,7 +66,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "husky": "^4.0.10",
+    "husky": "^4.2.0",
     "jsonlint": "^1.6.3",
     "lodash": "^4.17.15",
     "mocha": "^7.0.0",
@@ -93,7 +93,7 @@
     "build": "npm-run-all sassRender cssLint jsonLint",
     "postinstall": "node ./scripts/postinstall.js",
     "buildTokens": "node scripts/tokenScript.js",
-    "cssLint": "stylelint './src/style.css'",
+    "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
     "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
     "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
@@ -111,7 +111,7 @@
     "processImportsCanonical": "gulp processImportsCanonical",
     "processImportsVariable": "gulp processImportsVariable",
     "reprocessClean": "gulp reprocessClean",
-    "ciBuild": "npm-run-all buildTokens processSrc processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS",
+    "ciBuild": "npm-run-all buildTokens processSrc processDemo processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS",
     "devBuild": "npm-run-all buildTokens processSrc processDemo distTokens sassRender distJS"
   },
   "husky": {

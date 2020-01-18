@@ -1,5 +1,6 @@
 const StyleDictionary = require('style-dictionary');
-const fs = require('fs');
+const chalk = require('chalk');
+// const fs = require('fs');
 const _ = require('lodash');
 
 function variablesWithPrefix(prefix, properties) {
@@ -36,40 +37,13 @@ StyleDictionary.registerFormat({
   }
 });
 
-console.log('')
-console.log('Build started...');
-
-console.log('')
-console.log('         .         . ')
-console.log('               *       *')
-console.log('')
-console.log('                 * * *')
-console.log('                    !')
-console.log('               *       * ')
-console.log('')
-console.log(" ██████╗ ██████╗ ██╗ ██████╗ ███╗   ██╗")
-console.log("██╔═══██╗██╔══██╗██║██╔═══██╗████╗  ██║")
-console.log("██║   ██║██████╔╝██║██║   ██║██╔██╗ ██║")
-console.log("██║   ██║██╔══██╗██║██║   ██║██║╚██╗██║")
-console.log("╚██████╔╝██║  ██║██║╚██████╔╝██║ ╚████║")
-console.log(" ╚═════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
-console.log('') 
-console.log("██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗")
-console.log("██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║")
-console.log("██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║")
-console.log("██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║")
-console.log("██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║")
-console.log("╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
-console.log('')
-console.log("███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗")
-console.log("██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║")
-console.log("███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║")
-console.log("╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║")
-console.log("███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║")
-console.log("╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝")
-console.log('')
+console.log(chalk.green('---------------------------------------------'));
+console.log(chalk.green('Custom Style Disctionary build for :host properties'));
+console.log(chalk.green('---------------------------------------------'));
 
 // FINALLY, BUILD ALL THE PLATFORMS
-const componentConfig = StyleDictionary.extend('./scripts/componentConfigDist.json');
+const odsComponentConfig = StyleDictionary.extend('./scripts/ods-componentConfigDist.json');
+const auroComponentConfig = StyleDictionary.extend('./scripts/auro-componentConfigDist.json');
 
-componentConfig.buildAllPlatforms();
+odsComponentConfig.buildAllPlatforms();
+auroComponentConfig.buildAllPlatforms();

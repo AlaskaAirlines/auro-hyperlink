@@ -1,12 +1,12 @@
 {
-  "source": [ "./src/shape.json" ],
+  "source": [ "./src/auro-shape.json" ],
   "platforms": {
     "scss": {
       "transformGroup": "scss",
       "buildPath": "./src/tokens/",
       "files": [
         {
-          "destination": "_componentShapeVariables.scss",
+          "destination": "_auro-componentShapeVariables.scss",
           "format": "scss/variables"
         }
       ]
@@ -16,7 +16,7 @@
       "buildPath": "./src/tokens/",
       "files": [
         {
-          "destination": "componentShapeProperties.scss",
+          "destination": "auro-componentShapeProperties.scss",
           "format": "css/variables"
         }
       ]
