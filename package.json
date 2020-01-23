@@ -91,12 +91,12 @@
   },
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
-    "postinstall": "node scripts/postinstall.js",
+    "postinstall": "node dist/postinstall.js",
     "buildTokens": "node scripts/tokenScript.js",
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
     "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
-    "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
+    "distJS": "copyfiles -u 1 -V './scripts/postinstall.js' './src/**/*.js' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
     "jsonLint": "jsonlint -q ./src/ods-shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
@@ -111,7 +111,7 @@
     "processImportsCanonical": "gulp processImportsCanonical",
     "processImportsVariable": "gulp processImportsVariable",
     "reprocessClean": "gulp reprocessClean",
-    "ciBuild": "npm-run-all buildTokens processSrc processDemo processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS",
+    "ciBuild": "npm-run-all buildTokens processSrc processDemo processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS postinstall",
     "devBuild": "npm-run-all buildTokens processSrc processDemo distTokens sassRender distJS"
   },
   "husky": {
