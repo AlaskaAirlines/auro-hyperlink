@@ -1,5 +1,23 @@
 # Semantic Release Automated Changelog
 
+# [1.4.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.2...v1.4.0) (2020-01-23)
+
+
+### Bug Fixes
+
+* update packages and address dependency issues ([0090d59](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/0090d59e9b68713a044afd2f429854c2f9a54a0a))
+* update to Auro variables ([5f2fb89](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/5f2fb89662367ce9b1130dd346fa42341dc273e2))
+
+
+### Features
+
+* add support for auro-hyperlink component ([1cbdc19](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/1cbdc19acb4a9980f5bf0d526e37b464c8ca74df))
+
+
+### Reverts
+
+* reset Orion dependencies in styles ([47dc43e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/47dc43ee88d83538665649758d326a140cbc86fc))
+
 ## [1.3.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.1...v1.3.2) (2020-01-18)
 
 
