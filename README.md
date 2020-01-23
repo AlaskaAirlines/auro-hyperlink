@@ -10,16 +10,16 @@
 
 All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
 
-## Deprecation
+## Deprecated
 
-During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources. 
+During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
 
-1. `<ods-hyperlink>` will continue to be supported until an official EOL has been communicated 
+1. `<ods-hyperlink>` will continue to be supported until an official EOL has been communicated
 1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
 
 ## New features
 
-1. A new component `<auro-hyperlink>` is available that only consumes Auro resources to ensure a minimum weight and clean transition process for engineers 
+1. A new component `<auro-hyperlink>` is available that only consumes Auro resources to ensure a minimum weight and clean transition process for engineers
 1. See [Auro API](#auro-properties) for new Auro component
 
 
@@ -31,7 +31,7 @@ $ npm i @alaskaairux/ods-hyperlink
 
 ### Design Token CSS Custom Property dependency
 
-The use of any Web Component has a dependency on the [Orion/Auro Design Tokens (npm install)](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). 
+The use of any Web Component has a dependency on the [Orion/Auro Design Tokens (npm install)](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens).
 
 See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
 
@@ -46,7 +46,7 @@ Define the component dependency within each component that is using the \<ods-hy
 ```javascript
 import "@alaskaairux/ods-hyperlink";
 
-or 
+or
 
 import "@alaskaairux/ods-hyperlink/dist/auro-hyperlink";
 ```
@@ -104,9 +104,9 @@ The `<ods-hyperlink>` or `<auro-hyperlink>` elements should be used in situation
 
 ## Role button, keyboard support and accessibility
 
-When using the `role="button"` attribute, `<ods-hyperlink>` and `<auro-hyperlink>` have pre-configured support for `aria-pressed` rules. There is no need to code this outside the scope of the WC. 
+When using the `role="button"` attribute, `<ods-hyperlink>` and `<auro-hyperlink>` have pre-configured support for `aria-pressed` rules. There is no need to code this outside the scope of the WC.
 
-Managing `onclick` and `onkeypress` events are the responsibility of the user. See the following example for how to use `<ods-hyperlink>` or `<auro-hyperlink>` in concert with keyboard events to meet accessibility standards. 
+Managing `onclick` and `onkeypress` events are the responsibility of the user. See the following example for how to use `<ods-hyperlink>` or `<auro-hyperlink>` in concert with keyboard events to meet accessibility standards.
 
 ```html
 <ods-hyperlink id="cancel" role="button" onclick="clickMe(event)" onkeypress="keyPress(event)">Cancel update!</ods-hyperlink>
@@ -226,7 +226,7 @@ When using the `target` option and the string `_blank`, the \<ods-hyperlink> com
 
 ## Alternate build solutions
 
-__DEPRECATED: support will be removed with next major release__ 
+__DEPRECATED: support will be removed with next major release__
 
 Why would you need this? With all Orion custom elements the CSS for the element is embedded within the shadow DOM of the custom element. If your development environment is not allowing for the use of shadow DOM elements, the CSS for each element is distributed via additional resources within the npm package.
 
