@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.4.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.0...v1.4.1) (2020-01-23)
+
+
+### Bug Fixes
+
+* address postinstall bug ([2825e02](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/2825e02c5ba6458205646337ce05d7ad97460f78))
+
 # [1.4.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.2...v1.4.0) (2020-01-23)
 
 
