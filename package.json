@@ -91,7 +91,7 @@
   },
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
-    "postinstall": "node dist/postinstall.js",
+    "postinstall": "node packageScripts/postinstall.js",
     "buildTokens": "node scripts/tokenScript.js",
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
@@ -105,7 +105,7 @@
     "stylefluxVariable": "styleflux -o ./altImports/variable/*.css",
     "sweep": "rm -rf ./altImports ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
     "yamltest": "yamllint .travis.yml",
-    "test": "npm-run-all cssLint jsonLint yamltest",
+    "test": "npm-run-all buildTokens processSrc cssLint jsonLint yamltest",
     "processSrc": "gulp processSrc",
     "processDemo": "gulp processDemo",
     "processImportsCanonical": "gulp processImportsCanonical",
@@ -116,7 +116,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all test postinstall",
+      "pre-commit": "npm-run-all test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
