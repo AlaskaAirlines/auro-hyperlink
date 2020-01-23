@@ -91,7 +91,7 @@
   },
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
-    "postinstall": "node ./scripts/postinstall.js",
+    "postinstall": "node scripts/postinstall.js",
     "buildTokens": "node scripts/tokenScript.js",
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
