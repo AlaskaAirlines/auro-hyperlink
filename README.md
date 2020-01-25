@@ -1,8 +1,8 @@
+# ods-hyperlink / auro-hyperlink
+
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-hyperlink.svg?color=blue)
-
-# ods-hyperlink
 
 `<ods-hyperlink>` and `<auro-hyperlink>` are wrapper components for an HTML `<a>` element containing styling and behavior.
 
@@ -41,7 +41,7 @@ CSS Custom Properties are not supported in older browsers. For this, fallback pr
 
 ### Define dependency in project component
 
-Define the component dependency within each component that is using the \<ods-hyperlink> component.
+Define the component dependency within each component that is using the `<ods-hyperlink>` component.
 
 ```javascript
 import "@alaskaairux/ods-hyperlink";
@@ -134,7 +134,7 @@ Managing `onclick` and `onkeypress` events are the responsibility of the user. S
 
 __Not supported with auro-hyperlink__
 
-The default \<ods-hyperlink> has padding on the LEFT and the RIGHT of the element. If this padding is not required, the following CSS classes are supported:
+The default `<ods-hyperlink>` has padding on the LEFT and the RIGHT of the element. If this padding is not required, the following CSS classes are supported:
 
 | Class | Description |
 |---|---|
