@@ -96,7 +96,7 @@
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
     "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
-    "distJS": "copyfiles -u 1 -V './scripts/postinstall.js' './src/**/*.js' ./dist",
+    "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
     "jsonLint": "jsonlint -q ./src/ods-shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
