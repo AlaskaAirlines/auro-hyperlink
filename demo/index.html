@@ -13,6 +13,7 @@
       import "@polymer/iron-demo-helpers/demo-snippet";
     </script>
     <script type="module" src="../src/ods-hyperlink.js"></script>
+    <script type="module" src="../src/auro-hyperlink.js"></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
       import '../node_modules/@polymer/iron-icons/hardware-icons.js';
@@ -44,6 +45,84 @@
         </span>
       </p>
 
+      <h3>auro-hyperlink examples</h3>
+
+      <p>Without either href or role=button, hyperlink appears as text.</p>
+      <demo-snippet>
+        <template>
+            <auro-hyperlink>Alaska Airlines</auro-hyperlink>
+          </template>
+      </demo-snippet>
+
+      <p>Auro hyperlink style will have underline when used within text, this is the default state</p>
+      <demo-snippet>
+        <template>
+            <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link.</p>
+            <p>See more about <auro-hyperlink target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link.</p>
+          </template>
+      </demo-snippet>
+
+      <p>Auro hyperlink will only have the underline on hover when used with the <code>nav</code> attribute.</p>
+      <demo-snippet>
+        <template>
+            <auro-hyperlink nav href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+            <auro-hyperlink nav target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <p>Auro hyperlink with the <code>ondark</code> attribute.</p>
+      <demo-snippet>
+        <template>
+            <div style="background-color: var(--auro-color-background-darkest); padding: 10px 20px">
+              <auro-hyperlink ondark href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+            </div>
+        </template>
+      </demo-snippet>
+
+      <p>Auro hyperlink with the <code>nav</code> and <code>ondark</code> attributes.</p>
+      <demo-snippet>
+        <template>
+            <div style="background-color: var(--auro-color-background-darkest); padding: 10px 20px">
+              <auro-hyperlink nav ondark href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+            </div>
+        </template>
+      </demo-snippet>
+
+      <p>Auro hyperlink with the <code>rel</code> attribute.</p>
+      <demo-snippet>
+        <template>
+            <auro-hyperlink rel="nofollow" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <p>Auro hyperlink with the <code>role</code> attribute.</p>
+      <demo-snippet>
+        <template>
+            <auro-hyperlink role="button" onClick="_clickMe(event)" onKeyPress="_keyPress(event)">Cancel</auro-hyperlink>
+
+            <script>
+                function _clickMe(e) {
+                  console.log('You clicked me');
+                }
+
+                function _keyPress(e) {
+                  if(event.keyCode === 13) {
+                    e.preventDefault();
+                    console.log('You pressed either the RETURN key!');
+                  }
+
+                  if(event.keyCode === 32) {
+                    e.preventDefault();
+                    console.log('You pressed either the SPACEBAR key!');
+                  }
+                }
+              </script>
+        </template>
+      </demo-snippet>
+
+      <!-- ----------------------------------  -->
+
+      <h3>ods-hyperlink examples</h3>
       <demo-snippet>
         <template>
             <ods-hyperlink href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
@@ -52,19 +131,19 @@
 
       <demo-snippet>
         <template>
-            <ods-hyperlink cta href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
+            <ods-hyperlink cta href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-            <ods-hyperlink cta buttontype="secondary" href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
+            <ods-hyperlink cta buttontype="secondary" href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-            <ods-hyperlink cta responsive href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
+            <ods-hyperlink cta responsive href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
         </template>
       </demo-snippet>
 
@@ -76,28 +155,8 @@
 
       <demo-snippet>
         <template>
-          <a class="hyperlink" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <a class="hyperlink is-touching" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
             <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
-              <ods-hyperlink darktheme href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
-            </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
-              <a class="hyperlink hyperlink--darktheme" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+              <ods-hyperlink darktheme href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
             </div>
         </template>
       </demo-snippet>
@@ -121,14 +180,6 @@
           <p>
             These are words with a link to <ods-hyperlink href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
           </p>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <p>
-              These are words with a link to <a class="hyperlink hyperlink--inline" href="http://www.alaskaair.com">Go to Alaska Airlines!</a> and then show more words!
-            </p>
         </template>
       </demo-snippet>
 
@@ -160,10 +211,55 @@
 
       <demo-snippet>
         <template>
-            <ods-hyperlink id="cancel" role="button">Cancel</ods-hyperlink>
+            <ods-hyperlink id="cancel" role="button" onClick="clickMe(event)" onKeyPress="keyPress(event)">Cancel update!</ods-hyperlink>
+
             <script>
-              document.querySelector('#cancel').addEventListener('click', () => alert('cancel clicked'));
+              function clickMe(e) {
+                console.log('You clicked me');
+              }
+
+              function keyPress(e) {
+                if(event.keyCode === 13) {
+                  e.preventDefault();
+                  console.log('You pressed either the RETURN key!');
+                }
+
+                if(event.keyCode === 32) {
+                  e.preventDefault();
+                  console.log('You pressed either the SPACEBAR key!');
+                }
+              }
             </script>
+        </template>
+      </demo-snippet>
+
+      <h3>Standard HTML examples</h3>
+
+      <demo-snippet>
+        <template>
+          <a class="hyperlink" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <a class="hyperlink is-touching" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+          <template>
+            <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
+              <a class="hyperlink hyperlink--darktheme" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
+            </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+            <p>
+              These are words with a link to <a class="hyperlink hyperlink--inline" href="http://www.alaskaair.com">Go to Alaska Airlines!</a> and then show more words!
+            </p>
         </template>
       </demo-snippet>
 

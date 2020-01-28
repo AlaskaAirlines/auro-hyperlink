@@ -1,5 +1,45 @@
 # Semantic Release Automated Changelog
 
+## [1.4.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.1...v1.4.2) (2020-01-23)
+
+
+### Bug Fixes
+
+* address postinstall bug ([58bbdf2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/58bbdf2dc4d6519551c0034547596100d78f81f9))
+* address postinstall bug ([479e055](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/479e055314539d326419a8bbdd845aa63de19dde))
+
+## [1.4.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.0...v1.4.1) (2020-01-23)
+
+
+### Bug Fixes
+
+* address postinstall bug ([2825e02](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/2825e02c5ba6458205646337ce05d7ad97460f78))
+
+# [1.4.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.2...v1.4.0) (2020-01-23)
+
+
+### Bug Fixes
+
+* update packages and address dependency issues ([0090d59](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/0090d59e9b68713a044afd2f429854c2f9a54a0a))
+* update to Auro variables ([5f2fb89](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/5f2fb89662367ce9b1130dd346fa42341dc273e2))
+
+
+### Features
+
+* add support for auro-hyperlink component ([1cbdc19](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/1cbdc19acb4a9980f5bf0d526e37b464c8ca74df))
+
+
+### Reverts
+
+* reset Orion dependencies in styles ([47dc43e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/47dc43ee88d83538665649758d326a140cbc86fc))
+
+## [1.3.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.1...v1.3.2) (2020-01-18)
+
+
+### Bug Fixes
+
+* [#19](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/issues/19) issue regadring preventDefault() functions ([f995f53](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/f995f53f0ac5bce23012ca99f2cfb822f69c48e6))
+
 ## [1.3.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.3.0...v1.3.1) (2020-01-09)
 
 

@@ -1,0 +1,86 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Creates ods-hyperlink CSS UI definition of shape
+
+// Import Auro CSS Properties as Sass file
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
+
+// Boilerplate shape Sass variables and properties
+@import "./tokens/auro-componentShapeVariables";
+@import "./tokens/auro-componentShapeProperties";
+
+// general WCSS imports
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+
+// Import Auro Sass variables
+// Dependency reauired to process variables from Icons
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+// Import tokens selectors
+@import "./node_modules/@alaskaairux/orion-icons/dist/icons";
+
+
+:host(.focus-visible) {
+  .hyperlink {
+    @include auro_focus-hyperlink(css);
+  }
+}
+
+// layout styles - define any layout specifications for UI that is contained WITHIN the component
+// never define layout that would cause effect on element ouside the scope of this component
+
+// component shape styles
+.hyperlink {
+  color: var(--auro-hyperlink-color);
+  padding: var(--auro-hyperlink-padding);
+  text-decoration: var(--auro-hyperlink-decoration);
+
+  &:visited {
+    color: var(--auro-hyperlink-visited-color);
+  }
+
+  :host(:not(.is-touching)) & {
+    &:hover {
+      color: var(--auro-hyperlink-hover-color);
+      text-decoration: var(--auro-hyperlink-hover-decoration);
+    }
+
+    &--nav {
+      &:hover {
+        text-decoration: underline
+      }
+    }
+
+    &--ondark {
+      &:hover {
+        color: var(--auro-hyperlink-ondark-hover-color);
+      }
+    }
+  }
+
+  &--button {
+    @include auro_anchorButton(css, component);
+  }
+
+  &--nav {
+    text-decoration: none;
+    display: block;
+  }
+
+  &--ondark {
+    color: var(--auro-hyperlink-ondark-color);
+
+    &:visited {
+      color: var(--auro-hyperlink-ondark-color);
+    }
+  }
+}
+
+svg {
+  margin-left: var(--auro-size-xxxs);
+}

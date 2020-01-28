@@ -10,6 +10,8 @@ altImports/
 demo/css
 demo/sass/tokenProperties.scss
 src/style.css
+src/auro-style.css
+src/ods-style.css
 
 ## *-css built from sass-render process
 *-css.js

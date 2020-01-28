@@ -1,42 +1,41 @@
-console.log('')
-console.log('Build started...');
+const chalk = require('chalk');
 
 console.log('')
-console.log('         .         . ')
-console.log('               *       *')
+console.log('Build started...');
 console.log('')
-console.log('                 * * *')
-console.log('                    !')
-console.log('               *       * ')
-console.log('')
-console.log(" ██████╗ ██████╗ ██╗ ██████╗ ███╗   ██╗")
-console.log("██╔═══██╗██╔══██╗██║██╔═══██╗████╗  ██║")
-console.log("██║   ██║██████╔╝██║██║   ██║██╔██╗ ██║")
-console.log("██║   ██║██╔══██╗██║██║   ██║██║╚██╗██║")
-console.log("╚██████╔╝██║  ██║██║╚██████╔╝██║ ╚████║")
-console.log(" ╚═════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
-console.log('')
-console.log("██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗")
-console.log("██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║")
-console.log("██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║")
-console.log("██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║")
-console.log("██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║")
-console.log("╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
-console.log('')
-console.log("███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗")
-console.log("██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║")
-console.log("███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║")
-console.log("╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║")
-console.log("███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║")
-console.log("╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝")
+console.log(chalk.hex('#0074c8')
+  `
+ █████╗ ██╗   ██╗██████╗  ██████╗
+██╔══██╗██║   ██║██╔══██╗██╔═══██╗
+███████║██║   ██║██████╔╝██║   ██║
+██╔══██║██║   ██║██╔══██╗██║   ██║
+██║  ██║╚██████╔╝██║  ██║╚██████╔╝
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝
+
+██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗
+██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║
+██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║
+██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║
+██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║
+╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+
+███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗
+██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║
+███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║
+╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║
+███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║
+╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝
+
+Creating a Design System People Love.
+`)
 console.log('')
 
 
 
 // Required dependency
-const tokenConfig = require('style-dictionary').extend('./scripts/tokenConfig.json');
-const componentConfig = require('style-dictionary').extend('./scripts/componentConfig.json');
+const odsComponentConfig = require('style-dictionary').extend('./scripts/ods-componentConfig.json');
+const auroComponentConfig = require('style-dictionary').extend('./scripts/auro-componentConfig.json');
 
 // Style Dictionary build function
-tokenConfig.buildAllPlatforms();
-componentConfig.buildAllPlatforms();
+odsComponentConfig.buildAllPlatforms();
+auroComponentConfig.buildAllPlatforms();
