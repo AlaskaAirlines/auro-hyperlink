@@ -13,6 +13,7 @@
 @import "./tokens/auro-componentShapeProperties";
 
 // general WCSS imports
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";

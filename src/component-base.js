@@ -37,6 +37,22 @@ export default class ComponentBase extends LitElement {
     };
   }
 
+  safeUrl(href) {
+    if(href != undefined) {
+      const url = new URL(href, 'https://www.alaskaair.com')
+
+      if(url.protocol === 'javascript:') {
+        return undefined
+      }
+
+      url.protocol = 'https:'
+      return url.href;}
+
+    else {
+      return undefined
+    }
+  }
+
   targetIcon(target){
     if(target === '_blank') {
       return this.svg;
