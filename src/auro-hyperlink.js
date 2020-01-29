@@ -42,23 +42,26 @@ class AuroHyperlink extends ComponentBase {
 
   getMarkup() {
     let classes = {
-      'hyperlink': this.href || this.role,
+      'hyperlink': this.safeUrl(this.href) || this.role,
       'hyperlink--nav': this.nav,
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role
     }
 
     return html`
+      ${this.safeUrl(this.href) || this.role ? html`
       <a
         aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
         class="${classMap(classes)}"
-        href="${ifDefined(this.role ? undefined  : this.href)}"
+        href="${ifDefined(this.role ? undefined  : this.safeUrl(this.href))}"
         rel="${ifDefined(this.target || this.rel ? this.getReltype(this.target, this.rel) : undefined)}"
         role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
         ?download="${this.download}"
         target="${ifDefined(this.target ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
-      ><slot></slot>${this.targetIcon(this.target)}</a>
+      ><slot></slot>${this.targetIcon(this.target)}</a>` :
+
+      html`<slot></slot` }
     `
   }
 }

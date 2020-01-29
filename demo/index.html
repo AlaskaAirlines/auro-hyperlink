@@ -62,6 +62,16 @@
           </template>
       </demo-snippet>
 
+      <p>auro-hyperlink only accepts urls and will convert them to https:// protocol. </p>
+      <demo-snippet>
+        <template>
+            <p>See more about <auro-hyperlink href="/about">Alaska Airlines</auro-hyperlink> in this link. Link retruned in the DOM with full path to AS.com and https:// protocol.</p>
+            <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link retruned to the DOM with https:// protocol. </p>
+            <p>See more about <auro-hyperlink href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link retruned to the DOM with https:// protocol. </p>
+            <p>See more about <auro-hyperlink href="javascript:my_function();window.print();">Alaska Airlines</auro-hyperlink> in this link. The href attribute is not retruned to the DOM.</p>
+          </template>
+      </demo-snippet>
+
       <p>Auro hyperlink will only have the underline on hover when used with the <code>nav</code> attribute.</p>
       <demo-snippet>
         <template>
