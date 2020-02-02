@@ -65,10 +65,10 @@
       <p>auro-hyperlink only accepts urls and will convert them to https:// protocol. </p>
       <demo-snippet>
         <template>
-            <p>See more about <auro-hyperlink href="/about">Alaska Airlines</auro-hyperlink> in this link. Link retruned in the DOM with full path to AS.com and https:// protocol.</p>
-            <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link retruned to the DOM with https:// protocol. </p>
-            <p>See more about <auro-hyperlink href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link retruned to the DOM with https:// protocol. </p>
-            <p>See more about <auro-hyperlink href="javascript:my_function();window.print();">Alaska Airlines</auro-hyperlink> in this link. The href attribute is not retruned to the DOM.</p>
+            <p>See more about <auro-hyperlink href="/about">Alaska Airlines</auro-hyperlink> in this link. Link returned in the DOM with full path to AS.com and https:// protocol.</p>
+            <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
+            <p>See more about <auro-hyperlink href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
+            <p>See more about <auro-hyperlink href="javascript:my_function();window.print();">Alaska Airlines</auro-hyperlink> in this link. The href attribute is not returned to the DOM.</p>
           </template>
       </demo-snippet>
 
@@ -108,22 +108,26 @@
       <p>Auro hyperlink with the <code>role</code> attribute.</p>
       <demo-snippet>
         <template>
-            <auro-hyperlink role="button" onClick="_clickMe(event)" onKeyPress="_keyPress(event)">Cancel</auro-hyperlink>
+            <auro-hyperlink role="button" ontouchstart="_touchMe(event)" onmousedown="_clickMe(event)" onKeyPress="_keyPress(event)">Cancel</auro-hyperlink>
 
             <script>
                 function _clickMe(e) {
-                  console.log('You clicked me');
+                  console.log(e);
+                }
+
+                function _touchMe(e) {
+                  console.log(e);
                 }
 
                 function _keyPress(e) {
                   if(event.keyCode === 13) {
                     e.preventDefault();
-                    console.log('You pressed either the RETURN key!');
+                    console.log(event.keyCode);
                   }
 
                   if(event.keyCode === 32) {
                     e.preventDefault();
-                    console.log('You pressed either the SPACEBAR key!');
+                    console.log(event.keyCode);
                   }
                 }
               </script>

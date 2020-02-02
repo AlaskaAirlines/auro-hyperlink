@@ -28,38 +28,34 @@ class OdsHyperlink extends ComponentBase {
   static get properties() {
     return {
       ...super.properties,
-      cta:              { type: Boolean },  // Style prop
-      darktheme:        { type: Boolean },  // Style prop
-      inline:           { type: Boolean },  // Style prop
-      tabisactive:      { type: Boolean },  // Style prop
-      buttontype:       { type: String },   // Style prop
+      cta:              { type: Boolean },
+      darktheme:        { type: Boolean },
+      inline:           { type: Boolean },
+      tabisactive:      { type: Boolean },
+      buttontype:       { type: String },
     };
   }
 
   getStyles() {
     if (this.cta && this.buttontype === 'secondary') {
-      return 'hyperlink hyperlink--cta hyperlink--secondaryCta'
+      return 'hyperlink hyperlink--cta hyperlink--secondaryCta';
     }
 
     if (this.cta) {
-      return 'hyperlink hyperlink--cta'
+      return 'hyperlink hyperlink--cta';
+    } else if (this.darktheme) {
+      return 'hyperlink hyperlink--darktheme';
+    } else if (this.inline) {
+      return 'hyperlink hyperlink--inline';
     }
 
-    if (this.darktheme) {
-      return 'hyperlink hyperlink--darktheme'
+    if (this.role === 'button' || this.role === 'tab') {
+      return `hyperlink--${this.role}`;
+    } else if (this.role === undefined) {
+      return 'hyperlink';
     }
 
-    if (this.inline) {
-      return 'hyperlink hyperlink--inline'
-    }
-
-    if (this.role === 'button') {
-      return 'hyperlink--button'
-    } else if (this.role === 'tab') {
-      return 'hyperlink--tab'
-    } else {
-      return 'hyperlink'
-    }
+    return undefined;
   }
 
   // Adds styles for light DOM element; styles not defined in base class
@@ -69,7 +65,7 @@ class OdsHyperlink extends ComponentBase {
       ${buttonProperties}
       ${iconProperties}
       ${styleCss}
-    `
+    `;
   }
 
   getMarkup() {
@@ -85,11 +81,11 @@ class OdsHyperlink extends ComponentBase {
         target="${ifDefined(this.target ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' || this.role === 'tab' ? '0' : undefined)}"
       ><slot></slot>${this.targetIcon(this.target)}</a>
-    `
+    `;
   }
 }
 
 // define the name of the custom component
-if(!customElements.get("ods-hyperlink")) {
+if (!customElements.get("ods-hyperlink")) {
   customElements.define("ods-hyperlink", OdsHyperlink);
 }

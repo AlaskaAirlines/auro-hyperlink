@@ -21,6 +21,7 @@ class AuroHyperlink extends ComponentBase {
 
     this.dom = new DOMParser().parseFromString(externallink.svg, 'text/html');
     this.svg = this.dom.body.firstChild;
+    this.safeUri = '';
   }
 
   // function to define props used within the scope of thie component
@@ -37,36 +38,37 @@ class AuroHyperlink extends ComponentBase {
     return html`
       ${hyperlinkProperties}
       ${styleCss}
-    `
+    `;
   }
 
   getMarkup() {
-    let classes = {
-      'hyperlink': this.safeUrl(this.href) || this.role,
+    this.safeUri = this.safeUrl(this.href);
+
+    const classes = {
+      'hyperlink': this.safeUri || this.role,
       'hyperlink--nav': this.nav,
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role
-    }
+    };
 
     return html`
-      ${this.safeUrl(this.href) || this.role ? html`
+      ${this.safeUri || this.role ? html`
       <a
         aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
         class="${classMap(classes)}"
-        href="${ifDefined(this.role ? undefined  : this.safeUrl(this.href))}"
+        href="${ifDefined(this.role ? undefined : this.safeUri)}"
         rel="${ifDefined(this.target || this.rel ? this.getReltype(this.target, this.rel) : undefined)}"
         role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
         ?download="${this.download}"
         target="${ifDefined(this.target ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
-      ><slot></slot>${this.targetIcon(this.target)}</a>` :
-
-      html`<slot></slot` }
-    `
+      ><slot></slot>${this.targetIcon(this.target)}</a>`
+      : html`<slot></slot>`}
+    `;
   }
 }
 
 // define the name of the custom component
-if(!customElements.get("auro-hyperlink")) {
+if (!customElements.get("auro-hyperlink")) {
   customElements.define("auro-hyperlink", AuroHyperlink);
 }
