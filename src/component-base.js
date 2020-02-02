@@ -38,60 +38,61 @@ export default class ComponentBase extends LitElement {
   }
 
   safeUrl(href) {
-    if(href != undefined) {
-      const url = new URL(href, 'https://www.alaskaair.com')
+    if (href !== undefined) {
+      const url = new URL(href, 'https://www.alaskaair.com');
 
-      if(url.protocol === 'javascript:') {
-        return undefined
+      if (url.protocol === 'javascript:') { // eslint-disable-line no-script-url
+        return undefined;
       }
 
-      url.protocol = 'https:'
-      return url.href;}
+      url.protocol = 'https:';
 
-    else {
-      return undefined
+      return url.href;
+
+    } else if (href === undefined) {
+      return undefined;
     }
+
+    return undefined;
   }
 
-  targetIcon(target){
-    if(target === '_blank') {
+  targetIcon(target) {
+    if (target === '_blank') {
       return this.svg;
     }
+
+    return undefined;
   }
 
   getTabState(tabisactive) {
-    return tabisactive === true ? "is-active" : ''
+    return tabisactive === true ? "is-active" : '';
   }
 
   getReltype(target, rel) {
-    if(target === '_blank') {
-      return 'noopener noreferrer'
+    if (target === '_blank') {
+      return 'noopener noreferrer';
     } else if (rel) {
-      return rel
+      return rel;
     }
+
+    return undefined;
   }
 
   ariaPressedState(ariapressed) {
     const ariaToggle = function (event) {
       const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
 
-      if(event.type == 'mousedown') {
-        ariaPressedNode.setAttribute("aria-pressed", 'true')
+      if (event.type === 'touchstart' || event.type === 'mousedown') {
+        ariaPressedNode.setAttribute("aria-pressed", 'true');
+      } else {
+        ariaPressedNode.setAttribute("aria-pressed", 'false');
       }
 
-      if(event.type == 'mouseup') {
-        ariaPressedNode.setAttribute("aria-pressed", 'false')
-      }
-
-      if(event.type == 'keydown') {
-        if(event.keyCode === 13 || event.keyCode === 32) {
-          ariaPressedNode.setAttribute("aria-pressed", 'true')
-        }
-      }
-
-      if(event.type == 'keyup') {
-        if(event.keyCode === 13 || event.keyCode === 32) {
-          ariaPressedNode.setAttribute("aria-pressed", 'false')
+      if (event.type === 'keydown') {
+        if (event.keyCode === 13 || event.keyCode === 32) {
+          ariaPressedNode.setAttribute("aria-pressed", 'true');
+        } else {
+          ariaPressedNode.setAttribute("aria-pressed", 'false');
         }
       }
     };
@@ -99,10 +100,8 @@ export default class ComponentBase extends LitElement {
     // Add our event listeners
     this.addEventListener('mousedown', ariaToggle, false);
     this.addEventListener('keydown', ariaToggle, false);
-    this.addEventListener('mouseup', ariaToggle, false);
-    this.addEventListener('keyup', ariaToggle, false);
 
-    return ariapressed
+    return ariapressed;
   }
 
   // function that renders the HTML and CSS into  the scope of the component
