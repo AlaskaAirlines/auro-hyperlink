@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.4.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.2...v1.4.3) (2020-02-03)
+
+
+### Bug Fixes
+
+* install esLint [#14](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/issues/14) ([7eddb2e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/7eddb2edbefb0c730be17eb7c0f682f8706c951c))
+* update href string to address security ([44ec1d0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/44ec1d0fbef470363c87af65cef8094b106bb0c8))
+
 ## [1.4.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.1...v1.4.2) (2020-01-23)
 
 
