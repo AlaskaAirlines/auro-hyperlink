@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.4.4](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.3...v1.4.4) (2020-04-02)
+
+
+### Bug Fixes
+
+* remove dependency on icon lib CSS file ([cd3d805](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/cd3d805a46dc7be0f31f5769d3345f193b6d529d))
+
 ## [1.4.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.2...v1.4.3) (2020-02-03)
 
 
