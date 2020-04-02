@@ -8,7 +8,6 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import ComponentBase from './component-base';
 import hyperlinkProperties from './tokens/ods-componentShapeProperties-css.js';
 import buttonProperties from '@alaskaairux/ods-button/dist/tokens/componentProperties-css.js';
-import iconProperties from '@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties-css.js';
 import stepout from '@alaskaairux/orion-icons/dist/icons/step-out_es6.js';
 
 // import the processed CSS file into the scope of the component
@@ -63,7 +62,6 @@ class OdsHyperlink extends ComponentBase {
     return html`
       ${hyperlinkProperties}
       ${buttonProperties}
-      ${iconProperties}
       ${styleCss}
     `;
   }

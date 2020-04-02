@@ -17,19 +17,32 @@ console.log(chalk.hex('#f26135')(`
 +
 chalk.hex('#f26135')(`
 ╭ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ──────────────────────────────╮
-│                                                       │
-│       Thanks for installing the latest version        │
-│               of `) + chalk.hex('#ffd200').bold(`ods-hyperlink v${pjson.version}.`) + chalk.hex('#f26135')(`                │
-│       This version begins the transition from         │
-│               Orion to Auro components.               │
-│                                                       │
-│       Throughout the transition, ods-hyperlink        │
-│         will continue to be FULLY SUPPORTED           │
-│              until no longer required.                │
-│                                                       │
-│   Be sure to see `) +  chalk.hex('#00cff0').bold.underline(`https://git.io/Jvk4Z`) + chalk.hex('#f26135')(` for more info   │
-│          on updates and deprecation strategy.         │
-│                                                       │
+
+        Thanks for installing the latest version
+                of `) + chalk.hex('#ffd200').bold(`ods-hyperlink v${pjson.version}.`) + chalk.hex('#f26135')(`
+        This version begins the transition from
+                Orion to Auro components.
+
+        Throughout the transition, ods-hyperlink
+          will continue to be FULLY SUPPORTED
+               until no longer required.
+
+    Be sure to see `) +  chalk.hex('#00cff0').bold.underline(`https://git.io/Jvk4Z`) + chalk.hex('#f26135')(` for more info
+           on updates and deprecation strategy.
+
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
-`)
+`+
+chalk.hex('#f26135')(`
+╭ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ──────────────────────────────╮
+
+                    !!!! ALERT !!!!
+          If when installing `) + chalk.hex('#ffd200').bold(`ods-hyperlink v${pjson.version}`) + chalk.hex('#f26135')(`
+       and there is an issue with the icon rendering,
+
+                       please run
+           `) + chalk.hex('#ffd200').bold(`npm update @alaskaairux/orion-icons`) + chalk.hex('#f26135')(`
+
+
+╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
+`))
 );

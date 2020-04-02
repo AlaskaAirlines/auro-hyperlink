@@ -119,7 +119,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all test",
+      "pre-commit": "npm-run-all test postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
