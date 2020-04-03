@@ -31,18 +31,5 @@ chalk.hex('#f26135')(`
            on updates and deprecation strategy.
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
-`+
-chalk.hex('#f26135')(`
-╭ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ──────────────────────────────╮
-
-                    !!!! ALERT !!!!
-          If when installing `) + chalk.hex('#ffd200').bold(`ods-hyperlink v${pjson.version}`) + chalk.hex('#f26135')(`
-       and there is an issue with the icon rendering,
-
-                       please run
-           `) + chalk.hex('#ffd200').bold(`npm update @alaskaairux/orion-icons`) + chalk.hex('#f26135')(`
-
-
-╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
-`))
+`)
 );
