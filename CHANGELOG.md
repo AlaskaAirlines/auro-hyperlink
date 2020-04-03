@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.4.5](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.4...v1.4.5) (2020-04-03)
+
+
+### Bug Fixes
+
+* remove CLI warning ([a41110d](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/a41110d3d276e751c506bf9955061d596b6b4abb))
+
 ## [1.4.4](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.3...v1.4.4) (2020-04-02)
 
 
