@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.4.6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.5...v1.4.6) (2020-04-27)
+
+
+### Bug Fixes
+
+* add support for relative URLs ([59e8b2e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/59e8b2edf061735e08c2ac5ba150e853cf2770fa))
+
 ## [1.4.5](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.4...v1.4.5) (2020-04-03)
 
 
