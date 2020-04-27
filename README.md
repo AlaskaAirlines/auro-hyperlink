@@ -1,7 +1,7 @@
 # ods-hyperlink / auro-hyperlink
 
-[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink)
-![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?color=orange)
+[![Build Status](https://travis-ci.org/AlaskaAirlines/ods-hyperlink.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/ods-hyperlink)
+[![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?color=orange)](https://www.npmjs.com/package/@alaskaairux/ods-hyperlink)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-hyperlink.svg?color=blue)
 
 `<ods-hyperlink>` and `<auro-hyperlink>` are wrapper components for an HTML `<a>` element containing styling and behavior.
