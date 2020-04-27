@@ -58,17 +58,31 @@
       <demo-snippet>
         <template>
             <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link.</p>
-            <p>See more about <auro-hyperlink target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link.</p>
+            <p>See more about <auro-hyperlink target="_blank" href="//www.apple.com">Apple Computers</auro-hyperlink> in this link.</p>
           </template>
       </demo-snippet>
 
-      <p>auro-hyperlink only accepts urls and will convert them to https:// protocol. </p>
+      <p>auro-hyperlink automatically converts URLs to a full path using the https:// protocol.</p>
       <demo-snippet>
         <template>
             <p>See more about <auro-hyperlink href="/about">Alaska Airlines</auro-hyperlink> in this link. Link returned in the DOM with full path to AS.com and https:// protocol.</p>
             <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
             <p>See more about <auro-hyperlink href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
+          </template>
+      </demo-snippet>
+
+      <p>Javascript hrefs are fully ignored.</p>
+      <demo-snippet>
+        <template>
             <p>See more about <auro-hyperlink href="javascript:my_function();window.print();">Alaska Airlines</auro-hyperlink> in this link. The href attribute is not returned to the DOM.</p>
+          </template>
+      </demo-snippet>
+
+      <p>If a relative path is needed, pass in the <code>relative</code> flag. </p>
+      <demo-snippet>
+        <template>
+            <p>See more about <auro-hyperlink relative href="/about">Alaska Airlines</auro-hyperlink> in this link. </p>
+            <p>See more about <auro-hyperlink relative href="/about" target="_blank">Alaska Airlines</auro-hyperlink> in this link. </p>
           </template>
       </demo-snippet>
 

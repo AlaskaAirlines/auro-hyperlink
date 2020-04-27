@@ -42,7 +42,7 @@ class AuroHyperlink extends ComponentBase {
   }
 
   getMarkup() {
-    this.safeUri = this.safeUrl(this.href);
+    this.safeUri = this.safeUrl(this.href, this.relative);
 
     const classes = {
       'hyperlink': this.safeUri || this.role,
@@ -62,7 +62,7 @@ class AuroHyperlink extends ComponentBase {
         ?download="${this.download}"
         target="${ifDefined(this.target ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
-      ><slot></slot>${this.targetIcon(this.target)}</a>`
+      ><slot></slot>${this.targetIcon(this.target, this.relative)}</a>`
       : html`<slot></slot>`}
     `;
   }

@@ -33,11 +33,12 @@ export default class ComponentBase extends LitElement {
       rel:              { type: String },
       role:             { type: String },
       target:           { type: String },
-      download:         { type: Boolean }
+      download:         { type: Boolean },
+      relative:         { type: Boolean }
     };
   }
 
-  safeUrl(href) {
+  safeUrl(href, relative) {
     if (href !== undefined) {
       const url = new URL(href, 'https://www.alaskaair.com');
 
@@ -45,9 +46,14 @@ export default class ComponentBase extends LitElement {
         return undefined;
       }
 
-      url.protocol = 'https:';
+      if (!relative) {
+        url.protocol = 'https:';
 
-      return url.href;
+        return url.href;
+
+      } else if (relative) {
+        return href;
+      }
 
     } else if (href === undefined) {
       return undefined;
@@ -56,8 +62,8 @@ export default class ComponentBase extends LitElement {
     return undefined;
   }
 
-  targetIcon(target) {
-    if (target === '_blank') {
+  targetIcon(target, relative) {
+    if (target === '_blank' && !relative) {
       return this.svg;
     }
 

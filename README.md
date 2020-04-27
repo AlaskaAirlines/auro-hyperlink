@@ -59,7 +59,7 @@ import "@alaskaairux/ods-hyperlink/dist/auro-hyperlink";
 <auro-hyperlink>Hello World!</auro-hyperlink>
 ```
 
-## Element ods-hyperlink
+## Element ods-hyperlink / auro-hyperlink
 
 ### hyperlink use cases
 
@@ -69,6 +69,12 @@ The `<ods-hyperlink>` or `<auro-hyperlink>` elements should be used in situation
 * inline link element for navigation
 * optional role as button when hyperlink UI is needed for submit action
 * optional role as tab when hyperlink UI is needed for a tablist
+
+### Auto URL re-write feature (auro only)
+
+Auro-hyperlink, by default, will re-write your URL to ensure that the domain is `https://www.alaskaair.com`. This feature also ensures that JavaScript URLs are also not passed in. 
+
+If a relative URL is required, pass in the `relative` flag to disable the addition of the Alaska Airlines domain. The `relative` feature and `target="_blank"` cannot be used together. If the component has both attributes, the 
 
 ### Orion Properties:
 
@@ -97,6 +103,7 @@ The `<ods-hyperlink>` or `<auro-hyperlink>` elements should be used in situation
 | nav | boolean | Displays element as block element for use as navigation |
 | ondark | boolean | Specifies dark theme use of hyperlink |
 | rel | string | Specifies the relationship between the current document and the linked document |
+| relative | boolean | Add flag to disable auto URL re-write feature |
 | role | string | Use for aria roles; currently supports `button` for extended experiences |
 | target †† | string | Specifies where to open the linked document |
 
