@@ -1,29 +1,12 @@
 # ods-hyperlink / auro-hyperlink
 
-[![Build Status](https://travis-ci.org/AlaskaAirlines/ods-hyperlink.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/ods-hyperlink)
-[![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?color=orange)](https://www.npmjs.com/package/@alaskaairux/ods-hyperlink)
-![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-hyperlink.svg?color=blue)
-
 `<ods-hyperlink>` and `<auro-hyperlink>` are wrapper components for an HTML `<a>` element containing styling and behavior.
 
-## Docs
-
-All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
-
-## Deprecated
-
-During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
-
-1. `<ods-hyperlink>` will continue to be supported until an official EOL has been communicated
-1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
-
-## New features
-
-1. A new component `<auro-hyperlink>` is available that only consumes Auro resources to ensure a minimum weight and clean transition process for engineers
-1. See [Auro API](#auro-properties) for new Auro component
-
-
 ## Install
+
+[![Build Status](https://img.shields.io/travis/AlaskaAirlines/ods-hyperlink.svg?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/ods-hyperlink)
+[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/ods-hyperlink.svg?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/ods-hyperlink)
+[![License](https://img.shields.io/npm/l/@alaskaairux/ods-hyperlink.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
 $ npm i @alaskaairux/ods-hyperlink
@@ -138,6 +121,17 @@ Managing `onclick` and `onkeypress` events are the responsibility of the user. S
   }
 </script>
 ```
+
+## Docs
+
+All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
+
+## Deprecated
+
+During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
+
+1. `<ods-hyperlink>` will continue to be supported until an official EOL has been communicated
+1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
 
 ## Custom style support
 
