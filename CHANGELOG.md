@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.4.7](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.6...v1.4.7) (2020-05-19)
+
+
+### Bug Fixes
+
+* update status badges ([2354a63](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/2354a634630abf31ed8a1fc33bd9dacef2713067))
+
 ## [1.4.6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.5...v1.4.6) (2020-04-27)
 
 
