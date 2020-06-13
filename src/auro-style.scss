@@ -37,6 +37,8 @@
 
 // component shape styles
 .hyperlink {
+  @include auro_transition(all, 0.15s, ease);
+
   color: var(--auro-hyperlink-color);
   padding: var(--auro-hyperlink-padding);
   text-decoration: var(--auro-hyperlink-decoration);
@@ -45,7 +47,7 @@
     color: var(--auro-hyperlink-visited-color);
   }
 
-  :host(:not(.is-touching)) & {
+  @media (hover: hover) {
     &:hover {
       color: var(--auro-hyperlink-hover-color);
       text-decoration: var(--auro-hyperlink-hover-decoration);
@@ -71,6 +73,60 @@
   &--nav {
     text-decoration: none;
     display: block;
+  }
+
+  &--cta {
+    @include auro_anchorButton(css, component, block);
+
+    color: var(--auro-color-text-primary-on-dark);
+    background-color: var(--auro-color-ui-default-on-light);
+    border: 1px solid var(--auro-color-ui-default-on-light);
+    border-radius: var(--auro-border-radius);
+    font-family: var(--auro-font-family-default);
+    font-size: var(--auro-text-body-size-default);
+    font-weight: var(--auro-text-body-default-weight);
+    text-align: center;
+
+    // override from common button height
+    line-height: calc((var(--auro-size-xxxl)) - (var(--auro-size-xxs)));
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    // update to media query when ods-hyperlink support is removed
+    :host(:not(.is-touching)) & {
+      &:hover {
+        color: var(--auro-color-text-primary-on-dark);
+        background-color: var(--auro-color-ui-hover-on-light);
+        border: 1px solid var(--auro-color-ui-hover-on-light);
+        text-decoration: none;
+      }
+    }
+
+    &:visited {
+      color: var(--auro-color-text-primary-on-dark);
+    }
+
+    @include auro_breakpoint--sm {
+      display: inline-block;
+      min-width: calc((var(--auro-size-xxxl)) * 3);
+    }
+
+    &.hyperlink--secondary {
+      background-color: var(--auro-color-background-lightest);
+      border: 1px solid var(--auro-color-ui-default-on-light);
+      color: var(--auro-color-text-link-on-light);
+
+      // update to media query when ods-hyperlink support is removed
+      :host(:not(.is-touching)) & {
+        &:hover {
+          background-color: var(--auro-color-background-lighter);
+          border: 1px solid var(--auro-color-ui-default-on-light);
+          color: var(--auro-color-text-link-on-light);
+        }
+      }
+    }
   }
 
   &--ondark {

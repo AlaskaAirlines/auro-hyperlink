@@ -33,8 +33,10 @@ export default class ComponentBase extends LitElement {
       rel:              { type: String },
       role:             { type: String },
       target:           { type: String },
+      cta:              { type: Boolean },
       download:         { type: Boolean },
-      relative:         { type: Boolean }
+      relative:         { type: Boolean },
+      secondary:        { type: Boolean }
     };
   }
 
