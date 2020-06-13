@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.5.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.7...v1.5.0) (2020-06-13)
+
+
+### Features
+
+* [#27](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/issues/27) add support for default CTA button style ([5362639](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/5362639da476b4ad8535ce17c69245bd7d3d17b0))
+
 ## [1.4.7](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.6...v1.4.7) (2020-05-19)
 
 
