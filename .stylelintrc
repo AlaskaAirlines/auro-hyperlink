@@ -3,6 +3,7 @@
   "rules": {
     "no-duplicate-selectors": null,
     "font-family-no-duplicate-names": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "declaration-block-no-duplicate-properties": null
   }
 }

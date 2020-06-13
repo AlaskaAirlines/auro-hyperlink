@@ -27,7 +27,6 @@ class OdsHyperlink extends ComponentBase {
   static get properties() {
     return {
       ...super.properties,
-      cta:              { type: Boolean },
       darktheme:        { type: Boolean },
       inline:           { type: Boolean },
       tabisactive:      { type: Boolean },

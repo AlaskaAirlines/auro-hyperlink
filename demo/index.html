@@ -62,6 +62,12 @@
           </template>
       </demo-snippet>
 
+      <demo-snippet>
+        <template>
+            <auro-hyperlink role="button" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+          </template>
+      </demo-snippet>
+
       <p>auro-hyperlink automatically converts URLs to a full path using the https:// protocol.</p>
       <demo-snippet>
         <template>
@@ -91,6 +97,19 @@
         <template>
             <auro-hyperlink nav href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
             <auro-hyperlink nav target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <p>Hyperlink CTA support</p>
+      <demo-snippet>
+        <template>
+            <auro-hyperlink cta relative href="#">Go to Alaska Airlines!</auro-hyperlink>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+            <auro-hyperlink secondary cta relative href="#">Go to Alaska Airlines!</auro-hyperlink>
         </template>
       </demo-snippet>
 
@@ -126,22 +145,22 @@
 
             <script>
                 function _clickMe(e) {
-                  console.log(e);
+                  alert(e);
                 }
 
                 function _touchMe(e) {
-                  console.log(e);
+                  alert(e);
                 }
 
                 function _keyPress(e) {
                   if(event.keyCode === 13) {
                     e.preventDefault();
-                    console.log(event.keyCode);
+                    alert(event.keyCode);
                   }
 
                   if(event.keyCode === 32) {
                     e.preventDefault();
-                    console.log(event.keyCode);
+                    alert(event.keyCode);
                   }
                 }
               </script>
