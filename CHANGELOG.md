@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.5.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.5.0...v1.5.1) (2020-06-16)
+
+
+### Bug Fixes
+
+* update correct height for CTA button ([e4e1deb](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/e4e1deb1531ba47584e0d71cf126c0e017696cb4))
+
 # [1.5.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.4.7...v1.5.0) (2020-06-13)
 
 
