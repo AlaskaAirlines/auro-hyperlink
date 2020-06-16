@@ -88,7 +88,7 @@
     text-align: center;
 
     // override from common button height
-    line-height: calc((var(--auro-size-xxxl)) - (var(--auro-size-xxs)));
+    line-height: calc((var(--auro-size-xxl)) + ((var(--auro-size-xs)) - (var(--auro-size-xxxs))));
 
     &:active {
       transform: scale(0.95);
