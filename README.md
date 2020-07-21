@@ -1,4 +1,4 @@
-# hyperlink
+# Auro-hyperlink web component
 
 `<ods-hyperlink>` and `<auro-hyperlink>` are wrapper components for an HTML `<a>` element containing styling and behavior.
 
@@ -55,9 +55,9 @@ The `<ods-hyperlink>` or `<auro-hyperlink>` elements should be used in situation
 
 ### Auto URL re-write feature (auro only)
 
-Auro-hyperlink, by default, will re-write your URL to ensure that the domain is `https://www.alaskaair.com`. This feature also ensures that JavaScript URLs are also not passed in. 
+Auro-hyperlink, by default, will re-write your URL to ensure that the domain is `https://www.alaskaair.com`. This feature also ensures that JavaScript URLs are also not passed in.
 
-If a relative URL is required, pass in the `relative` flag to disable the addition of the Alaska Airlines domain. The `relative` feature and `target="_blank"` cannot be used together. If the component has both attributes, the 
+If a relative URL is required, pass in the `relative` flag to disable the addition of the Alaska Airlines domain. The `relative` feature and `target="_blank"` cannot be used together. If the component has both attributes, the
 
 ## Docs
 
