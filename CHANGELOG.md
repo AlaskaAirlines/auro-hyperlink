@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.6.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.5.1...v1.6.0) (2020-07-23)
+
+
+### Features
+
+* [#32](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/issues/32) support sms and tel protocols ([299961d](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/commit/299961d355181988d2ddaa2deba205a782f67e27))
+
 ## [1.5.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.5.0...v1.5.1) (2020-06-16)
 
 
