@@ -44,17 +44,25 @@ export default class ComponentBase extends LitElement {
     if (href !== undefined) {
       const url = new URL(href, 'https://www.alaskaair.com');
 
-      if (url.protocol === 'javascript:') { // eslint-disable-line no-script-url
-        return undefined;
-      }
+      switch (url.protocol) {
+        case 'javascript:':
+          return undefined;
 
-      if (!relative) {
-        url.protocol = 'https:';
+        case 'tel:':
+          return href;
 
-        return url.href;
+        case 'sms:':
+          return href;
 
-      } else if (relative) {
-        return href;
+        default:
+          if (!relative) {
+            url.protocol = 'https:';
+
+            return url.href;
+
+          } else if (relative) {
+            return href;
+          }
       }
 
     } else if (href === undefined) {
@@ -64,8 +72,8 @@ export default class ComponentBase extends LitElement {
     return undefined;
   }
 
-  targetIcon(target, relative) {
-    if (target === '_blank' && !relative) {
+  targetIcon(target) {
+    if (target === '_blank') {
       return this.svg;
     }
 
