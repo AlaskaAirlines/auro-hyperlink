@@ -180,7 +180,7 @@ module.exports = {
         "no-restricted-syntax": "error",
         "no-return-assign": "error",
         "no-return-await": "error",
-        "no-script-url": "error",
+        "no-script-url": "warn",
         "no-self-compare": "error",
         "no-sequences": "error",
         "no-setter-return": "error",

@@ -59,10 +59,6 @@ Auro-hyperlink, by default, will re-write your URL to ensure that the domain is 
 
 If a relative URL is required, pass in the `relative` flag to disable the addition of the Alaska Airlines domain. The `relative` feature and `target="_blank"` cannot be used together. If the component has both attributes, the
 
-## Docs
-
-All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
-
 ## Code Examples
 
 **Default hyperlink**
@@ -98,6 +94,16 @@ A link to <ods-hyperlink href="//" inline>Alaska Airlines!</ods-hyperlink> and t
 
 <auro-hyperlink download href="assets/thing.pdf">Download thing.pdf</auro-hyperlink>
 ```
+
+**Hyperlink with `sms:` or `tel:` protocol (auro only)**
+
+```html
+<auro-hyperlink href="sms:+18005552222">sms link</auro-hyperlink>
+
+<auro-hyperlink href="tel:+18005552222">telephone link</auro-hyperlink>
+```
+
+When using the `sms:` or `tel:` protocols, `<auro-hyperlink>` will honor this protocol request in the final rendered URL inside the shadowDOM.
 
 **Hyperlink with `role=button` option**
 
