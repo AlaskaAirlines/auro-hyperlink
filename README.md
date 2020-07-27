@@ -42,6 +42,40 @@ import "@alaskaairux/ods-hyperlink/dist/auro-hyperlink";
 <auro-hyperlink>Hello World!</auro-hyperlink>
 ```
 
+## Install bundled assets from CDN
+
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
+
+**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want. The first fully stable version is v4.4.4.
+
+### Using Auro assets
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/essentials.css" />
+
+<script src="https://unpkg.com/@alaskaairux/ods-hyperlink@:version/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/ods-hyperlink@:version/dist/auro-button__bundled.js"></script>
+```
+
+### Using Orion assets
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+
+<script src="https://unpkg.com/@alaskaairux/ods-hyperlink@:version/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/ods-hyperlink@:version/dist/ods-hyperlink__bundled.js"></script>
+```
+
+### polyfills.js
+
+The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
+
+### IE11 Support
+
+**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
+
 ## Element ods-hyperlink / auro-hyperlink
 
 ### hyperlink use cases
