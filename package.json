@@ -1,31 +1,19 @@
 {
   "//": [
     "================================================================================",
-    "The build process for Lit-Element components is currently a 2-part solution that uses Gulp and npm.",
-    "The primary use of Gulp is for the CSS processing that requires the generation of a CSS file and a series of PostCSS functions.",
-    "Aside from the Sass/PostCSS tasks, all other tasks are also avaialble directly from npm as well.",
-    "To keep things less confucing, all tasks share the same name between Gulp and npm.",
-    "",
-    "# To build resources to view the demo file, perform the following tasks",
-    "  1. $ gulp build",
-    "  2. $ npm run build",
-    "  3. $ polymer serve",
-    "  4. Go to http://127.0.0.1:8081",
-    "",
     "# To work within the development environment, run the following tasks",
-    "  1. $ gulp dev",
-    "  2. $ npm run dev",
-    "  4. $ polymer serve",
-    "  3. Go to http://127.0.0.1:8081",
+    "  1. $ npm run dev",
+    "  2. $ npm run serve",
+    "  3. Go to http://localhost:3001",
     "================================================================================"
   ],
-  "name": "@alaskaairux/ods-hyperlink",
+  "name": "@alaskaairux/auro-hyperlink",
   "version": "1.6.0",
-  "description": "Orion Design System hyperlink element",
+  "description": "Auro Design System hyperlink element",
   "author": "Product design and research",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink"
+    "url": "https://github.com/AlaskaAirlines/auro-hyperlink"
   },
   "main": "index.js",
   "license": "Apache-2.0",
@@ -34,15 +22,13 @@
     "lit-element": "^2.3.1"
   },
   "peerDependencies": {
-    "@alaskaairux/ods-button": "^4.2.0",
-    "@alaskaairux/orion-design-tokens": "^2.10.4",
-    "@alaskaairux/orion-icons": "^2.0.2",
-    "@alaskaairux/orion-web-core-style-sheets": "^2.8.4",
+    "@alaskaairux/orion-design-tokens": "^^2.12.1",
+    "@alaskaairux/orion-icons": "^2.0.4",
+    "@alaskaairux/orion-web-core-style-sheets": "^2.10.2",
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "focus-visible": "^5.0.2"
   },
   "devDependencies": {
-    "@alaskaairux/ods-button": "^4.6.1",
     "@alaskaairux/orion-design-tokens": "^2.12.1",
     "@alaskaairux/orion-icons": "^2.0.4",
     "@alaskaairux/orion-web-core-style-sheets": "^2.10.2",
@@ -69,10 +55,6 @@
     "eslint": "^6.8.0",
     "eslint-plugin-lit": "^1.2.0",
     "focus-visible": "^5.0.2",
-    "gulp": "^4.0.1",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.0",
     "husky": "^4.2.0",
     "jsonlint": "^1.6.3",
     "lodash": "^4.17.19",
@@ -81,11 +63,11 @@
     "npm-watch": "^0.6.0",
     "postcss": "^7.0.32",
     "postcss-custom-properties": "^9.0.2",
+    "postcss-discard-comments": "^4.0.2",
+    "postcss-remove-rules": "^1.0.0",
     "postcss-remove-selectors": "^2.0.1",
     "postcss-selector-replace": "^1.0.2",
     "semantic-release": "^15.13.31",
-    "style-dictionary": "^2.10.1",
-    "styleflux": "^1.2.0",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
     "wc-sass-render": "^1.2.1",
@@ -98,7 +80,7 @@
     "yaml-lint": "^1.2.4"
   },
   "watch": {
-    "tokens:build": "./src/*.json",
+    "": "./src/*.json",
     "sassRender:watch": ".src/**/*.scss"
   },
   "scripts": {
@@ -106,34 +88,26 @@
     "bundler": "webpack --mode=production",
     "bundle:test": "webpack-dev-server --host 0.0.0.0",
     "postinstall": "node packageScripts/postinstall.js",
-    "tokens:build": "node scripts/tokenScript.js",
-    "tokens:distBuild": "node scripts/tokenScriptCustom.js",
-    "ciBuild": "npm-run-all tokens:build processSrc sassRender:lightDomCSS processImports:canonical processImports:variable styleflux:canonical styleflux:variable reprocessClean tokens:preserve tokens:distBuild sassRender dist:js bundler postinstall",
-    "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.* ./demo/fonts/",
-    "cssLint": "stylelint './src/auro-style.css'",
-    "dev": "npm-watch tokens:build | npm-watch sassRender:watch | npm-watch devBuild",
-    "devBuild": "npm-run-all tokens:build processSrc tokens:distBuild sassRender dist:js",
-    "dist": "npm-run-all tokens:distBuild sassRender cssLint jsonLint",
-    "dist:js": "copyfiles -u 1 -V './src/**/*.js' './src/sassPartials/*.scss' ./dist",
+    "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall",
+    "cssLint": "stylelint './src/style.css'",
+    "dev": "npm run sassBuild:watch",
+    "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
+    "sassRender": "sass-render src/*.css",
+    "sweep": "rm -rf ./temp ./demo/css ./dist | rm ./src/*.css ./src/*-css.js",
     "esLint": "./node_modules/.bin/eslint src/*.js",
-    "sassRender": "sass-render src/*.css src/tokens/*.scss",
-    "sassRender:watch": "sass-render -w src/**/*.{scss,css}",
-    "sassRender:lightDomCSS": "sass-render --suffix='-ld-css.js' src/tokens/componentProperties.scss src/tokens/dotsProperties.scss",
-    "styleflux:canonical": "styleflux -o ./altImports/canonical/*.css",
-    "styleflux:variable": "styleflux -o ./altImports/variable/*.css",
-    "sweep": "rm -rf ./altImports ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
-    "test": "npm-run-all esLint cssLint yamltest",
-    "yamltest": "yamllint .travis.yml",
-    "processSrc": "gulp processSrc",
-    "processImports:canonical": "gulp processImportsCanonical",
-    "processImports:variable": "gulp processImportsVariable",
-    "serve": "polymer serve --port 3001 --hostname 0.0.0.0",
-    "reprocessClean": "gulp reprocessClean",
-    "tokens:preserve": "copyfiles -u 1 -V './src/**/componentProperties.scss' ./dist"
+    "test": "npm-run-all esLint cssLint test:yaml",
+    "test:yaml": "yamllint .travis.yml",
+    "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
+    "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
+    "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
+    "sassBuild:component": "node-sass ./src/ --output ./src/",
+    "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
+    "postCss:component": "node ./scripts/postCss.js",
+    "serve": "polymer serve --port 3001 --hostname 0.0.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all tokens:build processSrc test bundler postinstall",
+      "pre-commit": "npm-run-all test bundler postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -202,7 +176,7 @@
   ],
   "keywords": [
     "alaska airlines",
-    "orion design system",
+    "auro design system",
     "web components",
     "hyperlink"
   ]

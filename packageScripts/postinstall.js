@@ -19,16 +19,12 @@ chalk.hex('#f26135')(`
 ╭ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ──────────────────────────────╮
 
         Thanks for installing the latest version
-                of `) + chalk.hex('#ffd200').bold(`ods-hyperlink v${pjson.version}.`) + chalk.hex('#f26135')(`
-        This version begins the transition from
+                of `) + chalk.hex('#ffd200').bold(`auro-hyperlink v${pjson.version}.`) + chalk.hex('#f26135')(`
+        This version completes the transition from
                 Orion to Auro components.
 
-        Throughout the transition, ods-hyperlink
-          will continue to be FULLY SUPPORTED
-               until no longer required.
-
-    Be sure to see `) +  chalk.hex('#00cff0').bold.underline(`https://git.io/Jvk4Z`) + chalk.hex('#f26135')(` for more info
-           on updates and deprecation strategy.
+        For legacy support, ods-hyperlink v1.6.0
+              is still available for use.
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
 `)

@@ -7,11 +7,10 @@ import { html } from "lit-element";
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { classMap } from 'lit-html/directives/class-map';
 import ComponentBase from './component-base';
-import hyperlinkProperties from './tokens/auro-componentShapeProperties-css.js';
 import externallink from '@alaskaairux/orion-icons/dist/icons/interface/external-link-sm_es6.js';
 
 // import the processed CSS file into the scope of the component
-import styleCss from "./auro-style-css.js";
+import styleCss from "./style-css.js";
 
 // build the component class
 class AuroHyperlink extends ComponentBase {
@@ -27,16 +26,13 @@ class AuroHyperlink extends ComponentBase {
   // function to define props used within the scope of thie component
   static get properties() {
     return {
-      ...super.properties,
-      nav:    { type: Boolean },
-      ondark: { type: Boolean }
+      ...super.properties
     };
   }
 
   // Adds styles for light DOM element; styles not defined in base class
   getButtonStyles() {
     return html`
-      ${hyperlinkProperties}
       ${styleCss}
     `;
   }
