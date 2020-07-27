@@ -36,7 +36,9 @@ export default class ComponentBase extends LitElement {
       cta:              { type: Boolean },
       download:         { type: Boolean },
       relative:         { type: Boolean },
-      secondary:        { type: Boolean }
+      secondary:        { type: Boolean },
+      nav:              { type: Boolean },
+      ondark:           { type: Boolean }
     };
   }
 

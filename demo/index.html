@@ -12,7 +12,6 @@
       import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
       import "@polymer/iron-demo-helpers/demo-snippet";
     </script>
-    <script type="module" src="../src/ods-hyperlink.js"></script>
     <script type="module" src="../src/auro-hyperlink.js"></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
@@ -176,120 +175,7 @@
         </template>
       </demo-snippet>
 
-      <!-- ----------------------------------  -->
-
-      <h3>ods-hyperlink examples</h3>
-      <demo-snippet>
-        <template>
-            <ods-hyperlink href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <ods-hyperlink cta href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <ods-hyperlink cta buttontype="secondary" href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <ods-hyperlink cta responsive href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <ods-hyperlink class="util_paddingLeft--none util_paddingRight--none" href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
-              <ods-hyperlink darktheme href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
-            </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-hyperlink href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
-            <ods-hyperlink darktheme href="http://www.alaskaair.com" target="_blank">Go to Alaska Airlines!</ods-hyperlink>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <p>
-            These are words with a link to <ods-hyperlink href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
-          </p>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <p>
-            These are words with a link to <ods-hyperlink target="_blank" href="http://www.alaskaair.com" inline>Go to Alaska Airlines!</ods-hyperlink> and then show more words!
-          </p>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-hyperlink download href="assets/thing.pdf">Download thing.pdf</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-hyperlink rel="nofollow" href="/">SEO nofollow</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <ods-hyperlink cta target="_blank" href="http://www.alaskaair.com">Go to Alaska Airlines!</ods-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <ods-hyperlink id="cancel" role="button" onClick="clickMe(event)" onKeyPress="keyPress(event)">Cancel update!</ods-hyperlink>
-
-            <script>
-              function clickMe(e) {
-                console.log('You clicked me');
-              }
-
-              function keyPress(e) {
-                if(event.keyCode === 13) {
-                  e.preventDefault();
-                  console.log('You pressed either the RETURN key!');
-                }
-
-                if(event.keyCode === 32) {
-                  e.preventDefault();
-                  console.log('You pressed either the SPACEBAR key!');
-                }
-              }
-            </script>
-        </template>
-      </demo-snippet>
-
-      <h3>Standard HTML examples</h3>
+     <h3>Standard HTML examples</h3>
 
       <demo-snippet>
         <template>
@@ -322,38 +208,6 @@
       <demo-snippet>
         <template>
           <a class="ods-roleButton" tabindex="0" role="button">Cancel</a>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div role="tablist" class="ods-tablist" id="working-tabs">
-              <ods-hyperlink tabisactive role="tab">Tab One</ods-hyperlink>
-              <ods-hyperlink role="tab">Tab Two</ods-hyperlink>
-              <ods-hyperlink role="tab">Tab Three</ods-hyperlink>
-          </div>
-          <script>
-            const tabs = [...document.querySelectorAll('.ods-tablist ods-hyperlink')];
-            const removeActive = () => {
-              tabs.forEach(tab => {
-                tab.removeAttribute('tabisactive');
-              });
-            };
-
-            tabs.forEach(tab => {
-              tab.addEventListener('click', () => {
-                removeActive();
-                tab.setAttribute('tabisactive', true);
-              });
-
-              tab.addEventListener('keyup', (e) => {
-                if (e.keyCode === 13) {
-                  removeActive();
-                  tab.setAttribute('tabisactive', true);
-                }
-              });
-            });
-            </script>
         </template>
       </demo-snippet>
 

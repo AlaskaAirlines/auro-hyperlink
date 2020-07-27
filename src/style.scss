@@ -8,10 +8,6 @@
 // Import Auro CSS Properties as Sass file
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
 
-// Boilerplate shape Sass variables and properties
-@import "./tokens/auro-componentShapeVariables";
-@import "./tokens/auro-componentShapeProperties";
-
 // general WCSS imports
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
@@ -39,18 +35,18 @@
 .hyperlink {
   @include auro_transition(all, 0.15s, ease);
 
-  color: var(--auro-hyperlink-color);
-  padding: var(--auro-hyperlink-padding);
-  text-decoration: var(--auro-hyperlink-decoration);
+  color: var(--auro-color-ui-default-on-light);
+  padding: 0;
+  text-decoration: underline;
 
   &:visited {
-    color: var(--auro-hyperlink-visited-color);
+    color: var(--auro-color-ui-default-on-light);
   }
 
   @media (hover: hover) {
     &:hover {
-      color: var(--auro-hyperlink-hover-color);
-      text-decoration: var(--auro-hyperlink-hover-decoration);
+      color: var(--auro-color-ui-hover-on-light);
+      text-decoration: none;
     }
 
     &--nav {
@@ -130,10 +126,10 @@
   }
 
   &--ondark {
-    color: var(--auro-hyperlink-ondark-color);
+    color: var(--auro-color-ui-default-on-dark);
 
     &:visited {
-      color: var(--auro-hyperlink-ondark-color);
+      color: var(--auro-color-ui-default-on-dark);
     }
   }
 }
