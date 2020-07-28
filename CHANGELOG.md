@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [2.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v1.6.0...v2.0.0) (2020-07-28)
+
+
+### Features
+
+* [#23](https://github.com/AlaskaAirlines/auro-hyperlink/issues/23) add support for CDN delivery ([777bcb7](https://github.com/AlaskaAirlines/auro-hyperlink/commit/777bcb735063bd8873c11c7cb361b8540000bd04))
+* [#37](https://github.com/AlaskaAirlines/auro-hyperlink/issues/37) remove unused legacy component and build steps ([a655547](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a655547a7b5ae3113ef0d56dc12a7d0a19dc23d4))
+
+
+### BREAKING CHANGES
+
+* This commit will remove all legacy support files and
+any references to ods-hyperlink. If these legacy files are needed,
+please continue using v1.6.0.
+
 # [1.6.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-hyperlink/compare/v1.5.1...v1.6.0) (2020-07-23)
 
 
