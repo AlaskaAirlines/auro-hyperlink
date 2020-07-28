@@ -14,7 +14,7 @@ $ npm i @alaskaairux/auro-hyperlink
 
 ### Design Token CSS Custom Property dependency
 
-The use of any Web Component has a dependency on the [Orion/Auro Design Tokens](https://auro.alaskaair.com/getting-started/developers/design-tokens).
+The use of any Web Component has a dependency on the [Auro Design Tokens](https://auro.alaskaair.com/getting-started/developers/design-tokens).
 
 ### CSS Custom Property fallbacks
 
@@ -40,7 +40,7 @@ import "@alaskaairux/auro-hyperlink";
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want. The first fully stable version is v4.4.4.
+**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want.
 
 ### Using Auro assets
 
@@ -84,7 +84,7 @@ If a relative URL is required, pass in the `relative` flag to disable the additi
 <auro-hyperlink href="//">Go to Alaska Airlines!</auro-hyperlink>
 ```
 
-**Nav hyperlink (auro only)**
+**Nav hyperlink**
 
 ```html
 <auro-hyperlink href="//" nav>Alaska Airlines!</auro-hyperlink>
@@ -96,7 +96,7 @@ If a relative URL is required, pass in the `relative` flag to disable the additi
 <auro-hyperlink download href="assets/thing.pdf">Download thing.pdf</auro-hyperlink>
 ```
 
-**Hyperlink with `sms:` or `tel:` protocol (auro only)**
+**Hyperlink with `sms:` or `tel:` protocol**
 
 ```html
 <auro-hyperlink href="sms:+18005552222">sms link</auro-hyperlink>

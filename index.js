@@ -1,1 +1,1 @@
-export * from './dist/ods-hyperlink';
+export * from './dist/auro-hyperlink';
