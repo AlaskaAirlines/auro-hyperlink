@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.0.0...v2.0.1) (2020-07-28)
+
+
+### Bug Fixes
+
+* update barrel file ([b220e75](https://github.com/AlaskaAirlines/auro-hyperlink/commit/b220e753c135b62d9c7d713916ac6aa28015691c))
+
 # [2.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v1.6.0...v2.0.0) (2020-07-28)
 
 
