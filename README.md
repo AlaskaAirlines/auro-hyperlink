@@ -1,4 +1,4 @@
-# Auro-hyperlink web component
+# Auro-hyperlink
 
 `<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
 
@@ -74,7 +74,7 @@ The `<auro-hyperlink>` elements should be used in situations where users may:
 
 Auro-hyperlink, by default, will re-write your URL to ensure that the domain is `https://www.alaskaair.com`. This feature also ensures that JavaScript URLs are also not passed in.
 
-If a relative URL is required, pass in the `relative` flag to disable the addition of the Alaska Airlines domain. 
+If a relative URL is required, pass in the `relative` flag to disable the addition of the Alaska Airlines domain.
 
 ## Code Examples
 
