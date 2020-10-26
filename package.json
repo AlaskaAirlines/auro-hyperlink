@@ -22,7 +22,7 @@
     "lit-element": "^2.3.1"
   },
   "peerDependencies": {
-    "@alaskaairux/orion-design-tokens": "^^2.12.1",
+    "@alaskaairux/orion-design-tokens": "^2.12.1",
     "@alaskaairux/orion-icons": "^2.0.4",
     "@alaskaairux/orion-web-core-style-sheets": "^2.10.2",
     "@webcomponents/webcomponentsjs": "^2.4.0",
