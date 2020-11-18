@@ -67,7 +67,7 @@
     "postcss-remove-rules": "^1.0.0",
     "postcss-remove-selectors": "^2.0.1",
     "postcss-selector-replace": "^1.0.2",
-    "semantic-release": "^15.13.31",
+    "semantic-release": "^17.2.3",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
     "wc-sass-render": "^1.2.1",
