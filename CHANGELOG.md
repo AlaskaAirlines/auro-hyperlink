@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.0.1...v2.1.0) (2021-02-19)
+
+
+### Features
+
+* update bundle support ([c9a6543](https://github.com/AlaskaAirlines/auro-hyperlink/commit/c9a6543f5a71e9fa2e9383a88f86c4733ed3af94))
+* update to Github actions ([468dbc0](https://github.com/AlaskaAirlines/auro-hyperlink/commit/468dbc0534586dd6242eb1622279608739d18475))
+
 ## [2.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.0.0...v2.0.1) (2020-07-28)
 
 
