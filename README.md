@@ -38,29 +38,23 @@ import "@alaskaairux/auro-hyperlink";
 
 ## Install bundled assets from CDN
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-hyperlink__bundled.js` for modern browsers and `auro-hyperlink__bundled.es5.js` for legacy browsers (including IE11).
 
-**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want.
+Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
+
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
 
 ### Using Auro assets
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-hyperlink@:version/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-hyperlink@:version/dist/auro-button__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-hyperlink@latest/dist/auro-hyperlink__bundled.js" type="module"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-hyperlink@latest/dist/auro-hyperlink__bundled.es5.js" nomodule></script>
 ```
 
-### polyfills.js
-
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
-
-### IE11 Support
-
-**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
-
-## Element ods-hyperlink / auro-hyperlink
+## auro-hyperlink
 
 ### hyperlink use cases
 
@@ -70,7 +64,7 @@ The `<auro-hyperlink>` elements should be used in situations where users may:
 * inline link element for navigation
 * optional role as button when hyperlink UI is needed for submit action
 
-### Auto URL re-write feature (auro only)
+### Auto URL re-write feature
 
 Auro-hyperlink, by default, will re-write your URL to ensure that the domain is `https://www.alaskaair.com`. This feature also ensures that JavaScript URLs are also not passed in.
 
@@ -150,4 +144,4 @@ $ npm run dev
 $ npm run  serve
 ```
 
-Open [localhost:3001](http://localhost:3001/)
+Open [localhost:8000](http://localhost:8000/)
