@@ -21,7 +21,7 @@ repository:
   has_downloads: true
 
   # Updates the default branch for this repository.
-  default_branch: master
+  default_branch: main
 
   # Either `true` to allow squash-merging pull requests, or `false` to prevent
   # squash-merging.
@@ -36,7 +36,7 @@ repository:
   allow_rebase_merge: true
 
 branches:
-  - name: master
+  - name: main
     # https://developer.github.com/v3/repos/branches/#update-branch-protection
     # Branch Protection settings. Set to null to disable
     protection:
