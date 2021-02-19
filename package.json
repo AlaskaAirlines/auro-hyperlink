@@ -81,8 +81,7 @@
     "wc-sass-render": "^1.2.1",
     "wct-mocha": "^1.1.0",
     "webpack-merge": "^5.7.3",
-    "whatwg-fetch": "^3.6.1",
-    "yaml-lint": "^1.2.4"
+    "whatwg-fetch": "^3.6.1"
   },
   "watch": {
     "": "./src/*.json",
@@ -101,8 +100,7 @@
     "sassRender": "sass-render src/*.css",
     "sweep": "rm -rf ./temp ./demo/css ./dist | rm ./src/*.css ./src/*-css.js",
     "esLint": "./node_modules/.bin/eslint src/*.js",
-    "test": "npm-run-all esLint cssLint test:yaml",
-    "test:yaml": "yamllint .travis.yml",
+    "test": "npm-run-all esLint cssLint",
     "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
