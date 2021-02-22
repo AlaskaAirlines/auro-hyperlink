@@ -123,6 +123,21 @@
         }
       }
     }
+    // CTA ondark
+    &.hyperlink--ondark {
+      background-color: var(--auro-color-ui-default-on-dark);
+      border: 1px solid var(--auro-color-ui-default-on-dark);
+      color: var(--auro-color-text-primary-on-light);
+
+      // update to media query when ods-hyperlink support is removed
+      :host(:not(.is-touching)) & {
+        &:hover {
+          background-color: var(--auro-color-ui-hover-on-dark);
+          border: 1px solid var(--auro-color-ui-hover-on-dark);
+          color: var(--auro-color-text-primary-on-light);
+        }
+      }
+    }
   }
 
   &--ondark {
