@@ -136,6 +136,9 @@
           border: 1px solid var(--auro-color-ui-hover-on-dark);
           color: var(--auro-color-text-primary-on-light);
         }
+        &:visited {
+          color: var(--auro-color-text-primary-on-light);
+        }
       }
     }
   }
