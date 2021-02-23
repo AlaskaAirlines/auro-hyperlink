@@ -47,7 +47,7 @@ export default class ComponentBase extends LitElement {
       const url = new URL(href, 'https://www.alaskaair.com');
 
       switch (url.protocol) {
-        case 'javascript:':
+        case 'javascript:': // eslint-disable-line
           return undefined;
 
         case 'tel:':
