@@ -94,7 +94,7 @@
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "postinstall": "node packageScripts/postinstall.js",
     "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall",
-    "cssLint": "stylelint './src/style.css'",
+    "cssLint": "stylelint \"./src/*.css\"",
     "dev": "npm run sassBuild:watch",
     "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "sassRender": "sass-render src/*.css",
@@ -116,6 +116,12 @@
     "last 2 Edge versions",
     "last 2 Safari major versions"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all test bundler postinstall",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "release": {
     "branch": "master",
     "plugins": [
