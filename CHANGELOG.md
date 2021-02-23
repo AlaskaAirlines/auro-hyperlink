@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.1.0...v2.2.0) (2021-02-23)
+
+
+### Features
+
+* add support for cta ondark ([20db749](https://github.com/AlaskaAirlines/auro-hyperlink/commit/20db749a7b3cf3b8d0b23c112b8f5e19a7579f47))
+
 # [2.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.0.1...v2.1.0) (2021-02-19)
 
 
