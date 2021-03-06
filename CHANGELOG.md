@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.2.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.2.0...v2.2.1) (2021-03-06)
+
+
+### Bug Fixes
+
+* add secondary cta on dark styles ([05cef06](https://github.com/AlaskaAirlines/auro-hyperlink/commit/05cef06bebc55953d68e0e313286e31122209932))
+
 # [2.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.1.0...v2.2.0) (2021-02-23)
 
 
