@@ -21,13 +21,6 @@
 // Import tokens selectors
 @import "./node_modules/@alaskaairux/orion-icons/dist/icons";
 
-
-:host(.focus-visible) {
-  .hyperlink {
-    @include auro_focus-hyperlink(css);
-  }
-}
-
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element ouside the scope of this component
 
@@ -41,6 +34,14 @@
 
   &:visited {
     color: var(--auro-color-ui-default-on-light);
+  }
+
+  &.focus-visible {
+    @include auro_focus-hyperlink(css);
+  }
+
+  &:focus-visible {
+    @include auro_focus-hyperlink(css);
   }
 
   @media (hover: hover) {

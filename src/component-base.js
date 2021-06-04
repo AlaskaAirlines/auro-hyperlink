@@ -5,6 +5,7 @@
 
 import { LitElement, html } from "lit-element";
 import 'focus-visible/dist/focus-visible.min.js';
+import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
 
 // build the component class
 export default class ComponentBase extends LitElement {
@@ -24,6 +25,13 @@ export default class ComponentBase extends LitElement {
     this.addEventListener('touchstart', function() {
       this.classList.add('is-touching');
     });
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (!isFocusVisibleSupported() && isFocusVisiblePolyfillAvailable()) {
+      window.applyFocusVisiblePolyfill(this.shadowRoot);
+    }
   }
 
   // function to define props used within the scope of thie component
