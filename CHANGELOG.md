@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.3.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.2.1...v2.3.0) (2021-06-07)
+
+
+### Features
+
+* apply focus-visible polyfill to shadow root [#55](https://github.com/AlaskaAirlines/auro-hyperlink/issues/55) ([46cbacb](https://github.com/AlaskaAirlines/auro-hyperlink/commit/46cbacb2df390cfc2f20608b3437b63be6e3ff93))
+
 ## [2.2.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.2.0...v2.2.1) (2021-03-06)
 
 
