@@ -7,7 +7,6 @@ import { html } from "lit-element";
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { classMap } from 'lit-html/directives/class-map';
 import ComponentBase from './component-base';
-import externallink from '@alaskaairux/orion-icons/dist/icons/interface/external-link-sm_es6.js';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
@@ -18,12 +17,10 @@ class AuroHyperlink extends ComponentBase {
   constructor() {
     super();
 
-    this.dom = new DOMParser().parseFromString(externallink.svg, 'text/html');
-    this.svg = this.dom.body.firstChild;
     this.safeUri = '';
   }
 
-  // function to define props used within the scope of thie component
+  // function to define props used within the scope of this component
   static get properties() {
     return {
       ...super.properties

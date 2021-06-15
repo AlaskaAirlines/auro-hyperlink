@@ -19,7 +19,7 @@
 // Dependency reauired to process variables from Icons
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 // Import tokens selectors
-@import "./node_modules/@alaskaairux/orion-icons/dist/icons";
+@import "./node_modules/@alaskaairux/icons/dist/icons";
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element ouside the scope of this component
@@ -173,4 +173,11 @@
 
 svg {
   margin-left: var(--auro-size-xxxs);
+  position: relative;
+  top: 2px;
+}
+
+// reset token value for localized use
+svg {
+  --auro-size-lg: 1rem;
 }
