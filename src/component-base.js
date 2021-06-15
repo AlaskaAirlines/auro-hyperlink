@@ -6,6 +6,8 @@
 import { LitElement, html } from "lit-element";
 import 'focus-visible/dist/focus-visible.min.js';
 import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
+import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link_es6.js';
+import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window_es6.js';
 
 // build the component class
 export default class ComponentBase extends LitElement {
@@ -17,8 +19,8 @@ export default class ComponentBase extends LitElement {
     /*
       If the component requires a touch detection,
       please use this function to determine if a user is
-      activelly touching a device, versus detecting if
-      the device is touych enables or a handheld device.
+      actively touching a device, versus detecting if
+      the device is touch enables or a handheld device.
 
       Also uncomment the touch detection lib above
     */
@@ -46,7 +48,8 @@ export default class ComponentBase extends LitElement {
       relative:         { type: Boolean },
       secondary:        { type: Boolean },
       nav:              { type: Boolean },
-      ondark:           { type: Boolean }
+      ondark:           { type: Boolean },
+      noexit:           { type: Boolean }
     };
   }
 
@@ -82,9 +85,23 @@ export default class ComponentBase extends LitElement {
     return undefined;
   }
 
+  /**
+   * @private Internal function to generate the HTML for the icon to use
+   * @param {string} svgContent - The imported svg icon
+   * @returns {TemplateResult} - The html template for the icon
+   */
+   generateIconHtml(svgContent) {
+    const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
+      svg = dom.body.firstChild;
+
+    return svg;
+  }
+
   targetIcon(target) {
-    if (target === '_blank') {
-      return this.svg;
+    if (target === '_blank' && this.noexit) {
+      return this.generateIconHtml(newWindow.svg);
+    } else if (target === '_blank' && !this.noexit) {
+      return this.generateIconHtml(externalLink.svg);
     }
 
     return undefined;
