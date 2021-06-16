@@ -18,6 +18,7 @@ class AuroHyperlink extends ComponentBase {
     super();
 
     this.safeUri = '';
+    this.includesDomain = false;
   }
 
   // function to define props used within the scope of this component
@@ -35,7 +36,10 @@ class AuroHyperlink extends ComponentBase {
   }
 
   getMarkup() {
-    this.safeUri = this.safeUrl(this.href, this.relative);
+    if (this.href) {
+      this.safeUri = this.safeUrl(this.href, this.relative);
+      this.includesDomain = this.safeUri.includes('http');
+    }
 
     const classes = {
       'hyperlink': this.safeUri || this.role,
@@ -55,7 +59,7 @@ class AuroHyperlink extends ComponentBase {
         rel="${ifDefined(this.target || this.rel ? this.getReltype(this.target, this.rel) : undefined)}"
         role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
         ?download="${this.download}"
-        target="${ifDefined(this.target ? this.target : undefined)}"
+        target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
       ><slot></slot>${this.targetIcon(this.target, this.relative)}</a>`
       : html`<slot></slot>`}

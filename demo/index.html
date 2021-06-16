@@ -65,9 +65,16 @@
       <p>Auro hyperlink style will have underline when used within text, this is the default state</p>
       <demo-snippet>
         <template>
-            <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link.</p>
-            <p>See more about <auro-hyperlink target="_blank" href="//www.apple.com" noexit>Apple Computers</auro-hyperlink> in this no exit link.</p>
+            <p>See more about <auro-hyperlink target="_blank" href="https://www.alaskaair.com/en/?lid=nav:explore-destinations&int=AS_NAV_Explore_Destinations_-prodID:Destinations">Alaska Airlines</auro-hyperlink> in this link.</p>
+            <p>See more about <auro-hyperlink target="_blank" href="https://m.alaskaair.com/">MOW</auro-hyperlink> in this link.</p>
             <p>See more about <auro-hyperlink target="_blank" href="//www.apple.com">Apple Computers</auro-hyperlink> in this link.</p>
+          </template>
+      </demo-snippet>
+
+      <p>Targeted relative links are NOT supported.</p>
+      <demo-snippet>
+        <template>
+            <p>See more about <auro-hyperlink target="_blank" relative href="/route-map/">Alaska Airlines</auro-hyperlink> in this link.</p>
           </template>
       </demo-snippet>
 
@@ -86,6 +93,14 @@
           </template>
       </demo-snippet>
 
+      <demo-snippet>
+        <template>
+            <p>See more about <auro-hyperlink target="_blank" href="/about">Alaska Airlines</auro-hyperlink> in this link. Link returned in the DOM with full path to AS.com and https:// protocol.</p>
+            <p>See more about <auro-hyperlink target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
+            <p>See more about <auro-hyperlink target="_blank" href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
+          </template>
+      </demo-snippet>
+
       <p>Javascript hrefs are fully ignored.</p>
       <demo-snippet>
         <template>
@@ -96,8 +111,10 @@
       <p>If a relative path is needed, pass in the <code>relative</code> flag. </p>
       <demo-snippet>
         <template>
-            <p>See more about <auro-hyperlink relative href="/about">Alaska Airlines</auro-hyperlink> in this link. </p>
-            <p>See more about <auro-hyperlink relative href="/about" target="_blank">Alaska Airlines</auro-hyperlink> in this link. </p>
+            <p>See more about <auro-hyperlink relative href="/route-map">Alaska Airlines</auro-hyperlink> in this link. </p>
+            <p>See more about <auro-hyperlink relative href="/route-map" target="_blank">Alaska Airlines</auro-hyperlink> in this link. </p>
+            <p>See more about <auro-hyperlink href="/route-map" target="_blank">Alaska Airlines</auro-hyperlink> in this link. </p>
+            <p>See more about <auro-hyperlink href="https://www.delta.com/content/dam/delta-www/pdfs/route-maps/us-route-map.pdf" target="_blank">Delta Airlines</auro-hyperlink> in this link. </p>
           </template>
       </demo-snippet>
 
@@ -227,16 +244,6 @@
           <a class="ods-roleButton" tabindex="0" role="button">Cancel</a>
         </template>
       </demo-snippet>
-
-      <h2>Element &#60;ods-hyperlink&#62;</h2>
-
-      <pre><code>class OdsHyperlink extends LitElement</code></pre>
-
-      <h3>Styling:</h3>
-      <p>No custom styling options</p>
-
-      <h3>Responsive state:</h3>
-      <p>Supports natural responsivness of text</p>
     </div>
   </body>
 </html>

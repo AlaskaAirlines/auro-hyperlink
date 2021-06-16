@@ -48,8 +48,7 @@ export default class ComponentBase extends LitElement {
       relative:         { type: Boolean },
       secondary:        { type: Boolean },
       nav:              { type: Boolean },
-      ondark:           { type: Boolean },
-      noexit:           { type: Boolean }
+      ondark:           { type: Boolean }
     };
   }
 
@@ -59,7 +58,7 @@ export default class ComponentBase extends LitElement {
 
       switch (url.protocol) {
         case 'javascript:': // eslint-disable-line
-          return undefined;
+          return '';
 
         case 'tel:':
           return href;
@@ -98,9 +97,10 @@ export default class ComponentBase extends LitElement {
   }
 
   targetIcon(target) {
-    if (target === '_blank' && this.noexit) {
+
+    if (target === '_blank' && this.safeUri.includes('alaskaair.com')) {
       return this.generateIconHtml(newWindow.svg);
-    } else if (target === '_blank' && !this.noexit) {
+    } else if (target === '_blank' && this.includesDomain) {
       return this.generateIconHtml(externalLink.svg);
     }
 
@@ -112,7 +112,7 @@ export default class ComponentBase extends LitElement {
   }
 
   getReltype(target, rel) {
-    if (target === '_blank') {
+    if (target === '_blank' && this.includesDomain) {
       return 'noopener noreferrer';
     } else if (rel) {
       return rel;
@@ -151,7 +151,6 @@ export default class ComponentBase extends LitElement {
   render() {
     return html`
       ${this.getButtonStyles()}
-
       ${this.getMarkup()}
     `;
   }
