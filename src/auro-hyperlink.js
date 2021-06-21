@@ -13,14 +13,6 @@ import styleCss from "./style-css.js";
 
 // build the component class
 class AuroHyperlink extends ComponentBase {
-
-  constructor() {
-    super();
-
-    this.safeUri = '';
-    this.includesDomain = false;
-  }
-
   // function to define props used within the scope of this component
   static get properties() {
     return {
@@ -36,11 +28,6 @@ class AuroHyperlink extends ComponentBase {
   }
 
   getMarkup() {
-    if (this.href) {
-      this.safeUri = this.safeUrl(this.href, this.relative);
-      this.includesDomain = this.safeUri.includes('http');
-    }
-
     const classes = {
       'hyperlink': this.safeUri || this.role,
       'hyperlink--nav': this.nav,

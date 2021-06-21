@@ -52,6 +52,14 @@ export default class ComponentBase extends LitElement {
     };
   }
 
+  get safeUri() {
+    return this.href ? this.safeUrl(this.href, this.relative) : '';
+  }
+
+  get includesDomain() {
+    return this.href ? this.safeUri.includes('http') : false;
+  }
+
   safeUrl(href, relative) {
     if (href !== undefined) {
       const url = new URL(href, 'https://www.alaskaair.com');
