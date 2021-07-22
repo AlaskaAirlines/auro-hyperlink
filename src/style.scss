@@ -16,20 +16,23 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
 
 // Import Auro Sass variables
-// Dependency reauired to process variables from Icons
+// Dependency required to process variables from Icons
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 // Import tokens selectors
 @import "./node_modules/@alaskaairux/icons/dist/icons";
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element ouside the scope of this component
+// never define layout that would cause effect on element outside the scope of this component
+
+:host {
+  display: inline-block;
+}
 
 // component shape styles
 .hyperlink {
   @include auro_transition(all, 0.15s, ease);
 
   color: var(--auro-color-ui-default-on-light);
-  padding: 0;
   text-decoration: underline;
 
   &:visited {
