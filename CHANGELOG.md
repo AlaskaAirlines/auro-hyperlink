@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.4.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.4.0...v2.4.1) (2021-07-27)
+
+
+### Bug Fixes
+
+* **spacing:** update custom element shape to be inline-block [#67](https://github.com/AlaskaAirlines/auro-hyperlink/issues/67) ([866b5cc](https://github.com/AlaskaAirlines/auro-hyperlink/commit/866b5cca6255e0ef37639883cb2d5ca27a4dcae2))
+
 # [2.4.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.3.0...v2.4.0) (2021-06-22)
 
 
