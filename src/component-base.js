@@ -15,6 +15,12 @@ export default class ComponentBase extends LitElement {
     super();
     this.ariapressed = 'false';
     this.tabisactive = 'false';
+    this.cta = false;
+    this.download = false;
+    this.relative = false;
+    this.secondary = false;
+    this.nav = false;
+    this.ondark = false;
 
     /*
       If the component requires a touch detection,
