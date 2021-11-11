@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "@aurodesignsystem/eslint-config"
+  ],
+  "rules": {
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [0, 1, 13, 32],
+        "ignoreArrayIndexes": true
+      }
+    ]
+  }
+}

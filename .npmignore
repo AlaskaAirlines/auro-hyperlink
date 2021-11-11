@@ -1,15 +1,21 @@
 # standard ignore
+*config*
+*conf*
+
+.github/
 .gitignore
+.eslintrc
 .stylelintrc
-.travis.yml
-demo/
-gulpfile.js
-index.html
-polymer.json
+
+coverage/
+docs/
 scripts/
 test/
+demo/**/*.css
+demo/**/*.scss
+demo/**/*.html
+
+index.html
 
 # ignore src
 src/**/*
-
-# overrides

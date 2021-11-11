@@ -13,14 +13,21 @@ import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window_es6.js
 export default class ComponentBase extends LitElement {
   constructor() {
     super();
-    this.ariapressed = 'false';
-    this.tabisactive = 'false';
-    this.cta = false;
+
     this.download = false;
     this.relative = false;
     this.secondary = false;
-    this.nav = false;
     this.ondark = false;
+
+    /**
+     * @private
+     */
+    this.ariapressed = 'false';
+
+    /**
+     * @private
+     */
+    this.tabisactive = 'false';
 
     /*
       If the component requires a touch detection,
@@ -49,23 +56,36 @@ export default class ComponentBase extends LitElement {
       rel:              { type: String },
       role:             { type: String },
       target:           { type: String },
-      cta:              { type: Boolean },
       download:         { type: Boolean },
       relative:         { type: Boolean },
       secondary:        { type: Boolean },
-      nav:              { type: Boolean },
-      ondark:           { type: Boolean }
+      ondark:           { type: Boolean },
+      type:             { type: String }
     };
   }
 
+  /**
+   * @private
+   * @returns {string} Cleaned URL.
+   */
   get safeUri() {
     return this.href ? this.safeUrl(this.href, this.relative) : '';
   }
 
+  /**
+   * @private
+   * @returns {boolean} Whether or not URL includes protocol.
+   */
   get includesDomain() {
     return this.href ? this.safeUri.includes('http') : false;
   }
 
+  /**
+   * @private
+   * @param {string} href - Include href value.
+   * @param {boolean} relative - Include relative value.
+   * @returns {string} URL definition.
+   */
   safeUrl(href, relative) {
     if (href !== undefined) {
       const url = new URL(href, 'https://www.alaskaair.com');
@@ -99,17 +119,23 @@ export default class ComponentBase extends LitElement {
   }
 
   /**
-   * @private Internal function to generate the HTML for the icon to use
-   * @param {string} svgContent - The imported svg icon
-   * @returns {TemplateResult} - The html template for the icon
+   * Internal function to generate the HTML for the icon to use.
+   * @private
+   * @param {string} svgContent - The imported svg icon.
+   * @returns {string} - The html template for the icon.
    */
-   generateIconHtml(svgContent) {
+  generateIconHtml(svgContent) {
     const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
       svg = dom.body.firstChild;
 
     return svg;
   }
 
+  /**
+   * @private
+   * @param {string} target - Link destination target.
+   * @returns {string} Correct icon.
+   */
   targetIcon(target) {
 
     if (target === '_blank' && this.safeUri.includes('alaskaair.com')) {
@@ -121,10 +147,21 @@ export default class ComponentBase extends LitElement {
     return undefined;
   }
 
+  /**
+   * @private
+   * @param {boolean} tabisactive - Tab state.
+   * @returns {string} CSS class for active state.
+   */
   getTabState(tabisactive) {
     return tabisactive === true ? "is-active" : '';
   }
 
+  /**
+   * @private
+   * @param {string} target - Link destination target.
+   * @param {string} rel - Defined rel option.
+   * @returns {string} SEO security options.
+   */
   getReltype(target, rel) {
     if (target === '_blank' && this.includesDomain) {
       return 'noopener noreferrer';
@@ -135,6 +172,11 @@ export default class ComponentBase extends LitElement {
     return undefined;
   }
 
+  /**
+   * @private
+   * @param {boolean} ariapressed - Aria state.
+   * @returns {string} Aria attribute definition.
+   */
   ariaPressedState(ariapressed) {
     const ariaToggle = function (event) {
       const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
@@ -164,7 +206,6 @@ export default class ComponentBase extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-      ${this.getButtonStyles()}
       ${this.getMarkup()}
     `;
   }
