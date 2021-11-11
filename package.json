@@ -3,109 +3,88 @@
     "================================================================================",
     "# To work within the development environment, run the following tasks",
     "  1. $ npm run dev",
-    "  2. $ npm run serve",
-    "  3. Go to http://localhost:8000",
+    "  2. Go to http://localhost:8000",
     "================================================================================"
   ],
-  "name": "@alaskaairux/auro-hyperlink",
-  "version": "2.4.3",
-  "description": "Auro Design System hyperlink element",
-  "author": "Product design and research",
+  "name": "@aurodesignsystem/auro-hyperlink",
+  "version": "0.0.0",
+  "description": "auro-hyperlink HTML custom element",
   "repository": {
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/auro-hyperlink"
   },
   "main": "index.js",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14.17.6"
+  },
   "dependencies": {
-    "@alaskaairux/icons": "^4.8.4",
-    "chalk": "^3.0.0",
-    "lit-element": "^2.5.1"
+    "chalk": "^4.1.2",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.0.0"
   },
   "peerDependencies": {
-    "@alaskaairux/orion-design-tokens": "^2.12.1",
-    "@alaskaairux/orion-web-core-style-sheets": "^2.10.2",
-    "@webcomponents/webcomponentsjs": "^2.4.0",
-    "focus-visible": "^5.0.2"
+    "@alaskaairux/design-tokens": "^3.4.0",
+    "@alaskaairux/icons": "^4.8.4",
+    "@alaskaairux/webcorestylesheets": "^3.7.2",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "focus-visible": "^5.2.0"
   },
   "devDependencies": {
-    "@alaskaairux/orion-design-tokens": "^2.12.3",
-    "@alaskaairux/orion-web-core-style-sheets": "^2.12.2",
-    "@babel/core": "^7.15.5",
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "@babel/preset-env": "^7.15.6",
-    "@babel/runtime": "^7.15.4",
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@polymer/iron-demo-helpers": "^3.1.0",
-    "@polymer/iron-icons": "^3.0.1",
-    "@polymer/test-fixture": "^4.0.2",
-    "@rollup/plugin-alias": "^3.1.5",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
-    "@semantic-release/changelog": "^3.0.6",
-    "@semantic-release/git": "^7.0.18",
-    "@semantic-release/npm": "^5.3.4",
-    "@web/dev-server": "^0.1.24",
+    "@alaskaairux/design-tokens": "^3.4.0",
+    "@alaskaairux/icons": "^4.9.1",
+    "@alaskaairux/webcorestylesheets": "^3.7.2",
+    "@aurodesignsystem/eslint-config": "^1.2.0",
+    "@babel/eslint-parser": "^7.15.8",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@open-wc/testing": "^3.0.3",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^8.0.3",
+    "@web/dev-server": "^0.1.28",
+    "@web/test-runner": "^0.13.22",
     "@webcomponents/webcomponentsjs": "^2.6.0",
-    "autoprefixer": "^9.8.7",
-    "babel-loader": "^8.2.2",
-    "chai": "^4.3.4",
+    "autoprefixer": "^10.4.0",
+    "compression": "^1.7.4",
     "concat": "^1.0.3",
+    "concurrently": "^6.4.0",
     "copyfiles": "^2.4.1",
-    "css-byebye": "^2.0.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-lit": "^1.5.1",
+    "core-js": "^3.19.1",
+    "eslint": "^8.3.0",
+    "eslint-plugin-jsdoc": "^37.0.3",
     "focus-visible": "^5.2.0",
-    "husky": "^4.3.8",
-    "jsonlint": "^1.6.3",
-    "lodash": "^4.17.20",
-    "mocha": "^7.2.0",
+    "fs-extra": "^10.0.0",
+    "husky": "^7.0.0",
+    "lodash": "^4.17.21",
+    "markdown-magic": "^2.5.2",
+    "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.10.0",
-    "postcss": "^8.3.8",
-    "postcss-custom-properties": "^9.2.0",
-    "postcss-discard-comments": "^4.0.2",
+    "postcss": "^8.4.1",
+    "postcss-custom-properties": "^12.0.0",
+    "postcss-discard-comments": "^5.0.1",
+    "postcss-rem-to-pixel": "^4.1.2",
     "postcss-remove-rules": "^1.0.0",
-    "postcss-remove-selectors": "^2.0.1",
     "postcss-selector-replace": "^1.0.2",
-    "rollup": "^2.57.0",
+    "prismjs": "^1.25.0",
+    "rollup": "^2.60.1",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "semantic-release": "^17.4.7",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^20.0.0",
-    "wc-sass-render": "^1.2.1",
-    "wct-mocha": "^1.1.0",
-    "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2"
-  },
-  "watch": {
-    "": "./src/*.json",
-    "sassRender:watch": ".src/**/*.scss"
-  },
-  "scripts": {
-    "build": "npm run ciBuild",
-    "bundler": "rollup -c",
-    "bundle:test": "rollup -c -w",
-    "serve": "web-dev-server --open demo/ --node-resolve --watch",
-    "postinstall": "node packageScripts/postinstall.js",
-    "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall",
-    "cssLint": "stylelint \"./src/*.css\"",
-    "dev": "npm run sassBuild:watch",
-    "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
-    "sassRender": "sass-render src/*.css",
-    "sweep": "rm -rf ./temp ./demo/css ./dist | rm ./src/*.css ./src/*-css.js",
-    "esLint": "./node_modules/.bin/eslint src/*.js",
-    "test": "npm-run-all esLint cssLint",
-    "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
-    "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
-    "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
-    "sassBuild:component": "node-sass ./src/ --output ./src/",
-    "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
-    "postCss:component": "node ./scripts/postCss.js"
+    "sass": "^1.43.5",
+    "semantic-release": "^18.0.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.0.0",
+    "wc-sass-render": "^1.4.0",
+    "web-component-analyzer": "^1.1.6",
+    "whatwg-fetch": "^3.6.2",
+    "yaml-lint": "^1.2.4"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -115,14 +94,16 @@
     "last 2 Edge versions",
     "last 2 Safari major versions"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm-run-all test bundler postinstall",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "nodemonConfig": {
+    "ignore": [
+      "*-css.js",
+      "*.css"
+    ]
   },
   "release": {
-    "branch": "master",
+    "branches": [
+      "main"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -138,36 +119,51 @@
         "@semantic-release/git",
         {
           "assets": [
+            "./package.json",
             "./CHANGELOG.md",
-            "package.json"
+            "./README.md",
+            "./docs/api.md",
+            "./demo/demo.md"
           ]
         }
       ],
       "@semantic-release/github"
     ]
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "publishConfig": {
     "access": "public"
   },
-  "contributors": [
-    {
-      "name": "Dale Sande",
-      "email": "dale.sande@alaskaair.com"
-    },
-    {
-      "name": "Kevin Sonnichsen",
-      "email": "Kevin.Sonnichsen@alaskaair.com"
-    }
-  ],
   "keywords": [
     "alaska airlines",
-    "auro design system",
-    "web components",
-    "hyperlink"
-  ]
+    "auro",
+    "design system",
+    "web components"
+  ],
+  "scripts": {
+    "build": "npm-run-all build:sass sass:render dist:js build:api test build:markdownDocs bundler postinstall",
+    "build:api": "wca analyze 'src/auro-hyperlink.js' --outFiles docs/api.md",
+    "build:demo": "node ./scripts/prepForBuild",
+    "build:dev:assets": "npm-run-all build:sass:demo build:sass:component postCss:component sass:render build:markdownDocs",
+    "build:markdownDocs": "node scripts/generateDocs.js",
+    "build:sass": "npm-run-all build:sass:demo build:sass:component postCss:component sass:render",
+    "build:sass:demo": "sass --no-source-map demo:demo",
+    "build:sass:component": "sass --no-source-map src:src",
+    "build:watch": "nodemon -e scss,js --watch src --exec npm run build:dev:assets",
+    "bundler": "rollup -c",
+    "bundler:test": "rollup -c -w",
+    "dev": "concurrently --kill-others 'npm run build:watch' 'npm run serve'",
+    "dist:js": "copyfiles -u 1 -V './src/**/*.js' ./dist",
+    "esLint": "./node_modules/.bin/eslint src/**/*.js",
+    "linters": "npm-run-all scssLint esLint",
+    "preCommit": "node scripts/pre-commit.js",
+    "postCss:component": "node ./scripts/postCss.js",
+    "postinstall": "node packageScripts/postinstall.js",
+    "sass:render": "sass-render src/*.css -t ./scripts/staticStyles-template.js",
+    "scssLint": "stylelint \"./src/**/*.scss\"",
+    "serve": "web-dev-server --open demo/ --node-resolve --watch",
+    "sweep": "rm -rf ./demo/css ./dist | rm ./src/*.css ./src/*-css.js",
+    "test": "wtr --coverage",
+    "test:watch": "wtr --watch",
+    "prepare": "husky install"
+  }
 }

@@ -1,17 +1,19 @@
 /**
- * https://github.com/WICG/focus-visible#shadow-dom
- * @returns {Boolean} whether the focus-visible polyfill is available
+ * See https://github.com/WICG/focus-visible#shadow-dom for additional info.
+ * @private
+ * @returns {Boolean} Whether the focus-visible polyfill is available.
  */
 const isFocusVisiblePolyfillAvailable = function() {
   // eslint-disable-next-line
   return window.applyFocusVisiblePolyfill != null;
-},
+};
 
 
 /**
- * @returns {Boolean} whether :focus-visible is supported
+ * @private
+ * @returns {Boolean} Whether :focus-visible is supported.
  */
-isFocusVisibleSupported = function() {
+const isFocusVisibleSupported = function() {
   try {
     document.querySelector(':focus-visible');
   } catch (error) {
