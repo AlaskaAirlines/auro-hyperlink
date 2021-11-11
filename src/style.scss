@@ -6,23 +6,28 @@
 // Creates ods-hyperlink CSS UI definition of shape
 
 // Import Auro CSS Properties as Sass file
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
+// @import "./../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
+
+@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties.scss';
 
 // general WCSS imports
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+@import './../node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints';
+@import './../node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/focusVisible';
+@import './../node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/anchor-roleButton';
+@import './../node_modules/@alaskaairux/webcorestylesheets/dist/core';
+@import './../node_modules/@alaskaairux/webcorestylesheets/dist/animation';
 
 // Import Auro Sass variables
 // Dependency required to process variables from Icons
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+
 // Import tokens selectors
-@import "./node_modules/@alaskaairux/icons/dist/icons";
+@import './../node_modules/@alaskaairux/icons/dist/icons';
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
+
+/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class */
 
 :host {
   display: inline-block;
@@ -30,7 +35,7 @@
 
 // component shape styles
 .hyperlink {
-  @include auro_transition(all, 0.15s, ease);
+  @include auro_transition(all, .15s, ease);
 
   color: var(--auro-color-ui-default-on-light);
   text-decoration: underline;
@@ -55,7 +60,7 @@
 
     &--nav {
       &:hover {
-        text-decoration: underline
+        text-decoration: underline;
       }
     }
 
@@ -71,35 +76,35 @@
   }
 
   &--nav {
-    text-decoration: none;
     display: block;
+    text-decoration: none;
   }
 
   &--cta {
     @include auro_anchorButton(css, component, block);
 
-    color: var(--auro-color-text-primary-on-dark);
-    background-color: var(--auro-color-ui-default-on-light);
     border: 1px solid var(--auro-color-ui-default-on-light);
+    background-color: var(--auro-color-ui-default-on-light);
     border-radius: var(--auro-border-radius);
+    color: var(--auro-color-text-primary-on-dark);
     font-family: var(--auro-font-family-default);
     font-size: var(--auro-text-body-size-default);
     font-weight: var(--auro-text-body-default-weight);
-    text-align: center;
 
     // override from common button height
     line-height: calc((var(--auro-size-xxl)) + ((var(--auro-size-xs)) - (var(--auro-size-xxxs))));
+    text-align: center;
 
     &:active {
-      transform: scale(0.95);
+      transform: scale(.95);
     }
 
     // update to media query when ods-hyperlink support is removed
     :host(:not(.is-touching)) & {
       &:hover {
-        color: var(--auro-color-text-primary-on-dark);
-        background-color: var(--auro-color-ui-hover-on-light);
         border: 1px solid var(--auro-color-ui-hover-on-light);
+        background-color: var(--auro-color-ui-hover-on-light);
+        color: var(--auro-color-text-primary-on-dark);
         text-decoration: none;
       }
     }
@@ -114,50 +119,53 @@
     }
 
     &.hyperlink--secondary {
-      background-color: var(--auro-color-background-lightest);
       border: 1px solid var(--auro-color-ui-default-on-light);
+      background-color: var(--auro-color-background-lightest);
       color: var(--auro-color-text-link-on-light);
 
       // update to media query when ods-hyperlink support is removed
       :host(:not(.is-touching)) & {
         &:hover {
-          background-color: var(--auro-color-background-lighter);
           border: 1px solid var(--auro-color-ui-default-on-light);
+          background-color: var(--auro-color-background-lighter);
           color: var(--auro-color-text-link-on-light);
         }
       }
 
       &.hyperlink--ondark {
-        background-color: transparent;
         border: 1px solid var(--auro-color-ui-default-on-dark);
+        background-color: transparent;
         color: var(--auro-color-ui-default-on-dark);
 
         // update to media query when ods-hyperlink support is removed
         :host(:not(.is-touching)) & {
           &:hover {
-            background-color: var(--auro-color-base-black-opacity-15);
             border: 1px solid var(--auro-color-ui-default-on-dark);
+            background-color: var(--auro-color-base-black-opacity-15);
             color: var(--auro-color-ui-default-on-dark);
           }
+
           &:visited {
             color: var(--auro-color-ui-default-on-dark);
           }
         }
       }
     }
+
     // CTA ondark
     &.hyperlink--ondark {
-      background-color: var(--auro-color-ui-default-on-dark);
       border: 1px solid var(--auro-color-ui-default-on-dark);
+      background-color: var(--auro-color-ui-default-on-dark);
       color: var(--auro-color-text-primary-on-light);
 
       // update to media query when ods-hyperlink support is removed
       :host(:not(.is-touching)) & {
         &:hover {
-          background-color: var(--auro-color-ui-hover-on-dark);
           border: 1px solid var(--auro-color-ui-hover-on-dark);
+          background-color: var(--auro-color-ui-hover-on-dark);
           color: var(--auro-color-text-primary-on-light);
         }
+
         &:visited {
           color: var(--auro-color-text-primary-on-light);
         }
@@ -175,12 +183,10 @@
 }
 
 svg {
-  margin-left: var(--auro-size-xxxs);
+  // reset token value for localized use
+  --auro-size-lg: 1rem;
+
   position: relative;
   top: 2px;
-}
-
-// reset token value for localized use
-svg {
-  --auro-size-lg: 1rem;
+  margin-left: var(--auro-size-xxxs);
 }

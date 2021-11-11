@@ -10,6 +10,22 @@ import ComponentBase from './component-base';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
+import styleCssFixed from './style-fixed-css.js';
+
+// See https://git.io/JJ6SJ for "How to document your components using JSDoc"
+/**
+ * `<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
+ *
+ * @attr {Boolean} download - Specifies that the target will be downloaded when a user clicks on the hyperlink.
+ * @attr {Boolean} ondark - Specifies dark theme use of hyperlink.
+ * @attr {Boolean} relative - Add flag to disable auto URL re-write feature.
+ * @attr {Boolean} secondary - Modifier for `type="cta"` secondary UI option.
+ * @attr {String} rel - Specifies the relationship between the current document and the linked document.
+ * @attr {String} role - Use for aria roles; currently supports `button` for extended experiences.
+ * @attr {String} href - Specifies the URL of the page link.
+ * @attr {String} target - Specifies where to open the linked document.
+ * @attr {String} type - Enumerable attribute; [`nav`, `cta`]
+ */
 
 // build the component class
 class AuroHyperlink extends ComponentBase {
@@ -20,20 +36,24 @@ class AuroHyperlink extends ComponentBase {
     };
   }
 
-  // Adds styles for light DOM element; styles not defined in base class
-  getButtonStyles() {
-    return html`
-      ${styleCss}
-    `;
+  static get styles() {
+    return [
+      styleCss,
+      styleCssFixed
+    ];
   }
 
+  /**
+   * @private
+   * @returns {object} Classes object.
+   */
   getMarkup() {
     const classes = {
       'hyperlink': this.safeUri || this.role,
-      'hyperlink--nav': this.nav,
+      'hyperlink--nav': this.type === 'nav',
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role,
-      'hyperlink--cta': this.cta,
+      'hyperlink--cta': this.type === 'cta',
       'hyperlink--secondary': this.secondary
     };
 

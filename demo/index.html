@@ -1,256 +1,52 @@
+<!--
+  Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+  See LICENSE in the project root for license information.
+
+  HTML in this document is standardized and NOT to be edited.
+  All demo code should be added/edited in ./demo/demo.md
+
+  With the exception of adding custom elements if needed for the demo.
+
+  ----------------------- DO NOT EDIT -----------------------------
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auro Web Component Generator | auro-hyperlink custom element</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/prismjs@1.24.1/themes/prism.css"
     />
-    <title>Auro Design System | auro-hyperlink element</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/demoWrapper.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/elementDemoStyles.css" />
+  </head>
+  <body class="auro-markdown">
+    <main></main>
+
     <script type="module">
-      import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
-      import "@polymer/iron-demo-helpers/demo-snippet";
+      import 'https://unpkg.com/marked@latest/marked.min.js';
+      import 'https://unpkg.com/prismjs@latest/prism.js';
+      fetch('/demo/demo.md')
+        .then((response) => response.text())
+        .then((text) => {
+          const rawHtml = marked.parse(text);
+          document.querySelector('main').innerHTML = rawHtml;
+          Prism.highlightAll();
+        });
     </script>
     <script type="module" src="../src/auro-hyperlink.js"></script>
-    <script src="../demo/alert.js"></script>
-    <script type="module">
-      import '../node_modules/@polymer/iron-icons/hardware-icons.js';
-    </script>
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
-    </custom-style>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
-    <div class="vertical-section-container">
-      <h1>ods-hyperlink</h1>
+    <!-- If additional elements are needed for the demo, add them here. -->
+    <script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
 
-      <p>Component description ...</p>
-
-      <p class='ironIcons'>
-        <span class='util_floatLeft util_marginRight--med'>Narrow
-          <iron-icon class='util_marginAuto util_displayBlock' icon="hardware:phone-iphone"></iron-icon>
-        </span>
-        <span class='util_is-narrowAppears util_floatLeft util_marginRight--med'>Medium
-          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet-android'></iron-icon>
-        </span>
-        <span class='util_is-tabletAppears util_floatLeft util_marginRight--med'>Wide
-          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet'></iron-icon>
-        </span>
-        <span class='util_is-desktopOnly util_floatLeft util_marginRight--med'>Max
-          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tv'></iron-icon>
-        </span>
-      </p>
-
-      <h3>auro-hyperlink examples</h3>
-
-      <p>Ddefault link</p>
-      <demo-snippet>
-        <template>
-            This is a <auro-hyperlink href="//www.apple.com">link</auro-hyperlink>. How do I look?
-          </template>
-      </demo-snippet>
-
-      <p>Telephone link</p>
-      <demo-snippet>
-        <template>
-            <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>, or
-            <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>, or
-            <auro-hyperlink href="ftp://somewhere.on.the.internet">ftp link</auro-hyperlink>
-          </template>
-      </demo-snippet>
-
-      <p>Without either href or role=button, hyperlink appears as text.</p>
-      <demo-snippet>
-        <template>
-            <auro-hyperlink>Alaska Airlines</auro-hyperlink>
-          </template>
-      </demo-snippet>
-
-      <p>Auro hyperlink style will have underline when used within text, this is the default state</p>
-      <demo-snippet>
-        <template>
-            <p>See more about <auro-hyperlink target="_blank" href="https://www.alaskaair.com/en/?lid=nav:explore-destinations&int=AS_NAV_Explore_Destinations_-prodID:Destinations">Alaska Airlines</auro-hyperlink> in this link.</p>
-            <p>See more about <auro-hyperlink target="_blank" href="https://m.alaskaair.com/">MOW</auro-hyperlink> in this link.</p>
-            <p>See more about <auro-hyperlink target="_blank" href="//www.apple.com">Apple Computers</auro-hyperlink> in this link.</p>
-          </template>
-      </demo-snippet>
-
-      <p>Targeted relative links are NOT supported.</p>
-      <demo-snippet>
-        <template>
-            <p>See more about <auro-hyperlink target="_blank" relative href="/route-map/">Alaska Airlines</auro-hyperlink> in this link.</p>
-          </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <auro-hyperlink role="button" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
-          </template>
-      </demo-snippet>
-
-      <p>auro-hyperlink automatically converts URLs to a full path using the https:// protocol.</p>
-      <demo-snippet>
-        <template>
-            <p>See more about <auro-hyperlink href="/about">Alaska Airlines</auro-hyperlink> in this link. Link returned in the DOM with full path to AS.com and https:// protocol.</p>
-            <p>See more about <auro-hyperlink href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
-            <p>See more about <auro-hyperlink href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
-          </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <p>See more about <auro-hyperlink target="_blank" href="/about">Alaska Airlines</auro-hyperlink> in this link. Link returned in the DOM with full path to AS.com and https:// protocol.</p>
-            <p>See more about <auro-hyperlink target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
-            <p>See more about <auro-hyperlink target="_blank" href="//www.alaskaair.com">Alaska Airlines</auro-hyperlink> in this link. Link returned to the DOM with https:// protocol. </p>
-          </template>
-      </demo-snippet>
-
-      <p>Javascript hrefs are fully ignored.</p>
-      <demo-snippet>
-        <template>
-            <p>See more about <auro-hyperlink href="javascript:my_function();window.print();">Alaska Airlines</auro-hyperlink> in this link. The href attribute is not returned to the DOM.</p>
-          </template>
-      </demo-snippet>
-
-      <p>If a relative path is needed, pass in the <code>relative</code> flag. </p>
-      <demo-snippet>
-        <template>
-            <p>See more about <auro-hyperlink relative href="/route-map">Alaska Airlines</auro-hyperlink> in this link. </p>
-            <p>See more about <auro-hyperlink relative href="/route-map" target="_blank">Alaska Airlines</auro-hyperlink> in this link. </p>
-            <p>See more about <auro-hyperlink href="/route-map" target="_blank">Alaska Airlines</auro-hyperlink> in this link. </p>
-            <p>See more about <auro-hyperlink href="https://www.delta.com/content/dam/delta-www/pdfs/route-maps/us-route-map.pdf" target="_blank">Delta Airlines</auro-hyperlink> in this link. </p>
-          </template>
-      </demo-snippet>
-
-      <p>Auro hyperlink will only have the underline on hover when used with the <code>nav</code> attribute.</p>
-      <demo-snippet>
-        <template>
-            <auro-hyperlink nav href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
-            <auro-hyperlink nav target="_blank" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <p>Hyperlink CTA support</p>
-      <demo-snippet>
-        <template>
-            <auro-hyperlink cta relative href="#">Go to Alaska Airlines!</auro-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <auro-hyperlink secondary cta relative href="#">Go to Alaska Airlines!</auro-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div style="background-color: var(--auro-color-background-darkest)">
-            <auro-hyperlink ondark cta relative href="#">Go to Alaska Airlines!</auro-hyperlink>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div style="background-color: var(--auro-color-background-darkest)">
-            <auro-hyperlink secondary cta relative ondark href="#">Go to Alaska Airlines!</auro-hyperlink>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <p>Auro hyperlink with the <code>ondark</code> attribute.</p>
-      <demo-snippet>
-        <template>
-            <div style="background-color: var(--auro-color-background-darkest); padding: 10px 20px">
-              <auro-hyperlink ondark href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
-            </div>
-        </template>
-      </demo-snippet>
-
-      <p>Auro hyperlink with the <code>nav</code> and <code>ondark</code> attributes.</p>
-      <demo-snippet>
-        <template>
-            <div style="background-color: var(--auro-color-background-darkest); padding: 10px 20px">
-              <auro-hyperlink nav ondark href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
-            </div>
-        </template>
-      </demo-snippet>
-
-      <p>Auro hyperlink with the <code>rel</code> attribute.</p>
-      <demo-snippet>
-        <template>
-            <auro-hyperlink rel="nofollow" href="http://www.alaskaair.com">Alaska Airlines</auro-hyperlink>
-        </template>
-      </demo-snippet>
-
-      <p>Auro hyperlink with the <code>role</code> attribute.</p>
-      <demo-snippet>
-        <template>
-            <auro-hyperlink role="button" ontouchstart="_touchMe(event)" onmousedown="_clickMe(event)" onKeyPress="_keyPress(event)">Cancel</auro-hyperlink>
-
-            <script>
-                function _clickMe(e) {
-                  alert(e);
-                }
-
-                function _touchMe(e) {
-                  alert(e);
-                }
-
-                function _keyPress(e) {
-                  if(event.keyCode === 13) {
-                    e.preventDefault();
-                    alert(event.keyCode);
-                  }
-
-                  if(event.keyCode === 32) {
-                    e.preventDefault();
-                    alert(event.keyCode);
-                  }
-                }
-              </script>
-        </template>
-      </demo-snippet>
-
-     <h3>Standard HTML examples</h3>
-
-      <demo-snippet>
-        <template>
-          <a class="hyperlink" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <a class="hyperlink is-touching" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-          <template>
-            <div style="background-color: var(--color-background-footer); padding: var(--size-scale-lg);">
-              <a class="hyperlink hyperlink--darktheme" href="http://www.alaskaair.com">Go to Alaska Airlines!</a>
-            </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-            <p>
-              These are words with a link to <a class="hyperlink hyperlink--inline" href="http://www.alaskaair.com">Go to Alaska Airlines!</a> and then show more words!
-            </p>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <a class="ods-roleButton" tabindex="0" role="button">Cancel</a>
-        </template>
-      </demo-snippet>
-    </div>
+    <!-- This reference will need to be addressed with the demo wrapper of the hyperlink docsite page-->
+    <script src="./util.js"></script>
   </body>
 </html>
