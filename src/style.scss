@@ -50,6 +50,8 @@
 
   &:focus-visible {
     @include auro_focus-hyperlink(css);
+
+    outline-offset: unset;
   }
 
   @media (hover: hover) {
