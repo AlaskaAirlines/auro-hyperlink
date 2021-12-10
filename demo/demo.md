@@ -8,17 +8,23 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 
 
 <div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/default.html) -->
+  <!-- The below content is automatically added from ./partials/default.html -->
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
   <auro-hyperlink href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/default.html) -->
+  <!-- The below code snippet is automatically added from ./partials/default.html -->
   ```html
-  <auro-hyperlink>No href supplied</auro-hyperlink>
+  <auro-hyperlink>No href supplied</auro-hyperlink><br>
   <auro-hyperlink href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -27,6 +33,8 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain new-window icon versus an icon that communicates users will be taken to a new domain
 
 <div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/external.html) -->
+  <!-- The below content is automatically added from ./partials/external.html -->
   Example link with
   <auro-hyperlink
     target="_blank"
@@ -34,7 +42,7 @@ Hyperlinks when used with the `target="_blank"` attribute are domain aware and r
     external target
   </auro-hyperlink>
   but same domain
-
+  
   <br>
   Example link with
   <auro-hyperlink
@@ -43,11 +51,14 @@ Hyperlinks when used with the `target="_blank"` attribute are domain aware and r
     external target
   </auro-hyperlink>
    with external domain
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/external.html) -->
+  <!-- The below code snippet is automatically added from ./partials/external.html -->
   ```html
   Example link with
   <auro-hyperlink
@@ -56,15 +67,17 @@ Hyperlinks when used with the `target="_blank"` attribute are domain aware and r
     external target
   </auro-hyperlink>
   but same domain
-
+  
+  <br>
   Example link with
   <auro-hyperlink
     target="_blank"
     href="https://www.portseattle.org/sea-tac">
     external target
   </auro-hyperlink>
-  with external domain
+   with external domain
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -73,16 +86,21 @@ Hyperlinks when used with the `target="_blank"` attribute are domain aware and r
 When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
 
 <div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/navStyle.html) -->
+  <!-- The below content is automatically added from ./partials/navStyle.html -->
   <auro-hyperlink
     type="nav"
     href="https://www.alaskaair.com">
     Navigation style link
   </auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/navStyle.html) -->
+  <!-- The below code snippet is automatically added from ./partials/navStyle.html -->
   ```html
   <auro-hyperlink
     type="nav"
@@ -90,6 +108,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
     Navigation style link
   </auro-hyperlink>
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -162,21 +181,25 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 #### Using telephone/text/mailto URLs protocols
 
 <div class="exampleWrapper">
-  <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink> or
-  <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink> or
-  <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/URLscheme.html) -->
+  <!-- The below content is automatically added from ./partials/URLscheme.html -->
+  Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
+  Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
+  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/URLscheme.html) -->
+  <!-- The below code snippet is automatically added from ./partials/URLscheme.html -->
   ```html
-  <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink> or
-
-  <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink> or
-
-  <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>
+  Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
+  Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
+  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -188,29 +211,33 @@ Call to action buttons, or "CTA" buttons are a special use case hybrid hyperlink
 CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
 
 <div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/cta.html) -->
+  <!-- The below content is automatically added from ./partials/cta.html -->
   <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-</div>
-<br>
-<div class="exampleWrapper">
+  
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/cta.html) -->
+  <!-- The below code snippet is automatically added from ./partials/cta.html -->
   ```html
   <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-
+  
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -223,6 +250,8 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 **Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
 
 <div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/roleButton.html) -->
+  <!-- The below content is automatically added from ./partials/roleButton.html -->
   <auro-hyperlink
     href="http://www.alaskaair.com"
     role="button"
@@ -230,11 +259,14 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
     onKeyDown="handleKeyPress(event)">
     Cancel button
   </auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/roleButton.html) -->
+  <!-- The below code snippet is automatically added from ./partials/roleButton.html -->
   ```html
   <auro-hyperlink
     href="http://www.alaskaair.com"
@@ -244,6 +276,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
     Cancel button
   </auro-hyperlink>
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
   <!-- AURO-GENERATED-CONTENT:START (CODE:src=./util.js) -->
   <!-- The below code snippet is automatically added from ./util.js -->
@@ -251,7 +284,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
   function sayHello() {
     alert('Hello, you clicked the button!');
   }
-
+  
   function handleKeyPress(event) {
     if(event.keyCode === 13) {
       event.preventDefault();
@@ -274,30 +307,36 @@ Auro's hyperlink element can be used in many creative ways in combination with o
 The `auro-icon` element comes with some pre-defined opinions, but these are easily overwritten by binding CSS directly to the custom element itself. Remember to also use the `customColor` attribute with `auro-icon` so that the SVG will inherit the link and hover colors of the hyperlink.
 
 <div class="exampleWrapper" style="display: flex; justify-content: space-between;">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/navPattern.html) -->
+  <!-- The below content is automatically added from ./partials/navPattern.html -->
   <auro-hyperlink href="/last" type="nav">
     <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
     Click here to go back
   </auro-hyperlink>
-
+  
   <auro-hyperlink href="/next" type="nav">
     Click here to go forward
     <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
   </auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/navPattern.html) -->
+  <!-- The below code snippet is automatically added from ./partials/navPattern.html -->
   ```html
-  <auro-hyperlink href="/" type="nav">
+  <auro-hyperlink href="/last" type="nav">
     <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
     Click here to go back
   </auro-hyperlink>
-
-  <auro-hyperlink href="/" type="nav">
+  
+  <auro-hyperlink href="/next" type="nav">
     Click here to go forward
     <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
   </auro-hyperlink>
   ```
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
