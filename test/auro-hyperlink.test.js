@@ -25,6 +25,16 @@ describe('auro-hyperlink', () => {
     expect(anchor).not.to.have.attribute('href');
   });
 
+  it('auro-hyperlink is mailto', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+
+    expect(anchor).to.have.attribute('href', 'mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email');
+  });
+
   it('auro-hyperlink is tel', async () => {
     const el = await fixture(html`
       <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>
