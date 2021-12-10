@@ -100,6 +100,9 @@ export default class ComponentBase extends LitElement {
         case 'sms:':
           return href;
 
+        case 'mailto:':
+          return href;
+
         default:
           if (!relative) {
             url.protocol = 'https:';

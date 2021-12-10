@@ -159,6 +159,27 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 
 </auro-accordion>
 
+#### Using telephone/text/mailto URLs protocols
+
+<div class="exampleWrapper">
+  <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink> or
+  <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink> or
+  <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink> or
+
+  <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink> or
+
+  <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>
+  ```
+
+</auro-accordion>
+
 
 ## Call to action buttons
 
@@ -230,7 +251,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
   function sayHello() {
     alert('Hello, you clicked the button!');
   }
-  
+
   function handleKeyPress(event) {
     if(event.keyCode === 13) {
       event.preventDefault();
