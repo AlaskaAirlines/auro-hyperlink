@@ -2,6 +2,8 @@
 *config*
 *conf*
 
+apiExamples/
+demo/partials/
 .github/
 .gitignore
 .eslintrc
