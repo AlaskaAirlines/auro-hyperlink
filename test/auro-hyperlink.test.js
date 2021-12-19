@@ -84,17 +84,18 @@ describe('auro-hyperlink', () => {
     expect(el).not.to.have.shadowDom;
   });
 
-  it('auro-hyperlink is target _blank', async () => {
+  it('auro-hyperlink has no rel', async () => {
     const el = await fixture(html`
-      <auro-hyperlink href="/auro" target="_blank">It's Auro!</auro-hyperlink>
+      <auro-hyperlink href="https://www.alaskaair.com" target="_blank">It's Auro!</auro-hyperlink>
     `);
 
     const anchor = el.shadowRoot.querySelector('a');
 
-    expect(anchor).to.have.attribute('rel', 'noopener noreferrer');
+    expect(anchor).not.to.have.attribute('rel');
+    expect(anchor).not.to.have.attribute('referrerpolicy');
   });
 
-  it('auro-hyperlink is external target _blank', async () => {
+  it('auro-hyperlink rel = noopener noreferrer', async () => {
     const el = await fixture(html`
       <auro-hyperlink href="https://www.apple.com" target="_blank">It's Auro!</auro-hyperlink>
     `);
@@ -102,9 +103,10 @@ describe('auro-hyperlink', () => {
     const anchor = el.shadowRoot.querySelector('a');
 
     expect(anchor).to.have.attribute('rel', 'noopener noreferrer');
+    expect(anchor).not.to.have.attribute('referrerpolicy');
   });
 
-  it('auro-hyperlink is pre-defined rel', async () => {
+  it('auro-hyperlink has custom rel', async () => {
     const el = await fixture(html`
       <auro-hyperlink href="/auro" rel="hyperlink">It's Auro!</auro-hyperlink>
     `);
@@ -112,6 +114,18 @@ describe('auro-hyperlink', () => {
     const anchor = el.shadowRoot.querySelector('a');
 
     expect(anchor).to.have.attribute('rel', 'hyperlink');
+    expect(anchor).not.to.have.attribute('referrerpolicy');
+  });
+
+  it('auro-hyperlink rel = external && default referrerpolicy', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.apple.com" referrerpolicy target="_blank">It's Apple!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+
+    expect(anchor).to.have.attribute('rel', 'external');
+    expect(anchor).to.have.attribute('referrerpolicy', 'strict-origin-when-cross-origin');
   });
 
   it('auro-hyperlink custom element is defined', async () => {

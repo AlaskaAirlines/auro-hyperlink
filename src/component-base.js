@@ -18,6 +18,7 @@ export default class ComponentBase extends LitElement {
     this.relative = false;
     this.secondary = false;
     this.ondark = false;
+    this.defaultreferrerpolicy = 'strict-origin-when-cross-origin';
 
     /**
      * @private
@@ -60,7 +61,8 @@ export default class ComponentBase extends LitElement {
       relative:         { type: Boolean },
       secondary:        { type: Boolean },
       ondark:           { type: Boolean },
-      type:             { type: String }
+      type:             { type: String },
+      referrerpolicy:   { type: Boolean }
     };
   }
 
@@ -166,10 +168,21 @@ export default class ComponentBase extends LitElement {
    * @returns {string} SEO security options.
    */
   getReltype(target, rel) {
-    if (target === '_blank' && this.includesDomain) {
-      return 'noopener noreferrer';
-    } else if (rel) {
+
+    if (rel) {
       return rel;
+    }
+
+    if (target === '_blank' && this.safeUri.includes('alaskaair.com')) {
+      return rel;
+    }
+
+    if (target === '_blank' && this.includesDomain && !this.rel && !this.referrerpolicy) {
+      return 'noopener noreferrer';
+    }
+
+    if (target === '_blank' && this.referrerpolicy) {
+      return 'external';
     }
 
     return undefined;
