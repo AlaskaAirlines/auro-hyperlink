@@ -30,7 +30,9 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 
 ## External links
 
-Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain new-window icon versus an icon that communicates users will be taken to a new domain
+Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain new-window icon versus an icon that communicates users will be taken to a new domain.
+
+For link security purposaes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/external.html) -->
@@ -76,6 +78,47 @@ Hyperlinks when used with the `target="_blank"` attribute are domain aware and r
     external target
   </auro-hyperlink>
    with external domain
+  ```
+  <!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### External links with referrerpolicy
+
+When using the `target="_blank"` attribute, to override the default use of `rel="noreferrer"` use the `referrerpolicy` attribute.
+
+Using this attribute will use the `strict-origin-when-cross-origin` policy type. This sends a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
+
+This will also set the `rel` attribute to `external`.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/external-referrer.html) -->
+<!-- The below content is automatically added from ./partials/external-referrer.html -->
+Example link with
+<auro-hyperlink
+  target="_blank"
+  referrerpolicy
+  href="https://www.portseattle.org/sea-tac">
+  external target
+</auro-hyperlink>
+ , external domain with referrerpolicy attribute
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/external-referrer.html) -->
+  <!-- The below code snippet is automatically added from ./partials/external-referrer.html -->
+  ```html
+  Example link with
+  <auro-hyperlink
+    target="_blank"
+    referrerpolicy
+    href="https://www.portseattle.org/sea-tac">
+    external target
+  </auro-hyperlink>
+   , external domain with referrerpolicy attribute
   ```
   <!-- AURO-GENERATED-CONTENT:END -->
 
