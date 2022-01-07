@@ -1,5 +1,35 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.4.3...v3.0.0) (2022-01-07)
+
+
+### Bug Fixes
+
+* icon CSS/Sass for IE fallback [#72](https://github.com/AlaskaAirlines/auro-hyperlink/issues/72) ([14cebaf](https://github.com/AlaskaAirlines/auro-hyperlink/commit/14cebaf3383c1142f32922d818646bfe55bf547d))
+* remove outline-offset [#79](https://github.com/AlaskaAirlines/auro-hyperlink/issues/79) ([f3ff147](https://github.com/AlaskaAirlines/auro-hyperlink/commit/f3ff147c21e42fa9b3ff74bc8745d7d3e8815fc9))
+
+
+### Code Refactoring
+
+* **generator migration:** migrate repo to latest gen build [#73](https://github.com/AlaskaAirlines/auro-hyperlink/issues/73) ([543f723](https://github.com/AlaskaAirlines/auro-hyperlink/commit/543f723d76a51d78985ea93381fd1e1e06550413))
+
+
+### Features
+
+* **mailto:** add support for mailto: http request [#87](https://github.com/AlaskaAirlines/auro-hyperlink/issues/87) ([33ad5fd](https://github.com/AlaskaAirlines/auro-hyperlink/commit/33ad5fd96a3ad58df28d803ceae664843b62aabc))
+* **referrer:** add feature for external url referral tracking ([b416a60](https://github.com/AlaskaAirlines/auro-hyperlink/commit/b416a608046bc00b09aec9fa459e6e71ea42cf90))
+
+
+### Performance Improvements
+
+* **mdmagic:** update mdmagic watched files ([276b0e9](https://github.com/AlaskaAirlines/auro-hyperlink/commit/276b0e934af94f235294022d5f55a75881de9304))
+
+
+### BREAKING CHANGES
+
+* **generator migration:** This commit will move the element to the new
+@aurodesignsystem npm namespace as well redefine legacy API
+
 ## [2.4.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.4.2...v2.4.3) (2021-08-20)
 
 
