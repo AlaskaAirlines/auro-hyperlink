@@ -18,6 +18,10 @@ export default class ComponentBase extends LitElement {
     this.relative = false;
     this.secondary = false;
     this.ondark = false;
+
+    /**
+     * @private
+     */
     this.defaultreferrerpolicy = 'strict-origin-when-cross-origin';
 
     /**
