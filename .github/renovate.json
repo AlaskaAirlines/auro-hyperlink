@@ -19,6 +19,11 @@
 
   "packageRules": [
     {
+      "matchUpdateTypes": ["major"],
+      "matchBaseBranches": ["main"],
+      "enabled": false
+    },
+    {
       "matchDepTypes": [
         "peerDependencies"
       ],
