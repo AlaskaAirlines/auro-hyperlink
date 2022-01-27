@@ -68,7 +68,7 @@
     "postcss-rem-to-pixel": "4.1.2",
     "postcss-remove-rules": "1.0.0",
     "postcss-selector-replace": "1.0.2",
-    "prismjs": "1.25.0",
+    "prismjs": "1.26.0",
     "rollup": "2.61.1",
     "rollup-plugin-minify-html-literals": "1.2.6",
     "rollup-plugin-serve": "1.1.0",
