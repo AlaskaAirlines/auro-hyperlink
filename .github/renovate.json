@@ -32,14 +32,14 @@
     },
     {
       "updateTypes": ["patch"],
-      "automerge": false,
+      "automerge": true,
       "automergeType": "branch"
     },
     {
       "updateTypes": ["minor"],
       "matchCurrentVersion": "!/^[~^]?0/",
 
-      "automerge": false,
+      "automerge": true,
       "automergeType": "branch"
     }
   ]
