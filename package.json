@@ -47,7 +47,7 @@
     "@web/dev-server": "0.1.29",
     "@web/test-runner": "0.13.26",
     "@webcomponents/webcomponentsjs": "2.6.0",
-    "autoprefixer": "10.4.0",
+    "autoprefixer": "10.4.2",
     "compression": "1.7.4",
     "concat": "1.0.3",
     "concurrently": "6.5.0",
