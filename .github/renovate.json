@@ -1,0 +1,46 @@
+{
+  "branchPrefix": "renovate/",
+  "separateMajorMinor": false,
+  "separateMinorPatch": false,
+  "rebaseWhen": "behind-base-branch",
+  "prHourlyLimit": 0,
+
+  "extends": [
+    ":semanticCommitType(chore)",
+    ":semanticCommitType(fix)"
+  ],
+
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": [
+      "schedule:weekly"
+    ]
+  },
+
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "peerDependencies"
+      ],
+      "rangeStrategy": "widen"
+    },
+    {
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "updateTypes": ["patch"],
+      "automerge": false,
+      "automergeType": "branch"
+    },
+    {
+      "updateTypes": ["minor"],
+      "matchCurrentVersion": "!/^[~^]?0/",
+
+      "automerge": false,
+      "automergeType": "branch"
+    }
+  ]
+}
