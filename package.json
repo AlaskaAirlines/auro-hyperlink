@@ -44,7 +44,7 @@
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "8.0.3",
-    "@web/dev-server": "0.1.28",
+    "@web/dev-server": "0.1.29",
     "@web/test-runner": "0.13.26",
     "@webcomponents/webcomponentsjs": "2.6.0",
     "autoprefixer": "10.4.0",
