@@ -8,6 +8,9 @@
     ":widenPeerDependencies"
   ],
 
+  "groupName": "all",
+  "prCreation": "status-success",
+
   "packageRules": [
     {
       "updateTypes": ["patch"],
@@ -21,6 +24,10 @@
 
       "automerge": true,
       "automergeType": "branch"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "enabled": false
     }
   ],
 
