@@ -223,6 +223,10 @@ export default class ComponentBase extends LitElement {
     return ariapressed;
   }
 
+  focus() {
+    this.shadowRoot.querySelector('a').focus();
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
