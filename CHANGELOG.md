@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.0.0...v3.1.0) (2022-03-11)
+
+
+### Features
+
+* add focus method ([2d7b7ed](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2d7b7eda1554b321197188b6c4a8cc2c7c0b8732))
+* **style:** add support for .focus() ui ([ef81f16](https://github.com/AlaskaAirlines/auro-hyperlink/commit/ef81f1674a7441c48e8bc76b28077247c8b06c91))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v2.4.3...v3.0.0) (2022-01-07)
 
 
