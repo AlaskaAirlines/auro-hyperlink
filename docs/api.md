@@ -16,3 +16,9 @@
 | `secondary`      | `secondary`      | `Boolean` | false   | Modifier for `type="cta"` secondary UI option.   |
 | `target`         | `target`         | `String`  |         | Specifies where to open the linked document.     |
 | `type`           | `type`           | `String`  |         | Enumerable attribute; [`nav`, `cta`]             |
+
+## Methods
+
+| Method  | Type       | Description         |
+|---------|------------|---------------------|
+| `focus` | `(): void` | Focus this element. |
