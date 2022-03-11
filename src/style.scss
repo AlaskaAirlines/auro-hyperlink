@@ -24,7 +24,7 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class */
+/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class, declaration-no-important */
 
 :host {
   display: inline-block;
@@ -36,6 +36,13 @@
 
   color: var(--auro-color-ui-default-on-light);
   text-decoration: underline;
+
+  // applying a focus UI when using .focus()
+  &:focus {
+    @include auro_focus-hyperlink(css);
+
+    color: var(--auro-color-base-white) !important;
+  }
 
   &:visited {
     color: var(--auro-color-ui-default-on-light);
@@ -186,6 +193,6 @@ svg {
   --auro-size-lg: 1rem;
 
   position: relative;
-  top: 2px;
+  top: 4px;
   margin-left: var(--auro-size-xxxs);
 }
