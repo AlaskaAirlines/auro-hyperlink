@@ -383,3 +383,43 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
   <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
+
+## Setting focus programmatically
+
+The following example illustrates a use case where a user may want to set a user's focus programmatically. I.e. through another click event.
+
+<auro-button onclick="getFocus()">click me for focus</auro-button>
+
+
+<!-- <div class="exampleWrapper">
+  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+</div> -->
+
+<div class="exampleWrapper" style="display: flex; justify-content: space-between;">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/focus.html) -->
+  <!-- The below content is automatically added from ./partials/focus.html -->
+  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./util_focus.js) -->
+  <!-- The below code snippet is automatically added from ./util_focus.js -->
+  ```js
+  function getFocus() {
+    let el = document.getElementById("getFocus");
+    el.focus();
+  }
+  ```
+  <!-- AURO-GENERATED-CONTENT:END -->
+
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/focus.html) -->
+  <!-- The below code snippet is automatically added from ./partials/focus.html -->
+  ```html
+  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  ```
+  <!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
