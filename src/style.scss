@@ -24,10 +24,19 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class, declaration-no-important */
+/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class */
 
 :host {
   display: inline-block;
+}
+
+// applying a focus UI when using .focus()
+:host([type='nav']) {
+  .hyperlink {
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }
 
 // component shape styles
@@ -39,9 +48,7 @@
 
   // applying a focus UI when using .focus()
   &:focus {
-    @include auro_focus-hyperlink(css);
-
-    color: var(--auro-color-base-white) !important;
+    text-decoration: none;
   }
 
   &:visited {
