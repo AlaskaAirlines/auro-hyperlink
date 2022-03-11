@@ -223,6 +223,7 @@ export default class ComponentBase extends LitElement {
     return ariapressed;
   }
 
+  /** Focus this element. */
   focus() {
     this.shadowRoot.querySelector('a').focus();
   }
