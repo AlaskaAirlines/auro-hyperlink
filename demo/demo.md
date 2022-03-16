@@ -398,7 +398,7 @@ The following example illustrates a use case where a user may want to set a user
 <div class="exampleWrapper" style="display: flex; justify-content: space-between;">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/focus.html) -->
   <!-- The below content is automatically added from ./partials/focus.html -->
-  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com" target="_blank">Welcome to Alaska Airlines</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -418,7 +418,7 @@ The following example illustrates a use case where a user may want to set a user
   <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/focus.html) -->
   <!-- The below code snippet is automatically added from ./partials/focus.html -->
   ```html
-  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com" target="_blank">Welcome to Alaska Airlines</auro-hyperlink>
   ```
   <!-- AURO-GENERATED-CONTENT:END -->
 
