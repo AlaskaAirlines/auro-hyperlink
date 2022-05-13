@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.1.0...v3.1.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* **a11y:** add missing event listeners ([2519adb](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2519adb61588b96fead510fb15b14a6017510cfe))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.0.0...v3.1.0) (2022-03-11)
 
 
