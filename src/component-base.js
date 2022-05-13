@@ -218,7 +218,9 @@ export default class ComponentBase extends LitElement {
 
     // Add our event listeners
     this.addEventListener('mousedown', ariaToggle, false);
+    this.addEventListener('mouseup', ariaToggle, false);
     this.addEventListener('keydown', ariaToggle, false);
+    this.addEventListener('keyup', ariaToggle, false);
 
     return ariapressed;
   }
