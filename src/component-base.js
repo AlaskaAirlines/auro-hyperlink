@@ -200,27 +200,28 @@ export default class ComponentBase extends LitElement {
   ariaPressedState(ariapressed) {
     const ariaToggle = function (event) {
       const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
+      ariaPressedNode.setAttribute("aria-pressed", 'false');
 
-      if (event.type === 'touchstart' || event.type === 'mousedown') {
-        ariaPressedNode.setAttribute("aria-pressed", 'true');
+      if (event.type === 'mousedown') {
+        ariaPressedNode.ariaPressed = true;
       } else {
-        ariaPressedNode.setAttribute("aria-pressed", 'false');
+        ariaPressedNode.ariaPressed = false;
       }
 
       if (event.type === 'keydown') {
-        if (event.keyCode === 13 || event.keyCode === 32) {
-          ariaPressedNode.setAttribute("aria-pressed", 'true');
+        if (event.code === 'Enter' || event.code === 'Space') {
+          ariaPressedNode.ariaPressed = true;
         } else {
-          ariaPressedNode.setAttribute("aria-pressed", 'false');
+          ariaPressedNode.ariaPressed = false;
         }
       }
     };
 
     // Add our event listeners
-    this.addEventListener('mousedown', ariaToggle, false);
-    this.addEventListener('mouseup', ariaToggle, false);
-    this.addEventListener('keydown', ariaToggle, false);
-    this.addEventListener('keyup', ariaToggle, false);
+    this.addEventListener('mousedown', ariaToggle);
+    this.addEventListener('mouseup', ariaToggle);
+    this.addEventListener('keydown', ariaToggle);
+    this.addEventListener('keyup', ariaToggle);
 
     return ariapressed;
   }
