@@ -11,7 +11,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/default.html) -->
   <!-- The below content is automatically added from ./partials/default.html -->
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
-  <auro-hyperlink href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -22,7 +22,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
   <!-- The below code snippet is automatically added from ./partials/default.html -->
   ```html
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
-  <auro-hyperlink href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   ```
   <!-- AURO-GENERATED-CONTENT:END -->
 
