@@ -13,6 +13,8 @@
       import "@polymer/iron-demo-helpers/demo-snippet";
     </script>
     <script type="module" src="../src/auro-hyperlink.js"></script>
+    <script type="module" src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js
+    "></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
       import '../node_modules/@polymer/iron-icons/hardware-icons.js';
@@ -46,7 +48,49 @@
 
       <h3>auro-hyperlink examples</h3>
 
-      <p>Ddefault link</p>
+      <p>Default link</p>
+      <demo-snippet>
+        <template>
+          <style>
+            .breadcrumb {
+              color: var(--auro-color-text-secondary-on-light);
+              line-height: 1;
+            }
+
+            .breadcrumb-divider {
+              color: var(--auro-color-icon-primary-on-light);
+              height: var(--auro-size-300, 24px);
+              margin-left: 4px;
+              margin-right: 4px;
+            }
+
+            .breadcrumb-home {
+              margin-right: 6px;
+            }
+          </style>
+          <div class="breadcrumb">
+            <auro-hyperlink nav href="/next" type="nav">
+              <auro-icon class="breadcrumb-home" style="width: 20px" customSize category="interface" name="home-stroke" customColor></auro-icon>Home
+            </auro-hyperlink>
+            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
+            <auro-hyperlink nav href="/next">
+              Level 1
+            </auro-hyperlink>
+            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
+            <auro-hyperlink nav href="/next">
+              Level 2
+            </auro-hyperlink>
+            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
+            <auro-hyperlink nav href="/next">
+              Level 3
+            </auro-hyperlink>
+            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
+            Current
+        </div>
+          </template>
+      </demo-snippet>
+
+      <p>Default link</p>
       <demo-snippet>
         <template>
             This is a <auro-hyperlink href="//www.apple.com">link</auro-hyperlink>. How do I look?
