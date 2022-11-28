@@ -39,6 +39,16 @@
   }
 }
 
+// fill width of parent container when fluid=true and type='cta' (Call to action button)
+:host([fluid][type='cta']),
+:host([fluid='true'][type='cta']) {
+  width: 100%;
+
+  .hyperlink--cta {
+    width: 100%;
+  }
+}
+
 // component shape styles
 .hyperlink {
   @include auro_transition(all, .15s, ease);

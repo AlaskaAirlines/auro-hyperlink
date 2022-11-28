@@ -284,6 +284,31 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 
 </auro-accordion>
 
+### Fluid call to action buttons
+
+In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/cta-fluid.html) -->
+  <!-- The below content is automatically added from ./partials/cta-fluid.html -->
+  <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/cta-fluid.html) -->
+  <!-- The below code snippet is automatically added from ./partials/cta-fluid.html -->
+  ```html
+  <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  ```
+  <!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ## Using role="button"
 
 Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below. Assuming the role of button, `auro-hyperlink` also will track the `aria-pressed` state.
