@@ -66,6 +66,7 @@ export default class ComponentBase extends LitElement {
       secondary:        { type: Boolean },
       ondark:           { type: Boolean },
       type:             { type: String },
+      fluid:            { type: Boolean },
       referrerpolicy:   { type: Boolean }
     };
   }
