@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.1.1...v3.2.0) (2022-11-30)
+
+
+### Features
+
+* **cta:** add support for fluid width ([075a59e](https://github.com/AlaskaAirlines/auro-hyperlink/commit/075a59e783e1cd49c5a54dcacf219c9500fc166e))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.1.0...v3.1.1) (2022-05-13)
 
 

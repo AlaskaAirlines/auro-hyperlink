@@ -7,7 +7,7 @@
 | Property         | Attribute        | Type      | Default | Description                                      |
 |------------------|------------------|-----------|---------|--------------------------------------------------|
 | `download`       | `download`       | `Boolean` | false   | Specifies that the target will be downloaded when a user clicks on the hyperlink. |
-| `fluid`          | `fluid`          | `Boolean` | false   | Modifier for `type="cta"` fluid-width UI option. |
+| `fluid`          | `fluid`          | `boolean` |         |                                                  |
 | `href`           | `href`           | `String`  |         | Specifies the URL of the page link.              |
 | `ondark`         | `ondark`         | `Boolean` | false   | Specifies dark theme use of hyperlink.           |
 | `referrerpolicy` | `referrerpolicy` | `Boolean` |         | Sets `strict-origin-when-cross-origin` to send a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP). |
