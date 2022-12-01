@@ -17,6 +17,7 @@ import styleCssFixed from './style-fixed-css.js';
  * `<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
  *
  * @attr {Boolean} download - Specifies that the target will be downloaded when a user clicks on the hyperlink.
+ * @attr {Boolean} fluid - Modifier for `type="cta"` fluid-width UI option.
  * @attr {Boolean} ondark - Specifies dark theme use of hyperlink.
  * @attr {Boolean} relative - Add flag to disable auto URL re-write feature.
  * @attr {Boolean} secondary - Modifier for `type="cta"` secondary UI option.
