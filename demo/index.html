@@ -67,25 +67,81 @@
             .breadcrumb-home {
               margin-right: 6px;
             }
+            
+            .breadcrumb-link {
+              display: none;
+            }
+
+            .current {
+              display: none;
+            }
+
+            .breadcrumb-link:after {
+              content: "<";
+              margin: 0 4px;
+            }
+
+            .breadcrumb-link:nth-last-of-type(2) {
+              display: inline-block;
+            }
+
+            .breadcrumb-link:nth-last-of-type(2):after {
+              content: ""
+            }
+
+            .breadcrumb-link:nth-last-of-type(2):before {
+              content: "<";
+              margin: 0 4px;
+              color: var(--auro-color-icon-accent-on-light);
+            }
+            
+            @media screen and (min-width: 767px) {
+              .breadcrumb-link:after {
+                content: ">";
+              }
+
+              .breadcrumb-link {
+              display: inline-block;
+              }
+
+              .current {
+                display: inline-block;
+              }
+            
+              .breadcrumb-link:nth-last-of-type(2):before {
+                content: none;
+              }
+
+              .breadcrumb-link:nth-last-of-type(2):after {
+                content: ">";
+              }
+            }
+
           </style>
           <div class="breadcrumb">
-            <auro-hyperlink nav href="/next" type="nav">
-              <auro-icon class="breadcrumb-home" style="width: 20px" customSize category="interface" name="home-stroke" customColor></auro-icon>Home
-            </auro-hyperlink>
-            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
-            <auro-hyperlink nav href="/next">
-              Level 1
-            </auro-hyperlink>
-            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
-            <auro-hyperlink nav href="/next">
-              Level 2
-            </auro-hyperlink>
-            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
-            <auro-hyperlink nav href="/next">
-              Level 3
-            </auro-hyperlink>
-            <auro-icon class="breadcrumb-divider" category="interface" name="chevron-right" customColor></auro-icon>
-            Current
+            <div class="breadcrumb-link">
+              <auro-hyperlink nav href="/next" type="nav">
+                <auro-icon class="breadcrumb-home" style="width: 20px" customSize category="interface" name="home-stroke" customColor></auro-icon>Home
+              </auro-hyperlink>
+            </div>
+            <div class="breadcrumb-link">
+              <auro-hyperlink nav href="/next">
+                Level 1
+              </auro-hyperlink>
+            </div>
+            <div class="breadcrumb-link">
+              <auro-hyperlink nav href="/next">
+                Level 2
+              </auro-hyperlink>
+            </div>
+            <div class="breadcrumb-link">
+              <auro-hyperlink nav href="/next">
+                Level 3
+              </auro-hyperlink>
+            </div>
+            <div class="current">
+              Current
+            </div>
         </div>
           </template>
       </demo-snippet>
