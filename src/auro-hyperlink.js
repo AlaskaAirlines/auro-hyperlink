@@ -27,6 +27,7 @@ import styleCssFixed from './style-fixed-css.js';
  * @attr {String} href - Specifies the URL of the page link.
  * @attr {String} target - Specifies where to open the linked document.
  * @attr {String} type - Enumerable attribute; [`nav`, `cta`]
+ * @csspart link - Apply CSS to the `a` element
  */
 
 // build the component class
@@ -62,6 +63,7 @@ class AuroHyperlink extends ComponentBase {
     return html`
       ${this.safeUri || this.role ? html`
       <a
+        part="link"
         aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
         class="${classMap(classes)}"
         href="${ifDefined(this.role ? undefined : this.safeUri)}"

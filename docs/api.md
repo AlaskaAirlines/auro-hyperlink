@@ -23,3 +23,9 @@
 | Method  | Type       | Description         |
 |---------|------------|---------------------|
 | `focus` | `(): void` | Focus this element. |
+
+## CSS Shadow Parts
+
+| Part   | Description                  |
+|--------|------------------------------|
+| `link` | Apply CSS to the `a` element |
