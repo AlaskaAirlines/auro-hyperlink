@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.2.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.2.1...v3.2.2) (2022-12-20)
+
+
+### Bug Fixes
+
+* **part:** add css part for easy manipulation [#146](https://github.com/AlaskaAirlines/auro-hyperlink/issues/146) ([5b9e0f0](https://github.com/AlaskaAirlines/auro-hyperlink/commit/5b9e0f0bdad5124b89a4ada4b97ba8c4e76d4d79))
+
 ## [3.2.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.2.0...v3.2.1) (2022-12-20)
 
 
