@@ -309,6 +309,36 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 
 </auro-accordion>
 
+## Type Support
+
+These are two `auro-hyperlink`s when the attribute `type=breadcrumb` and `type=current` are assigned. These types are used to support the `auro-breadcrumb` component. 
+These are meant to support the use of a hyperlink in a series of hyperlinks, showing users the path of webpages leading to the webpage they are currently on. 
+
+In the use case of `type=breadcrumb`, it has the same functions as a default `auro-hyperlink`, but has different CSS styles to support the `auro-breadcrumb` component.
+In the use case of `type=current`, the hyperlink will have no functionality and is purely to demonstrate to the user what page they are currently on.
+
+
+<div class="exampleWrapper" aria-hidden>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/breadcrumb.html) -->
+  <!-- The below content is automatically added from ./partials/breadcrumb.html -->
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com" type="breadcrumb">Alaska Airlines</auro-hyperlink>. <br>
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com" type="current">Alaska Airlines</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./partials/breadcrumb.html) -->
+  <!-- The below code snippet is automatically added from ./partials/breadcrumb.html -->
+  ```html
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com" type="breadcrumb">Alaska Airlines</auro-hyperlink>. <br>
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com" type="current">Alaska Airlines</auro-hyperlink>.
+  ```
+  <!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ## Using role="button"
 
 Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below. Assuming the role of button, `auro-hyperlink` also will track the `aria-pressed` state.
