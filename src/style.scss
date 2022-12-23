@@ -213,3 +213,23 @@ svg {
   top: 4px;
   margin-left: var(--auro-size-xxxs);
 }
+
+// Support for using auro-hyperlink in auro-breadcrumb
+:host([type='breadcrumb']) {
+  &::part(link) {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Support for using auro-hyperlink in auro-breadcrumb
+:host([type='current']) {
+  &::part(link) {
+    color: var(--auro-color-text-secondary-on-light);
+    pointer-events: none;
+    text-decoration: none;
+  }
+}

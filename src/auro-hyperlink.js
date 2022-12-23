@@ -57,7 +57,9 @@ class AuroHyperlink extends ComponentBase {
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role,
       'hyperlink--cta': this.type === 'cta',
-      'hyperlink--secondary': this.secondary
+      'hyperlink--secondary': this.secondary,
+      'hyperlink--breadcrumb': this.type === 'breadcrumb',
+      'hyperlink--current': this.type === 'current'
     };
 
     return html`
