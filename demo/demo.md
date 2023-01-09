@@ -2,10 +2,11 @@
 
 Hyperlinks form the backbone of how users navigate through a site or app. The following example illustrates how the `auro-hyperlink` component can be used. Common api attributes include `href`, `nav`, `target` and more. For a full list of attributes, see the [api documentation](http://auro.alaskaair.com/components/auro/hyperlink/api).
 
+<custom-hyperlink href="http://auro.alaskaair.com">Custom Hyperlink</custom-hyperlink>
+
 ## Default
 
 If the `href` attribute is not added, the hyperlink element will render back simple text.
-
 
 <div class="exampleWrapper" aria-hidden>
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./partials/default.html) -->

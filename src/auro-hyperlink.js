@@ -31,7 +31,7 @@ import styleCssFixed from './style-fixed-css.js';
  */
 
 // build the component class
-class AuroHyperlink extends ComponentBase {
+export class AuroHyperlink extends ComponentBase {
   // function to define props used within the scope of this component
   static get properties() {
     return {
@@ -77,9 +77,4 @@ class AuroHyperlink extends ComponentBase {
       : html`<slot></slot>`}
     `;
   }
-}
-
-// define the name of the custom component
-if (!customElements.get("auro-hyperlink")) {
-  customElements.define("auro-hyperlink", AuroHyperlink);
 }
