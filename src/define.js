@@ -1,5 +1,10 @@
 import { AuroHyperlink } from './auro-hyperlink.js';
 
-if (!customElements.get("auro-hyperlink")) {
-  customElements.define("auro-hyperlink", AuroHyperlink);
+export function registerComponent(name = 'custom-hyperlink') {
+  // alias definition
+  if (!customElements.get(name)) {
+    customElements.define(name, class extends AuroHyperlink {});
+  }
 }
+
+registerComponent('auro-hyperlink');
