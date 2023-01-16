@@ -1,5 +1,10 @@
 import { AuroHyperlink } from './auro-hyperlink.js';
 
+/**
+ * Register Custom Element.
+ * @param {Object} name - Name to use for custom element.
+ * @returns {void}
+ */
 export function registerComponent(name = 'custom-hyperlink') {
   // alias definition
   if (!customElements.get(name)) {
