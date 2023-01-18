@@ -1,5 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import './../src/';
+import '../index.js';
 
 describe('auro-hyperlink', () => {
 
