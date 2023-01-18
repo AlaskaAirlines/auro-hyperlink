@@ -140,7 +140,7 @@
     "web components"
   ],
   "scripts": {
-    "build": "npm-run-all build:sass sass:render dist:js build:api test build:markdownDocs bundler postinstall",
+    "build": "npm-run-all build:sass sass:render build:api test build:markdownDocs bundler postinstall",
     "build:api": "wca analyze 'src/auro-hyperlink.js' --outFiles docs/api.md",
     "build:demo": "node ./scripts/prepForBuild",
     "build:dev:assets": "npm-run-all build:sass:demo build:sass:component postCss:component sass:render build:markdownDocs",
@@ -152,7 +152,6 @@
     "bundler": "rollup -c",
     "bundler:test": "rollup -c -w",
     "dev": "concurrently --kill-others 'npm run build:watch' 'npm run serve'",
-    "dist:js": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "esLint": "./node_modules/.bin/eslint src/**/*.js",
     "linters": "npm-run-all scssLint esLint",
     "preCommit": "node scripts/pre-commit.js",

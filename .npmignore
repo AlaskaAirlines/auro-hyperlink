@@ -16,8 +16,10 @@ test/
 demo/**/*.css
 demo/**/*.scss
 demo/**/*.html
+demo/**/*.md
 
 index.html
 
 # ignore src
-src/**/*
+src/**/*.scss
+src/**/*.css
