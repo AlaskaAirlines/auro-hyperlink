@@ -18,7 +18,7 @@ const getSharedPlugins = (isLegacy) => [
 
 const modernConfig = {
   input: {
-    ['auro-hyperlink__bundled']: './src/auro-hyperlink.js',
+    ['auro-hyperlink__bundled']: './index.js',
   },
   output: {
     format: 'esm',
