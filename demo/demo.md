@@ -2,8 +2,6 @@
 
 Hyperlinks form the backbone of how users navigate through a site or app. The following example illustrates how the `auro-hyperlink` component can be used. Common api attributes include `href`, `nav`, `target` and more. For a full list of attributes, see the [api documentation](http://auro.alaskaair.com/components/auro/hyperlink/api).
 
-<custom-hyperlink href="http://auro.alaskaair.com">Custom Hyperlink</custom-hyperlink>
-
 ## Default
 
 If the `href` attribute is not added, the hyperlink element will render back simple text.
@@ -45,7 +43,7 @@ For link security purposaes, when using the `target="_blank"` attribute, this im
     external target
   </auro-hyperlink>
   but same domain
-  
+
   <br>
   Example link with
   <auro-hyperlink
@@ -70,7 +68,7 @@ For link security purposaes, when using the `target="_blank"` attribute, this im
     external target
   </auro-hyperlink>
   but same domain
-  
+
   <br>
   Example link with
   <auro-hyperlink
@@ -260,7 +258,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-  
+
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -276,7 +274,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-  
+
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -353,7 +351,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
   function sayHello() {
     alert('Hello, you clicked the button!');
   }
-  
+
   function handleKeyPress(event) {
     if(event.keyCode === 13) {
       event.preventDefault();
@@ -382,7 +380,7 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
     <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
     Click here to go back
   </auro-hyperlink>
-  
+
   <auro-hyperlink href="/next" type="nav">
     Click here to go forward
     <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
@@ -400,7 +398,7 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
     <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
     Click here to go back
   </auro-hyperlink>
-  
+
   <auro-hyperlink href="/next" type="nav">
     Click here to go forward
     <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
