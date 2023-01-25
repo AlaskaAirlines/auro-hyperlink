@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [3.3.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.2.2...v3.3.0) (2023-01-25)
+
+
+### Features
+
+* **customization:** allow for CE class extension and customization [#151](https://github.com/AlaskaAirlines/auro-hyperlink/issues/151) ([6b6a3f9](https://github.com/AlaskaAirlines/auro-hyperlink/commit/6b6a3f940331b48b226e6a9dbe16f87831a3ff11))
+* **define:** custom CE definitions ([94de68b](https://github.com/AlaskaAirlines/auro-hyperlink/commit/94de68bc0e3cbdca07d18bbb10aafb01044debba))
+
 ## [3.2.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.2.1...v3.2.2) (2022-12-20)
 
 
