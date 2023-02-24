@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from "lit";
 import 'focus-visible/dist/focus-visible.min.js';
 import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
 import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link_es6.js';
