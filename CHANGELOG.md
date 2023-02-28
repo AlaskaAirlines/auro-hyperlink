@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.3.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.1...v3.3.2) (2023-02-28)
+
+
+### Bug Fixes
+
+* **bundle:** update rollup config [#161](https://github.com/AlaskaAirlines/auro-hyperlink/issues/161) ([abe252a](https://github.com/AlaskaAirlines/auro-hyperlink/commit/abe252a6da64efea5f5af4589f7db1465c95720c))
+
 ## [3.3.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.0...v3.3.1) (2023-02-26)
 
 
