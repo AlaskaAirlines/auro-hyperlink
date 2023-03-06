@@ -2,7 +2,7 @@
 
 `<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
 
-### hyperlink use cases
+## hyperlink use cases
 
 The `<auro-hyperlink>` elements should be used in situations where users may:
 
@@ -18,7 +18,7 @@ For the most up to date information on [UI development browser support](https://
 
 Installation and use of auro-hyperlink can be done as either a <a href="#js-import">JS Import</a> or using the <a href="#cdn-use">bundled CDN asset</a>, then <a href="#using-the-custom-element">reference the Custom Element</a> in your HTML.
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-hyperlink/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-hyperlink/actions?query=workflow%3A%22test+and+publish%22)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-hyperlink/testPublish.yml?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-hyperlink/actions?query=workflow%3A%22test+and+publish%22)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-hyperlink?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-hyperlink)
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-hyperlink?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -74,13 +74,13 @@ Review the <a href="https://auro.alaskaair.com/components/auro/hyperlink/api">AP
 
 ### Limitations and Risks
 
-When multiple microsites are combined and result in a custom element being imported more than once, only the first instance of the imported custom element is used. All subsequent attempts to load the custom element will fail. If a microsite loaded into the document subsequently attempts to load a new version of the component with an updated API, it will fail to load. This can result in unexpected API functionality.
+When multiple micro frontends are combined and result in a custom element being imported more than once, only the first instance of the imported custom element is used. All subsequent attempts to load the custom element will fail. If a micro frontend loaded into the document subsequently attempts to load a new version of the component with an updated API, it will fail to load. This can result in unexpected API functionality.
 
-For a detailed explanation of this issue, see this article: https://dev.to/florianrappl/versioning-web-components-3bda
+For a detailed explanation of this issue, see this article: [Versioning Web Components](https://dev.to/florianrappl/versioning-web-components-3bda) by [Florian Rappl](https://dev.to/florianrappl).
 
 ### Recommended Use and Version Control
 
-There are two important parts of every Auro Component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the Custom Element. The class is exported and then used as part of defining the Custom Element. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-hyperlink` custom element is defined automatically.
+There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-hyperlink` custom element is defined automatically.
 
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
 
@@ -90,7 +90,7 @@ import { AuroHyperlink } from './node_modules/@aurodesignsystem/auro-hyperlink';
 registerComponent('custom-hyperlink');
 ```
 
-This will create a new custom element that you can use in your html that will function identical to `auro-hyperlink`.
+This will create a new custom element that you can use in your HTML that will function identically to the `auro-hyperlink` element.
 
 ```html
 <custom-hyperlink></custom-hyperlink>
