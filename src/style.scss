@@ -107,8 +107,8 @@
     @include auro_anchorButton(css, component, block);
 
     border: 1px solid var(--auro-color-ui-default-on-light);
-    background-color: var(--auro-color-ui-default-on-light);
     border-radius: var(--auro-border-radius);
+    background-color: var(--auro-color-ui-default-on-light);
     color: var(--auro-color-text-primary-on-dark);
     font-family: var(--auro-font-family-default);
     font-size: var(--auro-text-body-size-default);
