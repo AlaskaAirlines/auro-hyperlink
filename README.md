@@ -25,15 +25,6 @@ The following sections are editable by making changes to the following files:
 <!-- The below content is automatically added from ./docs/partials/description.md -->
 `<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
-<!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
-<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
-<!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
-<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
-<!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
-<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
-<!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
-<!-- AURO-GENERATED-CONTENT:END -->
 
 ## Default auro-hyperlink
 
