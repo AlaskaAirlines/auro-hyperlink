@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [3.3.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.2...v3.3.3) (2023-03-21)
+
+
+### Bug Fixes
+
+* **workflow:** correct typo in workflow config ([45bdf5d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/45bdf5d0dba35ccc5bdfc69e2a8e6eb7bf74bfd5))
+
+
+### Performance Improvements
+
+* **node:** update version support ([a9152ce](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a9152ce6a0ab9cdd819fb04305861facf5dde2e5))
+
 ## [3.3.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.1...v3.3.2) (2023-02-28)
 
 
