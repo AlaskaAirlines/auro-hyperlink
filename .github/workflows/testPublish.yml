@@ -37,7 +37,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v3
         with:
-          node-ver18
+          node-version: 18
       - run: npm ci
       - run: npm run build
       - uses: cycjimmy/semantic-release-action@v3
