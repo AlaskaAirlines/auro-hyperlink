@@ -10,7 +10,6 @@ import ComponentBase from './component-base';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
-import styleCssFixed from './style-fixed-css.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -40,10 +39,7 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   static get styles() {
-    return [
-      styleCss,
-      styleCssFixed
-    ];
+    return [styleCss];
   }
 
   /**
