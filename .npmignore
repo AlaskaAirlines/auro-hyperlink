@@ -1,9 +1,9 @@
 # standard ignore
 *config*
 *conf*
+LICENSE
+NOTICE
 
-apiExamples/
-demo/partials/
 .github/
 .gitignore
 .eslintrc
@@ -13,12 +13,16 @@ coverage/
 docs/
 scripts/
 test/
+apiExamples/
+docTemplates/
 demo/**/*.css
 demo/**/*.scss
 demo/**/*.html
-demo/**/*.md
 
 dist/es5.js
+dist/auro-*.js
+!dist/auro-*__bundled.js
+dist/style-css.js
 
 index.html
 
