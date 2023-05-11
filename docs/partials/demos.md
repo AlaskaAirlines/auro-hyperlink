@@ -6,15 +6,13 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
 
 # Auro Hyperlink
 
-`<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-hyperlink use cases
 
-The `<auro-hyperlink>` elements should be used in situations where users may:
-
-* stand-alone link element for navigation
-* inline link element for navigation
-* optional role as button when hyperlink UI is needed for submit action
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ## Additional Information
 
@@ -49,16 +47,18 @@ toggleDialogClose = (elName) => {
 ## Example(s)
 
 <div class="exampleWrapper">
-  <auro-hyperlink>Hello World</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
-```html
-<auro-hyperlink>Hello World</auro-hyperlink>
-```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
+
 Having a closing statement about your example helps to really complete the thought with your reader.
 
 ## Recommended Use and Version Control
@@ -77,8 +77,10 @@ This will create a new custom element that you can use in your HTML that will fu
 <div class="exampleWrapper">
   <custom-header display="display">Salutations World!</custom-header>
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
+
   ```html
   <custom-header display="display">Salutations World!</custom-header>
   ```
