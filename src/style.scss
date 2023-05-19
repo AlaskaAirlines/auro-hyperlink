@@ -11,11 +11,10 @@
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties.scss';
 
 // general WCSS imports
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints';
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/focusVisible';
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/anchor-roleButton';
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/core';
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/animation';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleButton';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/animation';
 
 // Import Auro Sass variables
 // Dependency required to process variables from Icons
@@ -63,16 +62,6 @@
 
   &:visited {
     color: var(--auro-color-ui-default-on-light);
-  }
-
-  &.focus-visible {
-    @include auro_focus-hyperlink(css);
-  }
-
-  &:focus-visible {
-    @include auro_focus-hyperlink(css);
-
-    outline-offset: unset;
   }
 
   @media (hover: hover) {
