@@ -1,10 +1,11 @@
 const path = require('path');
 const markdownMagic = require('markdown-magic');
 const fs = require('fs');
+const https = require('https');
 
-const config = {
-  matchWord: 'AURO-GENERATED-CONTENT'
-};
+const readmeTemplateUrl = 'https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/README.md';
+const dirDocTemplates = './docTemplates';
+const readmeFilePath = `${dirDocTemplates}/README.md`;
 
 /**
  * Extract NPM, NAMESPACE and NAME from package.json.
@@ -57,12 +58,6 @@ function formatTemplateFileContents(content, destination) {
   result = result.replace(/\[namespace]/g, nameExtractionData.namespace);
   result = result.replace(/\[Namespace]/g, nameExtractionData.namespaceCap);
 
-  // /**
-  //  * Strip all markdown-magic comments
-  //  */
-  // result = result.replace(/<!-- AURO(.*?)-GENERATED-CONTENT(.*?)-->/g, '');
-  // result = result.replace(/<!-- The below (.*?) is automatically added from(.*?)-->/g, '');
-
   /**
    * Cleanup line breaks.
    */
@@ -78,19 +73,148 @@ function formatTemplateFileContents(content, destination) {
   fs.writeFileSync(destination, result, { encoding: 'utf8'});
 }
 
-const callback = function(updatedContent, outputConfig) {
-  console.log('Finished compiling documentation.');
-};
+/**
+ *
+ */
+function formatApiTableContents(content, destination) {
+  const nameExtractionData = nameExtraction();
+  const wcName = `${nameExtractionData.namespace}-${nameExtractionData.name}`;
 
-const markdownPathReadme = path.join(__dirname, './../README.md');
-markdownMagic(markdownPathReadme, config, callback);
-if (fs.existsSync('./README.md')) {
-  fs.readFile('./README.md', 'utf8', (err, data) => {
-    formatTemplateFileContents(data, './README.md');
+  let result = content;
+
+  result = result.
+    replace(/\r\n|\r|\n####\s`([a-zA-Z]*)`/g, `\r\n#### <a name="$1"></a>\`$1\`<a href="#${wcName}" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>`).
+    replace(/\r\n|\r|\n\|\s`([a-zA-Z]*)`/g, '\r\n| [$1](#$1)').
+    replace(/\| \[\]\(#\)/g, "");
+
+  fs.writeFileSync(destination, result, { encoding: 'utf8'});
+
+  fs.readFile('./demo/apiExamples.md', 'utf8', (err, data) => {
+    formatTemplateFileContents(data, './demo/apiExamples.md');
   });
-} else {
-  console.log('ERROR: ./README.md file is missing');
 }
 
-const markdownPathDemo = path.join(__dirname, './../demo/demo.md');
-markdownMagic(markdownPathDemo, config, callback);
+/**
+ * Compiles `./docTemplates/README.md` -> `./README.md`.
+ */
+
+/**
+ *
+ */
+function processReadme() {
+  const callback = function(updatedContent, outputConfig) {
+
+    if (fs.existsSync('./README.md')) {
+      fs.readFile('./README.md', 'utf8', (err, data) => {
+        formatTemplateFileContents(data, './README.md');
+      });
+    } else {
+      console.log('ERROR: ./README.md file is missing');
+    }
+  };
+
+  const config = {
+    matchWord: 'AURO-GENERATED-CONTENT',
+    outputDir: './'
+  };
+
+  const markdownPath = path.join(__dirname, '../docTemplates/README.md');
+
+  markdownMagic(markdownPath, config, callback);
+}
+
+/**
+ * Compiles `./docTemplates/demo.md` -> `./demo/demo.md`.
+ */
+
+/**
+ *
+ */
+function processDemo() {
+  const callback = function(updatedContent, outputConfig) {
+    if (fs.existsSync('./demo/demo.md')) {
+      fs.readFile('./demo/demo.md', 'utf8', (err, data) => {
+        formatTemplateFileContents(data, './demo/demo.md');
+      });
+    } else {
+      console.log('ERROR: ./demo/demo.md file is missing');
+    }
+  };
+
+  const configDemo = {
+    matchWord: 'AURO-GENERATED-CONTENT',
+    outputDir: './demo'
+  };
+
+  const markdownPath = path.join(__dirname, '../docs/partials/demo.md');
+
+  markdownMagic(markdownPath, configDemo, callback);
+}
+
+/**
+ * Compiles `./docTemplates/apiExamples.md` -> `./demo/apiExamples.md`.
+ */
+
+/**
+ *
+ */
+function processApiExamples() {
+  const callback = function(updatedContent, outputConfig) {
+    if (fs.existsSync('./demo/apiExamples.md')) {
+      fs.readFile('./demo/apiExamples.md', 'utf8', (err, data) => {
+        formatApiTableContents(data, './demo/apiExamples.md');
+      });
+    } else {
+      console.log('ERROR: ./demo/apiExamples.md file is missing');
+    }
+  };
+
+  const config = {
+    matchWord: 'AURO-GENERATED-CONTENT',
+    outputDir: './demo'
+  };
+
+  const markdownPath = path.join(__dirname, '../docs/partials/apiExamples.md');
+
+  markdownMagic(markdownPath, config, callback);
+}
+
+/**
+ * Copy README.md template from static source.
+ */
+
+/**
+ *
+ */
+function copyReadmeLocally() {
+
+  if (!fs.existsSync(dirDocTemplates)) {
+    fs.mkdirSync(dirDocTemplates);
+  }
+
+  if (!fs.existsSync(readmeFilePath)) {
+    fs.writeFile(readmeFilePath, '', (err) => {
+      if (err) {
+        console.log('ERROR: Unable to create README.md file.', err);
+      }
+    });
+  }
+
+  https.get(readmeTemplateUrl, (response) => {
+    const writeTemplate = response.pipe(fs.createWriteStream(readmeFilePath));
+
+    writeTemplate.on('finish', () => {
+      processReadme();
+    });
+
+  }).on('error', (err) => {
+    console.log('ERROR: Unable to fetch README.md file from server.', err);
+  });
+}
+
+/**
+ * Run all the actual document generation.
+ */
+copyReadmeLocally();
+processApiExamples();
+processDemo();
