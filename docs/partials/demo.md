@@ -8,7 +8,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 
 <div class="exampleWrapper" aria-hidden>
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/default.html) -->
-  <!-- The below content is automatically added from ./../../demo/partials/default.html -->
+  <!-- The below content is automatically added from ./../../demo/partials/default.html) -->
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
@@ -16,7 +16,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
   <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/default.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/default.html -->
+  <!-- The below code snippet is automatically added from ./../../demo/partials/default.html) -->
   ```html
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
@@ -32,7 +32,7 @@ For link security purposaes, when using the `target="_blank"` attribute, this im
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials//external.html) -->
-  <!-- The below content is automatically added from ./../../demo/partials//external.html -->
+  <!-- The below content is automatically added from ./../../demo/partials/external.html -->
   Example link with
   <auro-hyperlink
     target="_blank"
