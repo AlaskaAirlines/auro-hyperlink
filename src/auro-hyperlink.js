@@ -74,3 +74,8 @@ export class AuroHyperlink extends ComponentBase {
     `;
   }
 }
+
+// default internal definition
+if (!customElements.get("auro-hyperlink")) {
+  customElements.define("auro-hyperlink", AuroHyperlink);
+}
