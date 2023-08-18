@@ -128,18 +128,6 @@ describe('auro-hyperlink', () => {
     expect(anchor).to.have.attribute('referrerpolicy', 'strict-origin-when-cross-origin');
   });
 
-  it('allows programmatic focus', async () => {
-    const el = await fixture(html`
-      <auro-hyperlink href="https://www.apple.com" referrerpolicy target="_blank">It's Apple!</auro-hyperlink>
-    `);
-    const shadowLink = el.shadowRoot.querySelector('a');
-
-    el.focus();
-
-    expect(document.activeElement).to.equal(el);
-    expect(el.shadowRoot.activeElement).to.equal(shadowLink);
-  });
-
   it('auro-hyperlink custom element is defined', async () => {
     const el = await !!customElements.get("auro-hyperlink");
 

@@ -21,12 +21,6 @@
 | [target](#target)         | `target`         | `String`  |         | Specifies where to open the linked document.     |
 | [type](#type)           | `type`           | `String`  |         | Enumerable attribute; [`nav`, `cta`]             |
 
-## Methods
-
-| Method  | Type       | Description         |
-|---------|------------|---------------------|
-| [focus](#focus) | `(): void` | Focus this element. |
-
 ## CSS Shadow Parts
 
 | Part   | Description                  |

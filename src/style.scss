@@ -5,9 +5,6 @@
 
 // Creates ods-hyperlink CSS UI definition of shape
 
-// Import Auro CSS Properties as Sass file
-// @import "./../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
-
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties.scss';
 
 // general WCSS imports
@@ -52,7 +49,7 @@
 .hyperlink {
   @include auro_transition(all, .15s, ease);
 
-  color: var(--auro-color-ui-default-on-light);
+  color: var(--auro-color-ui-default-default);
   text-decoration: underline;
 
   // applying a focus UI when using .focus()
@@ -61,12 +58,23 @@
   }
 
   &:visited {
-    color: var(--auro-color-ui-default-on-light);
+    color: var(--auro-color-ui-default-default);
+  }
+
+  &:focus-visible {
+    background-color: var(--auro-color-ui-default-default);
+    color: var(--auro-color-text-primary-inverse);
+    outline: var(--auro-color-ui-default-default) solid var(--auro-size-50);
+    outline-offset: unset;
+
+    &:hover {
+      color: var(--auro-color-text-primary-inverse);
+    }
   }
 
   @media (hover: hover) {
     &:hover {
-      color: var(--auro-color-ui-hover-on-light);
+      color: var(--auro-color-ui-hover-default);
       text-decoration: none;
     }
 
@@ -95,16 +103,16 @@
   &--cta {
     @include auro_anchorButton(css, component, block);
 
-    border: 1px solid var(--auro-color-ui-default-on-light);
+    border: 1px solid var(--auro-color-ui-default-default);
     border-radius: var(--auro-border-radius);
-    background-color: var(--auro-color-ui-default-on-light);
-    color: var(--auro-color-text-primary-on-dark);
+    background-color: var(--auro-color-ui-default-default);
+    color: var(--auro-color-text-primary-inverse);
     font-family: var(--auro-font-family-default);
     font-size: var(--auro-text-body-size-default);
     font-weight: var(--auro-text-body-default-weight);
 
     // override from common button height
-    line-height: calc((var(--auro-size-xxl)) + ((var(--auro-size-xs)) - (var(--auro-size-xxxs))));
+    line-height: calc((var(--auro-size-800)) + ((var(--auro-size-100)) - (var(--auro-size-25))));
     text-align: center;
 
     &:active {
@@ -114,33 +122,33 @@
     // update to media query when ods-hyperlink support is removed
     :host(:not(.is-touching)) & {
       &:hover {
-        border: 1px solid var(--auro-color-ui-hover-on-light);
-        background-color: var(--auro-color-ui-hover-on-light);
-        color: var(--auro-color-text-primary-on-dark);
+        border: 1px solid var(--auro-color-ui-hover-default);
+        background-color: var(--auro-color-ui-hover-default);
+        color: var(--auro-color-text-primary-inverse);
         text-decoration: none;
       }
     }
 
     &:visited {
-      color: var(--auro-color-text-primary-on-dark);
+      color: var(--auro-color-text-primary-inverse);
     }
 
     @include auro_breakpoint--sm {
       display: inline-block;
-      min-width: calc((var(--auro-size-xxxl)) * 3);
+      min-width: calc((var(--auro-size-800)) * 3);
     }
 
     &.hyperlink--secondary {
-      border: 1px solid var(--auro-color-ui-default-on-light);
+      border: 1px solid var(--auro-color-ui-default-default);
       background-color: var(--auro-color-background-lightest);
-      color: var(--auro-color-text-link-on-light);
+      color: var(--auro-color-text-link-default);
 
       // update to media query when ods-hyperlink support is removed
       :host(:not(.is-touching)) & {
         &:hover {
-          border: 1px solid var(--auro-color-ui-default-on-light);
+          border: 1px solid var(--auro-color-ui-default-default);
           background-color: var(--auro-color-background-lighter);
-          color: var(--auro-color-text-link-on-light);
+          color: var(--auro-color-text-link-default);
         }
       }
 
@@ -168,18 +176,18 @@
     &.hyperlink--ondark {
       border: 1px solid var(--auro-color-ui-default-on-dark);
       background-color: var(--auro-color-ui-default-on-dark);
-      color: var(--auro-color-text-primary-on-light);
+      color: var(--auro-color-text-primary-default);
 
       // update to media query when ods-hyperlink support is removed
       :host(:not(.is-touching)) & {
         &:hover {
           border: 1px solid var(--auro-color-ui-hover-on-dark);
           background-color: var(--auro-color-ui-hover-on-dark);
-          color: var(--auro-color-text-primary-on-light);
+          color: var(--auro-color-text-primary-default);
         }
 
         &:visited {
-          color: var(--auro-color-text-primary-on-light);
+          color: var(--auro-color-text-primary-default);
         }
       }
     }
@@ -200,5 +208,5 @@ svg {
 
   position: relative;
   top: 4px;
-  margin-left: var(--auro-size-xxxs);
+  margin-left: var(--auro-size-25);
 }
