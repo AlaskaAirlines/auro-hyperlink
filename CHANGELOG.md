@@ -1,5 +1,24 @@
 # Semantic Release Automated Changelog
 
+## [3.3.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.3...v3.3.4) (2023-08-18)
+
+
+### Bug Fixes
+
+* general feedback review ([e8aa95f](https://github.com/AlaskaAirlines/auro-hyperlink/commit/e8aa95f1217b927759f35e7ef1c71b6ae7e939fb))
+* re-add docTemplates/ to .gitignore per [#171](https://github.com/AlaskaAirlines/auro-hyperlink/issues/171) ([fcf143a](https://github.com/AlaskaAirlines/auro-hyperlink/commit/fcf143aa1a2cbe6ef7d145a7359de286ca0e73ec))
+
+
+### Performance Improvements
+
+* **es5:** Remove legacy es5 bundling resources [#166](https://github.com/AlaskaAirlines/auro-hyperlink/issues/166) ([34a1a69](https://github.com/AlaskaAirlines/auro-hyperlink/commit/34a1a692b550b9394a2135b71549621ffd2bbc62))
+* general update to complete update node 18 ([4350122](https://github.com/AlaskaAirlines/auro-hyperlink/commit/43501220c43a3f6ef87db9f40cfa2879132383c5))
+* **node18:** update repo to support Node 18+ [#168](https://github.com/AlaskaAirlines/auro-hyperlink/issues/168) ([8e8b3bb](https://github.com/AlaskaAirlines/auro-hyperlink/commit/8e8b3bbe7d648c87654b0c560ff2b001d9134744))
+* remove unused script ([40d2386](https://github.com/AlaskaAirlines/auro-hyperlink/commit/40d23865b82b029837dbdadbc34f94b9f23f0a10))
+* update general dependencies node 18 ([f12886d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/f12886d85ea6e2099cecf25e0931db7ed77e8c6e))
+* update npm script, remove files ([d7ef58f](https://github.com/AlaskaAirlines/auro-hyperlink/commit/d7ef58f526a178a1c51aeeb328c9143b28290a57))
+* update to Lit2.0, TS support, issue templates, component registration extension [#167](https://github.com/AlaskaAirlines/auro-hyperlink/issues/167) ([ca387bc](https://github.com/AlaskaAirlines/auro-hyperlink/commit/ca387bcabe753b6a2448f9b186387b88c5207426))
+
 ## [3.3.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.2...v3.3.3) (2023-03-21)
 
 
