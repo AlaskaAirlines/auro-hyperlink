@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html } from "lit";
-import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
+// import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
 import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link_es6.js';
 import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window_es6.js';
 
@@ -44,13 +44,6 @@ export default class ComponentBase extends LitElement {
     this.addEventListener('touchstart', function() {
       this.classList.add('is-touching');
     });
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    if (!isFocusVisibleSupported() && isFocusVisiblePolyfillAvailable()) {
-      window.applyFocusVisiblePolyfill(this.shadowRoot);
-    }
   }
 
   // function to define props used within the scope of thie component
@@ -224,11 +217,6 @@ export default class ComponentBase extends LitElement {
     this.addEventListener('keyup', ariaToggle);
 
     return ariapressed;
-  }
-
-  /** Focus this element. */
-  focus() {
-    this.shadowRoot.querySelector('a').focus();
   }
 
   // function that renders the HTML and CSS into  the scope of the component
