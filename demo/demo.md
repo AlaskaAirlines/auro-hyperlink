@@ -4,7 +4,7 @@ Hyperlinks form the backbone of how users navigate through a site or app. The fo
 
 ## Default
 
-If the `href` attribute is not added, the hyperlink element will render back simple text.
+If the `href` attribute is not added, the hyperlink element will render back simple text. fucker
 
 <div class="exampleWrapper" aria-hidden>
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/default.html) -->
@@ -15,20 +15,21 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/default.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/default.html -->
-  ```html
-  <auro-hyperlink>No href supplied</auro-hyperlink><br>
-  Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/default.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/default.html -->
+
+```html
+<auro-hyperlink>No href supplied</auro-hyperlink><br>
+Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## External links
 
 Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain new-window icon versus an icon that communicates users will be taken to a new domain.
 
-For link security purposaes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
+For link security purposes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials//external.html) -->
@@ -53,27 +54,28 @@ For link security purposaes, when using the `target="_blank"` attribute, this im
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/external.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/external.html -->
-  ```html
-  Example link with
-  <auro-hyperlink
-    target="_blank"
-    href="https://www.alaskaair.com">
-    external target
-  </auro-hyperlink>
-  but same domain
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/external.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/external.html -->
 
-  <br>
-  Example link with
-  <auro-hyperlink
-    target="_blank"
-    href="https://www.portseattle.org/sea-tac">
-    external target
-  </auro-hyperlink>
-   with external domain
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+```html
+Example link with
+<auro-hyperlink
+  target="_blank"
+  href="https://www.alaskaair.com">
+  external target
+</auro-hyperlink>
+but same domain
+
+<br>
+Example link with
+<auro-hyperlink
+  target="_blank"
+  href="https://www.portseattle.org/sea-tac">
+  external target
+</auro-hyperlink>
+ with external domain
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### External links with referrerpolicy
@@ -99,19 +101,20 @@ Example link with
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/external-referrer.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/external-referrer.html -->
-  ```html
-  Example link with
-  <auro-hyperlink
-    target="_blank"
-    referrerpolicy
-    href="https://www.portseattle.org/sea-tac">
-    external target
-  </auro-hyperlink>
-   , external domain with referrerpolicy attribute
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/external-referrer.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/external-referrer.html -->
+
+```html
+Example link with
+<auro-hyperlink
+  target="_blank"
+  referrerpolicy
+  href="https://www.portseattle.org/sea-tac">
+  external target
+</auro-hyperlink>
+ , external domain with referrerpolicy attribute
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## Navigation style links
@@ -130,16 +133,17 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/navStyle.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/navStyle.html -->
-  ```html
-  <auro-hyperlink
-    type="nav"
-    href="https://www.alaskaair.com">
-    Navigation style link
-  </auro-hyperlink>
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/navStyle.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/navStyle.html -->
+
+```html
+<auro-hyperlink
+  type="nav"
+  href="https://www.alaskaair.com">
+  Navigation style link
+</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## Relative vs absolute URLs and https enforcement
@@ -212,14 +216,15 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/URLscheme.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/URLscheme.html -->
-  ```html
-  Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
-  Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
-  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/URLscheme.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/URLscheme.html -->
+
+```html
+Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
+Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
+Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## Call to action buttons
@@ -242,18 +247,19 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/cta.html -->
-  ```html
-  <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-  <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
-  <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-  <br>
-  <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-  <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
-  <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/cta.html -->
+
+```html
+<auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+<br>
+<auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Fluid call to action buttons
@@ -269,13 +275,14 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta-fluid.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/cta-fluid.html -->
-  ```html
-  <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-  <auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta-fluid.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/cta-fluid.html -->
+
+```html
+<auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## Using role="button"
@@ -300,37 +307,39 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/roleButton.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/roleButton.html -->
-  ```html
-  <auro-hyperlink
-    href="http://www.alaskaair.com"
-    role="button"
-    onClick="sayHello()"
-    onKeyDown="handleKeyPress(event)">
-    Cancel button
-  </auro-hyperlink>
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/util.js) -->
-  <!-- The below code snippet is automatically added from ./../../demo/util.js -->
-  ```js
-  function sayHello() {
-    alert('Hello, you clicked the button!');
-  }
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/roleButton.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/roleButton.html -->
 
-  function handleKeyPress(event) {
-    if(event.keyCode === 13) {
-      event.preventDefault();
-      alert('Win for a11y! The return key submits!')
-    }
-    else if(event.keyCode === 32) {
-      event.preventDefault();
-      alert('Win for a11y! The spacebar submits!')
-    }
+```html
+<auro-hyperlink
+  href="http://www.alaskaair.com"
+  role="button"
+  onClick="sayHello()"
+  onKeyDown="handleKeyPress(event)">
+  Cancel button
+</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/util.js) -->
+<!-- The below code snippet is automatically added from ./../../demo/util.js -->
+
+```js
+function sayHello() {
+  alert('Hello, you clicked the button!');
+}
+
+function handleKeyPress(event) {
+  if(event.keyCode === 13) {
+    event.preventDefault();
+    alert('Win for a11y! The return key submits!')
   }
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+  else if(event.keyCode === 32) {
+    event.preventDefault();
+    alert('Win for a11y! The spacebar submits!')
+  }
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## Navigation pattern example
@@ -354,19 +363,20 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/navPattern.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/navPattern.html -->
-  ```html
-  <auro-hyperlink href="/last" type="nav">
-    <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
-    Click here to go back
-  </auro-hyperlink>
-  <auro-hyperlink href="/next" type="nav">
-    Click here to go forward
-    <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
-  </auro-hyperlink>
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/navPattern.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/navPattern.html -->
+
+```html
+<auro-hyperlink href="/last" type="nav">
+  <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
+  Click here to go back
+</auro-hyperlink>
+<auro-hyperlink href="/next" type="nav">
+  Click here to go forward
+  <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
+</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ## Setting focus programmatically
@@ -374,9 +384,6 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 The following example illustrates a use case where a user may want to set a user's focus programmatically. I.e. through another click event.
 
 <auro-button onclick="getFocus()">click me for focus</auro-button>
-<!-- <div class="exampleWrapper">
-  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com">Welcome to Alaska Airlines</auro-hyperlink>
-</div> -->
 <div class="exampleWrapper" style="display: flex; justify-content: space-between;">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/focus.html) -->
   <!-- The below content is automatically added from ./../../demo/partials/focus.html -->
@@ -385,19 +392,21 @@ The following example illustrates a use case where a user may want to set a user
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/util_focus.js) -->
-  <!-- The below code snippet is automatically added from ./../../demo/util_focus.js -->
-  ```js
-  function getFocus() {
-    let el = document.getElementById("getFocus");
-    el.focus();
-  }
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
-  <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/focus.html) -->
-  <!-- The below code snippet is automatically added from ./../../demo/partials/focus.html -->
-  ```html
-  <auro-hyperlink id="getFocus" href="https://www.alaskaair.com" target="_blank">Welcome to Alaska Airlines</auro-hyperlink>
-  ```
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../../demo/util_focus.js) -->
+<!-- The below code snippet is automatically added from ../../demo/util_focus.js -->
+
+```js
+function getFocus() {
+  let el = document.getElementById("getFocus");
+  el.focus();
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/focus.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/focus.html -->
+
+```html
+<auro-hyperlink id="getFocus" href="https://www.alaskaair.com" target="_blank">Welcome to Alaska Airlines</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
