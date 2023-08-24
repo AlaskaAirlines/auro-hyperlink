@@ -4,7 +4,7 @@ Hyperlinks form the backbone of how users navigate through a site or app. The fo
 
 ## Default
 
-If the `href` attribute is not added, the hyperlink element will render back simple text. fucker
+If the `href` attribute is not added, the hyperlink element will render back simple text.
 
 <div class="exampleWrapper" aria-hidden>
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/default.html) -->
