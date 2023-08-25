@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.3.5](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.4...v3.3.5) (2023-08-25)
+
+
+### Performance Improvements
+
+* update Sass to not include design tokens [#178](https://github.com/AlaskaAirlines/auro-hyperlink/issues/178) ([e575f50](https://github.com/AlaskaAirlines/auro-hyperlink/commit/e575f5056b4537da60d4f55fa942e6abc87655b5))
+
 ## [3.3.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.3...v3.3.4) (2023-08-18)
 
 
