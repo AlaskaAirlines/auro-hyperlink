@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.3.6](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.5...v3.3.6) (2023-08-25)
+
+
+### Performance Improvements
+
+* add auro-icons to peer dependencies [#180](https://github.com/AlaskaAirlines/auro-hyperlink/issues/180) ([58f6d6c](https://github.com/AlaskaAirlines/auro-hyperlink/commit/58f6d6c57aaabca6575775927a62de9f866da4eb))
+
 ## [3.3.5](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.4...v3.3.5) (2023-08-25)
 
 
