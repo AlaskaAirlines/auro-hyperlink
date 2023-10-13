@@ -13,6 +13,9 @@
 // Dependency required to process variables from Icons
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 
+// Support for fallback values
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
+
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
@@ -45,7 +48,7 @@
 .hyperlink {
   @include auro_transition(all, .15s, ease);
 
-  color: var(--ds-color-ui-default-default);
+  color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
   text-decoration: underline;
 
   // applying a focus UI when using .focus()
@@ -54,23 +57,23 @@
   }
 
   &:visited {
-    color: var(--ds-color-ui-default-default);
+    color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
   }
 
   &:focus-visible {
-    background-color: var(--ds-color-ui-default-default);
-    color: var(--ds-color-text-primary-inverse);
-    outline: var(--ds-color-ui-default-default) solid var(--ds-size-50);
+    background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+    color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
+    outline: var(--ds-color-ui-default-default, $ds-color-ui-default-default) solid var(--ds-size-50, $ds-size-50);
     outline-offset: unset;
 
     &:hover {
-      color: var(--ds-color-text-primary-inverse);
+      color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
     }
   }
 
   @media (hover: hover) {
     &:hover {
-      color: var(--ds-color-ui-hover-default);
+      color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
       text-decoration: none;
     }
 
@@ -82,7 +85,7 @@
 
     &--ondark {
       &:hover {
-        color: var(--ds-color-ui-hover-inverse);
+        color: var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
       }
     }
   }
@@ -99,16 +102,16 @@
   &--cta {
     @include auro_anchorButton(css, component, block);
 
-    border: 1px solid var(--ds-color-ui-default-default);
-    border-radius: var(--ds-border-radius);
-    background-color: var(--ds-color-ui-default-default);
-    color: var(--ds-color-text-primary-inverse);
-    font-family: var(--ds-font-family-default);
-    font-size: var(--ds-text-body-size-default);
-    font-weight: var(--ds-text-body-default-weight);
+    border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+    border-radius: var(--ds-border-radius, $ds-border-radius);
+    background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+    color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
+    font-family: var(--ds-font-family-default, $ds-font-family-default);
+    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
+    font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
 
     // override from common button height
-    line-height: calc((var(--ds-size-800)) + ((var(--ds-size-100)) - (var(--ds-size-25))));
+    line-height: calc((var(--ds-size-800, $ds-size-800)) + ((var(--ds-size-100, $ds-size-100)) - (var(--ds-size-25, $ds-size-25))));
     text-align: center;
 
     &:active {
@@ -118,51 +121,51 @@
     // update to media query when ods-hyperlink support is removed
     :host(:not(.is-touching)) & {
       &:hover {
-        border: 1px solid var(--ds-color-ui-hover-default);
-        background-color: var(--ds-color-ui-hover-default);
-        color: var(--ds-color-text-primary-inverse);
+        border: 1px solid var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+        background-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+        color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
         text-decoration: none;
       }
     }
 
     &:visited {
-      color: var(--ds-color-text-primary-inverse);
+      color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
     }
 
     @include auro_breakpoint--sm {
       display: inline-block;
-      min-width: calc((var(--ds-size-800)) * 3);
+      min-width: calc((var(--ds-size-800, $ds-size-800)) * 3);
     }
 
     &.hyperlink--secondary {
-      border: 1px solid var(--ds-color-ui-default-default);
-      background-color: var(--ds-color-background-lightest);
-      color: var(--ds-color-text-link-default);
+      border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+      background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
+      color: var(--ds-color-text-link-default, $ds-color-text-link-default);
 
       // update to media query when ods-hyperlink support is removed
       :host(:not(.is-touching)) & {
         &:hover {
-          border: 1px solid var(--ds-color-ui-default-default);
-          background-color: var(--ds-color-background-lighter);
-          color: var(--ds-color-text-link-default);
+          border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+          background-color: var(--ds-color-background-lighter, $ds-color-background-lighter);
+          color: var(--ds-color-text-link-default, $ds-color-text-link-default);
         }
       }
 
       &.hyperlink--ondark {
-        border: 1px solid var(--ds-color-ui-default-inverse);
+        border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
         background-color: transparent;
-        color: var(--ds-color-ui-default-inverse);
+        color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
 
         // update to media query when ods-hyperlink support is removed
         :host(:not(.is-touching)) & {
           &:hover {
-            border: 1px solid var(--ds-color-ui-default-inverse);
-            background-color: var(--ds-color-base-black-opacity-15);
-            color: var(--ds-color-ui-default-inverse);
+            border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+            background-color: var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15);
+            color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
           }
 
           &:visited {
-            color: var(--ds-color-ui-default-inverse);
+            color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
           }
         }
       }
@@ -170,30 +173,30 @@
 
     // CTA ondark
     &.hyperlink--ondark {
-      border: 1px solid var(--ds-color-ui-default-inverse);
-      background-color: var(--ds-color-ui-default-inverse);
-      color: var(--ds-color-text-primary-default);
+      border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+      background-color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+      color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
 
       // update to media query when ods-hyperlink support is removed
       :host(:not(.is-touching)) & {
         &:hover {
-          border: 1px solid var(--ds-color-ui-hover-inverse);
-          background-color: var(--ds-color-ui-hover-inverse);
-          color: var(--ds-color-text-primary-default);
+          border: 1px solid var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
+          background-color: var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
+          color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
         }
 
         &:visited {
-          color: var(--ds-color-text-primary-default);
+          color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
         }
       }
     }
   }
 
   &--ondark {
-    color: var(--ds-color-ui-default-inverse);
+    color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
 
     &:visited {
-      color: var(--ds-color-ui-default-inverse);
+      color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
     }
   }
 }
@@ -204,5 +207,5 @@ svg {
 
   position: relative;
   top: 4px;
-  margin-left: var(--ds-size-25);
+  margin-left: var(--ds-size-25, $ds-size-25);
 }
