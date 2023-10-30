@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.3.7](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.6...v3.3.7) (2023-10-30)
+
+
+### Performance Improvements
+
+* add old design-tokens deps ([17fdaac](https://github.com/AlaskaAirlines/auro-hyperlink/commit/17fdaac6366c0b954f43392f9df58c566886b0ed))
+* **token:** update token per new theming [#183](https://github.com/AlaskaAirlines/auro-hyperlink/issues/183) ([79877ca](https://github.com/AlaskaAirlines/auro-hyperlink/commit/79877caa5026f3b5d163dfb7fc334f8b20f40448))
+
 ## [3.3.6](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.5...v3.3.6) (2023-08-25)
 
 
