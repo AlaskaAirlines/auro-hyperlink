@@ -191,6 +191,23 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 
 </auro-accordion>
 
+### Small call to action buttons
+
+In the following example, see how the `small` attribute alters the size of the button to be smaller than the normal `cta` button.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/cta-small.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta-small.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ## Using role="button"
 
 Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below. Assuming the role of button, `auro-hyperlink` also will track the `aria-pressed` state.

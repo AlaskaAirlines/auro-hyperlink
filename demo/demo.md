@@ -285,6 +285,39 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
+### Small call to action buttons
+
+In the following example, see how the `small` attribute alters the size of the button to be smaller than the normal `cta` button.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/cta-small.html) -->
+  <!-- The below content is automatically added from ./../../demo/partials/cta-small.html -->
+  <auro-hyperlink type="cta" small href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <br>
+  <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta-small.html) -->
+<!-- The below code snippet is automatically added from ./../../demo/partials/cta-small.html -->
+
+```html
+<auro-hyperlink type="cta" small href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+<br>
+<auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ## Using role="button"
 
 Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below. Assuming the role of button, `auro-hyperlink` also will track the `aria-pressed` state.

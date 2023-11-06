@@ -19,7 +19,7 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class */
+/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-class, declaration-empty-line-before, order/properties-order */
 
 :host {
   display: inline-block;
@@ -198,6 +198,18 @@
     &:visited {
       color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
     }
+  }
+}
+
+:host([small][type='cta']),
+:host([small='true'][type='cta']) {
+  .hyperlink--cta {
+    min-width: unset;
+    line-height: unset;
+
+    padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
+
+    font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm);
   }
 }
 

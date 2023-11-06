@@ -20,6 +20,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} ondark - Specifies dark theme use of hyperlink.
  * @attr {Boolean} relative - Add flag to disable auto URL re-write feature.
  * @attr {Boolean} secondary - Modifier for `type="cta"` secondary UI option.
+ * @attr {Boolean} small - Modifier for `type="cta"` small UI option.
  * @attr {Boolean} referrerpolicy - Sets `strict-origin-when-cross-origin` to send a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
  * @attr {String} rel - Specifies the relationship between the current document and the linked document.
  * @attr {String} role - Use for aria roles; currently supports `button` for extended experiences.
