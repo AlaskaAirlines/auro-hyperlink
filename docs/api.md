@@ -15,6 +15,7 @@
 | `relative`       | `relative`       | `Boolean` | false   | Add flag to disable auto URL re-write feature.   |
 | `role`           | `role`           | `String`  |         | Use for aria roles; currently supports `button` for extended experiences. |
 | `secondary`      | `secondary`      | `Boolean` | false   | Modifier for `type="cta"` secondary UI option.   |
+| `small`          | `small`          | `Boolean` | false   | Modifier for `type="cta"` small UI option.       |
 | `target`         | `target`         | `String`  |         | Specifies where to open the linked document.     |
 | `type`           | `type`           | `String`  |         | Enumerable attribute; [`nav`, `cta`]             |
 

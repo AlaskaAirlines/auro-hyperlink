@@ -17,6 +17,7 @@ export default class ComponentBase extends LitElement {
     this.relative = false;
     this.secondary = false;
     this.ondark = false;
+    this.small = false;
 
     /**
      * @private
@@ -59,7 +60,8 @@ export default class ComponentBase extends LitElement {
       ondark:           { type: Boolean },
       type:             { type: String },
       fluid:            { type: Boolean },
-      referrerpolicy:   { type: Boolean }
+      referrerpolicy:   { type: Boolean },
+      small:            { type: Boolean }
     };
   }
 
