@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.4.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.7...v3.4.0) (2023-11-07)
+
+
+### Features
+
+* **cta:** created small cta button [#172](https://github.com/AlaskaAirlines/auro-hyperlink/issues/172) ([3ffacad](https://github.com/AlaskaAirlines/auro-hyperlink/commit/3ffacad4fa535df4ae48fa2191b11d935b33550c))
+
 ## [3.3.7](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.6...v3.3.7) (2023-10-30)
 
 
