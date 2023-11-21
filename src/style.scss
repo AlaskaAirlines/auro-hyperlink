@@ -122,7 +122,7 @@
     :host(:not(.is-touching)) & {
       &:hover {
         border: 1px solid var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
-        background-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+        background-image: linear-gradient(var(--ds-color-ui-hover-default, $ds-color-ui-hover-default), var(--ds-color-ui-hover-default, $ds-color-ui-hover-default));
         color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
         text-decoration: none;
       }
@@ -146,7 +146,7 @@
       :host(:not(.is-touching)) & {
         &:hover {
           border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-          background-color: var(--ds-color-background-lighter, $ds-color-background-lighter);
+          background-image: linear-gradient(var(--ds-color-background-lighter, $ds-color-background-lighter), var(--ds-color-background-lighter, $ds-color-background-lighter));
           color: var(--ds-color-text-link-default, $ds-color-text-link-default);
         }
       }
@@ -160,7 +160,7 @@
         :host(:not(.is-touching)) & {
           &:hover {
             border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-            background-color: var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15);
+            background-image: linear-gradient(var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15), var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15));
             color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
           }
 
@@ -181,7 +181,7 @@
       :host(:not(.is-touching)) & {
         &:hover {
           border: 1px solid var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
-          background-color: var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
+          background-image: linear-gradient(var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse), var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse));
           color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
         }
 
