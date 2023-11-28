@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+## [3.4.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.4.0...v3.4.1) (2023-11-28)
+
+
+### Bug Fixes
+
+* **cta:** make cta buttons consistent with auro-button [#188](https://github.com/AlaskaAirlines/auro-hyperlink/issues/188) ([05fa7fc](https://github.com/AlaskaAirlines/auro-hyperlink/commit/05fa7fcd3bf33baab0c3886954766058d2c89695))
+
+
+### Performance Improvements
+
+* **cdn:** update to use new auro-button namespace ([35d87d0](https://github.com/AlaskaAirlines/auro-hyperlink/commit/35d87d04bb3090ce967316f33b3719a366162d59))
+* **deps:** update to use latest dependencies ([ff63d46](https://github.com/AlaskaAirlines/auro-hyperlink/commit/ff63d4629073aceffb793aa2150e0be5f6b718a0))
+* **hover:** update hover color implementation [#189](https://github.com/AlaskaAirlines/auro-hyperlink/issues/189) ([54e6d7a](https://github.com/AlaskaAirlines/auro-hyperlink/commit/54e6d7ad2c1979469397869ccb6a1c9142c79647))
+* **node:** update to support node 20 ([e2b329b](https://github.com/AlaskaAirlines/auro-hyperlink/commit/e2b329bc05a72a7688bba8328a1e18a6dd5181fe))
+
 # [3.4.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.3.7...v3.4.0) (2023-11-07)
 
 
