@@ -158,7 +158,7 @@ By default the `auro-hyperlink` will assume that the url passed is an absolute U
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/relativevsabsolute.html) -->
   <!-- The below content is automatically added from ./../../demo/partials/relativevsabsolute.html -->
-  Relative href converted to absolute URL to <auro-hyperlink href="/route-map" nav>route map</auro-hyperlink>.
+  Relative href converted to absolute URL to <auro-hyperlink href="/route-map">route map</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -168,7 +168,7 @@ By default the `auro-hyperlink` will assume that the url passed is an absolute U
 
 ```html
 <!-- Web component example -->
-Relative href converted to absolute URL to <auro-hyperlink href="/route-map" nav>route map</auro-hyperlink>.
+Relative href converted to absolute URL to <auro-hyperlink href="/route-map">route map</auro-hyperlink>.
 
 <!-- Output code in shadow DOM element -->
 Relative href converted to absolute URL to <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>route map</slot></a>.
@@ -262,7 +262,6 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-  <br>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -277,7 +276,6 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-<br>
 <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -318,7 +316,6 @@ In the following example, see how the `small` attribute alters the size of the b
   <auro-hyperlink type="cta" small href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-  <br>
   <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -333,7 +330,6 @@ In the following example, see how the `small` attribute alters the size of the b
 <auro-hyperlink type="cta" small href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" small href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" small href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
-<br>
 <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" small secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
