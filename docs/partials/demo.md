@@ -1,3 +1,8 @@
+<!--
+The demo.md file is a compiled document. No edits should be made directly to this file.
+This file is generated based on a template fetched from `./docs/partials/demo.md`
+-->
+
 # Hyperlink
 
 Hyperlinks form the backbone of how users navigate through a site or app. The following example illustrates how the `auro-hyperlink` component can be used. Common api attributes include `href`, `nav`, `target` and more. For a full list of attributes, see the [api documentation](http://auro.alaskaair.com/components/auro/hyperlink/api).
@@ -11,7 +16,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/default.html) -->
@@ -30,7 +35,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/external.html) -->
@@ -51,7 +56,7 @@ This will also set the `rel` attribute to `external`.
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/external-referrer.html) -->
@@ -68,7 +73,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/navStyle.html) -->
@@ -81,19 +86,15 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 By default the `auro-hyperlink` will assume that the url passed is an absolute URL to `www.alaskaair.com` with the `https` protocol.
 
 <div class="exampleWrapper">
-  Relative href converted to absolute URL to <auro-hyperlink href="/route-map" nav>route map</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/relativevsabsolute.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-  ```html
-  // Web component example
-  Relative href converted to absolute URL to <auro-hyperlink href="/route-map" nav>route map</auro-hyperlink>.
-
-  // Output code in shadow DOM element
-  Relative href converted to absolute URL to <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>route map</slot></a>.
-  ```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/relativevsabsolute_code.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -102,21 +103,15 @@ By default the `auro-hyperlink` will assume that the url passed is an absolute U
 Regardless of protocol used with `http` property, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
 
 <div class="exampleWrapper">
-  http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
-  no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/httpsEnforcement.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-  ```html
-  // Web component example
-  http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
-  no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
-  // Output code in shadow DOM element
-  http absolute URL <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>to route map</slot></a>
-  no hypertext transfer protocol absolute URL to <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>route map</slot></a>
-  ```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/httpsEnforcement_code.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -125,18 +120,15 @@ Regardless of protocol used with `http` property, `auro-hyperlink` will rewrite 
 Absolute URLs are not always preferred. When using relative URLs, use the `relative` attribute and `auro-hyperlink` will ignore the domain and the protocol.
 
 <div class="exampleWrapper">
-  Example of a <auro-hyperlink relative href="#">relative URL</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../demo/partials/relativeUrl.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-  ```html
-  // Web component example
-  Example of a <auro-hyperlink relative href="#">relative URL</auro-hyperlink>
-  // Output code in shadow DOM element
-  Example of a <a class="hyperlink" href="#"><slot>relative URL</slot></a>
-  ```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/relativeUrl_code.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -147,7 +139,7 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/URLscheme.html) -->
@@ -166,7 +158,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta.html) -->
@@ -183,7 +175,7 @@ In the following example, see how the `fluid` attribute alters the shape of the 
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta-fluid.html) -->
@@ -200,7 +192,7 @@ In the following example, see how the `small` attribute alters the size of the b
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/cta-small.html) -->
@@ -221,7 +213,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/roleButton.html) -->
@@ -243,7 +235,7 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../demo/partials/navPattern.html) -->
@@ -262,7 +254,7 @@ The following example illustrates a use case where a user may want to set a user
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../../demo/util_focus.js) -->
