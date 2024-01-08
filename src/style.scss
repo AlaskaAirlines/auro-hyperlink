@@ -243,6 +243,6 @@ svg {
   --auro-size-lg: 1rem;
 
   position: relative;
-  top: 2px;
+  top: var(--ds-size-25, $ds-size-25);
   margin-left: var(--ds-size-25, $ds-size-25);
 }
