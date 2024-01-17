@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [3.4.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.4.1...v3.4.2) (2024-01-17)
+
+
+### Bug Fixes
+
+* update small CTA to adjust content alignment [#191](https://github.com/AlaskaAirlines/auro-hyperlink/issues/191) ([8037424](https://github.com/AlaskaAirlines/auro-hyperlink/commit/803742437f7a7b8eff6261bfcbcdc0a1130d4bff))
+
+
+### Performance Improvements
+
+* convert hard value to token ([7073d49](https://github.com/AlaskaAirlines/auro-hyperlink/commit/7073d497caa85f9de6bb290fd13c3d78228dc5e3))
+
 ## [3.4.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.4.0...v3.4.1) (2023-11-28)
 
 
