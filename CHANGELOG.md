@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.5.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.1...v3.5.2) (2024-01-31)
+
+
+### Performance Improvements
+
+* alaskaairux ref updates ([e55b509](https://github.com/AlaskaAirlines/auro-hyperlink/commit/e55b5099acae6cb20079f87777febd6aa4a441b7))
+* **cdn:** update links from unpkg to jsdelivr ([a6b5508](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a6b550850992ef468b8e255a493939041ec01312))
+
 ## [3.5.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.0...v3.5.1) (2024-01-25)
 
 
