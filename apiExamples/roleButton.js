@@ -1,5 +1,11 @@
-function sayHello() {
-  alert('Hello, you clicked the button!');
+export function roleButtonExample() {
+  const roleButton = document.getElementById('roleButton');
+
+  roleButton.addEventListener('click', () => {
+    alert(`You clicked the role button!`);
+  });
+
+  roleButton.addEventListener('keydown', handleKeyPress);
 }
 
 function handleKeyPress(event) {
