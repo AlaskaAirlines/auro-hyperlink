@@ -13,7 +13,7 @@ describe('auro-hyperlink', () => {
 
   it('auro-hyperlink is button', async () => {
     const el = await fixture(html`
-      <auro-hyperlink href="alaska.com" onClick={this.sayHello} role="button">Alaska air</auro-hyperlink>
+      <auro-hyperlink href="alaska.com" role="button">Alaska air</auro-hyperlink>
     `);
 
     const anchor = el.shadowRoot.querySelector('a');
