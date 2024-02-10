@@ -1,4 +1,4 @@
-import { AuroHyperlink } from './src/auro-hyperlink.js';
+import { AuroHyperlink } from './src/auro-hyperlink.mjs';
 
 /**
  * Register Custom Element.

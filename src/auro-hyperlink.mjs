@@ -6,7 +6,7 @@
 import { html } from 'lit/html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
-import ComponentBase from './component-base';
+import ComponentBase from './component-base.mjs';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";

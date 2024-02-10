@@ -148,7 +148,7 @@
     "bundler:test": "rollup -c -w",
     "dev": "concurrently --kill-others 'npm run build:watch' 'npm run serve'",
     "dist:js": "copyfiles -u 1 -V './src/**/*.js' ./dist",
-    "esLint": "eslint src/auro-*.js",
+    "esLint": "eslint src/auro-*.mjs",
     "linters": "npm-run-all scssLint esLint",
     "preCommit": "node scripts/pre-commit.mjs",
     "postCss:component": "node scripts/postCss.mjs",
