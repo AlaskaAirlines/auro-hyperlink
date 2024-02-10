@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.5.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.3...v3.5.4) (2024-02-10)
+
+
+### Performance Improvements
+
+* update internal refs to support SSR ([047a6b6](https://github.com/AlaskaAirlines/auro-hyperlink/commit/047a6b6299e218366fa0882dc13653c7d7f30d5c))
+
 ## [3.5.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.2...v3.5.3) (2024-02-10)
 
 
