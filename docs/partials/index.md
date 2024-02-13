@@ -66,23 +66,3 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
-
-## Setting focus programmatically
-
-The following example illustrates a use case where a user may want to set a user's focus programmatically. I.e. through another click event.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/focus.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/focus.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/focus.js) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
