@@ -105,51 +105,14 @@ export function roleButtonExample() {
 }
 
 function handleKeyPress(event) {
-  if(event.keyCode === 13) {
+  if(event.key === 'Enter') {
     event.preventDefault();
     alert('Win for a11y! The return key submits!')
   }
-  else if(event.keyCode === 32) {
+  else if(event.key === ' ') {
     event.preventDefault();
     alert('Win for a11y! The spacebar submits!')
   }
-}
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-## Setting focus programmatically
-
-The following example illustrates a use case where a user may want to set a user's focus programmatically. I.e. through another click event.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/focus.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/focus.html -->
-  <auro-button id="focusExampleBtn">Click me for focus</auro-button>
-  <auro-hyperlink id="focusExample" href="https://www.alaskaair.com" target="_blank">Welcome to Alaska Airlines</auro-hyperlink>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/focus.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/focus.html -->
-
-```html
-<auro-button id="focusExampleBtn">Click me for focus</auro-button>
-<auro-hyperlink id="focusExample" href="https://www.alaskaair.com" target="_blank">Welcome to Alaska Airlines</auro-hyperlink>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/focus.js) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/focus.js -->
-
-```js
-export function focusExample() {
-  const focusExample = document.getElementById("focusExample");
-  const focusExampleBtn = document.getElementById("focusExampleBtn");
-
-  focusExampleBtn.addEventListener('click', () => {
-    focusExample.focus();
-  });
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

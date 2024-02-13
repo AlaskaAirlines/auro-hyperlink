@@ -9,11 +9,11 @@ export function roleButtonExample() {
 }
 
 function handleKeyPress(event) {
-  if(event.keyCode === 13) {
+  if(event.key === 'Enter') {
     event.preventDefault();
     alert('Win for a11y! The return key submits!')
   }
-  else if(event.keyCode === 32) {
+  else if(event.key === ' ') {
     event.preventDefault();
     alert('Win for a11y! The spacebar submits!')
   }

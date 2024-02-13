@@ -1,11 +1,9 @@
-import { focusExample } from "../apiExamples/focus";
 import { roleButtonExample } from "../apiExamples/roleButton";
 
 export function initHyperlinkIndexExamples(initCount) {
   initCount = initCount || 0;
 
   try {
-    focusExample();
     roleButtonExample();
   } catch {
     if (initCount <= 20) {
