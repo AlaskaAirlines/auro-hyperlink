@@ -123,7 +123,7 @@ function processReadme() {
 }
 
 /**
- * Compiles `./docTemplates/demo.md` -> `./demo/index.md`
+ * Compiles `./docTemplates/index.md` -> `./demo/index.md`
  */
 
 function processDemo() {
