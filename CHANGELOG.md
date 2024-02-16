@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [3.5.6](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.5...v3.5.6) (2024-02-16)
+
+
+### Bug Fixes
+
+* update npm script reference ([94a8196](https://github.com/AlaskaAirlines/auro-hyperlink/commit/94a8196ac5a9b21d22ec10b409878cdfdca11f09))
+
+
+### Performance Improvements
+
+* update reference to .js files ([f06d3ee](https://github.com/AlaskaAirlines/auro-hyperlink/commit/f06d3eed115c08e93e68cc95ac31be15950e9271))
+
 ## [3.5.5](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.4...v3.5.5) (2024-02-12)
 
 
