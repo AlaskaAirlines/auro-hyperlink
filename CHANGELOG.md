@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [3.5.7](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.6...v3.5.7) (2024-02-19)
+
+
+### Bug Fixes
+
+* **linters:** add linters script to build ([620bbe8](https://github.com/AlaskaAirlines/auro-hyperlink/commit/620bbe871cea98ba4d57d50c4260c5cdde3ef0e5))
+
+
+### Performance Improvements
+
+* **examples:** implement minified js system [#198](https://github.com/AlaskaAirlines/auro-hyperlink/issues/198) ([52d7417](https://github.com/AlaskaAirlines/auro-hyperlink/commit/52d7417fe9dcaf1049b3a9647b9521be555a83d7))
+* **hyperlink:** update references to main hyperlink js file ([98fa7fa](https://github.com/AlaskaAirlines/auro-hyperlink/commit/98fa7fa9542ea6c0ee178cd6d73d57f949a69184))
+* **js:** edit js demo examples ([5a558f5](https://github.com/AlaskaAirlines/auro-hyperlink/commit/5a558f507a5f49b0220247336730a22384e839c0))
+
 ## [3.5.6](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.5...v3.5.6) (2024-02-16)
 
 
