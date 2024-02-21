@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.5.8](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.7...v3.5.8) (2024-02-21)
+
+
+### Performance Improvements
+
+* **docs:** add custom registration example to index page ([4959fe8](https://github.com/AlaskaAirlines/auro-hyperlink/commit/4959fe8d44f9607029bcda565f3d80ba9cbbadb5))
+
 ## [3.5.7](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.6...v3.5.7) (2024-02-19)
 
 
