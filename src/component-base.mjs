@@ -47,7 +47,7 @@ export default class ComponentBase extends LitElement {
     });
   }
 
-  // function to define props used within the scope of thie component
+  // function to define props used within the scope of this component
   static get properties() {
     return {
       href:             { type: String },
@@ -66,67 +66,67 @@ export default class ComponentBase extends LitElement {
   }
 
   /**
+   * Gets the safe URI.
+   *
    * @private
-   * @returns {string} Cleaned URL.
+   * @type {string}
    */
   get safeUri() {
     return this.href ? this.safeUrl(this.href, this.relative) : '';
   }
 
   /**
+   * Checks if the safe URI includes a domain.
+   *
    * @private
-   * @returns {boolean} Whether or not URL includes protocol.
+   * @type {boolean}
    */
   get includesDomain() {
     return this.href ? this.safeUri.includes('http') : false;
   }
 
   /**
+   * Safely processes a URL.
+   *
    * @private
-   * @param {string} href - Include href value.
-   * @param {boolean} relative - Include relative value.
-   * @returns {string} URL definition.
+   * @param {string} href - The URL to be processed.
+   * @param {boolean} relative - Indicates whether the URL is relative.
+   * @returns {string|undefined} The processed URL or undefined if the URL is invalid or if JavaScript is used.
    */
   safeUrl(href, relative) {
-    if (href !== undefined) {
-      const url = new URL(href, 'https://www.alaskaair.com');
-
-      switch (url.protocol) {
-        case 'javascript:': // eslint-disable-line
-          return '';
-
-        case 'tel:':
-          return href;
-
-        case 'sms:':
-          return href;
-
-        case 'mailto:':
-          return href;
-
-        default:
-          if (!relative) {
-            url.protocol = 'https:';
-
-            return url.href;
-
-          } else if (relative) {
-            return href;
-          }
-      }
-
-    } else if (href === undefined) {
+    if (!href) {
       return undefined;
     }
 
-    return undefined;
+    const url = new URL(href, 'https://www.alaskaair.com');
+
+    switch (url.protocol) {
+      case 'tel:':
+      case 'sms:':
+      case 'mailto:':
+        return href;
+
+      // Specifically want to render NO shadowDOM for JavaScript refs
+      case 'javascript:':
+        return undefined;
+
+      default:
+        if (!relative) {
+          url.protocol = 'https:';
+          return url.href;
+        } else {
+          return href.replace(/[^:]*:/, "");
+        }
+    }
   }
 
+
   /**
-   * Internal function to generate the HTML for the icon to use.
+   * Generates an HTML element containing SVG content.
+   *
    * @private
-   * @param {string} svgContent - The imported svg icon.
-   * @returns {string} - The html template for the icon.
+   * @param {string} svgContent - The SVG content to be parsed.
+   * @returns {HTMLElement} The HTML element containing the parsed SVG content.
    */
   generateIconHtml(svgContent) {
     const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
@@ -136,9 +136,11 @@ export default class ComponentBase extends LitElement {
   }
 
   /**
+   * Generates an icon HTML element based on the target attribute.
+   *
    * @private
-   * @param {string} target - Link destination target.
-   * @returns {string} Correct icon.
+   * @param {string} target - The target attribute of the anchor element.
+   * @returns {HTMLElement|undefined} The HTML element containing the icon, or undefined if no icon is generated.
    */
   targetIcon(target) {
 
@@ -152,19 +154,23 @@ export default class ComponentBase extends LitElement {
   }
 
   /**
+   * Gets the state of a tab.
+   *
    * @private
-   * @param {boolean} tabisactive - Tab state.
-   * @returns {string} CSS class for active state.
+   * @param {boolean} tabisActive - Indicates whether the tab is active.
+   * @returns {string} The state of the tab, either "is-active" if active or an empty string if not active.
    */
   getTabState(tabisactive) {
     return tabisactive === true ? "is-active" : '';
   }
 
   /**
+   * Gets the rel attribute value based on target and rel values.
+   *
    * @private
-   * @param {string} target - Link destination target.
-   * @param {string} rel - Defined rel option.
-   * @returns {string} SEO security options.
+   * @param {string} target - The target attribute of the anchor element.
+   * @param {string} rel - The rel attribute of the anchor element.
+   * @returns {string|undefined} The rel attribute value or undefined if not applicable.
    */
   getReltype(target, rel) {
 
@@ -188,9 +194,11 @@ export default class ComponentBase extends LitElement {
   }
 
   /**
+   * Sets the ARIA pressed state based on user interactions.
+   *
    * @private
-   * @param {boolean} ariapressed - Aria state.
-   * @returns {string} Aria attribute definition.
+   * @param {boolean} ariaPressed - The initial value of the ARIA pressed state.
+   * @returns {boolean} The updated ARIA pressed state.
    */
   ariaPressedState(ariapressed) {
     const ariaToggle = function (event) {
