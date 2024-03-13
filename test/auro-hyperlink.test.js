@@ -25,35 +25,6 @@ describe('auro-hyperlink', () => {
     expect(anchor).not.to.have.attribute('href');
   });
 
-  it('auro-hyperlink is mailto', async () => {
-    const el = await fixture(html`
-      <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>
-    `);
-
-    const anchor = el.shadowRoot.querySelector('a');
-
-    expect(anchor).to.have.attribute('href', 'mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email');
-  });
-
-  it('auro-hyperlink is tel', async () => {
-    const el = await fixture(html`
-      <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>
-    `);
-
-    const anchor = el.shadowRoot.querySelector('a');
-
-    expect(anchor).to.have.attribute('href', 'tel:+18002527522');
-  });
-
-  it('auro-hyperlink is sms', async () => {
-    const el = await fixture(html`
-      <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>
-    `);
-
-    const anchor = el.shadowRoot.querySelector('a');
-
-    expect(anchor).to.have.attribute('href', 'sms:+18002527522');
-  });
 
   it('auro-hyperlink is relative', async () => {
     const el = await fixture(html`
@@ -66,9 +37,21 @@ describe('auro-hyperlink', () => {
     expect(anchor).not.to.have.attribute('href', 'https://www.alaskaair.com/auro');
   });
 
+  // eval that JS in the href attr is ignored
   it('auro-hyperlink is javascript', async () => {
     const el = await fixture(html`
       <auro-hyperlink href="javascript:;">It's JavaScript!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+
+    expect(el).not.to.have.shadowDom;
+  });
+
+  // eval that data in the href attr is ignored
+  it('auro-hyperlink is data', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="data:text/plain;charset=utf-8,Hello%20World!">It's data!</auro-hyperlink>
     `);
 
     const anchor = el.shadowRoot.querySelector('a');
@@ -134,4 +117,53 @@ describe('auro-hyperlink', () => {
     await expect(el).to.be.true;
   });
 
+});
+
+
+describe('safeUrl function', () => {
+  let component;
+
+  beforeEach(async () => {
+    component = await fixture('<auro-hyperlink></auro-hyperlink>');
+  });
+
+  it('returns undefined when href is undefined', () => {
+    const result = component.safeUrl(undefined, false);
+    expect(result).to.be.undefined;
+  });
+
+  it('returns href when protocol is tel:', async () => {
+    const result = component.safeUrl('tel:1234567890', false);
+    expect(result).to.equal('tel:1234567890');
+  });
+
+  it('returns href when protocol is sms:', async () => {
+    const result = component.safeUrl('sms:1234567890', false);
+    expect(result).to.equal('sms:1234567890');
+  });
+
+  it('returns href when protocol is mailto:', async () => {
+    const result = component.safeUrl('mailto:example@example.com', false);
+    expect(result).to.equal('mailto:example@example.com');
+  });
+
+  it('returns href when protocol is https:', async () => {
+    const result = component.safeUrl('https://www.example.com', false);
+    expect(result).to.equal('https://www.example.com/');
+  });
+
+  it('returns href with https protocol when relative is false', async () => {
+    const result = component.safeUrl('http://www.example.com', false);
+    expect(result).to.equal('https://www.example.com/');
+  });
+
+  it('returns href when relative is true', async () => {
+    const result = component.safeUrl('/example', true);
+    expect(result).to.equal('/example');
+  });
+
+  it('returns undefined when href is undefined and relative is true', () => {
+    const result = component.safeUrl(undefined, true);
+    expect(result).to.be.undefined;
+  });
 });
