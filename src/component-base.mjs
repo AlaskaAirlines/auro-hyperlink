@@ -106,8 +106,10 @@ export default class ComponentBase extends LitElement {
       case 'mailto:':
         return href;
 
-      // Specifically want to render NO shadowDOM for JavaScript refs
+      // Specifically want to render NO shadowDOM for the following refs
       case 'javascript:':
+      case 'data:':
+      case 'vbscript:':
         return undefined;
 
       default:
@@ -115,7 +117,7 @@ export default class ComponentBase extends LitElement {
           url.protocol = 'https:';
           return url.href;
         } else {
-          return href.replace(/[^:]*:/, "");
+          return href.replace(/^[^:]+:/, "");
         }
     }
   }
@@ -143,10 +145,22 @@ export default class ComponentBase extends LitElement {
    * @returns {HTMLElement|undefined} The HTML element containing the icon, or undefined if no icon is generated.
    */
   targetIcon(target) {
+    /**
+     * Checks if a URL's domain is from the 'alaskaair.com' domain or its subdomains.
+     * @param {string} url - The URL to check.
+     * @returns {boolean} Returns true if the URL's domain is 'alaskaair.com' or one of its subdomains, otherwise false.
+     */
+    const isAlaskaAirDomain = (url) => {
+      const urlObject = new URL(url);
+      return urlObject.hostname.endsWith('.alaskaair.com');
+    };
 
-    if (target === '_blank' && this.safeUri.includes('alaskaair.com')) {
+    // If target is '_blank' and the URL's domain is 'alaskaair.com' or one of its subdomains, return icon for new window
+    if (target === '_blank' && isAlaskaAirDomain(this.safeUri)) {
       return this.generateIconHtml(newWindow.svg);
-    } else if (target === '_blank' && this.includesDomain) {
+    }
+    // If target is '_blank' and the URL does not belong to 'alaskaair.com' or its subdomains but contains a domain, return icon for external link
+    else if (target === '_blank' && !isAlaskaAirDomain(this.safeUri) && this.includesDomain) {
       return this.generateIconHtml(externalLink.svg);
     }
 
