@@ -67,6 +67,25 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 
 </auro-accordion>
 
+## Unsupported types
+
+Not all URL types are supported for security reasons. Two common types that are worth mentioning are `javaScript:` and `data:`.
+
+The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/nonSupported.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/nonSupported.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ## Recommended Use and Version Control
 
 There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-hyperlink` custom element is defined automatically.
