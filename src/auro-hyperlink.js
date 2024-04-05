@@ -13,21 +13,21 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * `<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
+ * `<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.
  *
- * @attr {Boolean} download - Specifies that the target will be downloaded when a user clicks on the hyperlink.
- * @attr {Boolean} fluid - Modifier for `type="cta"` fluid-width UI option.
- * @attr {Boolean} ondark - Specifies dark theme use of hyperlink.
- * @attr {Boolean} relative - Add flag to disable auto URL re-write feature.
- * @attr {Boolean} secondary - Modifier for `type="cta"` secondary UI option.
- * @attr {Boolean} small - Modifier for `type="cta"` small UI option.
- * @attr {Boolean} referrerpolicy - Sets `strict-origin-when-cross-origin` to send a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
- * @attr {String} rel - Specifies the relationship between the current document and the linked document.
- * @attr {String} role - Use for aria roles; currently supports `button` for extended experiences.
- * @attr {String} href - Specifies the URL of the page link.
- * @attr {String} target - Specifies where to open the linked document.
- * @attr {String} type - Enumerable attribute; [`nav`, `cta`]
- * @csspart link - Apply CSS to the `a` element
+ * @attr {Boolean} download - If true, the linked resource will be downloaded when the hyperlink is clicked.
+ * @attr {Boolean} fluid - If true and `type="cta"`, the hyperlink will have a fluid-width UI.
+ * @attr {Boolean} ondark - If true, the hyperlink will be styled for use on a dark background.
+ * @attr {Boolean} relative - If true, the auto URL re-write feature will be disabled.
+ * @attr {Boolean} secondary - If true and `type="cta"`, the hyperlink will have a secondary UI.
+ * @attr {Boolean} small - If true and `type="cta"`, the hyperlink will have a small UI.
+ * @attr {Boolean} referrerpolicy - If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
+ * @attr {String} rel - Defines the relationship between the current document and the linked document.
+ * @attr {String} role - Defines ARIA roles; currently supports `button` for extended experiences.
+ * @attr {String} href - Defines the URL of the linked page.
+ * @attr {String} target - Defines where to open the linked document.
+ * @attr {String} type - Defines the type of hyperlink; accepts `nav` or `cta`.
+ * @csspart link - Allows styling to be applied to the `a` element.
  */
 
 // build the component class
@@ -44,8 +44,18 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
+   * Generates an object containing CSS classes based on the properties of the component.
+   *
+   * @example
+   * // Assuming this.safeUri = 'http://example.com', this.role = 'button', this.type = 'cta'
+   * this.getMarkup(); // Returns { 'hyperlink': true, 'hyperlink--nav': false, 'hyperlink--ondark': false, 'hyperlink--button': true, 'hyperlink--cta': true, 'hyperlink--secondary': false }
+   *
+   * @example
+   * // Assuming this.safeUri = '', this.role = '', this.type = 'nav', this.ondark = true, this.secondary = true
+   * this.getMarkup(); // Returns { 'hyperlink': false, 'hyperlink--nav': true, 'hyperlink--ondark': true, 'hyperlink--button': false, 'hyperlink--cta': false, 'hyperlink--secondary': true }
+   *
    * @private
-   * @returns {object} Classes object.
+   * @returns {object} An object containing CSS classes.
    */
   getMarkup() {
     const classes = {
