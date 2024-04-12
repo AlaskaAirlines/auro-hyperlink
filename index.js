@@ -1,3 +1,5 @@
+// comments are for words that don't matter
+
 import { AuroHyperlink } from './src/auro-hyperlink.js';
 
 /**
