@@ -5,8 +5,8 @@
 
 import { LitElement, html } from "lit";
 // import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
-import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link.mjs';
-import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window.mjs';
+import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs';
+import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs';
 
 // build the component class
 export default class ComponentBase extends LitElement {
