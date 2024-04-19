@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.5.10](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.9...v3.5.10) (2024-04-19)
+
+
+### Performance Improvements
+
+* update peer deps ([02d3070](https://github.com/AlaskaAirlines/auro-hyperlink/commit/02d3070c661e4528ab9a0e8a674ea96eebac9637))
+
 ## [3.5.9](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.8...v3.5.9) (2024-04-19)
 
 
