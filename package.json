@@ -24,9 +24,9 @@
     "lit": "^3.1.3"
   },
   "peerDependencies": {
-    "@alaskaairux/icons": "^4.36.2",
-    "@aurodesignsystem/design-tokens": "^4.3.0",
-    "@aurodesignsystem/webcorestylesheets": "^5.0.8"
+    "@alaskaairux/icons": "^4.40.2",
+    "@aurodesignsystem/design-tokens": "^4.3.1",
+    "@aurodesignsystem/webcorestylesheets": "^5.1.0"
   },
   "devDependencies": {
     "@alaskaairux/icons": "^4.40.2",
