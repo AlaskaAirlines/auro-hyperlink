@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.5.9](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.8...v3.5.9) (2024-04-19)
+
+
+### Performance Improvements
+
+* replace deprecated icon references ([6d90507](https://github.com/AlaskaAirlines/auro-hyperlink/commit/6d90507251ee18a277eeee15a6a322dde37a890e))
+
 ## [3.5.8](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.7...v3.5.8) (2024-02-21)
 
 
