@@ -186,6 +186,45 @@
       }
     }
 
+    &.hyperlink--tertiary {
+      border: 1px solid transparent;
+      background-color: color-mix(in srgb, var(--ds-color-base-black, $ds-color-base-black) 3%, transparent);
+      color: var(--ds-color-text-link-default, $ds-color-text-link-default);
+
+      // update to media query when ods-hyperlink support is removed
+      :host(:not(.is-touching)) & {
+        &:hover {
+          background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default));
+          color: var(--ds-color-text-link-default, $ds-color-text-link-default);
+        }
+      }
+
+      &.hyperlink--ondark {
+        border: 1px solid transparent;
+        background-color: color-mix(in srgb, var(--ds-color-base-white, $ds-color-base-white) 3%, transparent);
+        color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+
+        // update to media query when ods-hyperlink support is removed
+        :host(:not(.is-touching)) & {
+          &:hover {
+            background-image: linear-gradient(var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse), var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse));
+            background-color: var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse);
+            color: color-mix(in srgb, var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse) 40%, transparent);
+          }
+
+          &:visited {
+            color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+          }
+
+          &:focus-visible {
+            color: var(--ds-color-text-link-inverse, $ds-color-text-link-inverse);
+            outline: var(--ds-color-border-active-inverse, $ds-color-border-active-inverse) solid var(--ds-size-50, $ds-size-50);
+            outline-offset: unset;
+          }
+        }
+      }
+    }
+
     // CTA ondark
     &.hyperlink--ondark {
       border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);

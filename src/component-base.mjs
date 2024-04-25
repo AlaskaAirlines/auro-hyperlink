@@ -16,6 +16,7 @@ export default class ComponentBase extends LitElement {
     this.download = false;
     this.relative = false;
     this.secondary = false;
+    this.tertiary = false;
     this.ondark = false;
     this.small = false;
 
@@ -57,6 +58,7 @@ export default class ComponentBase extends LitElement {
       download:         { type: Boolean },
       relative:         { type: Boolean },
       secondary:        { type: Boolean },
+      tertiary:         { type: Boolean },
       ondark:           { type: Boolean },
       type:             { type: String },
       fluid:            { type: Boolean },
