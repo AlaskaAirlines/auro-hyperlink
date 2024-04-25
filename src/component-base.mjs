@@ -4,7 +4,6 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html } from "lit";
-// import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
 import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs';
 import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs';
 
