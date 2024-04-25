@@ -21,6 +21,7 @@
 | [secondary](#secondary)      | `secondary`      |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a secondary UI. |
 | [small](#small)          | `small`          |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a small UI. |
 | [target](#target)         | `target`         |           | `String`  |         | Defines where to open the linked document.       |
+| [tertiary](#tertiary)       | `tertiary`       |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a tertiary UI. |
 | [type](#type)           | `type`           |           | `String`  |         | Defines the type of hyperlink; accepts `nav` or `cta`. |
 
 ## CSS Shadow Parts
@@ -288,6 +289,9 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -302,6 +306,9 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -315,6 +322,7 @@ In the following example, see how the `fluid` attribute alters the shape of the 
   <!-- The below content is automatically added from ./../../apiExamples/cta-fluid.html -->
   <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" fluid tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -325,6 +333,7 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 ```html
 <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -342,6 +351,9 @@ In the following example, see how the `small` attribute alters the size of the b
   <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" small tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -356,6 +368,9 @@ In the following example, see how the `small` attribute alters the size of the b
 <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" small secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" small secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" small tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

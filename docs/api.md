@@ -18,6 +18,7 @@
 | `secondary`      | `secondary`      |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a secondary UI. |
 | `small`          | `small`          |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a small UI. |
 | `target`         | `target`         |           | `String`  |         | Defines where to open the linked document.       |
+| `tertiary`       | `tertiary`       |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a tertiary UI. |
 | `type`           | `type`           |           | `String`  |         | Defines the type of hyperlink; accepts `nav` or `cta`. |
 
 ## CSS Shadow Parts
