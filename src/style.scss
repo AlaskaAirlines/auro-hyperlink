@@ -98,7 +98,7 @@
   }
 
   &--button {
-    @include auro_anchorButton(css, component);
+    @include auro_anchorButton(css, noncomponent);
   }
 
   &--nav {
@@ -107,7 +107,7 @@
   }
 
   &--cta {
-    @include auro_anchorButton(css, component, block);
+    @include auro_anchorButton(css, noncomponent, block);
 
     border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
     border-radius: var(--ds-border-radius, $ds-border-radius);
@@ -129,8 +129,7 @@
       transform: scale(.95);
     }
 
-    // update to media query when ods-hyperlink support is removed
-    :host(:not(.is-touching)) & {
+    @media (hover: hover) {
       &:hover {
         border: 1px solid var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
         background-image: linear-gradient(var(--ds-color-ui-hover-default, $ds-color-ui-hover-default), var(--ds-color-ui-hover-default, $ds-color-ui-hover-default));
@@ -157,8 +156,7 @@
       background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
       color: var(--ds-color-text-link-default, $ds-color-text-link-default);
 
-      // update to media query when ods-hyperlink support is removed
-      :host(:not(.is-touching)) & {
+      @media (hover: hover) {
         &:hover {
           border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
           background-image: linear-gradient(var(--ds-color-background-lighter, $ds-color-background-lighter), var(--ds-color-background-lighter, $ds-color-background-lighter));
@@ -171,8 +169,8 @@
         background-color: transparent;
         color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
 
-        // update to media query when ods-hyperlink support is removed
-        :host(:not(.is-touching)) & {
+
+        @media (hover: hover) {
           &:hover {
             border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
             background-image: linear-gradient(var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15), var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15));
@@ -191,8 +189,7 @@
       background-color: color-mix(in srgb, var(--ds-color-base-black, $ds-color-base-black) 3%, transparent);
       color: var(--ds-color-text-link-default, $ds-color-text-link-default);
 
-      // update to media query when ods-hyperlink support is removed
-      :host(:not(.is-touching)) & {
+      @media (hover: hover) {
         &:hover {
           background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default));
           color: var(--ds-color-text-link-default, $ds-color-text-link-default);
@@ -204,8 +201,8 @@
         background-color: color-mix(in srgb, var(--ds-color-base-white, $ds-color-base-white) 3%, transparent);
         color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
 
-        // update to media query when ods-hyperlink support is removed
-        :host(:not(.is-touching)) & {
+
+        @media (hover: hover) {
           &:hover {
             background-image: linear-gradient(var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse), var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse));
             background-color: var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse);
@@ -231,8 +228,7 @@
       background-color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
       color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
 
-      // update to media query when ods-hyperlink support is removed
-      :host(:not(.is-touching)) & {
+      @media (hover: hover) {
         &:hover {
           border: 1px solid var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
           background-image: linear-gradient(var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse), var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse));
