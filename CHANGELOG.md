@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [3.6.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.11...v3.6.0) (2024-05-07)
+
+
+### Features
+
+* add tertiary variant to hyperlink component ([4c6edc7](https://github.com/AlaskaAirlines/auro-hyperlink/commit/4c6edc7c60e88abc20c0ee4b99ca3306ae1f7378))
+
+
+### Performance Improvements
+
+* update legacy .is-touch to media query ([69fb4ab](https://github.com/AlaskaAirlines/auro-hyperlink/commit/69fb4ab517b7c00cea024dbdd9f70077c04ffdd4))
+
 ## [3.5.11](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.10...v3.5.11) (2024-04-29)
 
 
