@@ -143,7 +143,7 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 
 ## Call to action buttons
 
-Call to action buttons, or "CTA" buttons are a special use case hybrid hyperlink/button solution. Semantically these links are hyperlinks, but take on the appearance of a button. While these look like the `auro-button`, there are slight differences and that is intentional. A `secondary` attribute modifier option is also supported.
+Call to action buttons, or "CTA" buttons are a special use case hybrid hyperlink/button solution. Semantically these links are hyperlinks, but take on the appearance of a button. While these look like the `auro-button`, there are slight differences and that is intentional. The `secondary` and `tertiary` attribute modifier options are also supported.
 
 CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
 
