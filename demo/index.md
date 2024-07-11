@@ -18,6 +18,13 @@ If the `href` attribute is not added, the hyperlink element will render back sim
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark" aria-hidden>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/basic-ondark.html -->
+  <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
+  Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
@@ -26,6 +33,14 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 ```html
 <auro-hyperlink>No href supplied</auro-hyperlink><br>
 Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/basic-ondark.html -->
+
+```html
+<auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
+Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -49,6 +64,19 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
   </auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark" style="display: flex; justify-content: space-between;">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navPattern-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/navPattern-ondark.html -->
+  <auro-hyperlink ondark href="/last" type="nav">
+    <auro-icon ondark category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
+    Click here to go back
+  </auro-hyperlink>
+  <auro-hyperlink ondark href="/next" type="nav">
+    Click here to go forward
+    <auro-icon ondark category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
+  </auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navPattern.html) -->
@@ -62,6 +90,20 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 <auro-hyperlink href="/next" type="nav">
   Click here to go forward
   <auro-icon category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
+</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navPattern-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/navPattern-ondark.html -->
+
+```html
+<auro-hyperlink ondark href="/last" type="nav">
+  <auro-icon ondark category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
+  Click here to go back
+</auro-hyperlink>
+<auro-hyperlink ondark href="/next" type="nav">
+  Click here to go forward
+  <auro-icon ondark category="interface" name="chevron-right" customColor style="line-height: 1"></auro-icon>
 </auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -81,6 +123,12 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
   <auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roleButton-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/roleButton-ondark.html -->
+  <auro-hyperlink ondark href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton.html) -->
@@ -90,18 +138,32 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 <auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/roleButton-ondark.html -->
+
+```html
+<auro-hyperlink ondark href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton.js) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roleButton.js -->
 
 ```js
 export function roleButtonExample() {
   const roleButton = document.getElementById('roleButton');
+  const roleButtonOndark = document.getElementById('roleButton-ondark');
 
   roleButton.addEventListener('click', () => {
     alert(`You clicked the role button!`);
   });
 
   roleButton.addEventListener('keydown', handleKeyPress);
+
+  roleButtonOndark.addEventListener('click', () => {
+    alert(`You clicked the role button!`);
+  });
+
+  roleButtonOndark.addEventListener('keydown', handleKeyPress);
 }
 
 function handleKeyPress(event) {
