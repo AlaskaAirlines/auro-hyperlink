@@ -19,8 +19,7 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-/* stylelint-disable
-  declaration-empty-line-before,
+/* stylelint-disable declaration-empty-line-before,
   no-descending-specificity,
   order/properties-order,
   selector-class-pattern,
@@ -55,44 +54,16 @@
 .hyperlink {
   @include auro_transition(all, .15s, ease);
 
-  color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
   text-decoration: underline;
-
-  // applying a focus UI when using .focus()
-  &:focus {
-    text-decoration: none;
-  }
-
-  &:visited {
-    color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-  }
-
-  &:focus-visible {
-    background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-    color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
-    outline: var(--ds-color-ui-default-default, $ds-color-ui-default-default) solid var(--ds-size-50, $ds-size-50);
-    outline-offset: unset;
-
-    &:hover {
-      color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
-    }
-  }
 
   @media (hover: hover) {
     &:hover {
-      color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
       text-decoration: none;
     }
 
     &--nav {
       &:hover {
         text-decoration: underline;
-      }
-    }
-
-    &--ondark {
-      &:hover {
-        color: var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
       }
     }
   }
@@ -104,15 +75,18 @@
   &--nav {
     display: block;
     text-decoration: none;
+
+    &:focus-visible {
+      outline-style: solid;
+      outline-width: var(--ds-size-50, $ds-size-50);
+      outline-offset: unset;
+    }
   }
 
   &--cta {
-    @include auro_anchorButton(css, noncomponent, block);
-
-    border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+    border-style: solid;
+    border-width: 1px;
     border-radius: var(--ds-border-radius, $ds-border-radius);
-    background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-    color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
     font-family: var(--ds-font-family-default, $ds-font-family-default);
     font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
     font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
@@ -124,22 +98,30 @@
 
     vertical-align: middle;
 
+    @include auro_anchorButton(css, noncomponent, block);
 
     &:active {
       transform: scale(.95);
     }
 
-    @media (hover: hover) {
-      &:hover {
-        border: 1px solid var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
-        background-image: linear-gradient(var(--ds-color-ui-hover-default, $ds-color-ui-hover-default), var(--ds-color-ui-hover-default, $ds-color-ui-hover-default));
-        color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
-        text-decoration: none;
-      }
+    &:focus-visible {
+      outline-style: solid;
+      outline-width: var(--ds-size-50, $ds-size-50);
+      outline-offset: calc(-1 * (var(--ds-size-50, $ds-size-50) + var(--ds-size-25, $ds-size-25)));
     }
 
-    &:visited {
-      color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
+    &.hyperlink--secondary {
+      outline-offset: calc(-1 * (var(--ds-size-50, $ds-size-50)));
+    }
+
+    &.hyperlink--tertiary {
+      outline-offset: calc(-1 * (var(--ds-size-50, $ds-size-50)));
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     @include auro_breakpoint--sm {
@@ -151,102 +133,11 @@
       padding: 0 var(--ds-size-300, $ds-size-300);
     }
 
-    &.hyperlink--secondary {
-      border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-      background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
-      color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-
-      @media (hover: hover) {
-        &:hover {
-          border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-          background-image: linear-gradient(var(--ds-color-background-lighter, $ds-color-background-lighter), var(--ds-color-background-lighter, $ds-color-background-lighter));
-          color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-        }
-      }
-
-      &.hyperlink--ondark {
-        border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-        background-color: transparent;
-        color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-
-
-        @media (hover: hover) {
-          &:hover {
-            border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-            background-image: linear-gradient(var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15), var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15));
-            color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-          }
-
-          &:visited {
-            color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-          }
-        }
-      }
-    }
-
-    &.hyperlink--tertiary {
-      border: 1px solid transparent;
-      background-color: color-mix(in srgb, var(--ds-color-base-black, $ds-color-base-black) 3%, transparent);
-      color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-
-      @media (hover: hover) {
-        &:hover {
-          background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default));
-          color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-        }
-      }
-
-      &.hyperlink--ondark {
-        border: 1px solid transparent;
-        background-color: color-mix(in srgb, var(--ds-color-base-white, $ds-color-base-white) 3%, transparent);
-        color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-
-
-        @media (hover: hover) {
-          &:hover {
-            background-image: linear-gradient(var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse), var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse));
-            background-color: var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse);
-            color: color-mix(in srgb, var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse) 40%, transparent);
-          }
-
-          &:visited {
-            color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-          }
-
-          &:focus-visible {
-            color: var(--ds-color-text-link-inverse, $ds-color-text-link-inverse);
-            outline: var(--ds-color-border-active-inverse, $ds-color-border-active-inverse) solid var(--ds-size-50, $ds-size-50);
-            outline-offset: unset;
-          }
-        }
-      }
-    }
-
-    // CTA ondark
+    &.hyperlink--secondary,
+    &.hyperlink--tertiary,
     &.hyperlink--ondark {
-      border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-      background-color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-      color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-
-      @media (hover: hover) {
-        &:hover {
-          border: 1px solid var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
-          background-image: linear-gradient(var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse), var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse));
-          color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-        }
-
-        &:visited {
-          color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-        }
-      }
-    }
-  }
-
-  &--ondark {
-    color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-
-    &:visited {
-      color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+      border-style: solid;
+      border-width: 1px;
     }
   }
 }

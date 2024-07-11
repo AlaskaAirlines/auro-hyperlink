@@ -1,0 +1,223 @@
+/* stylelint-disable custom-property-empty-line-before */
+
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
+
+:host {
+  // default hyperlink
+  --ds-auro-hyperlink-default-color-default: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
+  --ds-auro-hyperlink-default-container-color-default: transparent;
+  --ds-auro-hyperlink-default-outline-color-default: transparent;
+  --ds-auro-hyperlink-default-border-color-default: transparent;
+
+  --ds-auro-hyperlink-visited-color-default: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
+  --ds-auro-hyperlink-visited-container-color-default: transparent;
+  --ds-auro-hyperlink-visited-outline-color-default: transparent;
+  --ds-auro-hyperlink-visited-border-color-default: transparent;
+
+  --ds-auro-hyperlink-focus-color-default: var(--ds-color-text-ui-focus-default, #{$ds-color-text-ui-focus-default});
+  --ds-auro-hyperlink-focus-container-color-default: transparent;
+  --ds-auro-hyperlink-focus-outline-color-default: transparent;
+  --ds-auro-hyperlink-focus-border-color-default: transparent;
+
+  --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-ui-hover-default, #{$ds-color-text-ui-hover-default});
+  --ds-auro-hyperlink-hover-container-color-default: transparent;
+  --ds-auro-hyperlink-hover-outline-color-default: transparent;
+  --ds-auro-hyperlink-hover-border-color-default: transparent;
+
+  // default ondark hyperlink
+  --ds-auro-hyperlink-default-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-default-container-color-inverse: transparent;
+  --ds-auro-hyperlink-default-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-default-border-color-inverse: transparent;
+
+  --ds-auro-hyperlink-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-visited-container-color-inverse: transparent;
+  --ds-auro-hyperlink-visited-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-visited-border-color-inverse: transparent;
+
+  --ds-auro-hyperlink-focus-color-inverse: var(--ds-color-text-ui-focus-inverse, #{$ds-color-text-ui-focus-inverse});
+  --ds-auro-hyperlink-focus-container-color-inverse: transparent;
+  --ds-auro-hyperlink-focus-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-focus-border-color-inverse: transparent;
+
+  --ds-auro-hyperlink-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});
+  --ds-auro-hyperlink-hover-container-color-inverse: transparent;
+  --ds-auro-hyperlink-hover-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-hover-border-color-inverse: transparent;
+
+  // nav hyperlink
+  --ds-auro-hyperlink-nav-default-color-default: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
+  --ds-auro-hyperlink-nav-default-container-color-default: transparent;
+  --ds-auro-hyperlink-nav-default-outline-color-default: transparent;
+  --ds-auro-hyperlink-nav-default-border-color-default: transparent;
+
+  --ds-auro-hyperlink-nav-visited-color-default: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
+  --ds-auro-hyperlink-nav-visited-container-color-default: transparent;
+  --ds-auro-hyperlink-nav-visited-outline-color-default: transparent;
+  --ds-auro-hyperlink-nav-visited-border-color-default: transparent;
+
+  --ds-auro-hyperlink-nav-focus-color-default: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-hyperlink-nav-focus-container-color-default: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
+  --ds-auro-hyperlink-nav-focus-outline-color-default: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
+  --ds-auro-hyperlink-nav-focus-border-color-default: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
+
+  --ds-auro-hyperlink-nav-hover-color-default: var(--ds-color-text-ui-hover-default, #{$ds-color-text-ui-hover-default});
+  --ds-auro-hyperlink-nav-hover-container-color-default: transparent;
+  --ds-auro-hyperlink-nav-hover-outline-color-default: transparent;
+  --ds-auro-hyperlink-nav-hover-border-color-default: transparent;
+
+  // nav ondark hyperlink
+  --ds-auro-hyperlink-nav-default-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-nav-default-container-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-default-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-default-border-color-inverse: transparent;
+
+  --ds-auro-hyperlink-nav-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-nav-visited-container-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-visited-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-visited-border-color-inverse: transparent;
+
+  --ds-auro-hyperlink-nav-focus-color-inverse: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-hyperlink-nav-focus-container-color-inverse: var(--ds-color-container-ui-primary-focus-inverse, #{$ds-color-container-ui-primary-focus-inverse});
+  --ds-auro-hyperlink-nav-focus-outline-color-inverse: var(--ds-color-border-ui-default-inverse, #{$ds-color-border-ui-default-inverse});
+  --ds-auro-hyperlink-nav-focus-border-color-inverse: var(--ds-color-border-ui-default-inverse, #{$ds-color-border-ui-default-inverse});
+
+  --ds-auro-hyperlink-nav-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});
+  --ds-auro-hyperlink-nav-hover-container-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-hover-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-hover-border-color-inverse: transparent;
+
+  // cta hyperlink - default
+
+  --ds-auro-hyperlink-cta-default-color-default: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-hyperlink-cta-default-container-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-default-outline-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-default-border-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+
+  --ds-auro-hyperlink-cta-visited-color-default: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-hyperlink-cta-visited-container-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-visited-outline-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-visited-border-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+
+  --ds-auro-hyperlink-cta-focus-color-default: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-hyperlink-cta-focus-container-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-focus-outline-color-default: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
+  --ds-auro-hyperlink-cta-focus-border-color-default: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
+
+  --ds-auro-hyperlink-cta-hover-color-default: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-hyperlink-cta-hover-container-color-default: var(--ds-color-container-ui-primary-hover-default, #{$ds-color-container-ui-primary-hover-default});
+  --ds-auro-hyperlink-cta-hover-outline-color-default: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
+  --ds-auro-hyperlink-cta-hover-border-color-default: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
+
+  // cta hyperlink - default ondark
+
+  --ds-auro-hyperlink-cta-default-color-inverse: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-cta-default-container-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+  --ds-auro-hyperlink-cta-default-outline-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+  --ds-auro-hyperlink-cta-default-border-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+
+  --ds-auro-hyperlink-cta-visited-color-inverse: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-cta-visited-container-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+  --ds-auro-hyperlink-cta-visited-outline-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+  --ds-auro-hyperlink-cta-visited-border-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+
+  --ds-auro-hyperlink-cta-focus-color-inverse: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-cta-focus-container-color-inverse: var(--ds-color-ui-default-inverse, #{$ds-color-ui-default-inverse});
+  --ds-auro-hyperlink-cta-focus-outline-color-inverse: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
+  --ds-auro-hyperlink-cta-focus-border-color-inverse: var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+
+  --ds-auro-hyperlink-cta-hover-color-inverse: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-cta-hover-container-color-inverse: var(--ds-color-container-ui-primary-hover-inverse, #{$ds-color-container-ui-primary-hover-inverse});
+  --ds-auro-hyperlink-cta-hover-outline-color-inverse: var(--ds-color-border-ui-hover-inverse, #{$ds-color-border-ui-hover-inverse});
+  --ds-auro-hyperlink-cta-hover-border-color-inverse: var(--ds-color-border-ui-hover-inverse, #{$ds-color-border-ui-hover-inverse});
+
+  // cta hyperlink - secondary
+
+  --ds-auro-hyperlink-cta-secondary-default-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-secondary-default-container-color-default: var(--ds-color-background-lightest, #{$ds-color-background-lightest});
+  --ds-auro-hyperlink-cta-secondary-default-outline-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+  --ds-auro-hyperlink-cta-secondary-default-border-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+
+  --ds-auro-hyperlink-cta-secondary-visited-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-secondary-visited-container-color-default: var(--ds-color-background-lightest, #{$ds-color-background-lightest});
+  --ds-auro-hyperlink-cta-secondary-visited-outline-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+  --ds-auro-hyperlink-cta-secondary-visited-border-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+
+  --ds-auro-hyperlink-cta-secondary-focus-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-secondary-focus-container-color-default: var(--ds-color-container-ui-secondary-default-inverse, #{$ds-color-container-ui-secondary-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-focus-outline-color-default: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
+  --ds-auro-hyperlink-cta-secondary-focus-border-color-default: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
+
+  --ds-auro-hyperlink-cta-secondary-hover-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-cta-secondary-hover-container-color-default: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
+  --ds-auro-hyperlink-cta-secondary-hover-outline-color-default: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
+  --ds-auro-hyperlink-cta-secondary-hover-border-color-default: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
+
+  // cta hyperlink - secondary ondark
+
+  --ds-auro-hyperlink-cta-secondary-default-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-default-container-color-inverse: var(--ds-color-container-ui-secondary-default-inverse, #{$ds-color-container-ui-secondary-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-default-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+  --ds-auro-hyperlink-cta-secondary-default-border-color-inverse: var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+
+  --ds-auro-hyperlink-cta-secondary-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-visited-container-color-inverse: var(--ds-color-container-ui-secondary-default-inverse, #{$ds-color-container-ui-secondary-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-visited-outline-color-inverse:  var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+  --ds-auro-hyperlink-cta-secondary-visited-border-color-inverse:  var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+
+  --ds-auro-hyperlink-cta-secondary-focus-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-focus-container-color-inverse: var(--ds-color-container-ui-secondary-default-inverse, #{$ds-color-container-ui-secondary-default-inverse});
+  --ds-auro-hyperlink-cta-secondary-focus-outline-color-inverse:  var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+  --ds-auro-hyperlink-cta-secondary-focus-border-color-inverse:  var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+
+  --ds-auro-hyperlink-cta-secondary-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});
+  --ds-auro-hyperlink-cta-secondary-hover-container-color-inverse: var(--ds-color-container-ui-secondary-hover-inverse, #{$ds-color-container-ui-secondary-hover-inverse});
+  --ds-auro-hyperlink-cta-secondary-hover-outline-color-inverse: var(--ds-color-border-ui-hover-inverse, #{$ds-color-border-ui-hover-inverse});
+  --ds-auro-hyperlink-cta-secondary-hover-border-color-inverse: var(--ds-color-border-ui-hover-inverse, #{$ds-color-border-ui-hover-inverse});
+
+    // cta hyperlink - tertiary
+
+    
+    --ds-auro-hyperlink-cta-tertiary-default-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+    --ds-auro-hyperlink-cta-tertiary-default-container-color-default: var(--ds-color-container-tertiary-default, #{$ds-color-container-tertiary-default});
+    --ds-auro-hyperlink-cta-tertiary-default-outline-color-default: transparent;
+    --ds-auro-hyperlink-cta-tertiary-default-border-color-default: transparent;
+  
+    --ds-auro-hyperlink-cta-tertiary-visited-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+    --ds-auro-hyperlink-cta-tertiary-visited-container-color-default: var(--ds-color-container-tertiary-default, #{$ds-color-container-tertiary-default});
+    --ds-auro-hyperlink-cta-tertiary-visited-outline-color-default: transparent;
+    --ds-auro-hyperlink-cta-tertiary-visited-border-color-default: transparent;
+  
+    --ds-auro-hyperlink-cta-tertiary-focus-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+    --ds-auro-hyperlink-cta-tertiary-focus-container-color-default: var(--ds-color-container-tertiary-default, #{$ds-color-container-tertiary-default});
+    --ds-auro-hyperlink-cta-tertiary-focus-outline-color-default: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
+    --ds-auro-hyperlink-cta-tertiary-focus-border-color-default: transparent;
+  
+    --ds-auro-hyperlink-cta-tertiary-hover-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+    --ds-auro-hyperlink-cta-tertiary-hover-container-color-default: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
+    --ds-auro-hyperlink-cta-tertiary-hover-outline-color-default: transparent;
+    --ds-auro-hyperlink-cta-tertiary-hover-border-color-default: transparent;
+  
+    // cta hyperlink - tertiary ondark
+  
+    --ds-auro-hyperlink-cta-tertiary-default-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+    --ds-auro-hyperlink-cta-tertiary-default-container-color-inverse: var(--ds-color-container-ui-tertiary-default-inverse, #{$ds-color-container-ui-tertiary-default-inverse});
+    --ds-auro-hyperlink-cta-tertiary-default-outline-color-inverse: transparent;
+    --ds-auro-hyperlink-cta-tertiary-default-border-color-inverse: transparent;
+  
+    --ds-auro-hyperlink-cta-tertiary-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+    --ds-auro-hyperlink-cta-tertiary-visited-container-color-inverse: var(--ds-color-container-ui-tertiary-default-inverse, #{$ds-color-container-ui-tertiary-default-inverse});
+    --ds-auro-hyperlink-cta-tertiary-visited-outline-color-inverse: transparent;
+    --ds-auro-hyperlink-cta-tertiary-visited-border-color-inverse: transparent;
+  
+    --ds-auro-hyperlink-cta-tertiary-focus-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+    --ds-auro-hyperlink-cta-tertiary-focus-container-color-inverse: var(--ds-color-container-ui-secondary-focus-inverse, #{$ds-color-container-ui-secondary-focus-inverse});
+
+    --ds-auro-hyperlink-cta-tertiary-focus-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
+    --ds-auro-hyperlink-cta-tertiary-focus-border-color-inverse: transparent;
+  
+    --ds-auro-hyperlink-cta-tertiary-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});
+    --ds-auro-hyperlink-cta-tertiary-hover-container-color-inverse: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
+    --ds-auro-hyperlink-cta-tertiary-hover-outline-color-inverse: transparent;
+    --ds-auro-hyperlink-cta-tertiary-hover-border-color-inverse: transparent;
+}

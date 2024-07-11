@@ -10,6 +10,8 @@ import ComponentBase from './component-base.mjs';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -41,7 +43,11 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      styleCss,
+      colorCss,
+      tokensCss
+    ];
   }
 
   /**
