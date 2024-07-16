@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.6.1-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.0...v3.6.1-beta.1) (2024-07-16)
+
+
+### Bug Fixes
+
+* adjust shape of UI for a11y UI 209 ([847630d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/847630ddac38f89df82151ac6bf5f35900238de2))
+
 # [3.6.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.11...v3.6.0) (2024-05-07)
 
 
