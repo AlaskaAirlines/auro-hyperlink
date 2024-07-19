@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.7.0-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.1-beta.1...v3.7.0-beta.1) (2024-07-19)
+
+
+### Features
+
+* **theme:** update styles to support themeing ([2c89f15](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2c89f158d01150766b473c7bd910f162f8f727ac))
+
 ## [3.6.1-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.0...v3.6.1-beta.1) (2024-07-16)
 
 
