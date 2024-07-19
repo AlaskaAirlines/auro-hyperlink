@@ -78,14 +78,14 @@ describe('auro-hyperlink', () => {
     expect(anchor).not.to.have.attribute('referrerpolicy');
   });
 
-  it('auro-hyperlink rel = noopener noreferrer', async () => {
+  it('auro-hyperlink rel = noOpener noReferrer', async () => {
     const el = await fixture(html`
       <auro-hyperlink href="https://www.apple.com" target="_blank">It's Auro!</auro-hyperlink>
     `);
 
     const anchor = el.shadowRoot.querySelector('a');
 
-    expect(anchor).to.have.attribute('rel', 'noopener noreferrer');
+    expect(anchor).to.have.attribute('rel', 'noOpener noReferrer');
     expect(anchor).not.to.have.attribute('referrerpolicy');
   });
 
