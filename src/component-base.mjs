@@ -1,6 +1,8 @@
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
+/* eslint-disable max-lines, no-script-url, no-else-return, require-unicode-regexp */
+
 // ---------------------------------------------------------------------
 
 import { LitElement, html } from "lit";
@@ -22,17 +24,17 @@ export default class ComponentBase extends LitElement {
     /**
      * @private
      */
-    this.defaultreferrerpolicy = 'strict-origin-when-cross-origin';
+    this.defaultReferrerPolicy = 'strict-origin-when-cross-origin';
 
     /**
      * @private
      */
-    this.ariapressed = 'false';
+    this.ariaPressed = 'false';
 
     /**
      * @private
      */
-    this.tabisactive = 'false';
+    this.tabIsActive = 'false';
 
     /*
       If the component requires a touch detection,
@@ -175,7 +177,9 @@ export default class ComponentBase extends LitElement {
     const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
       svg = dom.body.firstChild;
 
-    return svg;
+    const iconHtml = `<auro-icon customSvg>${svg}</auro-icon>`;
+
+    return iconHtml;
   }
 
   /**
@@ -198,6 +202,7 @@ export default class ComponentBase extends LitElement {
    * @returns {HTMLElement|undefined} The HTML element containing the icon, or undefined if no icon is generated.
    */
   targetIcon(target) {
+
     /**
      * Checks if a URL's domain is from the 'alaskaair.com' domain or its subdomains.
      * @param {string} url - The URL to check.
@@ -211,9 +216,8 @@ export default class ComponentBase extends LitElement {
     // If target is '_blank' and the URL's domain is 'alaskaair.com' or one of its subdomains, return icon for new window
     if (target === '_blank' && isAlaskaAirDomain(this.safeUri)) {
       return this.generateIconHtml(newWindow.svg);
-    }
-    // If target is '_blank' and the URL does not belong to 'alaskaair.com' or its subdomains but contains a domain, return icon for external link
-    else if (target === '_blank' && !isAlaskaAirDomain(this.safeUri) && this.includesDomain) {
+    } else if (target === '_blank' && !isAlaskaAirDomain(this.safeUri) && this.includesDomain) {
+      // If target is '_blank' and the URL does not belong to 'alaskaair.com' or its subdomains but contains a domain, return icon for external link
       return this.generateIconHtml(externalLink.svg);
     }
 
@@ -224,46 +228,46 @@ export default class ComponentBase extends LitElement {
    * Returns the state of a tab as a string.
    *
    * @example
-   * // Assuming tabisActive = true
-   * this.getTabState(tabisactive); // Returns 'is-active'
+   * // Assuming tabIsActive = true
+   * this.getTabState(tabIsActive); // Returns 'is-active'
    *
    * @example
-   * // Assuming tabisActive = false
-   * this.getTabState(tabisactive); // Returns ''
+   * // Assuming tabIsActive = false
+   * this.getTabState(tabIsActive); // Returns ''
    *
    * @private
-   * @param {boolean} tabisActive - Indicates whether the tab is active.
+   * @param {boolean} tabIsActive - Indicates whether the tab is active.
    * @returns {string} 'is-active' if the tab is active, otherwise an empty string.
    */
-  getTabState(tabisactive) {
-    return tabisactive === true ? "is-active" : '';
+  getTabState(tabIsActive) {
+    return tabIsActive === true ? "is-active" : '';
   }
 
   /**
    * Gets the rel attribute value based on target and rel values.
    *
    * @example
-   * // Assuming target = '_blank', rel = 'nofollow', and this.safeUri = 'http://alaskaair.com'
-   * this.getReltype(target, rel); // Returns 'nofollow'
+   * // Assuming target = '_blank', rel = 'noFollow', and this.safeUri = 'http://alaskaair.com'
+   * this.getRelType(target, rel); // Returns 'noFollow'
    *
    * @example
    * // Assuming target = '_blank', rel = undefined, this.safeUri = 'http://alaskaair.com', and this.includesDomain = true
-   * this.getReltype(target, rel); // Returns undefined
+   * this.getRelType(target, rel); // Returns undefined
    *
    * @example
    * // Assuming target = '_blank', rel = undefined, this.safeUri = 'http://external.com', this.includesDomain = true, and this.referrerpolicy = undefined
-   * this.getReltype(target, rel); // Returns 'noopener noreferrer'
+   * this.getRelType(target, rel); // Returns 'noOpener noReferrer'
    *
    * @example
    * // Assuming target = '_blank', rel = undefined, this.safeUri = 'http://external.com', this.includesDomain = true, and this.referrerpolicy = 'no-referrer'
-   * this.getReltype(target, rel); // Returns 'external'
+   * this.getRelType(target, rel); // Returns 'external'
    *
    * @private
    * @param {string} target - The target attribute of the anchor element.
    * @param {string} rel - The rel attribute of the anchor element.
    * @returns {string|undefined} The rel attribute value or undefined if not applicable.
    */
-  getReltype(target, rel) {
+  getRelType(target, rel) {
 
     if (rel) {
       return rel;
@@ -274,7 +278,7 @@ export default class ComponentBase extends LitElement {
     }
 
     if (target === '_blank' && this.includesDomain && !this.rel && !this.referrerpolicy) {
-      return 'noopener noreferrer';
+      return 'noOpener noReferrer';
     }
 
     if (target === '_blank' && this.referrerpolicy) {
@@ -288,26 +292,26 @@ export default class ComponentBase extends LitElement {
    * Sets the ARIA pressed state based on user interactions.
    *
    * @example
-   * // Assuming ariapressed = false and user performs a mousedown event
-   * this.ariaPressedState(ariapressed); // Returns true
+   * // Assuming ariaPressed = false and user performs a mousedown event
+   * this.ariaPressedState(ariaPressed); // Returns true
    *
    * @example
-   * // Assuming ariapressed = true and user performs a mouseup event
-   * this.ariaPressedState(ariapressed); // Returns false
+   * // Assuming ariaPressed = true and user performs a mouseup event
+   * this.ariaPressedState(ariaPressed); // Returns false
    *
    * @example
-   * // Assuming ariapressed = false and user performs a keydown event with 'Enter' or 'Space'
-   * this.ariaPressedState(ariapressed); // Returns true
+   * // Assuming ariaPressed = false and user performs a keydown event with 'Enter' or 'Space'
+   * this.ariaPressedState(ariaPressed); // Returns true
    *
    * @example
-   * // Assuming ariapressed = true and user performs a keyup event
-   * this.ariaPressedState(ariapressed); // Returns false
+   * // Assuming ariaPressed = true and user performs a keyup event
+   * this.ariaPressedState(ariaPressed); // Returns false
    *
    * @private
-   * @param {boolean} ariapressed - The initial value of the ARIA pressed state.
+   * @param {boolean} ariaPressed - The initial value of the ARIA pressed state.
    * @returns {boolean} The updated ARIA pressed state.
    */
-  ariaPressedState(ariapressed) {
+  ariaPressedState(ariaPressed) {
     const ariaToggle = function (event) {
       const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
       ariaPressedNode.setAttribute("aria-pressed", 'false');
@@ -333,7 +337,7 @@ export default class ComponentBase extends LitElement {
     this.addEventListener('keydown', ariaToggle);
     this.addEventListener('keyup', ariaToggle);
 
-    return ariapressed;
+    return ariaPressed;
   }
 
   // function renders HTML and CSS into the scope of the component
