@@ -1,11 +1,12 @@
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
-/* eslint-disable max-lines, no-script-url, no-else-return, require-unicode-regexp */
+/* eslint-disable max-lines, no-script-url, no-else-return, require-unicode-regexp, lit/binding-positions, lit/no-invalid-html */
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html } from "lit";
+import { LitElement } from "lit";
+import { html } from 'lit/static-html.js';
 import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs';
 import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs';
 
@@ -161,7 +162,6 @@ export default class ComponentBase extends LitElement {
     }
   }
 
-
   /**
    * Generates an HTML element containing an SVG icon based on the provided `svgContent`.
    *
@@ -174,10 +174,12 @@ export default class ComponentBase extends LitElement {
    * @returns {Element} The HTML element containing the SVG icon.
    */
   generateIconHtml(svgContent) {
-    const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
-      svg = dom.body.firstChild;
+    const dom = new DOMParser().parseFromString(svgContent, 'text/html');
+    const svg = dom.body.firstChild;
 
-    const iconHtml = `<auro-icon customSvg>${svg}</auro-icon>`;
+    svg.setAttribute('slot', 'svg');
+
+    const iconHtml = html`<${this.iconTag} customColor customSize customSvg>${svg}</${this.iconTag}>`;
 
     return iconHtml;
   }

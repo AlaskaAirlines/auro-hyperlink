@@ -3,10 +3,16 @@
 
 // ---------------------------------------------------------------------
 
-import { html } from 'lit/html.js';
+import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
 import ComponentBase from './component-base.mjs';
+
+
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+
+import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
+import iconVersion from './iconVersion';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
@@ -35,6 +41,17 @@ import tokensCss from "./tokens-css.js";
 
 // build the component class
 export class AuroHyperlink extends ComponentBase {
+  constructor() {
+    super();
+
+    const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
+    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+  }
+
   // function to define props used within the scope of this component
   static get properties() {
     return {
@@ -88,7 +105,10 @@ export class AuroHyperlink extends ComponentBase {
         ?download="${this.download}"
         target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
-      ><slot></slot>${this.targetIcon(this.target, this.relative)}</a>`
+      >
+        <slot></slot>
+        ${this.targetIcon(this.target, this.relative)}
+      </a>`
       : html`<slot></slot>`}
     `;
   }
