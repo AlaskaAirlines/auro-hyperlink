@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.7.0-beta.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.1...v3.7.0-beta.2) (2024-07-20)
+
+
+### Performance Improvements
+
+* use icon element versioning ([0181399](https://github.com/AlaskaAirlines/auro-hyperlink/commit/0181399b23d2433d592645731ff1ebbe8e16757e))
+
 # [3.7.0-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.1-beta.1...v3.7.0-beta.1) (2024-07-19)
 
 
