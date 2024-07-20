@@ -55,6 +55,7 @@
   @include auro_transition(all, .15s, ease);
 
   text-decoration: underline;
+  white-space: nowrap;
 
   @media (hover: hover) {
     &:hover {
@@ -164,11 +165,8 @@
   }
 }
 
-svg {
-  // reset token value for localized use
-  --auro-size-lg: 1rem;
-
-  position: relative;
-  top: var(--ds-size-50, $ds-size-50);
+[auro-icon] {
+  height: 1rem;
+  width: 1rem;
   margin-left: var(--ds-size-25, $ds-size-25);
 }
