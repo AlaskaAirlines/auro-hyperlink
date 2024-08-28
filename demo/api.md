@@ -42,6 +42,13 @@
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/basic-ondark.html -->
+  <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
+  Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
@@ -50,6 +57,14 @@
 ```html
 <auro-hyperlink>No href supplied</auro-hyperlink><br>
 Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/basic-ondark.html -->
+
+```html
+<auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
+Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -81,6 +96,29 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
    with external domain
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/external-ondark.html -->
+  Example link with
+  <auro-hyperlink
+    ondark
+    target="_blank"
+    href="https://www.alaskaair.com">
+    external target
+  </auro-hyperlink>
+  but same domain
+
+  <br>
+  Example link with
+  <auro-hyperlink
+    ondark
+    target="_blank"
+    href="https://www.portseattle.org/sea-tac">
+    external target
+  </auro-hyperlink>
+   with external domain
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external.html) -->
@@ -98,6 +136,30 @@ but same domain
 <br>
 Example link with
 <auro-hyperlink
+  target="_blank"
+  href="https://www.portseattle.org/sea-tac">
+  external target
+</auro-hyperlink>
+ with external domain
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/external-ondark.html -->
+
+```html
+Example link with
+<auro-hyperlink
+  ondark
+  target="_blank"
+  href="https://www.alaskaair.com">
+  external target
+</auro-hyperlink>
+but same domain
+
+<br>
+Example link with
+<auro-hyperlink
+  ondark
   target="_blank"
   href="https://www.portseattle.org/sea-tac">
   external target
@@ -128,6 +190,20 @@ Example link with
  , external domain with referrerpolicy attribute
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-referrer-ondark.html) -->
+<!-- The below content is automatically added from ./../../apiExamples/external-referrer-ondark.html -->
+Example link with
+<auro-hyperlink
+  ondark
+  target="_blank"
+  referrerpolicy
+  href="https://www.portseattle.org/sea-tac">
+  external target
+</auro-hyperlink>
+ , external domain with referrerpolicy attribute
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-referrer.html) -->
@@ -136,6 +212,21 @@ Example link with
 ```html
 Example link with
 <auro-hyperlink
+  target="_blank"
+  referrerpolicy
+  href="https://www.portseattle.org/sea-tac">
+  external target
+</auro-hyperlink>
+ , external domain with referrerpolicy attribute
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-referrer-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/external-referrer-ondark.html -->
+
+```html
+Example link with
+<auro-hyperlink
+  ondark
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac">
@@ -160,6 +251,17 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
   </auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navStyle-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/navStyle-ondark.html -->
+  <auro-hyperlink
+    ondark
+    type="nav"
+    href="https://www.alaskaair.com">
+    Navigation style link
+  </auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navStyle.html) -->
@@ -167,6 +269,18 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 
 ```html
 <auro-hyperlink
+  type="nav"
+  href="https://www.alaskaair.com">
+  Navigation style link
+</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navStyle-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/navStyle-ondark.html -->
+
+```html
+<auro-hyperlink
+  ondark
   type="nav"
   href="https://www.alaskaair.com">
   Navigation style link
@@ -294,6 +408,20 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <auro-hyperlink type="cta" tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/cta-ondark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/cta-ondark.html -->
+  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+  <auro-hyperlink type="cta" ondark tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta.html) -->
@@ -309,6 +437,21 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <auro-hyperlink type="cta" tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
 <auro-hyperlink type="cta" tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/cta-ondark.html -->
+
+```html
+<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark secondary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark secondary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark tertiary href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" ondark tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -374,3 +517,177 @@ In the following example, see how the `small` attribute alters the size of the b
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+## Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.css) -->
+<!-- The below code snippet is automatically added from ./../../src/tokens.css -->
+
+```css
+/* stylelint-disable custom-property-empty-line-before */
+:host {
+  --ds-auro-hyperlink-default-color-default: var(--ds-color-text-ui-default-default, #2c67b5);
+  --ds-auro-hyperlink-default-container-color-default: transparent;
+  --ds-auro-hyperlink-default-outline-color-default: transparent;
+  --ds-auro-hyperlink-default-border-color-default: transparent;
+  --ds-auro-hyperlink-visited-color-default: var(--ds-color-text-ui-default-default, #2c67b5);
+  --ds-auro-hyperlink-visited-container-color-default: transparent;
+  --ds-auro-hyperlink-visited-outline-color-default: transparent;
+  --ds-auro-hyperlink-visited-border-color-default: transparent;
+  --ds-auro-hyperlink-focus-color-default: var(--ds-color-text-ui-focus-default, #2c67b5);
+  --ds-auro-hyperlink-focus-container-color-default: transparent;
+  --ds-auro-hyperlink-focus-outline-color-default: transparent;
+  --ds-auro-hyperlink-focus-border-color-default: transparent;
+  --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-ui-hover-default, #193d73);
+  --ds-auro-hyperlink-hover-container-color-default: transparent;
+  --ds-auro-hyperlink-hover-outline-color-default: transparent;
+  --ds-auro-hyperlink-hover-border-color-default: transparent;
+  --ds-auro-hyperlink-default-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-default-container-color-inverse: transparent;
+  --ds-auro-hyperlink-default-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-default-border-color-inverse: transparent;
+  --ds-auro-hyperlink-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-visited-container-color-inverse: transparent;
+  --ds-auro-hyperlink-visited-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-visited-border-color-inverse: transparent;
+  --ds-auro-hyperlink-focus-color-inverse: var(--ds-color-text-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-focus-container-color-inverse: transparent;
+  --ds-auro-hyperlink-focus-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-focus-border-color-inverse: transparent;
+  --ds-auro-hyperlink-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-hover-container-color-inverse: transparent;
+  --ds-auro-hyperlink-hover-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-hover-border-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-default-color-default: var(--ds-color-text-ui-default-default, #2c67b5);
+  --ds-auro-hyperlink-nav-default-container-color-default: transparent;
+  --ds-auro-hyperlink-nav-default-outline-color-default: transparent;
+  --ds-auro-hyperlink-nav-default-border-color-default: transparent;
+  --ds-auro-hyperlink-nav-visited-color-default: var(--ds-color-text-ui-default-default, #2c67b5);
+  --ds-auro-hyperlink-nav-visited-container-color-default: transparent;
+  --ds-auro-hyperlink-nav-visited-outline-color-default: transparent;
+  --ds-auro-hyperlink-nav-visited-border-color-default: transparent;
+  --ds-auro-hyperlink-nav-focus-color-default: var(--ds-color-text-primary-inverse, #ffffff);
+  --ds-auro-hyperlink-nav-focus-container-color-default: var(--ds-color-container-ui-primary-default-default, #2c67b5);
+  --ds-auro-hyperlink-nav-focus-outline-color-default: var(--ds-color-container-ui-primary-default-default, #2c67b5);
+  --ds-auro-hyperlink-nav-focus-border-color-default: var(--ds-color-container-ui-primary-default-default, #2c67b5);
+  --ds-auro-hyperlink-nav-hover-color-default: var(--ds-color-text-ui-hover-default, #193d73);
+  --ds-auro-hyperlink-nav-hover-container-color-default: transparent;
+  --ds-auro-hyperlink-nav-hover-outline-color-default: transparent;
+  --ds-auro-hyperlink-nav-hover-border-color-default: transparent;
+  --ds-auro-hyperlink-nav-default-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-nav-default-container-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-default-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-default-border-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-nav-visited-container-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-visited-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-visited-border-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-focus-color-inverse: var(--ds-color-text-primary-inverse, #ffffff);
+  --ds-auro-hyperlink-nav-focus-container-color-inverse: var(--ds-color-container-ui-primary-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-nav-focus-outline-color-inverse: var(--ds-color-border-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-nav-focus-border-color-inverse: var(--ds-color-border-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-nav-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-nav-hover-container-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-hover-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-nav-hover-border-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-default-color-default: var(--ds-color-text-primary-inverse, #ffffff);
+  --ds-auro-hyperlink-cta-default-container-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-default-outline-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-default-border-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-visited-color-default: var(--ds-color-text-primary-inverse, #ffffff);
+  --ds-auro-hyperlink-cta-visited-container-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-visited-outline-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-visited-border-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-focus-color-default: var(--ds-color-text-primary-inverse, #ffffff);
+  --ds-auro-hyperlink-cta-focus-container-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-focus-outline-color-default: var(--ds-color-container-ui-secondary-default-default, #ffffff);
+  --ds-auro-hyperlink-cta-focus-border-color-default: var(--ds-color-border-ui-focus-default, #2c67b5);
+  --ds-auro-hyperlink-cta-hover-color-default: var(--ds-color-text-primary-inverse, #ffffff);
+  --ds-auro-hyperlink-cta-hover-container-color-default: var(--ds-color-container-ui-primary-hover-default, #193d73);
+  --ds-auro-hyperlink-cta-hover-outline-color-default: var(--ds-color-border-ui-hover-default, #193d73);
+  --ds-auro-hyperlink-cta-hover-border-color-default: var(--ds-color-border-ui-hover-default, #193d73);
+  --ds-auro-hyperlink-cta-default-color-inverse: var(--ds-color-text-primary-default, #2a2a2a);
+  --ds-auro-hyperlink-cta-default-container-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-default-outline-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-default-border-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-visited-color-inverse: var(--ds-color-text-primary-default, #2a2a2a);
+  --ds-auro-hyperlink-cta-visited-container-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-visited-outline-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-visited-border-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-focus-color-inverse: var(--ds-color-text-primary-default, #2a2a2a);
+  --ds-auro-hyperlink-cta-focus-container-color-inverse: var(--ds-color-ui-default-inverse, #00cff0);
+  --ds-auro-hyperlink-cta-focus-outline-color-inverse: var(--ds-color-container-ui-secondary-default-default, #ffffff);
+  --ds-auro-hyperlink-cta-focus-border-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-hover-color-inverse: var(--ds-color-text-primary-default, #2a2a2a);
+  --ds-auro-hyperlink-cta-hover-container-color-inverse: var(--ds-color-container-ui-primary-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-hover-outline-color-inverse: var(--ds-color-border-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-hover-border-color-inverse: var(--ds-color-border-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-secondary-default-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-default-container-color-default: var(--ds-color-background-lightest, #ffffff);
+  --ds-auro-hyperlink-cta-secondary-default-outline-color-default: var(--ds-color-text-link-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-default-border-color-default: var(--ds-color-text-link-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-visited-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-visited-container-color-default: var(--ds-color-background-lightest, #ffffff);
+  --ds-auro-hyperlink-cta-secondary-visited-outline-color-default: var(--ds-color-text-link-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-visited-border-color-default: var(--ds-color-text-link-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-focus-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-focus-container-color-default: var(--ds-color-container-ui-secondary-default-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-secondary-focus-outline-color-default: var(--ds-color-border-ui-focus-default, #2c67b5);
+  --ds-auro-hyperlink-cta-secondary-focus-border-color-default: var(--ds-color-border-ui-focus-default, #2c67b5);
+  --ds-auro-hyperlink-cta-secondary-hover-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-secondary-hover-container-color-default: var(--ds-color-container-ui-tertiary-hover-default, rgba(0, 0, 0, 0.12));
+  --ds-auro-hyperlink-cta-secondary-hover-outline-color-default: var(--ds-color-border-ui-hover-default, #193d73);
+  --ds-auro-hyperlink-cta-secondary-hover-border-color-default: var(--ds-color-border-ui-hover-default, #193d73);
+  --ds-auro-hyperlink-cta-secondary-default-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-default-container-color-inverse: var(--ds-color-container-ui-secondary-default-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-secondary-default-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-default-border-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-visited-container-color-inverse: var(--ds-color-container-ui-secondary-default-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-secondary-visited-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-visited-border-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-focus-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-focus-container-color-inverse: var(--ds-color-container-ui-secondary-default-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-secondary-focus-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-focus-border-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-secondary-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-secondary-hover-container-color-inverse: var(--ds-color-container-ui-secondary-hover-inverse, rgba(255, 255, 255, 0.12));
+  --ds-auro-hyperlink-cta-secondary-hover-outline-color-inverse: var(--ds-color-border-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-secondary-hover-border-color-inverse: var(--ds-color-border-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-tertiary-default-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-tertiary-default-container-color-default: var(--ds-color-container-tertiary-default, rgba(0, 0, 0, 0.03));
+  --ds-auro-hyperlink-cta-tertiary-default-outline-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-default-border-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-visited-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-tertiary-visited-container-color-default: var(--ds-color-container-tertiary-default, rgba(0, 0, 0, 0.03));
+  --ds-auro-hyperlink-cta-tertiary-visited-outline-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-visited-border-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-focus-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-tertiary-focus-container-color-default: var(--ds-color-container-tertiary-default, rgba(0, 0, 0, 0.03));
+  --ds-auro-hyperlink-cta-tertiary-focus-outline-color-default: var(--ds-color-border-ui-focus-default, #2c67b5);
+  --ds-auro-hyperlink-cta-tertiary-focus-border-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-hover-color-default: var(--ds-color-ui-default-default, #0074c8);
+  --ds-auro-hyperlink-cta-tertiary-hover-container-color-default: var(--ds-color-container-ui-tertiary-hover-default, rgba(0, 0, 0, 0.12));
+  --ds-auro-hyperlink-cta-tertiary-hover-outline-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-hover-border-color-default: transparent;
+  --ds-auro-hyperlink-cta-tertiary-default-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-tertiary-default-container-color-inverse: var(--ds-color-container-ui-tertiary-default-inverse, rgba(255, 255, 255, 0.12));
+  --ds-auro-hyperlink-cta-tertiary-default-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-tertiary-default-border-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-tertiary-visited-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-tertiary-visited-container-color-inverse: var(--ds-color-container-ui-tertiary-default-inverse, rgba(255, 255, 255, 0.12));
+  --ds-auro-hyperlink-cta-tertiary-visited-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-tertiary-visited-border-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-tertiary-focus-color-inverse: var(--ds-color-text-ui-default-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-tertiary-focus-container-color-inverse: var(--ds-color-container-ui-secondary-focus-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-tertiary-focus-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
+  --ds-auro-hyperlink-cta-tertiary-focus-border-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-tertiary-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #a8e9f7);
+  --ds-auro-hyperlink-cta-tertiary-hover-container-color-inverse: var(--ds-color-container-ui-tertiary-hover-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-tertiary-hover-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-cta-tertiary-hover-border-color-inverse: transparent;
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->

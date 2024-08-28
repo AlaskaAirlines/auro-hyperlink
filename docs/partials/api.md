@@ -10,10 +10,17 @@
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic-ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -29,10 +36,17 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -50,10 +64,17 @@ This will also set the `rel` attribute to `external`.
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
+<div class="exampleWrapper--ondark">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-referrer-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-referrer.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-referrer-ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -67,10 +88,17 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navStyle-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navStyle.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navStyle-ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -152,11 +180,18 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/cta-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
@@ -193,3 +228,10 @@ In the following example, see how the `small` attribute alters the size of the b
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
+
+## Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.css) -->
+<!-- AURO-GENERATED-CONTENT:END -->

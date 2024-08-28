@@ -58,15 +58,6 @@ The use of any Auro custom element has a dependency on the [Auro Design Tokens](
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-### CSS Custom Property fallbacks
-
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/cssFallbacks.md) -->
-[CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) are [not supported](https://auro.alaskaair.com/support/custom-properties) in older browsers. For this, fallback properties are pre-generated and included with the npm.
-
-Any update to the Auro Design Tokens will be immediately reflected with browsers that support CSS custom properties, legacy browsers will require updated components with pre-generated fallback properties.
-
-<!-- AURO-GENERATED-CONTENT:END -->
-
 ### Define dependency in project component
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImportDescription.md) -->
@@ -104,9 +95,9 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/bundleUseModBrowsers.md) -->
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@4.3.1/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@4.9.0/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@5.1.0/dist/bundled/essentials.css" />
-<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-hyperlink@3.6.0/dist/auro-hyperlink__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-hyperlink@3.7.0-beta.2/dist/auro-hyperlink__bundled.js" type="module"></script>
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->

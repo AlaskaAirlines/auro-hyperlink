@@ -1,5 +1,26 @@
 # Semantic Release Automated Changelog
 
+# [3.7.0-beta.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.1...v3.7.0-beta.2) (2024-07-20)
+
+
+### Performance Improvements
+
+* use icon element versioning ([0181399](https://github.com/AlaskaAirlines/auro-hyperlink/commit/0181399b23d2433d592645731ff1ebbe8e16757e))
+
+# [3.7.0-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.1-beta.1...v3.7.0-beta.1) (2024-07-19)
+
+
+### Features
+
+* **theme:** update styles to support themeing ([2c89f15](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2c89f158d01150766b473c7bd910f162f8f727ac))
+
+## [3.6.1-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.0...v3.6.1-beta.1) (2024-07-16)
+
+
+### Bug Fixes
+
+* adjust shape of UI for a11y UI 209 ([847630d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/847630ddac38f89df82151ac6bf5f35900238de2))
+
 # [3.6.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.11...v3.6.0) (2024-05-07)
 
 

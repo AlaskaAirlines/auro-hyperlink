@@ -3,13 +3,21 @@
 
 // ---------------------------------------------------------------------
 
-import { html } from 'lit/html.js';
+import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
 import ComponentBase from './component-base.mjs';
 
+
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+
+import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
+import iconVersion from './iconVersion';
+
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -33,6 +41,17 @@ import styleCss from "./style-css.js";
 
 // build the component class
 export class AuroHyperlink extends ComponentBase {
+  constructor() {
+    super();
+
+    const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
+    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+  }
+
   // function to define props used within the scope of this component
   static get properties() {
     return {
@@ -41,7 +60,11 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      styleCss,
+      colorCss,
+      tokensCss
+    ];
   }
 
   /**
@@ -73,16 +96,19 @@ export class AuroHyperlink extends ComponentBase {
       ${this.safeUri || this.role ? html`
       <a
         part="link"
-        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
+        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariaPressed) : undefined)}"
         class="${classMap(classes)}"
         href="${ifDefined(this.role ? undefined : this.safeUri)}"
-        rel="${ifDefined(this.target || this.rel ? this.getReltype(this.target, this.rel) : undefined)}"
-        referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultreferrerpolicy : undefined)}"
+        rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
+        referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
         role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
         ?download="${this.download}"
         target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
-      ><slot></slot>${this.targetIcon(this.target, this.relative)}</a>`
+      >
+        <slot></slot>
+        ${this.targetIcon(this.target, this.relative)}
+      </a>`
       : html`<slot></slot>`}
     `;
   }
