@@ -7,6 +7,9 @@
 
 import { LitElement } from "lit";
 import { html } from 'lit/static-html.js';
+
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs';
 import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs';
 
@@ -36,6 +39,11 @@ export default class ComponentBase extends LitElement {
      * @private
      */
     this.tabIsActive = 'false';
+
+     /**
+     * @private
+     */
+     this.runtimeUtils = new AuroLibraryRuntimeUtils();
 
     /*
       If the component requires a touch detection,
@@ -67,6 +75,11 @@ export default class ComponentBase extends LitElement {
       referrerpolicy:   { type: Boolean },
       small:            { type: Boolean }
     };
+  }
+
+  firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-hyperlink');
   }
 
   /**
