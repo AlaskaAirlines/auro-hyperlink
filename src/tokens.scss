@@ -4,6 +4,7 @@
 
 :host {
   // default hyperlink
+  
   --ds-auro-hyperlink-default-color-default: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
   --ds-auro-hyperlink-default-container-color-default: transparent;
   --ds-auro-hyperlink-default-outline-color-default: transparent;
@@ -25,6 +26,7 @@
   --ds-auro-hyperlink-hover-border-color-default: transparent;
 
   // default ondark hyperlink
+
   --ds-auro-hyperlink-default-color-inverse: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
   --ds-auro-hyperlink-default-container-color-inverse: transparent;
   --ds-auro-hyperlink-default-outline-color-inverse: transparent;
@@ -46,6 +48,7 @@
   --ds-auro-hyperlink-hover-border-color-inverse: transparent;
 
   // nav hyperlink
+
   --ds-auro-hyperlink-nav-default-color-default: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
   --ds-auro-hyperlink-nav-default-container-color-default: transparent;
   --ds-auro-hyperlink-nav-default-outline-color-default: transparent;
@@ -176,7 +179,6 @@
   --ds-auro-hyperlink-cta-secondary-hover-border-color-inverse: var(--ds-color-border-ui-hover-inverse, #{$ds-color-border-ui-hover-inverse});
 
     // cta hyperlink - tertiary
-
     
     --ds-auro-hyperlink-cta-tertiary-default-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
     --ds-auro-hyperlink-cta-tertiary-default-container-color-default: var(--ds-color-container-tertiary-default, #{$ds-color-container-tertiary-default});
