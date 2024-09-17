@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [3.7.0-beta.5](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.4...v3.7.0-beta.5) (2024-09-17)
+
+
+### Features
+
+* add component name as attribute [#219](https://github.com/AlaskaAirlines/auro-hyperlink/issues/219) ([c430712](https://github.com/AlaskaAirlines/auro-hyperlink/commit/c43071223647f4a5903bbeb8e1cd1e5353fa9515))
+
+
+### Performance Improvements
+
+* refactor custom component registration config ([87ba85a](https://github.com/AlaskaAirlines/auro-hyperlink/commit/87ba85a8287a365a76f3543f3a68ce090e4cf749))
+
 # [3.7.0-beta.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.3...v3.7.0-beta.4) (2024-09-17)
 
 
