@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.7.0-beta.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.3...v3.7.0-beta.4) (2024-09-17)
+
+
+### Performance Improvements
+
+* update dependencies ([a52c27c](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a52c27cebc378bc846594e9ee127610c9fa28953))
+
 # [3.7.0-beta.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.2...v3.7.0-beta.3) (2024-08-26)
 
 
