@@ -1,15 +1,4 @@
 import { AuroHyperlink } from './src/auro-hyperlink.js';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-/**
- * Register Custom Element.
- * @param {Object} name - Name to use for custom element.
- * @returns {void}
- */
-export function registerComponent(name = 'custom-hyperlink') {
-  // alias definition
-  if (!customElements.get(name)) {
-    customElements.define(name, class extends AuroHyperlink {});
-  }
-}
-
-registerComponent('auro-hyperlink');
+RuntimeUtils.default.prototype.registerComponent('auro-hyperlink', AuroHyperlink);
