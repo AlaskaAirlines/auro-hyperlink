@@ -1,52 +1,5 @@
 # Semantic Release Automated Changelog
 
-# [3.7.0-beta.5](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.4...v3.7.0-beta.5) (2024-09-17)
-
-
-### Features
-
-* add component name as attribute [#219](https://github.com/AlaskaAirlines/auro-hyperlink/issues/219) ([c430712](https://github.com/AlaskaAirlines/auro-hyperlink/commit/c43071223647f4a5903bbeb8e1cd1e5353fa9515))
-
-
-### Performance Improvements
-
-* refactor custom component registration config ([87ba85a](https://github.com/AlaskaAirlines/auro-hyperlink/commit/87ba85a8287a365a76f3543f3a68ce090e4cf749))
-
-# [3.7.0-beta.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.3...v3.7.0-beta.4) (2024-09-17)
-
-
-### Performance Improvements
-
-* update dependencies ([a52c27c](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a52c27cebc378bc846594e9ee127610c9fa28953))
-
-# [3.7.0-beta.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.2...v3.7.0-beta.3) (2024-08-26)
-
-
-### Performance Improvements
-
-* update icon and all other dependencies ([92e2112](https://github.com/AlaskaAirlines/auro-hyperlink/commit/92e2112bb8fe928e9f6076dc29a4026246e3af98))
-
-# [3.7.0-beta.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.1...v3.7.0-beta.2) (2024-07-20)
-
-
-### Performance Improvements
-
-* use icon element versioning ([0181399](https://github.com/AlaskaAirlines/auro-hyperlink/commit/0181399b23d2433d592645731ff1ebbe8e16757e))
-
-# [3.7.0-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.1-beta.1...v3.7.0-beta.1) (2024-07-19)
-
-
-### Features
-
-* **theme:** update styles to support themeing ([2c89f15](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2c89f158d01150766b473c7bd910f162f8f727ac))
-
-## [3.6.1-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.0...v3.6.1-beta.1) (2024-07-16)
-
-
-### Bug Fixes
-
-* adjust shape of UI for a11y UI 209 ([847630d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/847630ddac38f89df82151ac6bf5f35900238de2))
-
 # [3.6.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.11...v3.6.0) (2024-05-07)
 
 
