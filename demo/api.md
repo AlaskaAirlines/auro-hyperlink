@@ -685,7 +685,7 @@ The component may be restyled using the following code sample and changing the v
   --ds-auro-hyperlink-cta-tertiary-focus-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #56bbde);
   --ds-auro-hyperlink-cta-tertiary-focus-border-color-inverse: transparent;
   --ds-auro-hyperlink-cta-tertiary-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #a8e9f7);
-  --ds-auro-hyperlink-cta-tertiary-hover-container-color-inverse: var(--ds-color-container-ui-tertiary-hover-inverse, rgba(255, 255, 255, 0.03));
+  --ds-auro-hyperlink-cta-tertiary-hover-container-color-inverse: var(--ds-color-container-ui-tertiary-hover-inverse, rgba(255, 255, 255, 0.25));
   --ds-auro-hyperlink-cta-tertiary-hover-outline-color-inverse: transparent;
   --ds-auro-hyperlink-cta-tertiary-hover-border-color-inverse: transparent;
 }
