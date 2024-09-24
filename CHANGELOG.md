@@ -1,18 +1,5 @@
 # Semantic Release Automated Changelog
 
-# [4.0.0-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.7.0-beta.6...v4.0.0-beta.1) (2024-09-24)
-
-
-### Performance Improvements
-
-* sync package and package-lock ([2964a35](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2964a356d70ddda4b5c80cb4cd5f6f79b7e4fbea))
-* update dependencies ([675600f](https://github.com/AlaskaAirlines/auro-hyperlink/commit/675600f5f1989066bdf1a184072a1a5a2013d514))
-
-
-### BREAKING CHANGES
-
-* trigger major release for color theme support #211
-
 # [3.6.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.11...v3.6.0) (2024-05-07)
 
 
