@@ -1,5 +1,34 @@
 # Semantic Release Automated Changelog
 
+# [4.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.0...v4.0.0) (2024-09-30)
+
+
+### Bug Fixes
+
+* adjust shape of UI for a11y UI 209 ([e4da5e4](https://github.com/AlaskaAirlines/auro-hyperlink/commit/e4da5e4edae61b56c8a4ccc1e96718d45ba79a58))
+
+
+### Features
+
+* add component name as attribute [#219](https://github.com/AlaskaAirlines/auro-hyperlink/issues/219) ([27e2b3b](https://github.com/AlaskaAirlines/auro-hyperlink/commit/27e2b3b4f5256b419902eb4138835e67662231ed))
+* **theme:** update styles to support themeing ([245f2a1](https://github.com/AlaskaAirlines/auro-hyperlink/commit/245f2a1b97da59d8bcc02b2a9f759a28263aa83f))
+
+
+### Performance Improvements
+
+* point to library scripts for build process ([6f3d7fb](https://github.com/AlaskaAirlines/auro-hyperlink/commit/6f3d7fbea832d7bf576349ef4abfbaaddbc688ea))
+* refactor custom component registration config ([25895cc](https://github.com/AlaskaAirlines/auro-hyperlink/commit/25895cc5c8572c69db47242b23ff00f05b6e0045))
+* sync package and package-lock ([1aaeb9b](https://github.com/AlaskaAirlines/auro-hyperlink/commit/1aaeb9bb00fdbec0af7b571370394a9526435199))
+* update dependencies ([91b3274](https://github.com/AlaskaAirlines/auro-hyperlink/commit/91b32748ca1237aefcb8979ed46384e36aac4c50))
+* update dependencies ([36e23d8](https://github.com/AlaskaAirlines/auro-hyperlink/commit/36e23d83145ca0a24dcb27aa1c83798e22f76780))
+* update icon and all other dependencies ([a516fd4](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a516fd475ebb68426c91538b222fef7804b41d53))
+* use icon element versioning ([55d7861](https://github.com/AlaskaAirlines/auro-hyperlink/commit/55d78618521fbf724f866b487b519ede41d3366c))
+
+
+### BREAKING CHANGES
+
+* trigger major release for color theme support #211
+
 # [3.6.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.5.11...v3.6.0) (2024-05-07)
 
 
