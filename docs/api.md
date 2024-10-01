@@ -23,6 +23,7 @@
 
 ## CSS Shadow Parts
 
-| Part   | Description                                      |
-|--------|--------------------------------------------------|
-| `link` | Allows styling to be applied to the `a` element. |
+| Part         | Description                                      |
+|--------------|--------------------------------------------------|
+| `link`       | Allows styling to be applied to the `a` element. |
+| `targetIcon` | Allows styling to be applied to the icon that appears next to the hyperlink. |
