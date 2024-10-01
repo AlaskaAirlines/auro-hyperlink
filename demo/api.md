@@ -26,9 +26,10 @@
 
 ## CSS Shadow Parts
 
-| Part   | Description                                      |
-|--------|--------------------------------------------------|
-| [link](#link) | Allows styling to be applied to the `a` element. |
+| Part         | Description                                      |
+|--------------|--------------------------------------------------|
+| [link](#link)       | Allows styling to be applied to the `a` element. |
+| [targetIcon](#targetIcon) | Allows styling to be applied to the icon that appears next to the hyperlink. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples

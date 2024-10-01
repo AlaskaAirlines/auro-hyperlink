@@ -37,6 +37,7 @@ import tokensCss from "./tokens-css.js";
  * @attr {String} target - Defines where to open the linked document.
  * @attr {String} type - Defines the type of hyperlink; accepts `nav` or `cta`.
  * @csspart link - Allows styling to be applied to the `a` element.
+ * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
  */
 
 // build the component class
