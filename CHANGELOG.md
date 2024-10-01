@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.0.0...v4.0.1) (2024-10-01)
+
+
+### Performance Improvements
+
+* add csspart to auro-icon ([980ba89](https://github.com/AlaskaAirlines/auro-hyperlink/commit/980ba897e44246f998e8fd4c8f3d8d45aed6e3f5))
+* remove github label colors ([eda1550](https://github.com/AlaskaAirlines/auro-hyperlink/commit/eda15500e0b7b94d0bf1edc3a4fc2fd73a7c4b24))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v3.6.0...v4.0.0) (2024-09-30)
 
 
