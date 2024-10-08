@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.0.1...v4.0.2) (2024-10-08)
+
+
+### Bug Fixes
+
+* moves auro library to dependencies in package.json [#228](https://github.com/AlaskaAirlines/auro-hyperlink/issues/228) ([1f4d822](https://github.com/AlaskaAirlines/auro-hyperlink/commit/1f4d822ebf8858221320db38fd9354887c302291))
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.0.0...v4.0.1) (2024-10-01)
 
 
