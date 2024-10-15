@@ -1,4 +1,7 @@
 import { roleButtonExample } from "../apiExamples/roleButton";
+import { AuroHyperlink } from '../src/auro-hyperlink.js';
+
+AuroHyperlink.register('custom-hyperlink');
 
 export function initHyperlinkIndexExamples(initCount) {
   initCount = initCount || 0;
