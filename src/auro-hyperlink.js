@@ -8,8 +8,8 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
 import ComponentBase from './component-base.mjs';
 
-
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion';
@@ -68,6 +68,19 @@ export class AuroHyperlink extends ComponentBase {
     ];
   }
 
+
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-hyperlink"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroHyperlink.register("custom-hyperlink") // this will register this element to <custom-hyperlink/>
+   *
+   */
+  static register(name = "auro-hyperlink") {
+    RuntimeUtils.default.prototype.registerComponent(name, AuroHyperlink);
+  }
+
   /**
    * Generates an object containing CSS classes based on the properties of the component.
    *
@@ -113,9 +126,4 @@ export class AuroHyperlink extends ComponentBase {
       : html`<slot></slot>`}
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-hyperlink")) {
-  customElements.define("auro-hyperlink", AuroHyperlink);
 }
