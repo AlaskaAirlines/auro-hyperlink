@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.0.2...v4.1.0) (2024-10-23)
+
+
+### Bug Fixes
+
+* add missing extension that prevents proper ESM support ([69724a2](https://github.com/AlaskaAirlines/auro-hyperlink/commit/69724a263324aa3a7afb9445b495780c07bd2f91))
+
+
+### Features
+
+* **api:** add register static method [#231](https://github.com/AlaskaAirlines/auro-hyperlink/issues/231) ([8d1908b](https://github.com/AlaskaAirlines/auro-hyperlink/commit/8d1908bdb9f7a2eb537eb83f8fe94797542df0bd))
+
 ## [4.0.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.0.1...v4.0.2) (2024-10-08)
 
 
