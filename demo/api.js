@@ -1,3 +1,7 @@
+import { AuroHyperlink } from '../src/auro-hyperlink.js';
+
+AuroHyperlink.register();
+
 export function initHyperlinkApiExamples(initCount) {
   initCount = initCount || 0;
 
