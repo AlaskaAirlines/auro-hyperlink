@@ -12,7 +12,7 @@ import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts
 import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
-import iconVersion from './iconVersion';
+import iconVersion from './iconVersion.js';
 
 // import the processed CSS file into the scope of the component
 import styleCss from "./style-css.js";
