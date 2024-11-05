@@ -192,7 +192,7 @@ export default class ComponentBase extends LitElement {
 
     svg.setAttribute('slot', 'svg');
 
-    return html`<${this.iconTag} customColor customSize customSvg part="targetIcon">${svg}</${this.iconTag}>`;
+    return html`<${this.iconTag} customColor customSvg part="targetIcon">${svg}</${this.iconTag}>`;
   }
 
   /**
