@@ -166,7 +166,7 @@
 }
 
 [auro-icon] {
-  height: 1rem;
-  width: 1rem;
+  --ds-auro-icon-size: var(--ds-size-200, $ds-size-200);
+  
   margin-left: var(--ds-size-25, $ds-size-25);
 }
