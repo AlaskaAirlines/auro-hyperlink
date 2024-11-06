@@ -1,5 +1,15 @@
 # Semantic Release Automated Changelog
 
+## [4.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.1.0...v4.1.1) (2024-11-06)
+
+
+### Performance Improvements
+
+* **cta:** match cta tokens with auro-button tokens [#213](https://github.com/AlaskaAirlines/auro-hyperlink/issues/213) ([217c20f](https://github.com/AlaskaAirlines/auro-hyperlink/commit/217c20f334ed7020c96c916ba624a74817a8c9ae))
+* support latest version of auro-icon ([d32a8df](https://github.com/AlaskaAirlines/auro-hyperlink/commit/d32a8df6048b721c072a810b1ff0a0aeeccb4105))
+* update dependencies ([caa7893](https://github.com/AlaskaAirlines/auro-hyperlink/commit/caa789349b65cd786e624f372229aed00ec30807))
+* update rollup config ([d324b04](https://github.com/AlaskaAirlines/auro-hyperlink/commit/d324b04095bedc53ad945b55924439b09d5e06de))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.0.2...v4.1.0) (2024-10-23)
 
 
