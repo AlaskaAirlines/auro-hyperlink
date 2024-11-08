@@ -12,21 +12,21 @@ Hyperlinks form the backbone of how users navigate through a site or app. The fo
 If the `href` attribute is not added, the hyperlink element will render back simple text.
 
 <div class="exampleWrapper" aria-hidden>
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <div class="exampleWrapper--ondark" aria-hidden>
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -38,21 +38,21 @@ Auro's hyperlink element can be used in many creative ways in combination with o
 The `auro-icon` element comes with some pre-defined opinions, but these are easily overwritten by binding CSS directly to the custom element itself. Remember to also use the `customColor` attribute with `auro-icon` so that the SVG will inherit the link and hover colors of the hyperlink.
 
 <div class="exampleWrapper" style="display: flex; justify-content: space-between;">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navPattern.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navPattern.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <div class="exampleWrapper--ondark" style="display: flex; justify-content: space-between;">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navPattern-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navPattern-ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navPattern.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navPattern-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern-ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -66,24 +66,24 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 **Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roleButton.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roleButton.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roleButton-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roleButton-ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton-ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton.js) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton.js) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -95,14 +95,14 @@ Not all URL types are supported for security reasons. Two common types that are 
 The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/nonSupported.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nonSupported.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/nonSupported.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/nonSupported.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -122,11 +122,11 @@ AuroHyperlink.register('custom-hyperlink');
 This will create a new custom element that you can use in your HTML that will function identically to the `<auro-hyperlink>` element.
 
 <div class="exampleWrapper exampleWrapper--flex">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/custom.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/custom.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

@@ -12,31 +12,31 @@ Hyperlinks form the backbone of how users navigate through a site or app. The fo
 If the `href` attribute is not added, the hyperlink element will render back simple text.
 
 <div class="exampleWrapper" aria-hidden>
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark" aria-hidden>
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic-ondark.html -->
   <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-hyperlink>No href supplied</auro-hyperlink><br>
 Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic-ondark.html -->
 
 ```html
 <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
@@ -52,8 +52,8 @@ Auro's hyperlink element can be used in many creative ways in combination with o
 The `auro-icon` element comes with some pre-defined opinions, but these are easily overwritten by binding CSS directly to the custom element itself. Remember to also use the `customColor` attribute with `auro-icon` so that the SVG will inherit the link and hover colors of the hyperlink.
 
 <div class="exampleWrapper" style="display: flex; justify-content: space-between;">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navPattern.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/navPattern.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navPattern.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/navPattern.html -->
   <auro-hyperlink href="/last" type="nav">
     <auro-icon category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
     Click here to go back
@@ -65,8 +65,8 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark" style="display: flex; justify-content: space-between;">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navPattern-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/navPattern-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navPattern-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/navPattern-ondark.html -->
   <auro-hyperlink ondark href="/last" type="nav">
     <auro-icon ondark category="interface" name="chevron-left" customColor style="line-height: 1"></auro-icon>
     Click here to go back
@@ -79,8 +79,8 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navPattern.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/navPattern.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/navPattern.html -->
 
 ```html
 <auro-hyperlink href="/last" type="nav">
@@ -93,8 +93,8 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 </auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navPattern-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/navPattern-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/navPattern-ondark.html -->
 
 ```html
 <auro-hyperlink ondark href="/last" type="nav">
@@ -118,35 +118,35 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 **Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roleButton.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/roleButton.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roleButton.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/roleButton.html -->
   <auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roleButton-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/roleButton-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roleButton-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/roleButton-ondark.html -->
   <auro-hyperlink ondark href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roleButton.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roleButton.html -->
 
 ```html
 <auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roleButton-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roleButton-ondark.html -->
 
 ```html
 <auro-hyperlink ondark href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roleButton.js) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roleButton.js -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton.js) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roleButton.js -->
 
 ```js
 export function roleButtonExample() {
@@ -187,8 +187,8 @@ Not all URL types are supported for security reasons. Two common types that are 
 The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/nonSupported.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/nonSupported.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nonSupported.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/nonSupported.html -->
   <p>
     <auro-hyperlink>No href supplied</auro-hyperlink>
   </p>
@@ -208,8 +208,8 @@ The following examples illustrate the use of `<auro-hyperlink>` with either no `
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/nonSupported.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/nonSupported.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/nonSupported.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/nonSupported.html -->
 
 ```html
 <p>
@@ -246,16 +246,16 @@ AuroHyperlink.register('custom-hyperlink');
 This will create a new custom element that you can use in your HTML that will function identically to the `<auro-hyperlink>` element.
 
 <div class="exampleWrapper exampleWrapper--flex">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/custom.html -->
   <custom-hyperlink>No href supplied</custom-hyperlink><br>
   Welcome to <custom-hyperlink href="https://www.alaskaair.com">Alaska Airlines</custom-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/custom.html -->
 
 ```html
 <custom-hyperlink>No href supplied</custom-hyperlink><br>

@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
+<!-- The below content is automatically added from ./../docs/api.md -->
 
 # auro-hyperlink
 
@@ -37,31 +37,31 @@
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic-ondark.html -->
   <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-hyperlink>No href supplied</auro-hyperlink><br>
 Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic-ondark.html -->
 
 ```html
 <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
@@ -77,8 +77,8 @@ Hyperlinks when used with the `target="_blank"` attribute are domain aware and r
 For link security purposes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/external.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/external.html -->
   Example link with
   <auro-hyperlink
     target="_blank"
@@ -98,8 +98,8 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/external-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/external-ondark.html -->
   Example link with
   <auro-hyperlink
     ondark
@@ -122,8 +122,8 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/external.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external.html -->
 
 ```html
 Example link with
@@ -144,8 +144,8 @@ Example link with
  with external domain
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/external-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-ondark.html -->
 
 ```html
 Example link with
@@ -179,8 +179,8 @@ Using this attribute will use the `strict-origin-when-cross-origin` policy type.
 This will also set the `rel` attribute to `external`.
 
 <div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-referrer.html) -->
-<!-- The below content is automatically added from ./../../apiExamples/external-referrer.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer.html) -->
+<!-- The below content is automatically added from ./../apiExamples/external-referrer.html -->
 Example link with
 <auro-hyperlink
   target="_blank"
@@ -192,8 +192,8 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/external-referrer-ondark.html) -->
-<!-- The below content is automatically added from ./../../apiExamples/external-referrer-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-ondark.html) -->
+<!-- The below content is automatically added from ./../apiExamples/external-referrer-ondark.html -->
 Example link with
 <auro-hyperlink
   ondark
@@ -207,8 +207,8 @@ Example link with
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-referrer.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/external-referrer.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-referrer.html -->
 
 ```html
 Example link with
@@ -221,8 +221,8 @@ Example link with
  , external domain with referrerpolicy attribute
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/external-referrer-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/external-referrer-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-ondark.html -->
 
 ```html
 Example link with
@@ -243,8 +243,8 @@ Example link with
 When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navStyle.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/navStyle.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/navStyle.html -->
   <auro-hyperlink
     type="nav"
     href="https://www.alaskaair.com">
@@ -253,8 +253,8 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/navStyle-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/navStyle-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/navStyle-ondark.html -->
   <auro-hyperlink
     ondark
     type="nav"
@@ -265,8 +265,8 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navStyle.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/navStyle.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/navStyle.html -->
 
 ```html
 <auro-hyperlink
@@ -276,8 +276,8 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/navStyle-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/navStyle-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/navStyle-ondark.html -->
 
 ```html
 <auro-hyperlink
@@ -295,15 +295,15 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 By default the `auro-hyperlink` will assume that the url passed is an absolute URL to `www.alaskaair.com` with the `https` protocol.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/relativevsabsolute.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/relativevsabsolute.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relativevsabsolute.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/relativevsabsolute.html -->
   Relative href converted to absolute URL to <auro-hyperlink href="/route-map">route map</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/relativevsabsolute_code.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/relativevsabsolute_code.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/relativevsabsolute_code.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/relativevsabsolute_code.html -->
 
 ```html
 <!-- Web component example -->
@@ -320,16 +320,16 @@ Relative href converted to absolute URL to <a class="hyperlink" href="https://ww
 Regardless of protocol used with `http` property, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/httpsEnforcement.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/httpsEnforcement.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/httpsEnforcement.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/httpsEnforcement.html -->
   http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
   no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/httpsEnforcement_code.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/httpsEnforcement_code.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/httpsEnforcement_code.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/httpsEnforcement_code.html -->
 
 ```html
 <!-- Web component example -->
@@ -347,15 +347,15 @@ no hypertext transfer protocol absolute URL to <a class="hyperlink" href="https:
 Absolute URLs are not always preferred. When using relative URLs, use the `relative` attribute and `auro-hyperlink` will ignore the domain and the protocol.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/relativeUrl.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/relativeUrl.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relativeUrl.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/relativeUrl.html -->
   Example of a <auro-hyperlink relative href="#">relative URL</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/relativeUrl_code.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/relativeUrl_code.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/relativeUrl_code.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/relativeUrl_code.html -->
 
 ```html
 <!-- Web component example -->
@@ -369,8 +369,8 @@ Example of a <a class="hyperlink" href="#"><slot>relative URL</slot></a>
 #### Using telephone/text/mailto URLs protocols
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/URLscheme.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/URLscheme.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/URLscheme.html -->
   Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
   Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
   Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
@@ -378,8 +378,8 @@ Example of a <a class="hyperlink" href="#"><slot>relative URL</slot></a>
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/URLscheme.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/URLscheme.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/URLscheme.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/URLscheme.html -->
 
 ```html
 Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
@@ -396,8 +396,8 @@ Call to action buttons, or "CTA" buttons are a special use case hybrid hyperlink
 CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/cta.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/cta.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta.html -->
   <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -410,8 +410,8 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/cta-ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/cta-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-ondark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-ondark.html -->
   <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" ondark href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -425,8 +425,8 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/cta.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta.html -->
 
 ```html
 <auro-hyperlink type="cta" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
@@ -440,8 +440,8 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <auro-hyperlink type="cta" tertiary href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/cta-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-ondark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-ondark.html -->
 
 ```html
 <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
@@ -462,8 +462,8 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/cta-fluid.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/cta-fluid.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-fluid.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-fluid.html -->
   <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" fluid secondary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" fluid tertiary href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
@@ -471,8 +471,8 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta-fluid.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/cta-fluid.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-fluid.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-fluid.html -->
 
 ```html
 <auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
@@ -487,8 +487,8 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 In the following example, see how the `small` attribute alters the size of the button to be smaller than the normal `cta` button.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/cta-small.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/cta-small.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-small.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-small.html -->
   <auro-hyperlink type="cta" small href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small href="https://www.alaskaair.com" target="_blank" >CTA Button</auro-hyperlink>
   <auro-hyperlink type="cta" small href="https://www.portseattle.org/sea-tac" target="_blank" >CTA Button</auro-hyperlink>
@@ -502,8 +502,8 @@ In the following example, see how the `small` attribute alters the size of the b
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/cta-small.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/cta-small.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-small.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-small.html -->
 
 ```html
 <auro-hyperlink type="cta" small href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
@@ -523,8 +523,8 @@ In the following example, see how the `small` attribute alters the size of the b
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.css) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.css -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.css) -->
+<!-- The below code snippet is automatically added from ./../src/tokens.css -->
 
 ```css
 /* stylelint-disable custom-property-empty-line-before */
