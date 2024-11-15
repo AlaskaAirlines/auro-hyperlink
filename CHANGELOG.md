@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.1.1...v4.2.0) (2024-11-15)
+
+
+### Features
+
+* upgrade to auro-library 3.0.1 ([59f811d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/59f811d0d70bc51746246af480669a4203c59137))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([f68a9c7](https://github.com/AlaskaAirlines/auro-hyperlink/commit/f68a9c7152a64c9e17819bafe757fceb16eb9542))
+
 ## [4.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.1.0...v4.1.1) (2024-11-06)
 
 
