@@ -110,7 +110,7 @@ export class AuroHyperlink extends ComponentBase {
       ${this.safeUri || this.role ? html`
       <a
         part="link"
-        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariaPressed) : undefined)}"
+        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
         class="${classMap(classes)}"
         href="${ifDefined(this.role ? undefined : this.safeUri)}"
         rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"

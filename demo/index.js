@@ -18,3 +18,5 @@ export function initHyperlinkIndexExamples(initCount) {
     }
   }
 }
+
+initHyperlinkIndexExamples();
