@@ -33,17 +33,17 @@ export default class ComponentBase extends LitElement {
     /**
      * @private
      */
-    this.ariaPressed = 'false';
+    this.ariapressed = 'false';
 
     /**
      * @private
      */
     this.tabIsActive = 'false';
 
-     /**
+    /**
      * @private
      */
-     this.runtimeUtils = new AuroLibraryRuntimeUtils();
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
 
     /*
       If the component requires a touch detection,
