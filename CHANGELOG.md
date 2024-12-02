@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.0...v4.2.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* ariaPressed name changed to prevent conflict with html attribute [#235](https://github.com/AlaskaAirlines/auro-hyperlink/issues/235) ([2c176a4](https://github.com/AlaskaAirlines/auro-hyperlink/commit/2c176a4b2900bf62f4ee798a9371fa16a8d9db5c))
+
 # [4.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.1.1...v4.2.0) (2024-11-15)
 
 
