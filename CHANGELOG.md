@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.1...v4.2.2) (2024-12-20)
+
+
+### Performance Improvements
+
+* update node to version 22 ([5a8ba3e](https://github.com/AlaskaAirlines/auro-hyperlink/commit/5a8ba3edd8ec6435bc524d25188f72d2bfe72ea4))
+
 ## [4.2.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.0...v4.2.1) (2024-12-02)
 
 
