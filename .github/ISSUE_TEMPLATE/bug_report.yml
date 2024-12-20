@@ -4,7 +4,7 @@ title: '[issue summary] Please verify version before submitting new issue'
 labels:
   - 'Type: Bug'
   - not-reviewed
-  - auro-hyperlink
+  - 'auro-hyperlink'
 body:
   - type: markdown
     attributes:
@@ -18,7 +18,7 @@ body:
     attributes:
       value: >
         [![See it on
-        NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-hyperlink?style=for-the-hyperlink&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-hyperlink)
+        NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-hyperlink?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-hyperlink)
   - type: textarea
     id: details
     attributes:
