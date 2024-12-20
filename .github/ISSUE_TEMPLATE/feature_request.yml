@@ -4,7 +4,7 @@ title: 'auro-hyperlink: [feature summary]'
 labels:
   - 'Type: Feature'
   - not-reviewed
-  - auro-hyperlink
+  - 'auro-hyperlink'
 body:
   - type: textarea
     id: request
