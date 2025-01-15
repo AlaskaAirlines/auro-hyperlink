@@ -13,9 +13,6 @@
 // Dependency required to process variables from Icons
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 
-// Support for fallback values
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
-
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
@@ -167,6 +164,6 @@
 
 [auro-icon] {
   --ds-auro-icon-size: var(--ds-size-200, $ds-size-200);
-  
+
   margin-left: var(--ds-size-25, $ds-size-25);
 }
