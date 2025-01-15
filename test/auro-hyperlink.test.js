@@ -5,9 +5,10 @@ describe('auro-hyperlink', () => {
 
   it('auro-hyperlink is accessible', async () => {
     const el = await fixture(html`
-      <auro-hyperlink href="alaska.com">Alaska air</auro-hyperlink>
+      <auro-hyperlink href="www.foobar.com/faq.html">Alaska air</auro-hyperlink>
     `);
 
+    // console.log(el.shadowRoot);
     await expect(el).to.be.accessible();
   });
 
@@ -35,6 +36,86 @@ describe('auro-hyperlink', () => {
 
     expect(anchor).to.have.attribute('href', '/auro');
     expect(anchor).not.to.have.attribute('href', 'https://www.alaskaair.com/auro');
+  });
+
+  it('inserted URL is updated to be dynamic based on environment', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    expect(anchor).to.have.attribute('href').that.includes('localhost');
+  });
+
+  it('inserted URL is expecte to maintain initial URL hostname', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink origin="hostname" href="https://www.alaskaair.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    expect(anchor).to.have.attribute('href').that.includes('alaskaair');
+  });
+
+  it('shadow DOM href is persisted from original href with target=_blank', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink target="_blank" href="https://www.alaskaair.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    expect(anchor).to.have.attribute('href').that.includes('alaskaair');
+  });
+
+  it('shadow DOM anchor is dynamic even with target=_blank applied', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink origin="dynamic" target="_blank" href="https://www.alaskaair.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    expect(anchor).to.have.attribute('href').that.includes('localhost');
+  });
+
+  it('uses new window icon', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink target="_blank" href="https://www.alaskaair.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    const title = anchor.querySelector('svg > title');
+    expect(title).to.have.attribute('id').that.includes('new-window-stroke');
+    expect(anchor).to.have.attribute('href').that.includes('alaskaair');
+  });
+
+  it('uses new window icon', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink target="_blank" href="https://www.hawaiianairlines.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    const title = anchor.querySelector('svg > title');
+    expect(title).to.have.attribute('id').that.includes('new-window-stroke');
+    expect(anchor).to.have.attribute('href').that.includes('hawaiianairlines');
+  });
+
+  it('uses new window icon w/dynmaic origin hostname', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink target="_blank" origin="dynamic" href="https://www.hawaiianairlines.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    const title = anchor.querySelector('svg > title');
+    expect(title).to.have.attribute('id').that.includes('new-window-stroke');
+    expect(anchor).to.have.attribute('href').that.includes('localhost');
+  });
+
+  it('uses extrenal link icon', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink target="_blank" href="https://www.portofseattle/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    const title = anchor.querySelector('svg > title');
+    expect(title).to.have.attribute('id').that.includes('external-link-stroke');
+    expect(anchor).to.have.attribute('href').that.includes('portofseattle');
   });
 
   // eval that JS in the href attr is ignored
@@ -148,11 +229,15 @@ describe('safeUrl function', () => {
   });
 
   it('returns href when protocol is https:', async () => {
-    const result = component.safeUrl('https://www.example.com', false);
+    component.origin = 'hostname'; // Set the origin value
+
+    const result = component.safeUrl('http://www.example.com', false);
     expect(result).to.equal('https://www.example.com/');
   });
 
   it('returns href with https protocol when relative is false', async () => {
+    component.origin = 'hostname'; // Set the origin value
+
     const result = component.safeUrl('http://www.example.com', false);
     expect(result).to.equal('https://www.example.com/');
   });
