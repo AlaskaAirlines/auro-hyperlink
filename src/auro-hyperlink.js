@@ -36,6 +36,7 @@ import tokensCss from "./tokens-css.js";
  * @attr {String} href - Defines the URL of the linked page.
  * @attr {String} target - Defines where to open the linked document.
  * @attr {String} type - Defines the type of hyperlink; accepts `nav` or `cta`.
+ * @attr {String} origin - Defines hostname for the origin of the URL. Options are `hostname` or `dynamic`. Default is `dynamic`. Using `hostname` will force the URL to be rewritten to use the hostname of the `href` attribute. Using `dynamic` will rewrite the URL to use the hostname of the current page.
  * @csspart link - Allows styling to be applied to the `a` element.
  * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
  */

@@ -62,6 +62,7 @@ export default class ComponentBase extends LitElement {
   static get properties() {
     return {
       href:             { type: String },
+      origin:           { type: String },
       rel:              { type: String },
       role:             { type: String },
       target:           { type: String },
@@ -147,19 +148,67 @@ export default class ComponentBase extends LitElement {
    * @returns {string|undefined} The safe URL or `undefined`.
    */
   safeUrl(href, relative) {
+
     if (!href) {
       return undefined;
     }
 
-    const url = new URL(href, 'https://www.alaskaair.com');
+    /**
+     * Determines the current hostname based on the environment (browser or server-side).
+     *
+     * @param {string} [href] - The URL to extract the hostname from when running in a server-side environment.
+     * @returns {string} The current hostname.
+     */
+    let currentHostname;
+    if (typeof window !== 'undefined') {
+      currentHostname = window.location.origin;
+    } else {
+      // Extract the hostname from the provided href for SSR
+      try {
+        currentHostname = new URL(href).origin;
+      } catch (e) {
+        // If href is not a valid URL, provide a default fallback
+        currentHostname = 'http://localhost:8000';
+      }
+    }
 
+    /**
+     * Processes the given href and currentHostname to generate a URL object.
+     *
+     * @param {string} href - The href attribute of the anchor element.
+     * @param {string} currentHostname - The current hostname to be used as a base.
+     * @returns {URL|undefined} The generated URL object, or undefined if an error occurs.
+     * @private
+     */
+    let url;
+
+
+    // let's refactor this so that it's using a enum versus a boolean value
+    try {
+      url = new URL(href, currentHostname);
+      if (this.origin !== `hostname` || this.origin === `dynamic`) {
+        const currentUrl = new URL(currentHostname);
+        url.hostname = currentUrl.hostname;
+        url.port = currentUrl.port; // Preserve the port number
+      }
+      if (this.target === `_blank` && this.origin === undefined) {
+        const hrefURL = new URL(href);
+        url.hostname = hrefURL.hostname;
+        url.port = ''; // Remove the port number
+      }
+    } catch (e) {
+      return undefined;
+    }
+
+    // return href if protocol is supported
     switch (url.protocol) {
       case 'tel:':
       case 'sms:':
       case 'mailto:':
         return href;
 
-      // Specifically want to render NO shadowDOM for the following refs
+      // Return undefined for unsupported protocols
+      // renders NO shadow DOM in the UI
       case 'javascript:':
       case 'data:':
       case 'vbscript:':
@@ -215,22 +264,28 @@ export default class ComponentBase extends LitElement {
    * @returns {HTMLElement|undefined} The HTML element containing the icon, or undefined if no icon is generated.
    */
   targetIcon(target) {
-
     /**
-     * Checks if a URL's domain is from the 'alaskaair.com' domain or its subdomains.
+     * Checks if a given URL belongs to an internal domain.
+     *
      * @param {string} url - The URL to check.
-     * @returns {boolean} Returns true if the URL's domain is 'alaskaair.com' or one of its subdomains, otherwise false.
+     * @returns {boolean} - Returns true if the URL is an internal domain, otherwise false.
      */
-    const isAlaskaAirDomain = (url) => {
+    const isInternalDomain = (url) => {
       const urlObject = new URL(url);
-      return urlObject.hostname.endsWith('.alaskaair.com');
+      const hostname = urlObject.hostname;
+      const internalDomains = [
+        /\.alaskaair\.com$/,
+        /\.hawaiianairlines\.com$/,
+        /^localhost$/
+      ];
+      return internalDomains.some((pattern) => pattern.test(hostname));
     };
-
-    // If target is '_blank' and the URL's domain is 'alaskaair.com' or one of its subdomains, return icon for new window
-    if (target === '_blank' && isAlaskaAirDomain(this.safeUri)) {
+    // If target is '_blank' and the URL's domain is internal or one of its subdomains,
+    // return icon for new window
+    if (target === '_blank' && isInternalDomain(this.safeUri)) {
       return this.generateIconHtml(newWindow.svg);
-    } else if (target === '_blank' && !isAlaskaAirDomain(this.safeUri) && this.includesDomain) {
-      // If target is '_blank' and the URL does not belong to 'alaskaair.com' or its subdomains but contains a domain, return icon for external link
+    } else if (target === '_blank' && !isInternalDomain(this.safeUri) && this.includesDomain) {
+      // If target is '_blank' and the URL is not internal, return icon for external link
       return this.generateIconHtml(externalLink.svg);
     }
 
