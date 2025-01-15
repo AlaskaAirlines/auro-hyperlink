@@ -10,6 +10,7 @@
 | `fluid`          | `fluid`          |           | `Boolean` |         | If true and `type="cta"`, the hyperlink will have a fluid-width UI. |
 | `href`           | `href`           |           | `String`  |         | Defines the URL of the linked page.              |
 | `ondark`         | `ondark`         |           | `Boolean` | false   | If true, the hyperlink will be styled for use on a dark background. |
+| `origin`         | `origin`         |           | `String`  |         | Defines hostname for the origin of the URL. Options are `hostname` or `dynamic`. Default is `dynamic`. Using `hostname` will force the URL to be rewritten to use the hostname of the `href` attribute. Using `dynamic` will rewrite the URL to use the hostname of the current page. |
 | `referrerpolicy` | `referrerpolicy` |           | `Boolean` |         | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
 | `rel`            | `rel`            |           | `String`  |         | Defines the relationship between the current document and the linked document. |
 | `relative`       | `relative`       |           | `Boolean` | false   | If true, the auto URL re-write feature will be disabled. |

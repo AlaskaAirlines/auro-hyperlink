@@ -31,6 +31,23 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 
 </auro-accordion>
 
+## Dynamic hostname support
+
+The `auro-hyperlink` component defaults to modifying the origin of any provided URL to match the hostname of the current page unless explicitly configured. Using `origin="hostname"` will retain the hostname of the URL entered into the `href` attribute. Using `target="_blank"`, the URL on the anchor tag will maintain the hostname of the URL in the `href` attribute. Using `origin="dynamic"` in combination with `target="_blank"` will allow the targeted link to match the hostname of the current page.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/dynamichostname.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/dynamichostname.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ## Navigation pattern example
 
 Auro's hyperlink element can be used in many creative ways in combination with other elements for easy-to-manage UI solutions. This example uses the `auro-hyperlink` with the `auro-icon` elements with a little CSS to create a pretty popular nav style UI.

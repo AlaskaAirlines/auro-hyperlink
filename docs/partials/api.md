@@ -25,6 +25,23 @@
 
 </auro-accordion>
 
+## Dynamic hostname support
+
+The `auro-hyperlink` component defaults to modifying the origin of any provided URL to match the hostname of the current page unless explicitly configured. Using `origin="hostname"` will retain the hostname of the URL entered into the `href` attribute. Using `target="_blank"`, the URL on the anchor tag will maintain the hostname of the URL in the `href` attribute. Using `origin="dynamic"` in combination with `target="_blank"` will allow the targeted link to match the hostname of the current page.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/dynamichostname.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/dynamichostname.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ## External Links
 
 Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain new-window icon versus an icon that communicates users will be taken to a new domain.

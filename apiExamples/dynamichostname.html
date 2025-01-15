@@ -1,0 +1,62 @@
+<p>
+  Expect this
+  <auro-hyperlink
+    href="https://www.alaskaair.com/faq.html">
+    Alaska Airlines
+  </auro-hyperlink>
+  link to be redefined based on the hostname of the current page.
+</p>
+<p>
+  Expect this
+  <auro-hyperlink
+    origin="hostname"
+    href="https://www.alaskaair.com/faq.html">
+    Alaska Airlines
+  </auro-hyperlink>
+  link to maintain the hostname of the original link.
+</p>
+<p>
+  Expect this
+  <auro-hyperlink
+    target="_blank"
+    href="https://www.alaskaair.com/faq.html">
+    Alaska Airlines
+  </auro-hyperlink>
+  link to maintain the hostname of the original link.
+</p>
+<p>
+  Expect this
+  <auro-hyperlink
+    origin="dynamic"
+    target="_blank"
+    href="https://www.alaskaair.com/faq.html">
+    Alaska Airlines
+  </auro-hyperlink>
+  link to be redefined based on the hostname of the current page.
+</p>
+<p>
+  Expect this
+  <auro-hyperlink
+    target="_blank"
+    href="https://www.portofseattle.com/faq.html">
+    external link
+  </auro-hyperlink>
+  link to maintain the hostname of the original link.
+</p>
+<p>
+  Expect this
+  <auro-hyperlink
+    href="/faq.html">
+    Alaska Airlines
+  </auro-hyperlink>
+  link to be redefined based on the hostname of the current page.
+</p>
+<p>
+  Expect this
+  <auro-hyperlink
+    relative
+    href="/faq.html">
+    Alaska Airlines
+  </auro-hyperlink>
+  link to be remain relative.
+</p>
