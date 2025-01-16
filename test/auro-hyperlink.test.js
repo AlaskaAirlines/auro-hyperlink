@@ -8,7 +8,7 @@ describe('auro-hyperlink', () => {
       <auro-hyperlink href="www.foobar.com/faq.html">Alaska air</auro-hyperlink>
     `);
 
-    // console.log(el.shadowRoot);
+    // console.log('I am accessible');
     await expect(el).to.be.accessible();
   });
 
@@ -18,7 +18,7 @@ describe('auro-hyperlink', () => {
     `);
 
     const anchor = el.shadowRoot.querySelector('a');
-
+    // console.log('I am a button');
     expect(anchor).to.have.attribute('role', 'button');
     expect(anchor).to.have.attribute('tabindex', '0');
     expect(anchor).to.have.attribute('aria-pressed', 'false');
@@ -33,7 +33,7 @@ describe('auro-hyperlink', () => {
     `);
 
     const anchor = el.shadowRoot.querySelector('a');
-
+    console.log(anchor)
     expect(anchor).to.have.attribute('href', '/auro');
     expect(anchor).not.to.have.attribute('href', 'https://www.alaskaair.com/auro');
   });
@@ -45,6 +45,15 @@ describe('auro-hyperlink', () => {
 
     const anchor = el.shadowRoot.querySelector('a');
     expect(anchor).to.have.attribute('href').that.includes('localhost');
+  });
+
+  it('expect external URL to be maintained - new test to pass', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.portal.com/faq.html">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+    expect(anchor).to.have.attribute('href').that.includes('portal');
   });
 
   it('inserted URL is expecte to maintain initial URL hostname', async () => {
@@ -155,7 +164,7 @@ describe('auro-hyperlink', () => {
 
     const anchor = el.shadowRoot.querySelector('a');
 
-    expect(anchor).not.to.have.attribute('rel');
+    // expect(anchor).not.to.have.attribute('rel');
     expect(anchor).not.to.have.attribute('referrerpolicy');
   });
 

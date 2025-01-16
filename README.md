@@ -77,7 +77,7 @@ import "@aurodesignsystem/auro-hyperlink";
 
 ```html
 <auro-hyperlink>No href supplied</auro-hyperlink><br>
-Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+Welcome to <auro-hyperlink href="https://www.portal.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -122,7 +122,7 @@ The `<auro-hyperlink>` elements should be used in situations where users may:
 
 ```html
 <auro-hyperlink>No href supplied</auro-hyperlink><br>
-Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+Welcome to <auro-hyperlink href="https://www.portal.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 

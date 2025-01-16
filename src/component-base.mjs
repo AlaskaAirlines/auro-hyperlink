@@ -168,6 +168,7 @@ export default class ComponentBase extends LitElement {
         currentHostname = new URL(href).origin;
       } catch (e) {
         // If href is not a valid URL, provide a default fallback
+        console.warn(e);
         currentHostname = 'http://localhost:8000';
       }
     }
@@ -180,10 +181,8 @@ export default class ComponentBase extends LitElement {
      * @returns {URL|undefined} The generated URL object, or undefined if an error occurs.
      * @private
      */
+
     let url;
-
-
-    // let's refactor this so that it's using a enum versus a boolean value
     try {
       url = new URL(href, currentHostname);
       if (this.origin !== `hostname` || this.origin === `dynamic`) {
@@ -245,6 +244,24 @@ export default class ComponentBase extends LitElement {
   }
 
   /**
+   * Checks if a given URL belongs to an internal domain.
+   *
+   * @param {string} url - The URL to check.
+   * @returns {boolean} - Returns true if the URL is an internal domain, otherwise false.
+   */
+  isInternalDomain(url) {
+    const urlObject = new URL(url);
+    const hostname = urlObject.hostname;
+    const internalDomains = [
+      /\.alaskaair\.com$/,
+      /\.hawaiianairlines\.com$/,
+      /^localhost$/
+    ];
+    return internalDomains.some((pattern) => pattern.test(hostname));
+  }
+
+
+  /**
    * Generates an icon HTML element based on the target attribute.
    *
    * @example
@@ -264,27 +281,11 @@ export default class ComponentBase extends LitElement {
    * @returns {HTMLElement|undefined} The HTML element containing the icon, or undefined if no icon is generated.
    */
   targetIcon(target) {
-    /**
-     * Checks if a given URL belongs to an internal domain.
-     *
-     * @param {string} url - The URL to check.
-     * @returns {boolean} - Returns true if the URL is an internal domain, otherwise false.
-     */
-    const isInternalDomain = (url) => {
-      const urlObject = new URL(url);
-      const hostname = urlObject.hostname;
-      const internalDomains = [
-        /\.alaskaair\.com$/,
-        /\.hawaiianairlines\.com$/,
-        /^localhost$/
-      ];
-      return internalDomains.some((pattern) => pattern.test(hostname));
-    };
     // If target is '_blank' and the URL's domain is internal or one of its subdomains,
     // return icon for new window
-    if (target === '_blank' && isInternalDomain(this.safeUri)) {
+    if (target === '_blank' && this.isInternalDomain(this.safeUri)) {
       return this.generateIconHtml(newWindow.svg);
-    } else if (target === '_blank' && !isInternalDomain(this.safeUri) && this.includesDomain) {
+    } else if (target === '_blank' && !this.isInternalDomain(this.safeUri) && this.includesDomain) {
       // If target is '_blank' and the URL is not internal, return icon for external link
       return this.generateIconHtml(externalLink.svg);
     }
