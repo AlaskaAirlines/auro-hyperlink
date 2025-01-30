@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [4.2.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.2...v4.2.3) (2025-01-30)
+
+
+### Bug Fixes
+
+* make hyperlinks with icons render correctly [#248](https://github.com/AlaskaAirlines/auro-hyperlink/issues/248) ([389b344](https://github.com/AlaskaAirlines/auro-hyperlink/commit/389b3444ddd00e84790e5b383043fa56de0512f3))
+
+
+### Performance Improvements
+
+* remove .scss file extensions ([3941594](https://github.com/AlaskaAirlines/auro-hyperlink/commit/3941594fe4cab34afbbfe9f1229d1770ff61542c))
+* update deps and npm script structure ([de514ec](https://github.com/AlaskaAirlines/auro-hyperlink/commit/de514ec4a1f20c42c9ad3c001503705588b455e7))
+
 ## [4.2.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.1...v4.2.2) (2024-12-20)
 
 
