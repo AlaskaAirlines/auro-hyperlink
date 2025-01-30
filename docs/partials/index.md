@@ -1,3 +1,9 @@
+<style>
+  .exampleWrapper--ondark {
+    color: var(--ds-color-text-primary-inverse);
+  }
+</style>
+
 <!--
 The index.md file is a compiled document. No edits should be made directly to this file.
 This file is generated based on a template fetched from `./apiExamples/index.md`

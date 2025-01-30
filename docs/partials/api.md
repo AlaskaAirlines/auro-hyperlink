@@ -1,3 +1,9 @@
+<style>
+  .exampleWrapper--ondark {
+    color: var(--ds-color-text-primary-inverse);
+  }
+</style>
+
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
