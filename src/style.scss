@@ -10,14 +10,7 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/animation';
 
 // Import Auro Sass variables
-// Dependency required to process variables from Icons
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
-
-// Support for fallback values
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
-
-// layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element outside the scope of this component
 
 /* stylelint-disable declaration-empty-line-before,
   no-descending-specificity,
