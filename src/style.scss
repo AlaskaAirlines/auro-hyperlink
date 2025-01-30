@@ -159,7 +159,7 @@
 }
 
 [auro-icon] {
-  --ds-auro-icon-size: var(--ds-size-200, $ds-size-200);
+  --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
   
   margin-left: var(--ds-size-25, $ds-size-25);
 }

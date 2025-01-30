@@ -20,7 +20,7 @@
     "node": "^20.x || ^22.x "
   },
   "dependencies": {
-    "@aurodesignsystem/auro-icon": "^6.1.6",
+    "@aurodesignsystem/auro-icon": "^6.1.7",
     "@aurodesignsystem/auro-library": "^3.0.7",
     "chalk": "^5.3.0",
     "lit": "^3.2.1"
