@@ -118,7 +118,7 @@
       }
     }
 
-    @include auro_breakpoint--sm {
+    @include auro_grid-breakpoint--sm {
       display: inline-block;
 
       min-width: 8.75rem;
@@ -160,6 +160,6 @@
 
 [auro-icon] {
   --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
-  
+
   margin-left: var(--ds-size-25, $ds-size-25);
 }
