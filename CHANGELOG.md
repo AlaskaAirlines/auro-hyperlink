@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [4.2.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.3...v4.2.4) (2025-02-08)
+
+
+### Performance Improvements
+
+* update dependencies ([f2ac233](https://github.com/AlaskaAirlines/auro-hyperlink/commit/f2ac233021c7fc7b9fbd2805ec02ed4de39e7dfb))
+* update mixin per new WCSS spec ([96e636d](https://github.com/AlaskaAirlines/auro-hyperlink/commit/96e636d0c0e0c2b0cd667e9fb151702c5d8cf63f))
+
 ## [4.2.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.2...v4.2.3) (2025-01-30)
 
 
