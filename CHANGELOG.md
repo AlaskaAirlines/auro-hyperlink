@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.4...v5.0.0) (2025-02-28)
+
+
+* feat!: move peer dependencies to "real" dependencies ([c983d97](https://github.com/AlaskaAirlines/auro-hyperlink/commit/c983d977f78561d3ee879b3181381c3832aaf824))
+
+
+### BREAKING CHANGES
+
+* last change was breaking _on a patch version_ because of peer dependencies
+
+Summary:
+   Our current build process relies on peer dependencies being present, but
+   the peer dependency pipeline is causing far more issues than it's worth.
+   Why not just make them regular dependencies? This is what this PR does :)
+
 ## [4.2.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.3...v4.2.4) (2025-02-08)
 
 
