@@ -37,9 +37,11 @@
 :host([fluid][type='cta']),
 :host([fluid='true'][type='cta']) {
   width: 100%;
+  box-sizing: border-box;
 
   .hyperlink--cta {
     width: 100%;
+    box-sizing: border-box;
   }
 }
 
