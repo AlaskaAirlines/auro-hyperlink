@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.0...v5.0.1) (2025-03-04)
+
+
+### Bug Fixes
+
+* make cta width not to oveflow ([730fc21](https://github.com/AlaskaAirlines/auro-hyperlink/commit/730fc2158ab39e900617581dd3e1ec6be4c3a14d))
+
 # [5.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.4...v5.0.0) (2025-02-28)
 
 
