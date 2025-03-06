@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.3.0-beta.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.2...v4.3.0-beta.1) (2025-03-06)
+
+
+### Features
+
+* **elements:** add focus outline to inline hyperlinks [#252](https://github.com/AlaskaAirlines/auro-hyperlink/issues/252) ([4d6ff84](https://github.com/AlaskaAirlines/auro-hyperlink/commit/4d6ff846688a202f712e260be189743d7cd6dc7f))
+
 ## [4.2.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v4.2.1...v4.2.2) (2024-12-20)
 
 
