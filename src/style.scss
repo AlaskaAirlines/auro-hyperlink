@@ -69,6 +69,19 @@
     }
   }
 
+  // apply focus outline to inline hyperlinks that aren't CTA, nav, or button
+  &:not(.hyperlink--cta):not(.hyperlink--nav):not(.hyperlink--button) {
+    display: inline-block;
+    border-radius: 3px;
+    outline-offset: unset;
+    outline-style: solid;
+    outline-width: 1px;
+
+    &:focus-visible {
+      outline-offset: var(--ds-size-25, $ds-size-25);
+    }
+  }
+
   &--button {
     @include auro_anchorButton(css, noncomponent);
   }
