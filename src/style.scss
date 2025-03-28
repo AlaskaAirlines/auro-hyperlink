@@ -77,8 +77,8 @@
         display: block;
         position: absolute;
         top: 0;
-        left: -4px;
-        right: -4px;
+        left: calc(-1 * var(--ds-size-50, $ds-size-50));
+        right: calc(-1 * var(--ds-size-50, $ds-size-50));
         bottom: 0;
         border-radius: var(--ds-border-radius, $ds-border-radius);
         border-width: 1px;
@@ -166,8 +166,8 @@
 
     min-width: unset;
 
-    min-height: calc(var(--ds-size-200, $ds-size-200) + 2px);
-    max-height: calc(var(--ds-size-200, $ds-size-200) + 2px);
+    min-height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-25, $ds-size-25));
+    max-height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-25, $ds-size-25));
 
     padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
 
@@ -176,7 +176,7 @@
     font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm);
 
     svg {
-      top: -4px;
+      top: calc(-1 * var(--ds-size-50, $ds-size-50));;
       position: relative;
     }
   }
