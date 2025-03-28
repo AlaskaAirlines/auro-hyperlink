@@ -100,7 +100,7 @@ export class AuroHyperlink extends ComponentBase {
       'hyperlink': this.safeUri || this.role,
       'hyperlink--nav': this.type === 'nav',
       'hyperlink--ondark': this.ondark,
-      'hyperlink--button': this.role,
+      'hyperlink--button': this.role === 'button',
       'hyperlink--cta': this.type === 'cta',
       'hyperlink--secondary': this.secondary,
       'hyperlink--tertiary': this.tertiary
@@ -112,10 +112,10 @@ export class AuroHyperlink extends ComponentBase {
         part="link"
         aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
         class="${classMap(classes)}"
-        href="${ifDefined(this.role ? undefined : this.safeUri)}"
+        href="${ifDefined(this.role && this.role !== 'link' ? undefined : this.safeUri)}"
         rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
         referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
-        role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
+        role="${ifDefined(this.role ? this.role : undefined)}"
         ?download="${this.download}"
         target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
