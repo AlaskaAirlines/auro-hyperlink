@@ -18,7 +18,8 @@
   selector-class-pattern,
   selector-max-class,
   selector-max-combinators,
-  selector-max-compound-selectors */
+  selector-max-compound-selectors,
+  declaration-block-no-redundant-longhand-properties */
 
 :host {
   display: inline-block;
@@ -66,14 +67,23 @@
 
   // apply focus outline to inline hyperlinks that aren't CTA, nav, or button
   &:not(:is(.hyperlink--cta, .hyperlink--nav, .hyperlink--button)) {
+    position: relative;
     display: inline-block;
-    border-radius: 3px;
-    outline-offset: unset;
-    outline-style: solid;
-    outline-width: 1px;
+    outline: none;
 
     &:focus-visible {
-      outline-offset: var(--ds-size-25, $ds-size-25);
+      :after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4px;
+        right: -4px;
+        bottom: 0;
+        border-radius: var(--ds-border-radius, $ds-border-radius);
+        border-width: 1px;
+        border-style: solid;
+      }
     }
   }
 
@@ -86,9 +96,7 @@
     text-decoration: none;
 
     &:focus-visible {
-      outline-style: solid;
-      outline-width: var(--ds-size-50, $ds-size-50);
-      outline-offset: unset;
+      outline: none;
     }
   }
 
