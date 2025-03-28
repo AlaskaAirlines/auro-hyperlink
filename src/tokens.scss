@@ -17,7 +17,7 @@
 
   --ds-auro-hyperlink-focus-color-default: var(--ds-color-text-ui-focus-default, #{$ds-color-text-ui-focus-default});
   --ds-auro-hyperlink-focus-container-color-default: transparent;
-  --ds-auro-hyperlink-focus-outline-color-default: transparent;
+  --ds-auro-hyperlink-focus-outline-color-default: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
   --ds-auro-hyperlink-focus-border-color-default: transparent;
 
   --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-ui-hover-default, #{$ds-color-text-ui-hover-default});
@@ -39,7 +39,7 @@
 
   --ds-auro-hyperlink-focus-color-inverse: var(--ds-color-text-ui-focus-inverse, #{$ds-color-text-ui-focus-inverse});
   --ds-auro-hyperlink-focus-container-color-inverse: transparent;
-  --ds-auro-hyperlink-focus-outline-color-inverse: transparent;
+  --ds-auro-hyperlink-focus-outline-color-inverse: var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
   --ds-auro-hyperlink-focus-border-color-inverse: transparent;
 
   --ds-auro-hyperlink-hover-color-inverse: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});

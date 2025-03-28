@@ -18,7 +18,8 @@
   selector-class-pattern,
   selector-max-class,
   selector-max-combinators,
-  selector-max-compound-selectors */
+  selector-max-compound-selectors,
+  declaration-block-no-redundant-longhand-properties */
 
 :host {
   display: inline-block;
@@ -64,6 +65,28 @@
     }
   }
 
+  // apply focus outline to inline hyperlinks that aren't CTA, nav, or button
+  &:not(:is(.hyperlink--cta, .hyperlink--nav, .hyperlink--button)) {
+    position: relative;
+    display: inline-block;
+    outline: none;
+
+    &:focus-visible {
+      :after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: calc(-1 * var(--ds-size-50, $ds-size-50));
+        right: calc(-1 * var(--ds-size-50, $ds-size-50));
+        bottom: 0;
+        border-radius: var(--ds-border-radius, $ds-border-radius);
+        border-width: 1px;
+        border-style: solid;
+      }
+    }
+  }
+
   &--button {
     @include auro_anchorButton(css, noncomponent);
   }
@@ -73,9 +96,7 @@
     text-decoration: none;
 
     &:focus-visible {
-      outline-style: solid;
-      outline-width: var(--ds-size-50, $ds-size-50);
-      outline-offset: unset;
+      outline: none;
     }
   }
 
@@ -145,8 +166,8 @@
 
     min-width: unset;
 
-    min-height: 2.25rem;
-    max-height: 2.25rem;
+    min-height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-25, $ds-size-25));
+    max-height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-25, $ds-size-25));
 
     padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
 
@@ -155,7 +176,8 @@
     font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm);
 
     svg {
-      top: unset;
+      top: calc(-1 * var(--ds-size-50, $ds-size-50));;
+      position: relative;
     }
   }
 }
