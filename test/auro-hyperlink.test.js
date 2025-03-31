@@ -139,6 +139,19 @@ describe('auro-hyperlink', () => {
     expect(anchor).not.to.have.attribute('tabindex');
     expect(anchor).not.to.have.class('hyperlink--button');
   });
+
+  it('applies tabindex and hyperlink--button class when role="button"', async () => {
+    const elButton = await fixture(html`
+      <auro-hyperlink role="button" href="https://www.alaskaair.com/">Alaska air</auro-hyperlink>
+    `);
+
+    expect(elButton).to.have.attribute('role', 'button');
+
+    const anchorButton = elButton.shadowRoot.querySelector('a');
+    expect(anchorButton).to.have.attribute('href');
+    expect(anchorButton).to.have.attribute('tabindex');
+    expect(anchorButton).to.have.class('hyperlink--button');
+  });
 });
 
 describe('safeUrl function', () => {
