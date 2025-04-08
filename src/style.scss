@@ -10,7 +10,8 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/animation';
 
 // Import Auro Sass variables
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 /* stylelint-disable declaration-empty-line-before,
   no-descending-specificity,
@@ -96,9 +97,10 @@
     border-style: solid;
     border-width: 1px;
     border-radius: var(--ds-border-radius, $ds-border-radius);
-    font-family: var(--ds-font-family-default, $ds-font-family-default);
-    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
-    font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
+
+    font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
+    font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
+    font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
 
     min-height: var(--ds-size-600, $ds-size-600);
     max-height: var(--ds-size-600, $ds-size-600);
@@ -163,9 +165,9 @@
 
     padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
 
-    line-height: var(--ds-unitless-scale-140, $ds-unitless-scale-140);
+    line-height: var(--ds-basic-text-body-sm-line-height, $ds-basic-text-body-sm-line-height);
 
-    font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm);
+    font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
 
     svg {
       top: calc(-1 * var(--ds-size-50, $ds-size-50));;
