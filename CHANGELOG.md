@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.1...v5.0.2) (2025-04-08)
+
+
+### Performance Improvements
+
+* add wca script for docs api ([6616883](https://github.com/AlaskaAirlines/auro-hyperlink/commit/661688379c3ad4585030c4c09c198e79e3c1fc54))
+
 ## [5.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.0...v5.0.1) (2025-03-04)
 
 
