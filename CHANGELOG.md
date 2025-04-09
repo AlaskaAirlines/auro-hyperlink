@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [5.0.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.2...v5.0.3) (2025-04-09)
+
+
+### Bug Fixes
+
+* change focus from outline to ::before so sizing can be corrected [#252](https://github.com/AlaskaAirlines/auro-hyperlink/issues/252) ([915bdf8](https://github.com/AlaskaAirlines/auro-hyperlink/commit/915bdf858464e34a451ff40d8d0f8e3710f0e700))
+* corrects size and icon placement of the small CTA variant ([cd44e3f](https://github.com/AlaskaAirlines/auro-hyperlink/commit/cd44e3fe796f47f02b294456444655f092cb3846))
+* **elements:** add focus outline to inline hyperlinks [#252](https://github.com/AlaskaAirlines/auro-hyperlink/issues/252) ([6ccd8c7](https://github.com/AlaskaAirlines/auro-hyperlink/commit/6ccd8c7e208c2fdd4d0a0c66894c4c8d4ab38a00))
+
+
+### Reverts
+
+* Revert "fix: change focus from outline to ::before so sizing can be corrected [#252](https://github.com/AlaskaAirlines/auro-hyperlink/issues/252)" ([cfea6cd](https://github.com/AlaskaAirlines/auro-hyperlink/commit/cfea6cdb99f731d2926904636bfbc2d5c2a0bc6a))
+
 ## [5.0.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.1...v5.0.2) (2025-04-08)
 
 
