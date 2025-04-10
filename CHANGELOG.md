@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [5.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.3...v5.1.0) (2025-04-10)
+
+
+### Features
+
+* update to use new alaska theme tokens [#259](https://github.com/AlaskaAirlines/auro-hyperlink/issues/259) ([dbac850](https://github.com/AlaskaAirlines/auro-hyperlink/commit/dbac85039646b674a3ba87538d3e2c83ed716d04))
+
+
+### Performance Improvements
+
+* update dependencies and tsconfig ([a9cdc28](https://github.com/AlaskaAirlines/auro-hyperlink/commit/a9cdc281546a00d85bd04b99732b1a9ba0e5d1c1))
+
 ## [5.0.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.2...v5.0.3) (2025-04-09)
 
 
