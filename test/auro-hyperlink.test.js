@@ -117,8 +117,42 @@ describe('auro-hyperlink', () => {
     await expect(el).to.be.true;
   });
 
-});
+  /**
+   * It is worth noting that the `role` attribute is not necessary for an anchor
+   * element, as the default role is link. It is usually only used to mimic the
+   * behavior of form elements on non-cta elements for accessibility purposes.
+   * The specs also state that the `tabindex` should also manually be included
+   * when using the `role` attribute on a non-tabbable element, such as a `div`.
+   * See: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role
+   */
+  it('auro-hyperlink has role = link', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink role="link" href="https://www.alaskaair.com/">Alaska air</auro-hyperlink>
+    `);
 
+    expect(el).to.have.attribute('role', 'link');
+
+    const anchor = el.shadowRoot.querySelector('a');
+    expect(anchor).to.have.attribute('href');
+
+    // Since the element is an `a` and role is link, the tabindex should not be present.
+    expect(anchor).not.to.have.attribute('tabindex');
+    expect(anchor).not.to.have.class('hyperlink--button');
+  });
+
+  it('applies tabindex and hyperlink--button class when role="button"', async () => {
+    const elButton = await fixture(html`
+      <auro-hyperlink role="button" href="https://www.alaskaair.com/">Alaska air</auro-hyperlink>
+    `);
+
+    expect(elButton).to.have.attribute('role', 'button');
+
+    const anchorButton = elButton.shadowRoot.querySelector('a');
+    expect(anchorButton).to.have.attribute('href');
+    expect(anchorButton).to.have.attribute('tabindex');
+    expect(anchorButton).to.have.class('hyperlink--button');
+  });
+});
 
 describe('safeUrl function', () => {
   let component;
