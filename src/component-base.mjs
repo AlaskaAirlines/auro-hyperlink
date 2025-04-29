@@ -61,19 +61,37 @@ export default class ComponentBase extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      href:             { type: String },
-      rel:              { type: String },
-      role:             { type: String },
-      target:           { type: String },
-      download:         { type: Boolean },
-      relative:         { type: Boolean },
-      secondary:        { type: Boolean },
-      tertiary:         { type: Boolean },
-      ondark:           { type: Boolean },
-      type:             { type: String },
-      fluid:            { type: Boolean },
-      referrerpolicy:   { type: Boolean },
-      small:            { type: Boolean }
+      href: {
+        type: String,
+        reflect: true,
+      },
+      rel: {
+        type: String,
+        reflect: true
+      },
+      role: {
+        type: String,
+        reflect: true
+      },
+      target: {
+        type: String,
+        reflect: true
+      },
+      download: {
+        type: Boolean,
+        reflect: true
+      },
+      relative: { type: Boolean },
+      secondary: { type: Boolean },
+      tertiary: { type: Boolean },
+      ondark: { type: Boolean },
+      type: { type: String },
+      fluid: { type: Boolean },
+      referrerpolicy: {
+        type: Boolean,
+        reflect: true
+      },
+      small: { type: Boolean },
     };
   }
 
