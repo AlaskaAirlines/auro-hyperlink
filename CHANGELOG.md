@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.0...v5.1.1) (2025-05-02)
+
+
+### Bug Fixes
+
+* remove redudant font tokens ([eb32500](https://github.com/AlaskaAirlines/auro-hyperlink/commit/eb325000bdd5dcb50fa14d524d10404f3ece3d50))
+
 # [5.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.0.3...v5.1.0) (2025-04-10)
 
 
