@@ -98,10 +98,6 @@
     border-width: 1px;
     border-radius: var(--ds-border-radius, $ds-border-radius);
 
-    font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
-    font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
-    font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
-
     min-height: var(--ds-size-600, $ds-size-600);
     max-height: var(--ds-size-600, $ds-size-600);
 
