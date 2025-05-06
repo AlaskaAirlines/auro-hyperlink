@@ -3,6 +3,7 @@
 
 // ---------------------------------------------------------------------
 
+import { LitElement } from "lit";
 import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -66,6 +67,13 @@ export class AuroHyperlink extends ComponentBase {
       colorCss,
       tokensCss
     ];
+  }
+
+  static get shadowRootOptions() {
+    return {
+      ...LitElement.shadowRootOptions,
+      delegatesFocus: true,
+    };
   }
 
 
