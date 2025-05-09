@@ -94,6 +94,29 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 
 </auro-accordion>
 
+## Using type="cta"
+
+If you simply want your hyperlink to look like a button but still act like a hyperlink, you will want to use `type="cta"`, which will style the hyperlink like a button. Note that you can also utilize the props `fluid` to make the hyperlink `width: 100%`, and `secondary` to make it look like a seconday button. See examples below.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typeCta.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typeCta-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/typeCta.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/typeCta-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ## Unsupported types
 
 Not all URL types are supported for security reasons. Two common types that are worth mentioning are `javaScript:` and `data:`.
