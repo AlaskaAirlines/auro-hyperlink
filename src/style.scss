@@ -23,6 +23,7 @@
 
 :host {
   display: inline-block;
+  max-width: 100%;
 }
 
 // applying a focus UI when using .focus()
@@ -50,8 +51,10 @@
 .hyperlink {
   @include auro_transition(all, .15s, ease);
 
+  overflow: hidden;
   text-decoration: underline;
   white-space: nowrap;
+  text-overflow: ellipsis;
 
   @media (hover: hover) {
     &:hover {
@@ -68,6 +71,7 @@
   // apply focus outline to inline hyperlinks that aren't CTA, nav, or button
   &:not(:is(.hyperlink--cta, .hyperlink--nav, .hyperlink--button)) {
     display: inline-block;
+    width: 100%;
     border-radius: 3px;
     outline-offset: unset;
     outline-style: solid;
