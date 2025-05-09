@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.1...v5.1.2) (2025-05-08)
+
+
+### Bug Fixes
+
+* make anchor to get focus on `focus()` ([96051fa](https://github.com/AlaskaAirlines/auro-hyperlink/commit/96051fa9885b6658d9d59de0032b4c52b4460edf))
+
 ## [5.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.0...v5.1.1) (2025-05-02)
 
 
