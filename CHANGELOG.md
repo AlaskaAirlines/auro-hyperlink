@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.2...v5.1.3) (2025-05-16)
+
+
+### Bug Fixes
+
+* add explicit reflect: true to necessary properties ([e6ac38e](https://github.com/AlaskaAirlines/auro-hyperlink/commit/e6ac38eeeea96e572a71437b6fcac1c81b9de37e)), closes [#539](https://github.com/AlaskaAirlines/auro-hyperlink/issues/539)
+
 ## [5.1.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.1...v5.1.2) (2025-05-08)
 
 
