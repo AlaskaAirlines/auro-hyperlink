@@ -61,36 +61,100 @@ export default class ComponentBase extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
+
+      /**
+       * Defines the URL of the linked page.
+       */
       href: {
         type: String,
-        reflect: true,
+        reflect: true
       },
+
+      /**
+       * Defines the relationship between the current document and the linked document.
+       */
       rel: {
         type: String,
         reflect: true
       },
+
+      /**
+       * DEPRECATED.
+       */
       role: {
         type: String,
         reflect: true
       },
+
+      /**
+       * Defines where to open the linked document.
+       */
       target: {
         type: String,
         reflect: true
       },
+
+      /**
+       * If true, the linked resource will be downloaded when the hyperlink is clicked.
+       */
       download: {
         type: Boolean,
         reflect: true
       },
-      relative: { type: Boolean },
-      secondary: { type: Boolean },
-      tertiary: { type: Boolean },
+
+      /**
+       * If true, the auto URL re-write feature will be disabled.
+       */
+      relative: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * If true and `type="cta"`, the hyperlink will have a secondary UI.
+       */
+      secondary: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * If true and `type="cta"`, the hyperlink will have a tertiary UI.
+       */
+      tertiary: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * If true, the hyperlink will be styled for use on a dark background.
+       */
       ondark: { type: Boolean },
-      type: { type: String },
+
+      /**
+       * Defines the type of hyperlink; accepts `nav` or `cta`.
+       */
+      type: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * If true and `type="cta"`, the hyperlink will have a fluid-width UI.
+       */
       fluid: { type: Boolean },
+
+      /**
+       * If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
+       */
       referrerpolicy: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * If true and `type="cta"`, the hyperlink will have a small UI.
+       */
       small: { type: Boolean },
     };
   }
