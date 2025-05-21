@@ -24,19 +24,6 @@ import tokensCss from "./tokens-css.js";
 /**
  * `<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.
  *
- * @attr {Boolean} download - If true, the linked resource will be downloaded when the hyperlink is clicked.
- * @attr {Boolean} fluid - If true and `type="cta"`, the hyperlink will have a fluid-width UI.
- * @attr {Boolean} ondark - If true, the hyperlink will be styled for use on a dark background.
- * @attr {Boolean} relative - If true, the auto URL re-write feature will be disabled.
- * @attr {Boolean} secondary - If true and `type="cta"`, the hyperlink will have a secondary UI.
- * @attr {Boolean} tertiary - If true and `type="cta"`, the hyperlink will have a tertiary UI.
- * @attr {Boolean} small - If true and `type="cta"`, the hyperlink will have a small UI.
- * @attr {Boolean} referrerpolicy - If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
- * @attr {String} rel - Defines the relationship between the current document and the linked document.
- * @attr {String} role - Defines ARIA roles; currently supports `button` for extended experiences.
- * @attr {String} href - Defines the URL of the linked page.
- * @attr {String} target - Defines where to open the linked document.
- * @attr {String} type - Defines the type of hyperlink; accepts `nav` or `cta`.
  * @csspart link - Allows styling to be applied to the `a` element.
  * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
  */
