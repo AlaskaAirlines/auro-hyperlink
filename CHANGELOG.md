@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.3...v5.1.4) (2025-06-02)
+
+
+### Bug Fixes
+
+* remove no wrap rule from styles [#265](https://github.com/AlaskaAirlines/auro-hyperlink/issues/265) ([0eb51e6](https://github.com/AlaskaAirlines/auro-hyperlink/commit/0eb51e6a379bbe46582c0bafdce61b307c124581))
+
 ## [5.1.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.2...v5.1.3) (2025-05-16)
 
 
