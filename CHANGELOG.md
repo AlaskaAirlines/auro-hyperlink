@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [5.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.4...v5.2.0) (2025-06-04)
+
+
+### Features
+
+* deprecate `role` which was violating a11y [#262](https://github.com/AlaskaAirlines/auro-hyperlink/issues/262) ([d9a416a](https://github.com/AlaskaAirlines/auro-hyperlink/commit/d9a416a48a2ac45519e68b9465210d4c27345b9b))
+
 ## [5.1.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.3...v5.1.4) (2025-06-02)
 
 
