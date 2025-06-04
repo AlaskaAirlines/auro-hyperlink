@@ -51,7 +51,6 @@
   @include auro_transition(all, .15s, ease);
 
   text-decoration: underline;
-  white-space: nowrap;
 
   @media (hover: hover) {
     &:hover {
