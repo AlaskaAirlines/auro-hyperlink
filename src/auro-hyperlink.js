@@ -110,7 +110,7 @@ export class AuroHyperlink extends ComponentBase {
         href="${ifDefined(this.role ? undefined : this.safeUri)}"
         rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
         referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
-        role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
+        role="${ifDefined(this.ariarole === 'button' ? this.role : undefined)}"
         ?download="${this.download}"
         target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
         tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
