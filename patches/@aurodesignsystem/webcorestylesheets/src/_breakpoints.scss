@@ -1,0 +1,159 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/* stylelint-disable no-invalid-position-at-import-rule */
+
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+
+// @import './libSupport/deprecated';
+
+// The following mixins provide pre-configured Orion approved
+// breakpoints when development mobile-first UIs.
+
+/// Open format mixin to define any breakpoint.
+///
+/// See also: [Media_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features)
+///
+/// Compatibility: [css-mediaqueries](https://caniuse.com/#feat=css-mediaqueries\)
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
+/// @group responsive
+/// @example scss - Auro breakpoint tokens
+///   $ds-grid-breakpoint-sm: 576px;
+///   $ds-grid-breakpoint-md: 768px;
+///   $ds-grid-breakpoint-lg: 1024px;
+/// @param {string} $min [null] - sets `min-width` value
+/// @param {string} $max [null] - sets `max-width` value
+/// @param {list} $polar [null] - sets `min-width` and `max-width` values
+/// @param {string} $cust [null] - allows for 100% custom breakpoint options
+/// @example scss - Set breakpoint using `$min` argument
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+///       color: blue;
+///     }
+///   }
+/// @example scss - Set breakpoint using `$max` argument
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($max: $ds-grid-breakpoint-lg) {
+///       color: blue;
+///     }
+///   }
+/// @example scss - Set breakpoint using `$polar` argument
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($polar: $ds-grid-breakpoint-sm $ds-grid-breakpoint-lg) {
+///       color: blue;
+///     }
+///   }
+/// @example scss - Set breakpoint using `$cust` argument. Interpolation `#{}` is required if you intend to use a variable within a string.
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$ds-grid-breakpoint-sm})') {
+///       color: blue;
+///     }
+///   }
+@mixin auro_breakpoint($min: null, $max: null, $polar: null, $cust: null) {
+  $breakpoints: null;
+
+  @if $min {
+    $breakpoints: '(min-width: #{$min})';
+  } @else if $max {
+    $breakpoints: '(max-width: #{$max})';
+  } @else if $polar {
+    $breakpoints: '(min-width: #{nth($polar, 1)}) and (max-width: #{nth($polar, 2)})';
+  } @else if $cust {
+    $breakpoints: #{$cust};
+  }
+
+  @media screen and #{$breakpoints} {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 1232px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--xl {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--xl {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-xl) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 1024px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--lg {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--lg {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-lg) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 768px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--md {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--md {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-md) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 576px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--sm {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--sm {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-sm) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 320px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--xs {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--xs {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-xs) {
+    @content;
+  }
+}

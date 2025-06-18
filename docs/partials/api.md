@@ -177,7 +177,7 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 
 ## Call to action buttons
 
-Call to action buttons, or "CTA" buttons are a special use case hybrid hyperlink/button solution. Semantically these links are hyperlinks, but take on the appearance of a button. While these look like the `auro-button`, there are slight differences and that is intentional. The `secondary` and `tertiary` attribute modifier options are also supported.
+Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `ondark` attribute can be combined with any `type="cta"` option.
 
 CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
 
@@ -201,7 +201,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 
 </auro-accordion>
 
-### Fluid call to action buttons
+### Fluid CTA links
 
 In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
 
@@ -218,19 +218,36 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 
 </auro-accordion>
 
-### Small call to action buttons
+### CTA sizes
 
-In the following example, see how the `small` attribute alters the size of the button to be smaller than the normal `cta` button.
+In the following example, see how the `size` attribute alters the size of the cta link. Available sizes are `xs`, `sm`, `md`, `lg`, `xl`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-small.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-small.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### CTA shape
+
+The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-shape.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-shape.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -239,5 +256,5 @@ In the following example, see how the `small` attribute alters the size of the b
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.css) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.css) -->
 <!-- AURO-GENERATED-CONTENT:END -->

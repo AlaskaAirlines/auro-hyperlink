@@ -15,7 +15,9 @@
   selector-not-notation */
 
 // Support for fallback values
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+// TODO: make sure this has fallback values
+@use "../../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+
 
 @mixin color-variant($mode, $nav: false, $cta: false, $secondary: false, $tertiary: false) {
   $nav-str: '';
@@ -98,45 +100,10 @@
   }
 }
 
-:host(:not([type="cta"]):not([type="nav"]):not([ondark])) {
-  @include color-variant($mode: 'default');
-}
-
-:host(:not([type="cta"]):not([type="nav"])[ondark]) {
-  @include color-variant($mode: 'inverse');
-}
-
 :host([type="nav"]:not([ondark])) {
   @include color-variant($mode: 'default', $nav: true);
 }
 
 :host([type="nav"][ondark]) {
   @include color-variant($mode: 'inverse', $nav: true);
-}
-
-// Default CTA
-:host([type="cta"]:not([ondark]):not([secondary]):not([tertiary])) {
-  @include color-variant($mode: 'default', $cta: true);
-}
-
-:host([type="cta"][ondark]:not([secondary]):not([tertiary])) {
-  @include color-variant($mode: 'inverse', $cta: true);
-}
-
-// Secondary CTA
-:host([type="cta"][secondary]:not([ondark])) {
-  @include color-variant($mode: 'default', $cta: true, $secondary: true);
-}
-
-:host([type="cta"][secondary][ondark]) {
-  @include color-variant($mode: 'inverse', $cta: true, $secondary: true);
-}
-
-// Tertiary CTA
-:host([type="cta"][tertiary]:not([ondark])) {
-  @include color-variant($mode: 'default', $cta: true, $tertiary: true);
-}
-
-:host([type="cta"][tertiary][ondark]) {
-  @include color-variant($mode: 'inverse', $cta: true, $tertiary: true);
 }

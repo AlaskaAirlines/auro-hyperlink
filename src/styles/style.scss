@@ -1,0 +1,73 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license.
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// general WCSS imports
+@use '../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@use '../../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints' as vb;
+@use '../../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
+@use '../../node_modules/@aurodesignsystem/webcorestylesheets/src/animation' as va;
+
+// Import Auro Sass variables
+
+/* stylelint-disable declaration-empty-line-before,
+  no-descending-specificity,
+  order/properties-order,
+  selector-class-pattern,
+  selector-max-class,
+  selector-max-combinators,
+  selector-max-compound-selectors */
+
+:host(:not([fluid])) {
+  display: inline-block;
+}
+
+// applying a focus UI when using .focus()
+:host([type='nav']) {
+  .hyperlink {
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+// component shape styles
+.hyperlink {
+  @include va.auro_transition(all, .15s, ease);
+
+  text-decoration: underline;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+
+    &--nav {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--nav {
+    display: block;
+    text-decoration: none;
+
+    &:focus-visible {
+      outline-style: solid;
+      outline-width: var(--ds-size-50, vac.$ds-size-50);
+      outline-offset: unset;
+    }
+  }
+}
+
+[auro-icon] {
+  --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
+
+  margin-left: var(--ds-size-25, vac.$ds-size-25);
+}
+
+[fluid] {
+  display: flex;
+}
