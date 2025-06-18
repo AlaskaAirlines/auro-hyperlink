@@ -1,6 +1,6 @@
 /* stylelint-disable custom-property-empty-line-before */
 
-@use "../../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 :host(:not([type='cta'])) {
   // default hyperlink
