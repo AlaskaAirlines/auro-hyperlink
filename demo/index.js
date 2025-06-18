@@ -3,7 +3,7 @@ import { AuroHyperlink } from '../src/auro-hyperlink.js';
 AuroHyperlink.register();
 AuroHyperlink.register('custom-hyperlink');
 
-export function initHyperlinkIndexExamples(initCount) {
+function initHyperlinkIndexExamples(initCount) {
   initCount = initCount || 0;
 
   try {

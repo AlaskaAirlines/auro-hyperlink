@@ -4,8 +4,7 @@
 /* eslint-disable max-lines, no-script-url, no-else-return, require-unicode-regexp, lit/binding-positions, lit/no-invalid-html */
 
 // ---------------------------------------------------------------------
-
-import { LitElement } from "lit";
+import { AuroElement } from "./layoutElement/auroElement.js";
 import { html } from 'lit/static-html.js';
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
@@ -14,7 +13,7 @@ import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link-
 import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs';
 
 // build the component class
-export default class ComponentBase extends LitElement {
+export default class ComponentBase extends AuroElement {
   constructor() {
     super();
 
@@ -24,6 +23,10 @@ export default class ComponentBase extends LitElement {
     this.tertiary = false;
     this.ondark = false;
     this.small = false;
+    this.layout = 'classic';
+    this.shape = 'rounded';
+    this.size = 'md';
+    this.variant = 'primary';
 
     /**
      * @private
@@ -61,6 +64,7 @@ export default class ComponentBase extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
+      ...super.properties,
 
       /**
        * Defines the URL of the linked page.
@@ -156,6 +160,15 @@ export default class ComponentBase extends LitElement {
        * If true and `type="cta"`, the hyperlink will have a small UI.
        */
       small: { type: Boolean },
+
+      /**
+       * Sets button variant option.
+       * @default primary
+       */
+      variant: {
+        type: String,
+        reflect: true
+      },
     };
   }
 
@@ -437,8 +450,6 @@ export default class ComponentBase extends LitElement {
 
   // function renders HTML and CSS into the scope of the component
   render() {
-    return html`
-      ${this.getMarkup()}
-    `;
+    return this.getMarkup();
   }
 }

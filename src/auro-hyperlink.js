@@ -2,7 +2,6 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-
 import { LitElement } from "lit";
 import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -15,10 +14,12 @@ import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runt
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion.js';
 
+import "./auro-hyperlink-button.js";
+
 // import the processed CSS file into the scope of the component
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-css.js";
+import colorCss from "./styles/color-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -52,7 +53,7 @@ export class AuroHyperlink extends ComponentBase {
     return [
       styleCss,
       colorCss,
-      tokensCss
+      tokensCss,
     ];
   }
 
@@ -77,6 +78,66 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
+   * Renders the default layout for the hyperlink.
+   * @returns {TemplateResult}
+   * @private
+   */
+  renderLayoutDefault() {
+
+    const classes = {
+      'hyperlink': this.safeUri || this.role,
+      'hyperlink--nav': this.type === 'nav',
+      'hyperlink--ondark': this.ondark,
+      'hyperlink--button': this.role,
+      'hyperlink--secondary': this.secondary,
+      'hyperlink--tertiary': this.tertiary
+    };
+
+    return html`
+    ${this.safeUri || this.role ? html`
+    <a
+      part="link"
+      aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
+      class="${classMap(classes)}"
+      href="${ifDefined(this.role ? undefined : this.safeUri)}"
+      rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
+      referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
+      role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
+      ?download="${this.download}"
+      target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
+      tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
+    >
+      <slot></slot>
+      ${this.targetIcon(this.target, this.relative)}
+    </a>`
+    : html`<slot></slot>`}
+    `;
+  }
+
+  /**
+   * Renders the cta layout for the hyperlink.
+   * @returns {TemplateResult}
+   * @private
+   */
+  renderLayoutCTA() {
+    return html`
+      <auro-hyperlink-button 
+        ?ondark="${this.ondark}"
+        ?fluid="${this.fluid}"
+        variant="${ifDefined(this.variant || undefined)}"
+        shape="${ifDefined(this.shape || undefined)}"
+        size="${ifDefined(this.size || undefined)}"
+        layout="${ifDefined(this.layout || undefined)}"
+        buttonHref="${ifDefined(this.safeUri || undefined)}"
+        buttonRel="${ifDefined(this.rel || undefined)}"
+        buttonTarget="${ifDefined(this.target || undefined)}"
+      >
+        <slot></slot>
+      </auro-hyperlink-button>
+    `;
+  }
+
+  /**
    * Generates an object containing CSS classes based on the properties of the component.
    *
    * @example
@@ -91,34 +152,11 @@ export class AuroHyperlink extends ComponentBase {
    * @returns {object} An object containing CSS classes.
    */
   getMarkup() {
-    const classes = {
-      'hyperlink': this.safeUri || this.role,
-      'hyperlink--nav': this.type === 'nav',
-      'hyperlink--ondark': this.ondark,
-      'hyperlink--button': this.role,
-      'hyperlink--cta': this.type === 'cta',
-      'hyperlink--secondary': this.secondary,
-      'hyperlink--tertiary': this.tertiary
-    };
-
-    return html`
-      ${this.safeUri || this.role ? html`
-      <a
-        part="link"
-        aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
-        class="${classMap(classes)}"
-        href="${ifDefined(this.role ? undefined : this.safeUri)}"
-        rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
-        referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
-        role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
-        ?download="${this.download}"
-        target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
-        tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
-      >
-        <slot></slot>
-        ${this.targetIcon(this.target, this.relative)}
-      </a>`
-      : html`<slot></slot>`}
-    `;
+    switch (this.type) {
+      case 'cta':
+        return this.renderLayoutCTA();
+      default:
+        return this.renderLayoutDefault();
+    }
   }
 }

@@ -2,7 +2,7 @@ import { AuroHyperlink } from '../src/auro-hyperlink.js';
 
 AuroHyperlink.register();
 
-export function initHyperlinkApiExamples(initCount) {
+function initHyperlinkApiExamples(initCount) {
   initCount = initCount || 0;
 
   try {
@@ -16,4 +16,4 @@ export function initHyperlinkApiExamples(initCount) {
   }
 }
 
-initHyperlinkIndexExamples();
+initHyperlinkApiExamples();
