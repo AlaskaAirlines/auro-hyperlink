@@ -16,7 +16,7 @@
 
 // Support for fallback values
 // TODO: make sure this has fallback values
-@use "../../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 
 @mixin color-variant($mode, $nav: false, $cta: false, $secondary: false, $tertiary: false) {

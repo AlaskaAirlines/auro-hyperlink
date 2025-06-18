@@ -4,10 +4,9 @@
 // ---------------------------------------------------------------------
 
 // general WCSS imports
-@use '../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '../../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints' as vb;
-@use '../../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
-@use '../../node_modules/@aurodesignsystem/webcorestylesheets/src/animation' as va;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@use '@aurodesignsystem/webcorestylesheets/src/core';
+@use '@aurodesignsystem/webcorestylesheets/src/animation' as va;
 
 // Import Auro Sass variables
 
