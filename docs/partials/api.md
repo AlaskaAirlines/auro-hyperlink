@@ -239,5 +239,5 @@ In the following example, see how the `small` attribute alters the size of the b
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.css) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.css) -->
 <!-- AURO-GENERATED-CONTENT:END -->

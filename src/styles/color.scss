@@ -15,7 +15,7 @@
   selector-not-notation */
 
 // Support for fallback values
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+// @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 
 @mixin color-variant($mode, $nav: false, $cta: false, $secondary: false, $tertiary: false) {
   $nav-str: '';

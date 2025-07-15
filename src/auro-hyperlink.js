@@ -16,9 +16,9 @@ import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion.js';
 
 // import the processed CSS file into the scope of the component
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-css.js";
+import colorCss from "./styles/color-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -93,10 +93,12 @@ export class AuroHyperlink extends ComponentBase {
   getMarkup() {
     const classes = {
       'hyperlink': this.safeUri || this.role,
+      'body-default': (this.safeUri || this.role) && !this.small,
       'hyperlink--nav': this.type === 'nav',
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role,
       'hyperlink--cta': this.type === 'cta',
+      'body-sm' : this.type === 'cta' && this.small,
       'hyperlink--secondary': this.secondary,
       'hyperlink--tertiary': this.tertiary
     };
