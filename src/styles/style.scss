@@ -3,10 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-// general WCSS imports
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '@aurodesignsystem/webcorestylesheets/src/core';
-@use '@aurodesignsystem/webcorestylesheets/src/animation' as va;
+@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
+@use "@aurodesignsystem/webcorestylesheets/src/animation" as animation;
 
 // Import Auro Sass variables
 
@@ -16,7 +15,8 @@
   selector-class-pattern,
   selector-max-class,
   selector-max-combinators,
-  selector-max-compound-selectors */
+  selector-max-compound-selectors,
+  selector-not-notation */
 
 :host(:not([fluid])) {
   display: inline-block;
@@ -31,9 +31,28 @@
   }
 }
 
+:host([type='cta']) {
+  line-height: 0;
+}
+
+// apply focus outline to inline hyperlinks that aren't CTA, nav, or button
+:host(:not([type='cta']):not([type='nav'])) {
+  .hyperlink{
+    display: inline-block;
+    border-radius: 3px;
+    outline-offset: unset;
+    outline-style: solid;
+    outline-width: 1px;
+
+    &:focus-visible {
+      outline-offset: var(--ds-size-25, vac.$ds-size-25);
+    }
+  }
+}
+
 // component shape styles
 .hyperlink {
-  @include va.auro_transition(all, .15s, ease);
+  @include animation.auro_transition(all, .15s, ease);
 
   text-decoration: underline;
 

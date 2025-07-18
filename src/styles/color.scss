@@ -15,11 +15,8 @@
   selector-not-notation */
 
 // Support for fallback values
-// TODO: make sure this has fallback values
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-
-@mixin color-variant($mode, $nav: false, $cta: false, $secondary: false, $tertiary: false) {
+@mixin color-variant($mode, $nav: false, $secondary: false, $tertiary: false) {
   $nav-str: '';
   $cta-str: '';
   $secondary-str: '';
@@ -28,10 +25,6 @@
 
   @if $nav {
     $nav-str: '-nav';
-  }
-
-  @if $cta {
-    $cta-str: '-cta';
   }
 
   @if $secondary {
@@ -107,3 +100,12 @@
 :host([type="nav"][ondark]) {
   @include color-variant($mode: 'inverse', $nav: true);
 }
+
+:host(:not([type="nav"]):not([ondark])) {
+  @include color-variant($mode: 'default', $nav: false);
+}
+
+:host(:not([type="nav"])[ondark]) {
+  @include color-variant($mode: 'inverse', $nav: false);
+}
+

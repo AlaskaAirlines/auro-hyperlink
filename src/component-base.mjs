@@ -23,10 +23,23 @@ export default class ComponentBase extends AuroElement {
     this.tertiary = false;
     this.ondark = false;
     this.small = false;
-    this.layout = 'classic';
-    this.shape = 'rounded';
-    this.size = 'md';
     this.variant = 'primary';
+
+
+    /**
+     * @private
+     */
+    this.layout = this.type === 'cta' ? 'block' : null;
+
+    /**
+     * @private
+     */
+    this.shape = this.type === 'cta' ? 'rounded' : null;
+
+    /**
+     * @private
+     */
+    this.size = this.type === 'cta' ? 'md' : null;
 
     /**
      * @private

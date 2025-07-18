@@ -53,7 +53,7 @@ export class AuroHyperlink extends ComponentBase {
     return [
       styleCss,
       colorCss,
-      tokensCss,
+      tokensCss
     ];
   }
 
@@ -86,9 +86,11 @@ export class AuroHyperlink extends ComponentBase {
 
     const classes = {
       'hyperlink': this.safeUri || this.role,
+      'body-default': (this.safeUri || this.role) && !this.small,
       'hyperlink--nav': this.type === 'nav',
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role,
+      'body-sm' : this.small,
       'hyperlink--secondary': this.secondary,
       'hyperlink--tertiary': this.tertiary
     };
