@@ -1,5 +1,27 @@
 # Semantic Release Automated Changelog
 
+# [6.0.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.2.0...v6.0.0) (2025-07-18)
+
+
+* feat!: redesign hyperlink component with new CTA layouts ([39a40d0](https://github.com/AlaskaAirlines/auro-hyperlink/commit/39a40d06b6dbf69fe43d4a117b7c48ab32a6372a))
+
+
+### Bug Fixes
+
+* add type classes and fix missing basic hyperlink styles ([6caa8bd](https://github.com/AlaskaAirlines/auro-hyperlink/commit/6caa8bd902bfffc0436ec7311ece6f97240b93be))
+
+
+### BREAKING CHANGES
+
+* hyperlink CTA type now uses new button layout system
+
+- migrate base class to AuroElement
+- implement modular layout system with new options (layout, shape, size, variant)
+- update icon dependency to v8.0.4
+- reorganize styles into modular structure
+- add utility functions for dynamic rendering
+- configure web-dev-server to enable surge publishing
+
 # [5.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v5.1.4...v5.2.0) (2025-06-04)
 
 

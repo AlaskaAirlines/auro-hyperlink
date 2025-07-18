@@ -9,7 +9,6 @@
 | `download`       | `download`       |           | `boolean` | false     | If true, the linked resource will be downloaded when the hyperlink is clicked. |
 | `fluid`          | `fluid`          |           | `boolean` |           | If true and `type="cta"`, the hyperlink will have a fluid-width UI. |
 | `href`           | `href`           |           | `string`  |           | Defines the URL of the linked page.              |
-| `layout`         | `layout`         |           | `string`  | "classic" | Defines the language of an element.              |
 | `ondark`         | `ondark`         |           | `boolean` | false     | If true, the hyperlink will be styled for use on a dark background. |
 | `referrerpolicy` | `referrerpolicy` |           | `boolean` |           | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
 | `rel`            | `rel`            |           | `string`  |           | Defines the relationship between the current document and the linked document. |
@@ -17,8 +16,6 @@
 | `role`           | `role`           |           | `string`  |           | DEPRECATED.                                      |
 | `safeUri`        |                  | readonly  | `string`  |           | Returns a safe URI based on the provided `href` and `relative` parameters.<br />If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br />Otherwise, it returns an empty string. |
 | `secondary`      | `secondary`      |           | `boolean` | false     | If true and `type="cta"`, the hyperlink will have a secondary UI. |
-| `shape`          | `shape`          |           | `string`  | "rounded" |                                                  |
-| `size`           | `size`           |           | `string`  | "md"      |                                                  |
 | `small`          | `small`          |           | `boolean` | false     | If true and `type="cta"`, the hyperlink will have a small UI. |
 | `target`         | `target`         |           | `string`  |           | Defines where to open the linked document.       |
 | `tertiary`       | `tertiary`       |           | `boolean` | false     | If true and `type="cta"`, the hyperlink will have a tertiary UI. |
