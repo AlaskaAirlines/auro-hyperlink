@@ -19,10 +19,7 @@ export default class ComponentBase extends AuroElement {
 
     this.download = false;
     this.relative = false;
-    this.secondary = false;
-    this.tertiary = false;
     this.ondark = false;
-    this.small = false;
     this.variant = 'primary';
 
 
@@ -128,22 +125,6 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * If true and `type="cta"`, the hyperlink will have a secondary UI.
-       */
-      secondary: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * If true and `type="cta"`, the hyperlink will have a tertiary UI.
-       */
-      tertiary: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
        * If true, the hyperlink will be styled for use on a dark background.
        */
       ondark: { type: Boolean },
@@ -168,11 +149,6 @@ export default class ComponentBase extends AuroElement {
         type: Boolean,
         reflect: true
       },
-
-      /**
-       * If true and `type="cta"`, the hyperlink will have a small UI.
-       */
-      small: { type: Boolean },
 
       /**
        * Sets button variant option.

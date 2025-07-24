@@ -15,10 +15,7 @@
 | `relative`       | `relative`       |           | `boolean` | false     | If true, the auto URL re-write feature will be disabled. |
 | `role`           | `role`           |           | `string`  |           | DEPRECATED.                                      |
 | `safeUri`        |                  | readonly  | `string`  |           | Returns a safe URI based on the provided `href` and `relative` parameters.<br />If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br />Otherwise, it returns an empty string. |
-| `secondary`      | `secondary`      |           | `boolean` | false     | If true and `type="cta"`, the hyperlink will have a secondary UI. |
-| `small`          | `small`          |           | `boolean` | false     | If true and `type="cta"`, the hyperlink will have a small UI. |
 | `target`         | `target`         |           | `string`  |           | Defines where to open the linked document.       |
-| `tertiary`       | `tertiary`       |           | `boolean` | false     | If true and `type="cta"`, the hyperlink will have a tertiary UI. |
 | `type`           | `type`           |           | `string`  |           | Defines the type of hyperlink; accepts `nav` or `cta`. |
 | `variant`        | `variant`        |           | `string`  | "primary" | Sets button variant option.                      |
 
