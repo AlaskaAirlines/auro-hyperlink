@@ -89,8 +89,8 @@ export class AuroHyperlink extends ComponentBase {
       'hyperlink--nav': this.type === 'nav',
       'hyperlink--ondark': this.ondark,
       'hyperlink--button': this.role,
-      'hyperlink--secondary': this.secondary,
-      'hyperlink--tertiary': this.tertiary
+      'hyperlink--secondary': this.variant === 'secondary',
+      'hyperlink--tertiary': this.variant === 'tertiary'
     };
 
     return html`
@@ -145,7 +145,7 @@ export class AuroHyperlink extends ComponentBase {
    * this.getMarkup(); // Returns { 'hyperlink': true, 'hyperlink--nav': false, 'hyperlink--ondark': false, 'hyperlink--button': true, 'hyperlink--cta': true, 'hyperlink--secondary': false }
    *
    * @example
-   * // Assuming this.safeUri = '', this.role = '', this.type = 'nav', this.ondark = true, this.secondary = true
+   * // Assuming this.safeUri = '', this.role = '', this.type = 'nav', this.ondark = true, this.variant = 'secondary'
    * this.getMarkup(); // Returns { 'hyperlink': false, 'hyperlink--nav': true, 'hyperlink--ondark': true, 'hyperlink--button': false, 'hyperlink--cta': false, 'hyperlink--secondary': true }
    *
    * @private
