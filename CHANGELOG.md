@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.0.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.1...v6.0.2) (2025-07-25)
+
+
+### Performance Improvements
+
+* make hyperlink responsive to type classes [#288](https://github.com/AlaskaAirlines/auro-hyperlink/issues/288) ([32b2863](https://github.com/AlaskaAirlines/auro-hyperlink/commit/32b286395da200108b15f729786aaf1ffe7c5561))
+
 ## [6.0.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.0...v6.0.1) (2025-07-21)
 
 
