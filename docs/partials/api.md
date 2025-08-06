@@ -179,8 +179,6 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 
 Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `ondark` attribute can be combined with any `type="cta"` option.
 
-CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
-
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
@@ -198,6 +196,33 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### CTA External links
+
+(CTA) buttons can also be used in combinaton with external links. In the following example, see how the `target="_blank"` attribute acts like external links.
+
+
+CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 

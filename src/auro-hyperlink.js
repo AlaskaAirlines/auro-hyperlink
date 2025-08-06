@@ -108,7 +108,7 @@ export class AuroHyperlink extends ComponentBase {
       tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
     >
       <slot></slot>
-      ${this.targetIcon(this.target, this.relative)}
+      ${this.targetIcon(this.target)}
     </a>`
     : html`<slot></slot>`}
     `;
@@ -133,6 +133,7 @@ export class AuroHyperlink extends ComponentBase {
         buttonTarget="${ifDefined(this.target || undefined)}"
       >
         <slot></slot>
+        ${this.targetIcon(this.target)}
       </auro-hyperlink-button>
     `;
   }
