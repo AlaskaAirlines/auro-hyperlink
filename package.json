@@ -21,11 +21,11 @@
   },
   "dependencies": {
     "@alaskaairux/icons": "^5.6.0",
-    "@aurodesignsystem/auro-button": "11.3.1",
-    "@aurodesignsystem/auro-icon": "^8.1.1",
-    "@aurodesignsystem/auro-library": "^5.3.2",
-    "@aurodesignsystem/design-tokens": "^8.3.0",
-    "@aurodesignsystem/webcorestylesheets": "10.0.2",
+    "@aurodesignsystem/auro-button": "11.3.3",
+    "@aurodesignsystem/auro-icon": "^8.1.4",
+    "@aurodesignsystem/auro-library": "^5.4.0",
+    "@aurodesignsystem/design-tokens": "^8.4.0",
+    "@aurodesignsystem/webcorestylesheets": "10.0.3",
     "chalk": "^5.4.1",
     "lit": "^3.3.1"
   },
