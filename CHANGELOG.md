@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.0.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.3...v6.0.4) (2025-08-15)
+
+
+### Bug Fixes
+
+* update auro-library to latest version ([6fb7c9c](https://github.com/AlaskaAirlines/auro-hyperlink/commit/6fb7c9c9ad8f3350c6d5ced3b6769b4e6884c6ab))
+
 ## [6.0.3](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.2...v6.0.3) (2025-08-06)
 
 
