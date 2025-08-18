@@ -4,12 +4,14 @@
 // ---------------------------------------------------------------------
 import { LitElement } from "lit";
 import { html } from 'lit/static-html.js';
+import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
 import ComponentBase from './component-base.mjs';
 
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { transportAllA11yAttributes } from '@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.js';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion.js';
@@ -33,6 +35,7 @@ import tokensCss from "./styles/tokens-css.js";
 export class AuroHyperlink extends ComponentBase {
   constructor() {
     super();
+    this._createRefs(); // eslint-disable-line
 
     const versioning = new AuroDependencyVersioning();
 
@@ -64,6 +67,31 @@ export class AuroHyperlink extends ComponentBase {
     };
   }
 
+  /**
+   * Create usable refs to internal elements
+   * @returns {void}
+   * @private
+   */
+  _createRefs() {
+    this.hyperlinkRef = createRef();
+  }
+
+  firstUpdated() {
+    // Initialize the transportation of ARIA attributes to the target element and get the disconnect function for cleanup
+    if (this.hyperlinkRef.value) {
+      this.attributeWatcher = transportAllA11yAttributes({
+        host: this,
+        target: this.hyperlinkRef.value
+      });
+    }
+  }
+
+  disconnectedCallback() {
+    if (this.attributeWatcher) {
+      this.attributeWatcher.cleanup();
+      this.attributeWatcher = null;
+    }
+  }
 
   /**
    * This will register this element with the browser.
@@ -96,6 +124,7 @@ export class AuroHyperlink extends ComponentBase {
     return html`
     ${this.safeUri || this.role ? html`
     <a
+      ${ref(this.hyperlinkRef)}
       part="link"
       aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
       class="${classMap(classes)}"
@@ -121,7 +150,8 @@ export class AuroHyperlink extends ComponentBase {
    */
   renderLayoutCTA() {
     return html`
-      <auro-hyperlink-button 
+      <auro-hyperlink-button
+        ${ref(this.hyperlinkRef)}
         ?ondark="${this.ondark}"
         ?fluid="${this.fluid}"
         variant="${ifDefined(this.variant || undefined)}"
