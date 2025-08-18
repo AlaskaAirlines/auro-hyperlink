@@ -93,14 +93,6 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * DEPRECATED.
-       */
-      role: {
-        type: String,
-        reflect: true
-      },
-
-      /**
        * Defines where to open the linked document.
        */
       target: {
