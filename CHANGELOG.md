@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.4...v6.1.0) (2025-08-18)
+
+
+### Features
+
+* add a11y attribute projection for hyperlink and hyperlink CTA ([7d47815](https://github.com/AlaskaAirlines/auro-hyperlink/commit/7d478154fca0c25ad4a8fb1ce07b48df6e59cb89))
+
 ## [6.0.4](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.3...v6.0.4) (2025-08-15)
 
 

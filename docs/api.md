@@ -13,7 +13,6 @@
 | `referrerpolicy` | `referrerpolicy` |           | `boolean` |           | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
 | `rel`            | `rel`            |           | `string`  |           | Defines the relationship between the current document and the linked document. |
 | `relative`       | `relative`       |           | `boolean` | false     | If true, the auto URL re-write feature will be disabled. |
-| `role`           | `role`           |           | `string`  |           | DEPRECATED.                                      |
 | `safeUri`        |                  | readonly  | `string`  |           | Returns a safe URI based on the provided `href` and `relative` parameters.<br />If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br />Otherwise, it returns an empty string. |
 | `target`         | `target`         |           | `string`  |           | Defines where to open the linked document.       |
 | `type`           | `type`           |           | `string`  |           | Defines the type of hyperlink; accepts `nav` or `cta`. |
