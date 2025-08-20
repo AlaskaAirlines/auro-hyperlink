@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.1.0...v6.1.1) (2025-08-20)
+
+
+### Bug Fixes
+
+* convert attribute transporter to module import via rename to .mjs ([ff434da](https://github.com/AlaskaAirlines/auro-hyperlink/commit/ff434da3ce1f1c11b1ab162762662e44e1acc8a2))
+
 # [6.1.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.0.4...v6.1.0) (2025-08-18)
 
 
