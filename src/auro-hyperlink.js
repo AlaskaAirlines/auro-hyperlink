@@ -11,7 +11,7 @@ import ComponentBase from './component-base.mjs';
 
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-import { transportAllA11yAttributes } from '@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.js';
+import { transportAllA11yAttributes } from '@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion.js';
