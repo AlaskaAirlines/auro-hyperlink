@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.1.1...v6.1.2) (2025-08-22)
+
+
+### Performance Improvements
+
+* update button for icon fix and all other auro dependencies [#297](https://github.com/AlaskaAirlines/auro-hyperlink/issues/297) ([c1deba9](https://github.com/AlaskaAirlines/auro-hyperlink/commit/c1deba9436d47e8862602d60ec2349add40a8a96))
+
 ## [6.1.1](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.1.0...v6.1.1) (2025-08-20)
 
 
