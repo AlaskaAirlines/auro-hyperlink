@@ -412,7 +412,7 @@ export default class ComponentBase extends AuroElement {
       }
 
       if (event.type === 'keydown') {
-        if (event.code === 'Enter' || event.code === 'Space') {
+        if (event.code === 'Enter') {
           ariaPressedNode.ariaPressed = true;
         } else {
           ariaPressedNode.ariaPressed = false;
