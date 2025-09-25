@@ -1,5 +1,23 @@
 # Semantic Release Automated Changelog
 
+# [6.2.0](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.1.2...v6.2.0) (2025-09-25)
+
+
+### Bug Fixes
+
+* remove reference to `space` [#280](https://github.com/AlaskaAirlines/auro-hyperlink/issues/280) ([3262aaa](https://github.com/AlaskaAirlines/auro-hyperlink/commit/3262aaa027271f9f8c4e7e5d043088450a6a222e))
+* support Enter press on role="button" [#302](https://github.com/AlaskaAirlines/auro-hyperlink/issues/302) ([8e6e2ff](https://github.com/AlaskaAirlines/auro-hyperlink/commit/8e6e2ff349717c68730e92b95512401778d08980))
+
+
+### Features
+
+* revert `role="button" deprecation as it's not violating a11y anymore ([1740d24](https://github.com/AlaskaAirlines/auro-hyperlink/commit/1740d24c4bfa0f293c1c010b1d4dc2391f97ef88))
+
+
+### Performance Improvements
+
+* npm dependency updates ([bcda01e](https://github.com/AlaskaAirlines/auro-hyperlink/commit/bcda01eb4b219d79c31529274caaebea03ec4c16))
+
 ## [6.1.2](https://github.com/AlaskaAirlines/auro-hyperlink/compare/v6.1.1...v6.1.2) (2025-08-22)
 
 
