@@ -414,6 +414,10 @@ export default class ComponentBase extends AuroElement {
       if (event.type === 'keydown') {
         if (event.code === 'Enter') {
           ariaPressedNode.ariaPressed = true;
+
+          if (this.hyperlinkRef && this.hyperlinkRef.value && this.hyperlinkRef.value.role === 'button') {
+            this.click();
+          }
         } else {
           ariaPressedNode.ariaPressed = false;
         }
