@@ -20,11 +20,11 @@
     "node": "^20.x || ^22.x "
   },
   "dependencies": {
-    "@alaskaairux/icons": "^5.7.1",
-    "@aurodesignsystem/auro-button": "^11.4.0",
+    "@alaskaairux/icons": "^5.9.0",
+    "@aurodesignsystem/auro-button": "^11.5.0",
     "@aurodesignsystem/auro-icon": "^8.1.4",
-    "@aurodesignsystem/auro-library": "^5.5.2",
-    "@aurodesignsystem/design-tokens": "^8.4.2",
+    "@aurodesignsystem/auro-library": "^5.5.3",
+    "@aurodesignsystem/design-tokens": "^8.4.3",
     "@aurodesignsystem/webcorestylesheets": "^10.0.4",
     "chalk": "^5.4.1",
     "lit": "^3.3.1"
