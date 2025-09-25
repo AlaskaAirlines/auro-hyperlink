@@ -78,6 +78,10 @@
       outline-offset: unset;
     }
   }
+
+  &--button {
+    cursor: pointer;
+  }
 }
 
 [auro-icon] {

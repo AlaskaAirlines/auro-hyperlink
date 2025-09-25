@@ -27,6 +27,7 @@ import tokensCss from "./styles/tokens-css.js";
 /**
  * `<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.
  *
+ * @prop {String} role - Defines ARIA roles; currently supports `button` for extended experiences.
  * @csspart link - Allows styling to be applied to the `a` element.
  * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
  */
@@ -74,6 +75,11 @@ export class AuroHyperlink extends ComponentBase {
    */
   _createRefs() {
     this.hyperlinkRef = createRef();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-hyperlink');
   }
 
   firstUpdated() {

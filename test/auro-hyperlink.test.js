@@ -7,6 +7,20 @@ useAccessibleIt();
 
 describe('auro-hyperlink', () => {
 
+  it('auro-hyperlink is button', async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="alaska.com" role="button">Alaska air</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector('a');
+
+    expect(anchor).to.have.attribute('role', 'button');
+    expect(anchor).to.have.attribute('tabindex', '0');
+    expect(anchor).to.have.attribute('aria-pressed', 'false');
+    expect(anchor).to.have.class('hyperlink--button');
+    expect(anchor).not.to.have.attribute('href');
+  });
+
   it('auro-hyperlink is relative', async () => {
     const el = await fixture(html`
       <auro-hyperlink href="/auro" relative>It's Auro!</auro-hyperlink>
