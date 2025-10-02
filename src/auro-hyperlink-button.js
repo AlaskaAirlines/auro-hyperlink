@@ -5,13 +5,12 @@
 
 import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
 
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
 import styles from "./styles/hyperlink-button-style-css.js";
 
 // build the component class
 export class AuroHyperlinkButton extends AuroButton {
-
   /**
    * This will register this element with the browser.
    * @param {string} [name="auro-hyperlink-button"] - The name of element that you want to register to.
@@ -25,12 +24,8 @@ export class AuroHyperlinkButton extends AuroButton {
   }
 
   static get styles() {
-    return [
-      ...super.styles,
-      styles,
-    ];
+    return [...AuroButton.styles, styles];
   }
-
 }
 
 /* istanbul ignore else */
