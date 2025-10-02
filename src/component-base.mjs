@@ -3,14 +3,13 @@
 
 /* eslint-disable max-lines, no-script-url, no-else-return, require-unicode-regexp, lit/binding-positions, lit/no-invalid-html */
 
+import externalLink from "@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs";
+import newWindow from "@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs";
+
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import { html } from "lit/static-html.js";
 // ---------------------------------------------------------------------
 import { AuroElement } from "./layoutElement/auroElement.js";
-import { html } from 'lit/static-html.js';
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import externalLink from '@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs';
-import newWindow from '@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs';
 
 // build the component class
 export default class ComponentBase extends AuroElement {
@@ -20,38 +19,37 @@ export default class ComponentBase extends AuroElement {
     this.download = false;
     this.relative = false;
     this.ondark = false;
-    this.variant = 'primary';
-
-
-    /**
-     * @private
-     */
-    this.layout = this.type === 'cta' ? 'block' : null;
+    this.variant = "primary";
 
     /**
      * @private
      */
-    this.shape = this.type === 'cta' ? 'rounded' : null;
+    this.layout = this.type === "cta" ? "block" : null;
 
     /**
      * @private
      */
-    this.size = this.type === 'cta' ? 'md' : null;
+    this.shape = this.type === "cta" ? "rounded" : null;
 
     /**
      * @private
      */
-    this.defaultReferrerPolicy = 'strict-origin-when-cross-origin';
+    this.size = this.type === "cta" ? "md" : null;
 
     /**
      * @private
      */
-    this.ariapressed = 'false';
+    this.defaultReferrerPolicy = "strict-origin-when-cross-origin";
 
     /**
      * @private
      */
-    this.tabIsActive = 'false';
+    this.ariapressed = "false";
+
+    /**
+     * @private
+     */
+    this.tabIsActive = "false";
 
     /**
      * @private
@@ -66,22 +64,22 @@ export default class ComponentBase extends AuroElement {
 
       Also uncomment the touch detection lib above
     */
-    this.addEventListener('touchstart', function() {
-      this.classList.add('is-touching');
+    this.addEventListener("touchstart", function () {
+      this.classList.add("is-touching");
     });
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      ...super.properties,
+      ...AuroElement.properties,
 
       /**
        * Defines the URL of the linked page.
        */
       href: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -89,7 +87,7 @@ export default class ComponentBase extends AuroElement {
        */
       rel: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -97,7 +95,7 @@ export default class ComponentBase extends AuroElement {
        */
       target: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -105,7 +103,7 @@ export default class ComponentBase extends AuroElement {
        */
       download: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -113,7 +111,7 @@ export default class ComponentBase extends AuroElement {
        */
       relative: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -126,7 +124,7 @@ export default class ComponentBase extends AuroElement {
        */
       type: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -139,7 +137,7 @@ export default class ComponentBase extends AuroElement {
        */
       referrerpolicy: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -148,14 +146,14 @@ export default class ComponentBase extends AuroElement {
        */
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
     };
   }
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-hyperlink');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-hyperlink");
   }
 
   /**
@@ -174,7 +172,7 @@ export default class ComponentBase extends AuroElement {
    * @returns {string} The safe URI or an empty string.
    */
   get safeUri() {
-    return this.href ? this.safeUrl(this.href, this.relative) : '';
+    return this.href ? this.safeUrl(this.href, this.relative) : "";
   }
 
   /**
@@ -198,7 +196,7 @@ export default class ComponentBase extends AuroElement {
    * @returns {boolean} True if the URI includes 'http', false otherwise.
    */
   get includesDomain() {
-    return this.href ? this.safeUri.includes('http') : false;
+    return this.href ? this.safeUri.includes("http") : false;
   }
 
   /**
@@ -227,27 +225,26 @@ export default class ComponentBase extends AuroElement {
       return undefined;
     }
 
-    const url = new URL(href, 'https://www.alaskaair.com');
+    const url = new URL(href, "https://www.alaskaair.com");
 
     switch (url.protocol) {
-      case 'tel:':
-      case 'sms:':
-      case 'mailto:':
+      case "tel:":
+      case "sms:":
+      case "mailto:":
         return href;
 
       // Specifically want to render NO shadowDOM for the following refs
-      case 'javascript:':
-      case 'data:':
-      case 'vbscript:':
+      case "javascript:":
+      case "data:":
+      case "vbscript:":
         return undefined;
 
       default:
         if (!relative) {
-          url.protocol = 'https:';
+          url.protocol = "https:";
           return url.href;
-        } else {
-          return href.replace(/^[^:]+:/, "");
         }
+        return href.replace(/^[^:]+:/, "");
     }
   }
 
@@ -263,10 +260,10 @@ export default class ComponentBase extends AuroElement {
    * @returns {Element} The HTML element containing the SVG icon.
    */
   generateIconHtml(svgContent) {
-    const dom = new DOMParser().parseFromString(svgContent, 'text/html');
+    const dom = new DOMParser().parseFromString(svgContent, "text/html");
     const svg = dom.body.firstChild;
 
-    svg.setAttribute('slot', 'svg');
+    svg.setAttribute("slot", "svg");
 
     return html`<${this.iconTag} customColor customSvg part="targetIcon">${svg}</${this.iconTag}>`;
   }
@@ -291,7 +288,6 @@ export default class ComponentBase extends AuroElement {
    * @returns {HTMLElement|undefined} The HTML element containing the icon, or undefined if no icon is generated.
    */
   targetIcon(target) {
-
     /**
      * Checks if a URL's domain is from the 'alaskaair.com' domain or its subdomains.
      * @param {string} url - The URL to check.
@@ -299,13 +295,18 @@ export default class ComponentBase extends AuroElement {
      */
     const isAlaskaAirDomain = (url) => {
       const urlObject = new URL(url);
-      return urlObject.hostname.endsWith('.alaskaair.com');
+      return urlObject.hostname.endsWith(".alaskaair.com");
     };
 
     // If target is '_blank' and the URL's domain is 'alaskaair.com' or one of its subdomains, return icon for new window
-    if (target === '_blank' && isAlaskaAirDomain(this.safeUri)) {
+    if (target === "_blank" && isAlaskaAirDomain(this.safeUri)) {
       return this.generateIconHtml(newWindow.svg);
-    } else if (target === '_blank' && !isAlaskaAirDomain(this.safeUri) && this.includesDomain) {
+    }
+    if (
+      target === "_blank" &&
+      !isAlaskaAirDomain(this.safeUri) &&
+      this.includesDomain
+    ) {
       // If target is '_blank' and the URL does not belong to 'alaskaair.com' or its subdomains but contains a domain, return icon for external link
       return this.generateIconHtml(externalLink.svg);
     }
@@ -329,7 +330,7 @@ export default class ComponentBase extends AuroElement {
    * @returns {string} 'is-active' if the tab is active, otherwise an empty string.
    */
   getTabState(tabIsActive) {
-    return tabIsActive === true ? "is-active" : '';
+    return tabIsActive === true ? "is-active" : "";
   }
 
   /**
@@ -357,21 +358,25 @@ export default class ComponentBase extends AuroElement {
    * @returns {string|undefined} The rel attribute value or undefined if not applicable.
    */
   getRelType(target, rel) {
-
     if (rel) {
       return rel;
     }
 
-    if (target === '_blank' && this.safeUri.includes('alaskaair.com')) {
+    if (target === "_blank" && this.safeUri.includes("alaskaair.com")) {
       return rel;
     }
 
-    if (target === '_blank' && this.includesDomain && !this.rel && !this.referrerpolicy) {
-      return 'noOpener noReferrer';
+    if (
+      target === "_blank" &&
+      this.includesDomain &&
+      !this.rel &&
+      !this.referrerpolicy
+    ) {
+      return "noOpener noReferrer";
     }
 
-    if (target === '_blank' && this.referrerpolicy) {
-      return 'external';
+    if (target === "_blank" && this.referrerpolicy) {
+      return "external";
     }
 
     return undefined;
@@ -402,20 +407,23 @@ export default class ComponentBase extends AuroElement {
    */
   ariaPressedState(ariaPressed) {
     const ariaToggle = function (event) {
-      const ariaPressedNode = this.shadowRoot.querySelector('[aria-pressed]');
-      ariaPressedNode.setAttribute("aria-pressed", 'false');
+      const ariaPressedNode = this.shadowRoot.querySelector("[aria-pressed]");
+      ariaPressedNode.setAttribute("aria-pressed", "false");
 
-      if (event.type === 'mousedown') {
+      if (event.type === "mousedown") {
         ariaPressedNode.ariaPressed = true;
       } else {
         ariaPressedNode.ariaPressed = false;
       }
 
-      if (event.type === 'keydown') {
-        if (event.code === 'Enter') {
+      if (event.type === "keydown") {
+        if (event.code === "Enter") {
           ariaPressedNode.ariaPressed = true;
 
-          if (this.hyperlinkRef && this.hyperlinkRef.value && this.hyperlinkRef.value.role === 'button') {
+          if (
+            this.hyperlinkRef?.value &&
+            this.hyperlinkRef.value.role === "button"
+          ) {
             this.click();
           }
         } else {
@@ -425,10 +433,10 @@ export default class ComponentBase extends AuroElement {
     };
 
     // Add event listeners
-    this.addEventListener('mousedown', ariaToggle);
-    this.addEventListener('mouseup', ariaToggle);
-    this.addEventListener('keydown', ariaToggle);
-    this.addEventListener('keyup', ariaToggle);
+    this.addEventListener("mousedown", ariaToggle);
+    this.addEventListener("mouseup", ariaToggle);
+    this.addEventListener("keydown", ariaToggle);
+    this.addEventListener("keyup", ariaToggle);
 
     return ariaPressed;
   }
