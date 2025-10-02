@@ -139,7 +139,7 @@ There are two important parts of every Auro component. The <a href="https://deve
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `AuroHyperlink.register(name)` method and pass in a unique name.
 
 ```js
-import { AuroHyperlink } from '../src/auro-hyperlink.js';
+import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/class';
 
 AuroHyperlink.register('custom-hyperlink');
 ```

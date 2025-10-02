@@ -3,11 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
+import { AuroButton } from "@aurodesignsystem/auro-button/class";
 
 import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
-import styles from "./styles/hyperlink-button-style-css.js";
+import styles from "./styles/hyperlink-button-style.scss";
 
 // build the component class
 export class AuroHyperlinkButton extends AuroButton {

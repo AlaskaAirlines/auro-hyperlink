@@ -1,7 +1,7 @@
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
-import { AuroIcon } from "@aurodesignsystem/auro-icon/src/auro-icon.js";
+import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
 import { transportAllA11yAttributes } from "@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
@@ -16,10 +16,10 @@ import iconVersion from "./iconVersion.js";
 
 import "./auro-hyperlink-button.js";
 
-import colorCss from "./styles/color-css.js";
+import colorCss from "./styles/color.scss";
 // import the processed CSS file into the scope of the component
-import styleCss from "./styles/style-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**

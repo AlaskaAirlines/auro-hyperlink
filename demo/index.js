@@ -1,5 +1,5 @@
 import { roleButtonExample } from "../apiExamples/roleButton";
-import { AuroHyperlink } from "../src/auro-hyperlink.js";
+import { AuroHyperlink } from "../src/index";
 
 AuroHyperlink.register();
 AuroHyperlink.register("custom-hyperlink");
