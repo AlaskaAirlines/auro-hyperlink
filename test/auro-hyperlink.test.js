@@ -1,7 +1,7 @@
 import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 import { expect, fixture, html } from "@open-wc/testing";
 
-import "../index.js";
+import "../src/registered";
 
 useAccessibleIt();
 
