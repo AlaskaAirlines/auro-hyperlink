@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
+import { AuroButton } from "@aurodesignsystem-dev/auro-button/class";
 
 import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 

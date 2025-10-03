@@ -13,7 +13,7 @@ import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts
 import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import { transportAllA11yAttributes } from '@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs';
 
-import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
+import { AuroIcon } from '@aurodesignsystem-dev/auro-icon/class';
 import iconVersion from './iconVersion.js';
 
 import "./auro-hyperlink-button.js";
@@ -121,7 +121,7 @@ export class AuroHyperlink extends ComponentBase {
     const classes = {
       'hyperlink': this.safeUri || this.role,
       'hyperlink--nav': this.type === 'nav',
-      'hyperlink--ondark': this.ondark,
+      'hyperlink--ondark': this.appearance === 'inverse' || this.ondark,
       'hyperlink--button': this.role,
       'hyperlink--secondary': this.variant === 'secondary',
       'hyperlink--tertiary': this.variant === 'tertiary'
@@ -158,6 +158,7 @@ export class AuroHyperlink extends ComponentBase {
     return html`
       <auro-hyperlink-button
         ${ref(this.hyperlinkRef)}
+        appearance="${this.appearance}"
         ?ondark="${this.ondark}"
         ?fluid="${this.fluid}"
         variant="${ifDefined(this.variant || undefined)}"
