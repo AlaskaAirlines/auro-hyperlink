@@ -93,19 +93,23 @@
   }
 }
 
-:host([type="nav"]:not([ondark])) {
+:host([type="nav"]:not([ondark])),
+:host([type="nav"]:not([appearance="inverse"])) {
   @include color-variant($mode: 'default', $nav: true);
 }
 
-:host([type="nav"][ondark]) {
+:host([type="nav"][ondark]),
+:host([type="nav"][appearance="inverse"]) {
   @include color-variant($mode: 'inverse', $nav: true);
 }
 
-:host(:not([type="nav"]):not([ondark])) {
+:host(:not([type="nav"]):not([ondark])),
+:host(:not([type="nav"]):not([appearance="inverse"])) {
   @include color-variant($mode: 'default', $nav: false);
 }
 
-:host(:not([type="nav"])[ondark]) {
+:host(:not([type="nav"])[ondark]),
+:host(:not([type="nav"])[appearance="inverse"]) {
   @include color-variant($mode: 'inverse', $nav: false);
 }
 

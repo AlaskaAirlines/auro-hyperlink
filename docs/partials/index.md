@@ -23,7 +23,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 </div>
 
 <div class="exampleWrapper--ondark" aria-hidden>
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -32,7 +32,7 @@ If the `href` attribute is not added, the hyperlink element will render back sim
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -49,7 +49,7 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 </div>
 
 <div class="exampleWrapper--ondark" style="display: flex; justify-content: space-between;">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navPattern-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navPattern-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -58,7 +58,7 @@ The `auro-icon` element comes with some pre-defined opinions, but these are easi
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navPattern-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -77,7 +77,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roleButton-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roleButton-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -86,7 +86,7 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roleButton.js) -->
