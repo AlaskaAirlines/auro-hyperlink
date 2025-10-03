@@ -20,6 +20,7 @@ export default class ComponentBase extends AuroElement {
     this.download = false;
     this.relative = false;
     this.ondark = false;
+    this.appearance = 'default';
     this.variant = 'primary';
 
 
@@ -77,6 +78,16 @@ export default class ComponentBase extends AuroElement {
       ...super.properties,
 
       /**
+       * Defines whether the hyperlink should be light colored for use on dark backgrounds.
+       * @property {'default', 'inverse'}
+       * @default 'default'
+       */
+      appearance: {
+        type: String,
+        reflect: true
+      },
+
+      /**
        * Defines the URL of the linked page.
        */
       href: {
@@ -117,7 +128,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * If true, the hyperlink will be styled for use on a dark background.
+       * DEPRECATED - use `appearance` instead.
        */
       ondark: { type: Boolean },
 
