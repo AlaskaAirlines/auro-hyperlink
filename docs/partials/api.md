@@ -17,7 +17,7 @@
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -26,7 +26,7 @@
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -43,7 +43,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -52,7 +52,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -71,7 +71,7 @@ This will also set the `rel` attribute to `external`.
 </div>
 
 <div class="exampleWrapper--ondark">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -80,7 +80,7 @@ This will also set the `rel` attribute to `external`.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -95,7 +95,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -104,7 +104,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -185,7 +185,7 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -194,7 +194,7 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -212,7 +212,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 </div>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
@@ -221,7 +221,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
