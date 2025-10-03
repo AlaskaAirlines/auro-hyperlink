@@ -1,10 +1,11 @@
 import { roleButtonExample } from "../apiExamples/roleButton";
-import { AuroHyperlink } from '../src/auro-hyperlink.js';
+import { AuroHyperlink } from "../src/index";
 
 AuroHyperlink.register();
-AuroHyperlink.register('custom-hyperlink');
+AuroHyperlink.register("custom-hyperlink");
 
 function initHyperlinkIndexExamples(initCount) {
+  // biome-ignore lint: no-unused-vars
   initCount = initCount || 0;
 
   try {

@@ -1,27 +1,25 @@
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
+import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
+import { transportAllA11yAttributes } from "@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs";
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // ---------------------------------------------------------------------
 import { LitElement } from "lit";
-import { html } from 'lit/static-html.js';
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { ifDefined } from 'lit/directives/if-defined.js';
-import { classMap } from 'lit/directives/class-map.js';
-import ComponentBase from './component-base.mjs';
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-import { transportAllA11yAttributes } from '@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs';
-
-import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
-import iconVersion from './iconVersion.js';
+import { html } from "lit/static-html.js";
+import ComponentBase from "./component-base.mjs";
+import iconVersion from "./iconVersion.js";
 
 import "./auro-hyperlink-button.js";
 
+import colorCss from "./styles/color.scss";
 // import the processed CSS file into the scope of the component
-import styleCss from "./styles/style-css.js";
-import colorCss from "./styles/color-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -43,22 +41,18 @@ export class AuroHyperlink extends ComponentBase {
     /**
      * @private
      */
-    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+    this.iconTag = versioning.generateTag("auro-icon", iconVersion, AuroIcon);
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      ...super.properties
+      ...ComponentBase.properties,
     };
   }
 
   static get styles() {
-    return [
-      styleCss,
-      colorCss,
-      tokensCss
-    ];
+    return [styleCss, colorCss, tokensCss];
   }
 
   static get shadowRootOptions() {
@@ -79,7 +73,7 @@ export class AuroHyperlink extends ComponentBase {
 
   connectedCallback() {
     super.connectedCallback();
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-hyperlink');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-hyperlink");
   }
 
   firstUpdated() {
@@ -87,7 +81,7 @@ export class AuroHyperlink extends ComponentBase {
     if (this.hyperlinkRef.value) {
       this.attributeWatcher = transportAllA11yAttributes({
         host: this,
-        target: this.hyperlinkRef.value
+        target: this.hyperlinkRef.value,
       });
     }
   }
@@ -117,35 +111,37 @@ export class AuroHyperlink extends ComponentBase {
    * @private
    */
   renderLayoutDefault() {
-
     const classes = {
-      'hyperlink': this.safeUri || this.role,
-      'hyperlink--nav': this.type === 'nav',
-      'hyperlink--ondark': this.ondark,
-      'hyperlink--button': this.role,
-      'hyperlink--secondary': this.variant === 'secondary',
-      'hyperlink--tertiary': this.variant === 'tertiary'
+      hyperlink: this.safeUri || this.role,
+      "hyperlink--nav": this.type === "nav",
+      "hyperlink--ondark": this.ondark,
+      "hyperlink--button": this.role,
+      "hyperlink--secondary": this.variant === "secondary",
+      "hyperlink--tertiary": this.variant === "tertiary",
     };
 
     return html`
-    ${this.safeUri || this.role ? html`
+    ${
+      this.safeUri || this.role
+        ? html`
     <a
       ${ref(this.hyperlinkRef)}
       part="link"
-      aria-pressed="${ifDefined(this.role === 'button' ? this.ariaPressedState(this.ariapressed) : undefined)}"
+      aria-pressed="${ifDefined(this.role === "button" ? this.ariaPressedState(this.ariapressed) : undefined)}"
       class="${classMap(classes)}"
       href="${ifDefined(this.role ? undefined : this.safeUri)}"
       rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
       referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
-      role="${ifDefined(this.role === 'button' ? this.role : undefined)}"
+      role="${ifDefined(this.role === "button" ? this.role : undefined)}"
       ?download="${this.download}"
       target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
-      tabindex="${ifDefined(this.role === 'button' ? '0' : undefined)}"
+      tabindex="${ifDefined(this.role === "button" ? "0" : undefined)}"
     >
       <slot></slot>
       ${this.targetIcon(this.target)}
     </a>`
-    : html`<slot></slot>`}
+        : html`<slot></slot>`
+    }
     `;
   }
 
@@ -190,7 +186,7 @@ export class AuroHyperlink extends ComponentBase {
    */
   getMarkup() {
     switch (this.type) {
-      case 'cta':
+      case "cta":
         return this.renderLayoutCTA();
       default:
         return this.renderLayoutDefault();
