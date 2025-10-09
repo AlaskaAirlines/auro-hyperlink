@@ -32,6 +32,8 @@
     "@aurodesignsystem/auro-library": "^5.5.3",
     "@aurodesignsystem/design-tokens": "^8.5.0",
     "@aurodesignsystem/webcorestylesheets": "^10.1.1",
+    "@custom-elements-manifest/analyzer": "^0.10.10",
+    "@custom-elements-manifest/to-markdown": "^0.1.0",
     "husky": "^9.1.7"
   },
   "browserslist": [
@@ -55,6 +57,8 @@
     "build:version": "node ./scripts/version.mjs",
     "dev": "auro dev -w -s",
     "dev:open": "auro dev -w -s --open",
+    "gen:manifest": "cem analyze --litelement --globs src/*.*js --packagejson --dependencies",
+    "gen:docs": "node generate-docs.js",
     "lint": "biome check --no-errors-on-unmatched && stylelint \"./src/**/*.scss\"",
     "lint:fix": "biome check --fix --no-errors-on-unmatched && stylelint \"./src/**/*.scss\" --fix",
     "test": "auro test",
@@ -79,6 +83,8 @@
     "CHANGELOG.md",
     "README.md",
     "LICENSE",
-    "NOTICE"
-  ]
+    "NOTICE",
+    "custom-elements.json"
+  ],
+  "customElements": "custom-elements.json"
 }

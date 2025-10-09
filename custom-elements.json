@@ -1,0 +1,1186 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-hyperlink-button.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AuroHyperlinkButton",
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-hyperlink-button\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser."
+            }
+          ],
+          "superclass": {
+            "name": "AuroButton",
+            "package": "@aurodesignsystem/auro-button/class"
+          },
+          "tagName": "auro-hyperlink-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroHyperlinkButton",
+          "declaration": {
+            "name": "AuroHyperlinkButton",
+            "module": "src/auro-hyperlink-button.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "auro-hyperlink-button",
+          "declaration": {
+            "name": "AuroHyperlinkButton",
+            "module": "src/auro-hyperlink-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-hyperlink.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.",
+          "name": "AuroHyperlink",
+          "cssParts": [
+            {
+              "description": "Allows styling to be applied to the `a` element.",
+              "name": "link"
+            },
+            {
+              "description": "Allows styling to be applied to the icon that appears next to the hyperlink.",
+              "name": "targetIcon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_createRefs",
+              "description": "Create usable refs to internal elements",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-hyperlink\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser."
+            },
+            {
+              "kind": "method",
+              "name": "renderLayoutDefault",
+              "description": "Renders the default layout for the hyperlink.",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderLayoutCTA",
+              "description": "Renders the cta layout for the hyperlink.",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getMarkup",
+              "description": "Generates an object containing CSS classes based on the properties of the component.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "object"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "iconTag",
+              "privacy": "private"
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": "Defines ARIA roles; currently supports `button` for extended experiences.",
+              "name": "role",
+              "kind": "field"
+            },
+            {
+              "kind": "field",
+              "name": "safeUri",
+              "description": "Returns a safe URI based on the provided `href` and `relative` parameters.\nIf `href` is truthy, it generates a safe URL using the `safeUrl` function.\nOtherwise, it returns an empty string.",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "includesDomain",
+              "description": "Checks whether the provided URI (if available) includes the 'http' protocol.\nIf the URI is truthy, it examines whether it contains 'http'.\nOtherwise, it returns false.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "safeUrl",
+              "parameters": [
+                {
+                  "name": "href",
+                  "description": "The original URL.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "relative",
+                  "description": "Indicates whether the URL is relative.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Generates a safe URL based on the provided `href` and `relative` parameters.\nIf `href` is falsy, it returns `undefined`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateIconHtml",
+              "parameters": [
+                {
+                  "name": "svgContent",
+                  "description": "The SVG content to be embedded.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an HTML element containing an SVG icon based on the provided `svgContent`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Element"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "targetIcon",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an icon HTML element based on the target attribute.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "HTMLElement|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getTabState",
+              "parameters": [
+                {
+                  "name": "tabIsActive",
+                  "description": "Indicates whether the tab is active.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Returns the state of a tab as a string.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getRelType",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "rel",
+                  "description": "The rel attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Gets the rel attribute value based on target and rel values.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "ariaPressedState",
+              "parameters": [
+                {
+                  "name": "ariaPressed",
+                  "description": "The initial value of the ARIA pressed state.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Sets the ARIA pressed state based on user interactions.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "download",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "attribute": "download",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "relative",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "attribute": "relative",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ondark",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the hyperlink will be styled for use on a dark background.",
+              "default": "false",
+              "attribute": "ondark",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "attribute": "variant",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "layout",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "shape",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "defaultReferrerPolicy",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"strict-origin-when-cross-origin\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ariapressed",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "tabIsActive",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "attribute": "href",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "rel",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "attribute": "rel",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "attribute": "target",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fluid",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "attribute": "fluid",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "referrerpolicy",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "attribute": "referrerpolicy",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ComponentBase",
+            "module": "/src/component-base.mjs"
+          },
+          "attributes": [
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "fieldName": "href",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "fieldName": "rel",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "fieldName": "target",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "download",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "fieldName": "download",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "relative",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "fieldName": "relative",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "ondark",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the hyperlink will be styled for use on a dark background.",
+              "default": "false",
+              "fieldName": "ondark",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "fluid",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "fieldName": "fluid",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "referrerpolicy",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "fieldName": "referrerpolicy",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "fieldName": "variant",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroHyperlink",
+          "declaration": {
+            "name": "AuroHyperlink",
+            "module": "src/auro-hyperlink.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/component-base.mjs",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ComponentBase",
+          "members": [
+            {
+              "kind": "field",
+              "name": "safeUri",
+              "description": "Returns a safe URI based on the provided `href` and `relative` parameters.\nIf `href` is truthy, it generates a safe URL using the `safeUrl` function.\nOtherwise, it returns an empty string.",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "includesDomain",
+              "description": "Checks whether the provided URI (if available) includes the 'http' protocol.\nIf the URI is truthy, it examines whether it contains 'http'.\nOtherwise, it returns false.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "safeUrl",
+              "parameters": [
+                {
+                  "name": "href",
+                  "description": "The original URL.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "relative",
+                  "description": "Indicates whether the URL is relative.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Generates a safe URL based on the provided `href` and `relative` parameters.\nIf `href` is falsy, it returns `undefined`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateIconHtml",
+              "parameters": [
+                {
+                  "name": "svgContent",
+                  "description": "The SVG content to be embedded.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an HTML element containing an SVG icon based on the provided `svgContent`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Element"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "targetIcon",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an icon HTML element based on the target attribute.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "HTMLElement|undefined"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getTabState",
+              "parameters": [
+                {
+                  "name": "tabIsActive",
+                  "description": "Indicates whether the tab is active.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Returns the state of a tab as a string.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getRelType",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "rel",
+                  "description": "The rel attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Gets the rel attribute value based on target and rel values.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "ariaPressedState",
+              "parameters": [
+                {
+                  "name": "ariaPressed",
+                  "description": "The initial value of the ARIA pressed state.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Sets the ARIA pressed state based on user interactions.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "download",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "attribute": "download",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "relative",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "attribute": "relative",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ondark",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the hyperlink will be styled for use on a dark background.",
+              "default": "false",
+              "attribute": "ondark"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "layout",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "shape",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "defaultReferrerPolicy",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"strict-origin-when-cross-origin\""
+            },
+            {
+              "kind": "field",
+              "name": "ariapressed",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\""
+            },
+            {
+              "kind": "field",
+              "name": "tabIsActive",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\""
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()"
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "attribute": "href",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "rel",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "attribute": "rel",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "attribute": "target",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "fluid",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "attribute": "fluid"
+            },
+            {
+              "kind": "field",
+              "name": "referrerpolicy",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "attribute": "referrerpolicy",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "fieldName": "href"
+            },
+            {
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "fieldName": "rel"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "fieldName": "target"
+            },
+            {
+              "name": "download",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "fieldName": "download"
+            },
+            {
+              "name": "relative",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "fieldName": "relative"
+            },
+            {
+              "name": "ondark",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the hyperlink will be styled for use on a dark background.",
+              "default": "false",
+              "fieldName": "ondark"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "fieldName": "type"
+            },
+            {
+              "name": "fluid",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "fieldName": "fluid"
+            },
+            {
+              "name": "referrerpolicy",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "fieldName": "referrerpolicy"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "fieldName": "variant"
+            }
+          ],
+          "superclass": {
+            "name": "AuroElement",
+            "module": "/src/layoutElement/auroElement.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ComponentBase",
+            "module": "src/component-base.mjs"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/iconVersion.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "9.0.0",
+            "module": "src/iconVersion.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroHyperlink",
+          "declaration": {
+            "name": "AuroHyperlink",
+            "module": "src/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/registered.js",
+      "declarations": [],
+      "exports": []
+    }
+  ]
+}
