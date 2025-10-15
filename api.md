@@ -12,20 +12,21 @@
 
 ## Properties
 
-| Property         | Attribute        | Modifiers | Type      | Default   | Description                                      |
-|------------------|------------------|-----------|-----------|-----------|--------------------------------------------------|
-| [download](#download)       | `download`       |           | `boolean` | false     | If true, the linked resource will be downloaded when the hyperlink is clicked. |
-| [fluid](#fluid)          | `fluid`          |           | `boolean` |           | If true and `type="cta"`, the hyperlink will have a fluid-width UI. |
-| [href](#href)           | `href`           |           | `string`  |           | Defines the URL of the linked page.              |
-| [ondark](#ondark)         | `ondark`         |           | `boolean` | false     | If true, the hyperlink will be styled for use on a dark background. |
-| [referrerpolicy](#referrerpolicy) | `referrerpolicy` |           | `boolean` |           | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
-| [rel](#rel)            | `rel`            |           | `string`  |           | Defines the relationship between the current document and the linked document. |
-| [relative](#relative)       | `relative`       |           | `boolean` | false     | If true, the auto URL re-write feature will be disabled. |
-| [role](#role)           |                  |           | `String`  |           | Defines ARIA roles; currently supports `button` for extended experiences. |
-| [safeUri](#safeUri)        |                  | readonly  | `string`  |           | Returns a safe URI based on the provided `href` and `relative` parameters.<br />If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br />Otherwise, it returns an empty string. |
-| [target](#target)         | `target`         |           | `string`  |           | Defines where to open the linked document.       |
-| [type](#type)           | `type`           |           | `string`  |           | Defines the type of hyperlink; accepts `nav` or `cta`. |
-| [variant](#variant)        | `variant`        |           | `string`  | "primary" | Sets button variant option.                      |
+| Property         | Attribute        | Modifiers | Type      | Default     | Description                                      |
+|------------------|------------------|-----------|-----------|-------------|--------------------------------------------------|
+| [appearance](#appearance)     | `appearance`     |           | `string`  | "'default'" | Defines whether the component will be on lighter or darker backgrounds. |
+| [download](#download)       | `download`       |           | `boolean` | false       | If true, the linked resource will be downloaded when the hyperlink is clicked. |
+| [fluid](#fluid)          | `fluid`          |           | `boolean` |             | If true and `type="cta"`, the hyperlink will have a fluid-width UI. |
+| [href](#href)           | `href`           |           | `string`  |             | Defines the URL of the linked page.              |
+| [ondark](#ondark)         | `ondark`         |           | `boolean` | false       | DEPRECATED - use `appearance` instead.           |
+| [referrerpolicy](#referrerpolicy) | `referrerpolicy` |           | `boolean` |             | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
+| [rel](#rel)            | `rel`            |           | `string`  |             | Defines the relationship between the current document and the linked document. |
+| [relative](#relative)       | `relative`       |           | `boolean` | false       | If true, the auto URL re-write feature will be disabled. |
+| [role](#role)           |                  |           | `String`  |             | Defines ARIA roles; currently supports `button` for extended experiences. |
+| [safeUri](#safeUri)        |                  | readonly  | `string`  |             | Returns a safe URI based on the provided `href` and `relative` parameters.<br />If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br />Otherwise, it returns an empty string. |
+| [target](#target)         | `target`         |           | `string`  |             | Defines where to open the linked document.       |
+| [type](#type)           | `type`           |           | `string`  |             | Defines the type of hyperlink; accepts `nav` or `cta`. |
+| [variant](#variant)        | `variant`        |           | `string`  | "primary"   | Sets button variant option.                      |
 
 ## CSS Shadow Parts
 
@@ -47,10 +48,10 @@
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-ondark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/basic-ondark.html -->
-  <auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
-  Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic-inverseAppearance.html -->
+  <auro-hyperlink appearance="inverse">No href supplied</auro-hyperlink><br>
+  Welcome to <auro-hyperlink appearance="inverse" href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -63,12 +64,12 @@
 Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/basic-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic-inverseAppearance.html -->
 
 ```html
-<auro-hyperlink ondark>No href supplied</auro-hyperlink><br>
-Welcome to <auro-hyperlink ondark href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+<auro-hyperlink appearance="inverse">No href supplied</auro-hyperlink><br>
+Welcome to <auro-hyperlink appearance="inverse" href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -101,11 +102,11 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-ondark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/external-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/external-inverseAppearance.html -->
   Example link with
   <auro-hyperlink
-    ondark
+    appearance="inverse"
     target="_blank"
     href="https://www.alaskaair.com">
     external target
@@ -115,7 +116,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   <br>
   Example link with
   <auro-hyperlink
-    ondark
+    appearance="inverse"
     target="_blank"
     href="https://www.portseattle.org/sea-tac">
     external target
@@ -147,13 +148,13 @@ Example link with
  with external domain
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/external-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-inverseAppearance.html -->
 
 ```html
 Example link with
 <auro-hyperlink
-  ondark
+  appearance="inverse"
   target="_blank"
   href="https://www.alaskaair.com">
   external target
@@ -163,7 +164,7 @@ but same domain
 <br>
 Example link with
 <auro-hyperlink
-  ondark
+  appearance="inverse"
   target="_blank"
   href="https://www.portseattle.org/sea-tac">
   external target
@@ -195,11 +196,11 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-ondark.html) -->
-<!-- The below content is automatically added from ./../apiExamples/external-referrer-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-inverseAppearance.html) -->
+<!-- The below content is automatically added from ./../apiExamples/external-referrer-inverseAppearance.html -->
 Example link with
 <auro-hyperlink
-  ondark
+  appearance="inverse"
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac">
@@ -224,13 +225,13 @@ Example link with
  , external domain with referrerpolicy attribute
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-inverseAppearance.html -->
 
 ```html
 Example link with
 <auro-hyperlink
-  ondark
+  appearance="inverse"
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac">
@@ -256,10 +257,10 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle-ondark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/navStyle-ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle-inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/navStyle-inverseAppearance.html -->
   <auro-hyperlink
-    ondark
+    appearance="inverse"
     type="nav"
     href="https://www.alaskaair.com">
     Navigation style link
@@ -279,12 +280,12 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/navStyle-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle-inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/navStyle-inverseAppearance.html -->
 
 ```html
 <auro-hyperlink
-  ondark
+  appearance="inverse"
   type="nav"
   href="https://www.alaskaair.com">
   Navigation style link
@@ -407,13 +408,13 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-ondark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/cta-ondark.html -->
-  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="primary">Primary</auro-hyperlink>
-  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="secondary">Secondary</auro-hyperlink>
-  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="tertiary">Tertiary</auro-hyperlink>
-  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="ghost">Ghost</auro-hyperlink>
-  <auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-inverseAppearance.html -->
+  <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="primary">Primary</auro-hyperlink>
+  <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="secondary">Secondary</auro-hyperlink>
+  <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="tertiary">Tertiary</auro-hyperlink>
+  <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="ghost">Ghost</auro-hyperlink>
+  <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -429,15 +430,15 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/cta-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-inverseAppearance.html -->
 
 ```html
-<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="primary">Primary</auro-hyperlink>
-<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="secondary">Secondary</auro-hyperlink>
-<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="tertiary">Tertiary</auro-hyperlink>
-<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="ghost">Ghost</auro-hyperlink>
-<auro-hyperlink type="cta" ondark href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
+<auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="primary">Primary</auro-hyperlink>
+<auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="secondary">Secondary</auro-hyperlink>
+<auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="tertiary">Tertiary</auro-hyperlink>
+<auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="ghost">Ghost</auro-hyperlink>
+<auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -459,13 +460,13 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-ondark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/cta-external-link-ondark.html -->
-  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="primary">Primary</auro-hyperlink>
-  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="secondary">Secondary</auro-hyperlink>
-  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="tertiary">Tertiary</auro-hyperlink>
-  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="ghost">Ghost</auro-hyperlink>
-  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="flat">Flat</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-external-link-inverseAppearance.html -->
+  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="primary">Primary</auro-hyperlink>
+  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="secondary">Secondary</auro-hyperlink>
+  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="tertiary">Tertiary</auro-hyperlink>
+  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="ghost">Ghost</auro-hyperlink>
+  <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="flat">Flat</auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -481,15 +482,15 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <auro-hyperlink target="_blank" type="cta" href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-ondark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/cta-external-link-ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-external-link-inverseAppearance.html -->
 
 ```html
-<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="primary">Primary</auro-hyperlink>
-<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="secondary">Secondary</auro-hyperlink>
-<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="tertiary">Tertiary</auro-hyperlink>
-<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="ghost">Ghost</auro-hyperlink>
-<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" ondark variant="flat">Flat</auro-hyperlink>
+<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="primary">Primary</auro-hyperlink>
+<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="secondary">Secondary</auro-hyperlink>
+<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="tertiary">Tertiary</auro-hyperlink>
+<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="ghost">Ghost</auro-hyperlink>
+<auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="flat">Flat</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -566,7 +567,7 @@ The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
     <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
   </auro-hyperlink>
   <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle">
-    <auro-icon customcolor category="interface" name="account-filled" ondark></auro-icon>
+    <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
   </auro-hyperlink>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -583,7 +584,7 @@ The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
   <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle">
-  <auro-icon customcolor category="interface" name="account-filled" ondark></auro-icon>
+  <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
 </auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
