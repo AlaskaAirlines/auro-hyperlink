@@ -25,13 +25,13 @@
   },
   "devDependencies": {
     "@alaskaairux/icons": "^5.10.0",
-    "@aurodesignsystem/auro-button": "^12.1.0",
+    "@aurodesignsystem/auro-button": "^12.3.0",
     "@aurodesignsystem/auro-icon": "^9.1.0",
-    "@aurodesignsystem/auro-cli": "^3.0.4",
+    "@aurodesignsystem/auro-cli": "^3.1.0",
     "@aurodesignsystem/auro-config": "^1.3.0",
-    "@aurodesignsystem/auro-library": "^5.5.3",
+    "@aurodesignsystem/auro-library": "^5.5.4",
     "@aurodesignsystem/design-tokens": "^8.5.0",
-    "@aurodesignsystem/webcorestylesheets": "^10.1.1",
+    "@aurodesignsystem/webcorestylesheets": "^10.1.2",
     "husky": "^9.1.7"
   },
   "browserslist": [
@@ -63,6 +63,8 @@
     "prepare": "husky"
   },
   "exports": {
+    "./package.json": "./package.json",
+    "./custom-elements.json": "./custom-elements.json",
     "./readme.md": "./README.md",
     ".": "./dist/registered.js",
     "./demo/*.md": "./demo/*.md",
@@ -74,11 +76,13 @@
     }
   },
   "files": [
+    "custom-elements.json",
     "dist/**/*",
     "demo/**/*",
     "CHANGELOG.md",
     "README.md",
     "LICENSE",
     "NOTICE"
-  ]
+  ],
+  "customElements": "custom-elements.json"
 }
