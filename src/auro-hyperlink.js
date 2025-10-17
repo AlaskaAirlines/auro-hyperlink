@@ -114,7 +114,7 @@ export class AuroHyperlink extends ComponentBase {
     const classes = {
       hyperlink: this.safeUri || this.role,
       "hyperlink--nav": this.type === "nav",
-      "hyperlink--ondark": this.ondark,
+      'hyperlink--ondark': this.appearance === 'inverse' || this.ondark,
       "hyperlink--button": this.role,
       "hyperlink--secondary": this.variant === "secondary",
       "hyperlink--tertiary": this.variant === "tertiary",
@@ -154,7 +154,7 @@ export class AuroHyperlink extends ComponentBase {
     return html`
       <auro-hyperlink-button
         ${ref(this.hyperlinkRef)}
-        ?ondark="${this.ondark}"
+        appearance="${this.ondark ? 'inverse' : this.appearance}"
         ?fluid="${this.fluid}"
         variant="${ifDefined(this.variant || undefined)}"
         shape="${ifDefined(this.shape || undefined)}"
