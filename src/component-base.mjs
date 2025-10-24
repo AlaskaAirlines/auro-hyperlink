@@ -280,6 +280,24 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
+   * Checks if a given URL is a relative URL.
+   * 
+   * @example
+   * // Assuming url = '/path/to/resource
+   * this.isRelativeUrl(url); // Returns true
+   * 
+   * @example
+   * // Assuming url = 'https://example.com/resource
+   * this.isRelativeUrl(url); // Returns false
+   * 
+   * @param {string} url The URL to check 
+   * @returns {boolean} Returns true if the URL is relative and false otherwise.
+   */
+  isRelativeUrl(url) {
+   return /^(?!https?:\/\/)(?!\/\/)[^\s]+$/.test(url); 
+  }
+
+  /**
    * Generates an icon HTML element based on the target attribute.
    *
    * @example
@@ -305,6 +323,11 @@ export default class ComponentBase extends AuroElement {
      * @returns {boolean} Returns true if the URL's domain is 'alaskaair.com' or one of its subdomains, otherwise false.
      */
     const isAlaskaAirDomain = (url) => {
+      // Relative URLs are considered part of alaskaair.com domain
+      if(this.isRelativeUrl(url)) {
+        return true
+      };
+      
       const urlObject = new URL(url);
       return urlObject.hostname.endsWith(".alaskaair.com");
     };

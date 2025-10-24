@@ -134,7 +134,7 @@ export class AuroHyperlink extends ComponentBase {
       referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
       role="${ifDefined(this.role === "button" ? this.role : undefined)}"
       ?download="${this.download}"
-      target="${ifDefined(this.target && this.includesDomain ? this.target : undefined)}"
+      target="${ifDefined(this.target && (this.includesDomain || this.isRelativeUrl(this.safeUri)) ? this.target : undefined)}"
       tabindex="${ifDefined(this.role === "button" ? "0" : undefined)}"
     >
       <slot></slot>
