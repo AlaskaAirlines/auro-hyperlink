@@ -255,7 +255,11 @@ export default class ComponentBase extends AuroElement {
           url.protocol = "https:";
           return url.href;
         }
-        return href.replace(/^[^:]+:/, "");
+        /**
+         * This regex checks if the provided href starts with http:, http:, ftp:, etc...
+         * Also checks if it has // if that matches it replaces it for just one /
+         */
+        return href.replace(/^(?:[^:]+:)?\/\/?/, "/");
     }
   }
 
@@ -277,24 +281,6 @@ export default class ComponentBase extends AuroElement {
     svg.setAttribute("slot", "svg");
 
     return html`<${this.iconTag} customColor customSvg part="targetIcon">${svg}</${this.iconTag}>`;
-  }
-
-  /**
-   * Checks if a given URL is a relative URL.
-   * 
-   * @example
-   * // Assuming url = '/path/to/resource
-   * this.isRelativeUrl(url); // Returns true
-   * 
-   * @example
-   * // Assuming url = 'https://example.com/resource
-   * this.isRelativeUrl(url); // Returns false
-   * 
-   * @param {string} url The URL to check 
-   * @returns {boolean} Returns true if the URL is relative and false otherwise.
-   */
-  isRelativeUrl(url) {
-   return /^(?!https?:\/\/)(?!\/\/)[^\s]+$/.test(url); 
   }
 
   /**
@@ -324,7 +310,7 @@ export default class ComponentBase extends AuroElement {
      */
     const isAlaskaAirDomain = (url) => {
       // Relative URLs are considered part of alaskaair.com domain
-      if(this.isRelativeUrl(url)) {
+      if(this.relative) {
         return true
       };
       
