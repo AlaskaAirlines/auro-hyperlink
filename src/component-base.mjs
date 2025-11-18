@@ -16,9 +16,8 @@ export default class ComponentBase extends AuroElement {
   constructor() {
     super();
 
-    this.appearance = 'default';
+    this.appearance = "default";
     this.download = false;
-    this.relative = false;
     this.ondark = false;
     this.variant = "primary";
 
@@ -82,7 +81,7 @@ export default class ComponentBase extends AuroElement {
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -113,14 +112,6 @@ export default class ComponentBase extends AuroElement {
        * If true, the linked resource will be downloaded when the hyperlink is clicked.
        */
       download: {
-        type: Boolean,
-        reflect: true,
-      },
-
-      /**
-       * If true, the auto URL re-write feature will be disabled.
-       */
-      relative: {
         type: Boolean,
         reflect: true,
       },
@@ -168,12 +159,12 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
-   * Returns a safe URI based on the provided `href` and `relative` parameters.
+   * Returns a safe URI based on the provided `href`.
    * If `href` is truthy, it generates a safe URL using the `safeUrl` function.
    * Otherwise, it returns an empty string.
    *
    * @example
-   * // Assuming this.href = 'http://example.com' and this.relative = false
+   * // Assuming this.href = 'http://example.com'
    * this.safeUri; // Returns 'http://example.com'
    *
    * @example
@@ -183,7 +174,7 @@ export default class ComponentBase extends AuroElement {
    * @returns {string} The safe URI or an empty string.
    */
   get safeUri() {
-    return this.href ? this.safeUrl(this.href, this.relative) : "";
+    return this.href ? this.safeUrl(this.href) : "";
   }
 
   /**
@@ -211,56 +202,58 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
-   * Generates a safe URL based on the provided `href` and `relative` parameters.
+   * Generates a safe URL based on the provided `href` parameter.
    * If `href` is falsy, it returns `undefined`.
    *
    * @example
-   * // Assuming href = 'http://example.com' and relative = false
-   * this.safeUrl(href, relative); // Returns 'https://example.com'
+   * // Assuming href = 'http://example.com'
+   * this.safeUrl(href); // Returns 'https://example.com'
    *
    * @example
-   * // Assuming href = '/path/to/file' and relative = true
-   * this.safeUrl(href, relative); // Returns '/path/to/file'
+   * // Assuming href = '/path/to/file'
+   * this.safeUrl(href); // Returns 'https://<host>/path/to/file'
    *
    * @example
    * // Assuming href = 'javascript:alert("Hello")'
-   * this.safeUrl(href, relative); // Returns undefined
+   * this.safeUrl(href); // Returns undefined
    *
    * @private
    * @param {string} href - The original URL.
-   * @param {boolean} relative - Indicates whether the URL is relative.
    * @returns {string|undefined} The safe URL or `undefined`.
    */
-  safeUrl(href, relative) {
+  safeUrl(href) {
+    let safeUrl;
+
     if (!href) {
       return undefined;
     }
 
-    const url = new URL(href, "https://www.alaskaair.com");
+    const url = new URL(href, window?.location?.href);
 
     switch (url.protocol) {
       case "tel:":
       case "sms:":
       case "mailto:":
-        return href;
+        safeUrl = href;
+        break;
 
       // Specifically want to render NO shadowDOM for the following refs
       case "javascript:":
       case "data:":
       case "vbscript:":
-        return undefined;
+        safeUrl = undefined;
+        break;
 
-      default:
-        if (!relative) {
+      default: {
+        if (!window?.location?.href.includes("localhost")) {
           url.protocol = "https:";
-          return url.href;
         }
-        /**
-         * This regex checks if the provided href starts with http:, http:, ftp:, etc...
-         * Also checks if it has // if that matches it replaces it for just one /
-         */
-        return href.replace(/^(?:[^:]+:)?\/\/?/, "/");
+        safeUrl = url.href;
+        break;
+      }
     }
+
+    return safeUrl;
   }
 
   /**
@@ -304,30 +297,20 @@ export default class ComponentBase extends AuroElement {
    */
   targetIcon(target) {
     /**
-     * Checks if a URL's domain is from the 'alaskaair.com' domain or its subdomains.
+     * Checks if a URL's domain is from the current domain or its subdomains.
      * @param {string} url - The URL to check.
-     * @returns {boolean} Returns true if the URL's domain is 'alaskaair.com' or one of its subdomains, otherwise false.
+     * @returns {boolean} Returns true if the URL's domain is equals to current domain or one of its subdomains, otherwise false.
      */
-    const isAlaskaAirDomain = (url) => {
-      // Relative URLs are considered part of alaskaair.com domain
-      if(this.relative) {
-        return true
-      };
-      
+    const isCurrentDomain = (url) => {
       const urlObject = new URL(url);
-      return urlObject.hostname.endsWith(".alaskaair.com");
+      return urlObject.hostname === window.location.hostname;
     };
 
-    // If target is '_blank' and the URL's domain is 'alaskaair.com' or one of its subdomains, return icon for new window
-    if (target === "_blank" && isAlaskaAirDomain(this.safeUri)) {
-      return this.generateIconHtml(newWindow.svg);
-    }
-    if (
-      target === "_blank" &&
-      !isAlaskaAirDomain(this.safeUri) &&
-      this.includesDomain
-    ) {
-      // If target is '_blank' and the URL does not belong to 'alaskaair.com' or its subdomains but contains a domain, return icon for external link
+    // If target is '_blank' and the URL's domain is equal to the current domain or one of its subdomains, return icon for new window
+    if (target === "_blank") {
+      if (isCurrentDomain(this.safeUri)) {
+        return this.generateIconHtml(newWindow.svg);
+      }
       return this.generateIconHtml(externalLink.svg);
     }
 
@@ -382,8 +365,11 @@ export default class ComponentBase extends AuroElement {
       return rel;
     }
 
-    if (target === "_blank" && this.safeUri.includes("alaskaair.com")) {
-      return rel;
+    if (
+      target === "_blank" &&
+      this.safeUri.includes(window?.location?.hostname)
+    ) {
+      return undefined;
     }
 
     if (
