@@ -10,7 +10,7 @@ export class AuroElement extends LitElement {
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**

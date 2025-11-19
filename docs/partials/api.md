@@ -145,7 +145,7 @@ Regardless of protocol used with `http` property, `auro-hyperlink` will rewrite 
 
 #### Relative URLs
 
-Absolute URLs are not always preferred. When using relative URLs, use the `relative` attribute and `auro-hyperlink` will ignore the domain and the protocol.
+Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relativeUrl.html) -->
