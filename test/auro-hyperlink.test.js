@@ -20,18 +20,27 @@ describe("auro-hyperlink", () => {
     expect(anchor).not.to.have.attribute("href");
   });
 
-  it("auro-hyperlink is relative", async () => {
+  it("auro-hyperlink href is relative URL", async () => {
     const el = await fixture(html`
-      <auro-hyperlink href="/auro" relative>It's Auro!</auro-hyperlink>
+      <auro-hyperlink href="/auro">It's Auro!</auro-hyperlink>
     `);
 
     const anchor = el.shadowRoot.querySelector("a");
 
-    expect(anchor).to.have.attribute("href", "/auro");
-    expect(anchor).not.to.have.attribute(
-      "href",
-      "https://www.alaskaair.com/auro",
-    );
+    console.log(anchor.href);
+
+    expect(anchor).to.have.attribute("href", "http://localhost:8000/auro");
+    expect(anchor).not.to.have.attribute("href", "/auro");
+  });
+
+  it("auro-hyperlink href is absolute URL", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://alaskaair.com/auro">It's Auro!</auro-hyperlink>
+    `);
+
+    const anchor = el.shadowRoot.querySelector("a");
+
+    expect(anchor).to.have.attribute("href", "https://alaskaair.com/auro");
   });
 
   // eval that JS in the href attr is ignored
@@ -66,7 +75,7 @@ describe("auro-hyperlink", () => {
 
   it("auro-hyperlink has no rel", async () => {
     const el = await fixture(html`
-      <auro-hyperlink href="https://www.alaskaair.com" target="_blank">It's Auro!</auro-hyperlink>
+      <auro-hyperlink href="http://localhost:8000" target="_blank">It's Auro!</auro-hyperlink>
     `);
 
     const anchor = el.shadowRoot.querySelector("a");
@@ -126,42 +135,32 @@ describe("safeUrl function", () => {
   });
 
   it("returns undefined when href is undefined", () => {
-    const result = component.safeUrl(undefined, false);
+    const result = component.safeUrl(undefined);
     expect(result).to.be.undefined;
   });
 
   it("returns href when protocol is tel:", async () => {
-    const result = component.safeUrl("tel:1234567890", false);
+    const result = component.safeUrl("tel:1234567890");
     expect(result).to.equal("tel:1234567890");
   });
 
   it("returns href when protocol is sms:", async () => {
-    const result = component.safeUrl("sms:1234567890", false);
+    const result = component.safeUrl("sms:1234567890");
     expect(result).to.equal("sms:1234567890");
   });
 
   it("returns href when protocol is mailto:", async () => {
-    const result = component.safeUrl("mailto:example@example.com", false);
+    const result = component.safeUrl("mailto:example@example.com");
     expect(result).to.equal("mailto:example@example.com");
   });
 
   it("returns href when protocol is https:", async () => {
-    const result = component.safeUrl("https://www.example.com", false);
+    const result = component.safeUrl("https://www.example.com");
     expect(result).to.equal("https://www.example.com/");
   });
 
-  it("returns href with https protocol when relative is false", async () => {
-    const result = component.safeUrl("http://www.example.com", false);
-    expect(result).to.equal("https://www.example.com/");
-  });
-
-  it("returns href when relative is true", async () => {
-    const result = component.safeUrl("/example", true);
-    expect(result).to.equal("/example");
-  });
-
-  it("returns undefined when href is undefined and relative is true", () => {
-    const result = component.safeUrl(undefined, true);
+  it("returns undefined when href is undefined", () => {
+    const result = component.safeUrl(undefined);
     expect(result).to.be.undefined;
   });
 });

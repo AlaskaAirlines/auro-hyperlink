@@ -114,7 +114,7 @@ export class AuroHyperlink extends ComponentBase {
     const classes = {
       hyperlink: this.safeUri || this.role,
       "hyperlink--nav": this.type === "nav",
-      'hyperlink--ondark': this.appearance === 'inverse' || this.ondark,
+      "hyperlink--ondark": this.appearance === "inverse" || this.ondark,
       "hyperlink--button": this.role,
       "hyperlink--secondary": this.variant === "secondary",
       "hyperlink--tertiary": this.variant === "tertiary",
@@ -130,11 +130,11 @@ export class AuroHyperlink extends ComponentBase {
       aria-pressed="${ifDefined(this.role === "button" ? this.ariaPressedState(this.ariapressed) : undefined)}"
       class="${classMap(classes)}"
       href="${ifDefined(this.role ? undefined : this.safeUri)}"
-      rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
+      .rel="${ifDefined(this.target || this.rel ? this.getRelType(this.target, this.rel) : undefined)}"
       referrerpolicy="${ifDefined(this.referrerpolicy ? this.defaultReferrerPolicy : undefined)}"
       role="${ifDefined(this.role === "button" ? this.role : undefined)}"
       ?download="${this.download}"
-      target="${ifDefined(this.target && (this.includesDomain || this.relative) ? this.target : undefined)}"
+      .target="${ifDefined(this.target ? this.target : undefined)}"
       tabindex="${ifDefined(this.role === "button" ? "0" : undefined)}"
     >
       <slot></slot>
@@ -154,7 +154,7 @@ export class AuroHyperlink extends ComponentBase {
     return html`
       <auro-hyperlink-button
         ${ref(this.hyperlinkRef)}
-        appearance="${this.ondark ? 'inverse' : this.appearance}"
+        appearance="${this.ondark ? "inverse" : this.appearance}"
         ?fluid="${this.fluid}"
         variant="${ifDefined(this.variant || undefined)}"
         shape="${ifDefined(this.shape || undefined)}"
