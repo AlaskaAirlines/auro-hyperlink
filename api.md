@@ -12,35 +12,34 @@
 
 ### Properties & Attributes
 
-| Properties | Attributes | Type | Default | Description  |
-| --- | --- | --- | --- | --- |
-role |  | String |  | Defines ARIA roles; currently supports `button` for extended experiences.
-safeUri |  |  |  | Returns a safe URI based on the provided `href` and `relative` parameters.<br>If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br>Otherwise, it returns an empty string.
-includesDomain |  |  |  | Checks whether the provided URI (if available) includes the 'http' protocol.<br>If the URI is truthy, it examines whether it contains 'http'.<br>Otherwise, it returns false.
-appearance | appearance | string | 'default' | Defines whether the component will be on lighter or darker backgrounds.
-download | download | boolean | false | If true, the linked resource will be downloaded when the hyperlink is clicked.
-relative | relative | boolean | false | If true, the auto URL re-write feature will be disabled.
-ondark | ondark | boolean | false | DEPRECATED - use `appearance` instead.
-variant | variant | string | "primary" | Sets button variant option.
-href | href | string |  | Defines the URL of the linked page.
-rel | rel | string |  | Defines the relationship between the current document and the linked document.
-target | target | string |  | Defines where to open the linked document.
-type | type | string |  | Defines the type of hyperlink; accepts `nav` or `cta`.
-fluid | fluid | boolean |  | If true and `type="cta"`, the hyperlink will have a fluid-width UI.
-referrerpolicy | referrerpolicy | boolean |  | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
+| Properties     | Attributes     | Modifiers | Type    | Default     | Description                                                                                                                                                              |
+| -------------- | -------------- | --------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| appearance     | appearance     |           | string  | "default"   | Defines whether the component will be on lighter or darker backgrounds.                                                                                                  |
+| download       | download       |           | boolean | false       | If true, the linked resource will be downloaded when the hyperlink is clicked.                                                                                           |
+| fluid          | fluid          |           | boolean |             | If true and `type="cta"`, the hyperlink will have a fluid-width UI.                                                                                                      |
+| href           | href           |           | string  |             | Defines the URL of the linked page.                                                                                                                                      |
+| layout         | layout         |           | string  | {'default'} | Defines the language of an element.                                                                                                                                      |
+| ondark         | ondark         |           | boolean | false       | DEPRECATED - use `appearance` instead.                                                                                                                                   |
+| referrerpolicy | referrerpolicy |           | boolean |             | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.                                                                  |
+| rel            | rel            |           | string  |             | Defines the relationship between the current document and the linked document.                                                                                           |
+| role           |                |           | String  |             | Defines ARIA roles; currently supports `button` for extended experiences.                                                                                                |
+| safeUri        |                | readonly  | string  |             | Returns a safe URI based on the provided `href`.<br>If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br>Otherwise, it returns an empty string. |
+| target         | target         |           | string  |             | Defines where to open the linked document.                                                                                                                               |
+| type           | type           |           | string  |             | Defines the type of hyperlink; accepts `nav` or `cta`.                                                                                                                   |
+| variant        | variant        |           | string  | "primary"   | Sets button variant option.                                                                                                                                              |
 
 ### Methods
 
-| Name | Parameters | Return | Description |
-| --- | --- | --- | --- |
-register | `name` (string) - The name of element that you want to register to. |  | This will register this element with the browser.
+| Name     | Parameters                                                          | Return | Description                                       |
+| -------- | ------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of element that you want to register to. |        | This will register this element with the browser. |
 
 ### CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
-link | Allows styling to be applied to the `a` element.
-targetIcon | Allows styling to be applied to the icon that appears next to the hyperlink.
+| Name       | Description                                                                  |
+| ---------- | ---------------------------------------------------------------------------- |
+| link       | Allows styling to be applied to the `a` element.                             |
+| targetIcon | Allows styling to be applied to the icon that appears next to the hyperlink. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples
@@ -355,12 +354,12 @@ no hypertext transfer protocol absolute URL to <a class="hyperlink" href="https:
 
 #### Relative URLs
 
-Absolute URLs are not always preferred. When using relative URLs, use the `relative` attribute and `auro-hyperlink` will ignore the domain and the protocol.
+Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relativeUrl.html) -->
   <!-- The below content is automatically added from ./../apiExamples/relativeUrl.html -->
-  Example of a <auro-hyperlink relative href="#">relative URL</auro-hyperlink>.
+  Example of a <auro-hyperlink href="#">relative URL</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -370,9 +369,9 @@ Absolute URLs are not always preferred. When using relative URLs, use the `relat
 
 ```html
 <!-- Web component example -->
-Example of a <auro-hyperlink relative href="#">relative URL</auro-hyperlink>
+Example of a <auro-hyperlink href="#">relative URL</auro-hyperlink>
 <!-- Output code in shadow DOM element -->
-Example of a <a class="hyperlink" href="#"><slot>relative URL</slot></a>
+Example of a <a class="hyperlink" href="https://auro.alaskaair.com/components/auro/hyperlink/api#"><slot>relative URL</slot></a>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

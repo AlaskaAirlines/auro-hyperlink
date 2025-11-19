@@ -186,13 +186,7 @@ The following examples illustrate the use of `<auro-hyperlink>` with either no `
     <auro-hyperlink href="javascript:;">JavaScript not supported</auro-hyperlink>
   </p>
   <p>
-    <auro-hyperlink relative href="javascript:;">JavaScript w/relative attr not supported</auro-hyperlink>
-  </p>
-  <p>
     <auro-hyperlink href="data:text/plain;charset=utf-8,Hello%20World!">Data type not supported</auro-hyperlink>
-  </p>
-  <p>
-    <auro-hyperlink relative href="data:text/plain;charset=utf-8,Hello%20World!">Data type w/relative attr not supported</auro-hyperlink>
   </p>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -209,13 +203,7 @@ The following examples illustrate the use of `<auro-hyperlink>` with either no `
   <auro-hyperlink href="javascript:;">JavaScript not supported</auro-hyperlink>
 </p>
 <p>
-  <auro-hyperlink relative href="javascript:;">JavaScript w/relative attr not supported</auro-hyperlink>
-</p>
-<p>
   <auro-hyperlink href="data:text/plain;charset=utf-8,Hello%20World!">Data type not supported</auro-hyperlink>
-</p>
-<p>
-  <auro-hyperlink relative href="data:text/plain;charset=utf-8,Hello%20World!">Data type w/relative attr not supported</auro-hyperlink>
 </p>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
