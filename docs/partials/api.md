@@ -43,24 +43,9 @@ Difference appearance options through the `appearance` attribute. This example s
 
 ### Relative vs Absolute URLs and HTTPS Enforcement
 
-By default the `auro-hyperlink` will assume that the url passed is an absolute URL to `www.alaskaair.com` with the `https` protocol.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relative-vs-absolute.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/relative-vs-absolute_code.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
 #### HTTPS Enforcement
 
-Regardless of protocol used with `http` property, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
+Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/https-enforcement.html) -->
@@ -92,7 +77,7 @@ Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink
 
 </auro-accordion>
 
-#### Using telephone/text/mailto URLs protocols
+#### Using telephone/text/mailto URLs Schemes
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
