@@ -1,12 +1,13 @@
 # auro-hyperlink
 
-The `auro-hyperlink` element wraps an HTML `<a>` element, providing additional styling and behavior.
+The `auro-hyperlink` element is a wrapper for an HTML5 `<a>` anchor element. 
+This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
 
 ### Properties & Attributes
 
 | Properties     | Attributes     | Modifiers | Type                                                        | Default   | Description                                                                                                                                                                                           |
 | -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance     | appearance     |           | string                                                      | `default` | Defines whether the component will be on lighter or darker backgrounds.                                                                                                                               |
+| appearance     | appearance     |           | `default` \| `inverse`                                      | `default` | Defines whether the component will be on lighter or darker backgrounds.                                                                                                                               |
 | download       | download       |           | boolean                                                     |           | If true, the linked resource will be downloaded when the hyperlink is clicked.                                                                                                                        |
 | fluid          | fluid          |           | boolean                                                     |           | If true and `type="cta"`, the hyperlink will have a fluid-width UI.                                                                                                                                   |
 | href           | href           |           | string                                                      |           | Defines the URL of the linked page.                                                                                                                                                                   |

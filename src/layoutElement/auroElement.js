@@ -5,7 +5,7 @@ export class AuroElement extends LitElement {
     return {
       /**
        * Defines whether the component should be light colored for use on dark backgrounds.
-       * @property {'default', 'inverse'}
+       * @type {'default' | 'inverse'}
        * @default 'default'
        */
       appearance: {
@@ -15,7 +15,7 @@ export class AuroElement extends LitElement {
 
       /**
        * Defines the language of an element.
-       * @default {'default'}
+       * @default 'default'
        */
       layout: {
         type: String,

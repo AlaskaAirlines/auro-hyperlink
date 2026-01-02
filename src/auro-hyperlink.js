@@ -5,7 +5,6 @@ import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
 import { transportAllA11yAttributes } from "@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-// ---------------------------------------------------------------------
 import { LitElement } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -22,7 +21,8 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The `auro-hyperlink` element wraps an HTML `<a>` element, providing additional styling and behavior.
+ * The `auro-hyperlink` element is a wrapper for an HTML5 `<a>` anchor element. 
+ * This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
  * @customElement auro-hyperlink
  *
  * @forcePrivate {'layout'}
