@@ -1,4 +1,5 @@
 import { AuroHyperlink } from "../src/index";
+import { roleButtonExample } from "../apiExamples/role-button";
 
 AuroHyperlink.register();
 
@@ -7,7 +8,7 @@ function initHyperlinkApiExamples(initCount) {
   initCount = initCount || 0;
 
   try {
-    initHyperlinkApiExamples();
+    roleButtonExample();
   } catch {
     if (initCount <= 20) {
       // setTimeout handles issue where content is sometimes loaded after the functions get called

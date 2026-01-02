@@ -21,7 +21,7 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/description.md) -->
 <!-- The below content is automatically added from ./docs/partials/description.md -->
-`<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
+The `<auro-hyperlink>` element is a wrapper element for an HTML `<a>` element containing styling and behavior.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
@@ -102,7 +102,16 @@ You can do this by importing only the component class and using the `register(na
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
 <!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
-<!-- add custom registration content here -->
+
+```js
+// Import the class only
+import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/class';
+
+// Register with a custom name if desired
+AuroHyperlink.register('custom-hyperlink');
+```
+
+This will create a new custom element `<custom-hyperlink>` that behaves exactly like `<auro-hyperlink>`, allowing both to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->

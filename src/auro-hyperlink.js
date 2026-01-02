@@ -17,15 +17,19 @@ import iconVersion from "./iconVersion.js";
 import "./auro-hyperlink-button.js";
 
 import colorCss from "./styles/color.scss";
-// import the processed CSS file into the scope of the component
 import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * `<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.
+ * The `auro-hyperlink` element wraps an HTML `<a>` element, providing additional styling and behavior.
+ * @customElement auro-hyperlink
  *
- * @prop {String} role - Defines ARIA roles; currently supports `button` for extended experiences.
+ * @forcePrivate {'layout'}
+ * 
+ * "Role" property needs to stay in this jsdocs block to avoid conflicts with testing framework.
+ * @property {string} role - Defines ARIA roles; currently supports `button` for extended experiences.
+ * 
  * @csspart link - Allows styling to be applied to the `a` element.
  * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
  */
@@ -95,7 +99,7 @@ export class AuroHyperlink extends ComponentBase {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-hyperlink"] - The name of element that you want to register to.
+   * @param {string} [name="auro-hyperlink"] - The name of the element that you want to register.
    *
    * @example
    * AuroHyperlink.register("custom-hyperlink") // this will register this element to <custom-hyperlink/>
