@@ -8,31 +8,31 @@
 
 # auro-hyperlink
 
-`<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.
+The `auro-hyperlink` element is a wrapper for an HTML5 `<a>` anchor element. 
+This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
 
 ### Properties & Attributes
 
-| Properties     | Attributes     | Modifiers | Type    | Default     | Description                                                                                                                                                              |
-| -------------- | -------------- | --------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| appearance     | appearance     |           | string  | "default"   | Defines whether the component will be on lighter or darker backgrounds.                                                                                                  |
-| download       | download       |           | boolean | false       | If true, the linked resource will be downloaded when the hyperlink is clicked.                                                                                           |
-| fluid          | fluid          |           | boolean |             | If true and `type="cta"`, the hyperlink will have a fluid-width UI.                                                                                                      |
-| href           | href           |           | string  |             | Defines the URL of the linked page.                                                                                                                                      |
-| layout         | layout         |           | string  | {'default'} | Defines the language of an element.                                                                                                                                      |
-| ondark         | ondark         |           | boolean | false       | DEPRECATED - use `appearance` instead.                                                                                                                                   |
-| referrerpolicy | referrerpolicy |           | boolean |             | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.                                                                  |
-| rel            | rel            |           | string  |             | Defines the relationship between the current document and the linked document.                                                                                           |
-| role           |                |           | String  |             | Defines ARIA roles; currently supports `button` for extended experiences.                                                                                                |
-| safeUri        |                | readonly  | string  |             | Returns a safe URI based on the provided `href`.<br>If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br>Otherwise, it returns an empty string. |
-| target         | target         |           | string  |             | Defines where to open the linked document.                                                                                                                               |
-| type           | type           |           | string  |             | Defines the type of hyperlink; accepts `nav` or `cta`.                                                                                                                   |
-| variant        | variant        |           | string  | "primary"   | Sets button variant option.                                                                                                                                              |
+| Properties     | Attributes     | Modifiers | Type                                                        | Default   | Description                                                                                                                                                                                           |
+| -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance     | appearance     |           | `default` \| `inverse`                                      | `default` | Defines whether the component will be on lighter or darker backgrounds.                                                                                                                               |
+| download       | download       |           | boolean                                                     |           | If true, the linked resource will be downloaded when the hyperlink is clicked.                                                                                                                        |
+| fluid          | fluid          |           | boolean                                                     |           | If true and `type="cta"`, the hyperlink will have a fluid-width UI.                                                                                                                                   |
+| href           | href           |           | string                                                      |           | Defines the URL of the linked page.                                                                                                                                                                   |
+| ondark         | ondark         |           | boolean                                                     |           | DEPRECATED - use `appearance="inverse"` instead.                                                                                                                                                      |
+| referrerpolicy | referrerpolicy |           | boolean                                                     |           | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.                                                                                               |
+| rel            | rel            |           | string                                                      |           | Defines the relationship between the current document and the linked document. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information. |
+| role           |                |           | string                                                      |           | Defines ARIA roles; currently supports `button` for extended experiences.                                                                                                                             |
+| safeUri        |                | readonly  | string                                                      |           | Returns a safe URI based on the provided `href`.<br>If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br>Otherwise, it returns an empty string.                              |
+| target         | target         |           | string                                                      |           | Defines where to open the linked document.                                                                                                                                                            |
+| type           | type           |           | `nav` \| `cta`                                              |           | Defines the type of hyperlink.                                                                                                                                                                        |
+| variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | Sets button variant option when using `type="cta"`.                                                                                                                                                   |
 
 ### Methods
 
-| Name     | Parameters                                                          | Return | Description                                       |
-| -------- | ------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of element that you want to register to. |        | This will register this element with the browser. |
+| Name     | Parameters                                                           | Return | Description                                       |
+| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
 
 ### CSS Shadow Parts
 
@@ -42,22 +42,13 @@
 | targetIcon | Allows styling to be applied to the icon that appears next to the hyperlink. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## API Examples
-
-### Basic
+## Basic
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-hyperlink>No href supplied</auro-hyperlink><br>
   Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic-inverseAppearance.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/basic-inverseAppearance.html -->
-  <auro-hyperlink appearance="inverse">No href supplied</auro-hyperlink><br>
-  Welcome to <auro-hyperlink appearance="inverse" href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -70,8 +61,25 @@
 Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic-inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/basic-inverseAppearance.html -->
+</auro-accordion>
+
+## Property & Attribute Examples
+
+### Appearance
+
+Difference appearance options through the `appearance` attribute. This example shows the `inverse` appearance.
+
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/appearance-inverse.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/appearance-inverse.html -->
+  <auro-hyperlink appearance="inverse">No href supplied</auro-hyperlink><br>
+  Welcome to <auro-hyperlink appearance="inverse" href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/appearance-inverse.html -->
 
 ```html
 <auro-hyperlink appearance="inverse">No href supplied</auro-hyperlink><br>
@@ -80,9 +88,86 @@ Welcome to <auro-hyperlink appearance="inverse" href="https://www.alaskaair.com"
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## External Links
+### Relative vs Absolute URLs and HTTPS Enforcement
 
-Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain new-window icon versus an icon that communicates users will be taken to a new domain.
+#### HTTPS Enforcement
+
+Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/https-enforcement.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/https-enforcement.html -->
+  http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
+  no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/https-enforcement_code.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/https-enforcement_code.html -->
+
+```html
+<!-- Web component example -->
+http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
+no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
+<!-- Output code in shadow DOM element -->
+http absolute URL <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>to route map</slot></a>
+no hypertext transfer protocol absolute URL to <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>route map</slot></a>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Relative URLs
+
+Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relative-url.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/relative-url.html -->
+  Relative href converted to absolute URL to <auro-hyperlink href="/components/hyperlink/api">Hyperlink API page</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/relative-url_code.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/relative-url_code.html -->
+
+```html
+<!-- Web component example -->
+Relative href converted to absolute URL to <auro-hyperlink href="/components/hyperlink/api">Hyperlink API page</auro-hyperlink>.
+
+<!-- Output code in shadow DOM element -->
+Relative href converted to absolute URL to <a class="hyperlink" href="https://www.auro.alaskaair.com/components/hyperlink/api"><slot>Hyperlink API page</slot></a>.
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Using telephone/text/mailto URLs Schemes
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/URLscheme.html -->
+  Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
+  Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
+  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/URLscheme.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/URLscheme.html -->
+
+```html
+Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
+Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
+Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### External Links
+
+Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain "new-window" icon, or an icon that communicates users will be taken to a new domain.
 
 For link security purposes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
 
@@ -108,8 +193,8 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-inverseAppearance.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/external-inverseAppearance.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-appearance-inverse.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/external-appearance-inverse.html -->
   Example link with
   <auro-hyperlink
     appearance="inverse"
@@ -154,8 +239,8 @@ Example link with
  with external domain
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/external-inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-appearance-inverse.html -->
 
 ```html
 Example link with
@@ -180,9 +265,9 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### External links with referrerpolicy
+### External Links with Referrerpolicy
 
-When using the `target="_blank"` attribute, to override the default use of `rel="noreferrer"` use the `referrerpolicy` attribute.
+When using the `target="_blank"` attribute, use the `referrerpolicy` attribute to override the default use of `rel="noreferrer"`.
 
 Using this attribute will use the `strict-origin-when-cross-origin` policy type. This sends a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
 
@@ -202,8 +287,8 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-inverseAppearance.html) -->
-<!-- The below content is automatically added from ./../apiExamples/external-referrer-inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-appearance-inverse.html) -->
+<!-- The below content is automatically added from ./../apiExamples/external-referrer-appearance-inverse.html -->
 Example link with
 <auro-hyperlink
   appearance="inverse"
@@ -231,8 +316,8 @@ Example link with
  , external domain with referrerpolicy attribute
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-appearance-inverse.html -->
 
 ```html
 Example link with
@@ -248,13 +333,13 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Navigation style links
+### Navigation Links
 
-When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
+When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/navStyle.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nav.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/nav.html -->
   <auro-hyperlink
     type="nav"
     href="https://www.alaskaair.com">
@@ -263,8 +348,8 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/navStyle-inverseAppearance.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/navStyle-inverseAppearance.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nav-appearance-inverse.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/nav-appearance-inverse.html -->
   <auro-hyperlink
     appearance="inverse"
     type="nav"
@@ -275,8 +360,8 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/navStyle.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/nav.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/nav.html -->
 
 ```html
 <auro-hyperlink
@@ -286,8 +371,8 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 </auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/navStyle-inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/navStyle-inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/nav-appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/nav-appearance-inverse.html -->
 
 ```html
 <auro-hyperlink
@@ -300,106 +385,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for the alte
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Relative vs absolute URLs and https enforcement
-
-By default the `auro-hyperlink` will assume that the url passed is an absolute URL to `www.alaskaair.com` with the `https` protocol.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relativevsabsolute.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/relativevsabsolute.html -->
-  Relative href converted to absolute URL to <auro-hyperlink href="/route-map">route map</auro-hyperlink>.
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/relativevsabsolute_code.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/relativevsabsolute_code.html -->
-
-```html
-<!-- Web component example -->
-Relative href converted to absolute URL to <auro-hyperlink href="/route-map">route map</auro-hyperlink>.
-
-<!-- Output code in shadow DOM element -->
-Relative href converted to absolute URL to <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>route map</slot></a>.
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### https enforcement
-
-Regardless of protocol used with `http` property, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/httpsEnforcement.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/httpsEnforcement.html -->
-  http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
-  no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/httpsEnforcement_code.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/httpsEnforcement_code.html -->
-
-```html
-<!-- Web component example -->
-http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
-no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
-<!-- Output code in shadow DOM element -->
-http absolute URL <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>to route map</slot></a>
-no hypertext transfer protocol absolute URL to <a class="hyperlink" href="https://www.alaskaair.com/route-map"><slot>route map</slot></a>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### Relative URLs
-
-Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relativeUrl.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/relativeUrl.html -->
-  Example of a <auro-hyperlink href="#">relative URL</auro-hyperlink>.
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/relativeUrl_code.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/relativeUrl_code.html -->
-
-```html
-<!-- Web component example -->
-Example of a <auro-hyperlink href="#">relative URL</auro-hyperlink>
-<!-- Output code in shadow DOM element -->
-Example of a <a class="hyperlink" href="https://auro.alaskaair.com/components/auro/hyperlink/api#"><slot>relative URL</slot></a>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### Using telephone/text/mailto URLs protocols
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/URLscheme.html -->
-  Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
-  Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
-  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/URLscheme.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/URLscheme.html -->
-
-```html
-Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
-Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
-Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-## Call to action buttons
+### Call to Action Buttons
 
 Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `ondark` attribute can be combined with any `type="cta"` option.
 
@@ -414,8 +400,8 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-inverseAppearance.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/cta-inverseAppearance.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-appearance-inverse.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-appearance-inverse.html -->
   <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="primary">Primary</auro-hyperlink>
   <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="secondary">Secondary</auro-hyperlink>
   <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="tertiary">Tertiary</auro-hyperlink>
@@ -436,8 +422,8 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/cta-inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-appearance-inverse.html -->
 
 ```html
 <auro-hyperlink type="cta" appearance="inverse" href="https://www.alaskaair.com" variant="primary">Primary</auro-hyperlink>
@@ -449,7 +435,7 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### CTA External links
+#### CTA External links
 
 (CTA) buttons can also be used in combinaton with external links. In the following example, see how the `target="_blank"` attribute acts like external links.
 
@@ -466,8 +452,8 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-inverseAppearance.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/cta-external-link-inverseAppearance.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link-appearance-inverse.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/cta-external-link-appearance-inverse.html -->
   <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="primary">Primary</auro-hyperlink>
   <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="secondary">Secondary</auro-hyperlink>
   <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="tertiary">Tertiary</auro-hyperlink>
@@ -488,8 +474,8 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <auro-hyperlink target="_blank" type="cta" href="https://www.alaskaair.com" variant="flat">Flat</auro-hyperlink>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/cta-external-link-inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-external-link-appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-external-link-appearance-inverse.html -->
 
 ```html
 <auro-hyperlink target="_blank" type="cta" href="https://www.portseattle.org/sea-tac" appearance="inverse" variant="primary">Primary</auro-hyperlink>
@@ -501,7 +487,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Fluid CTA links
+#### Fluid CTA links
 
 In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
 
@@ -530,7 +516,7 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### CTA sizes
+#### CTA sizes
 
 In the following example, see how the `size` attribute alters the size of the cta link. Available sizes are `xs`, `sm`, `md`, `lg`, `xl`.
 
@@ -559,7 +545,7 @@ In the following example, see how the `size` attribute alters the size of the ct
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### CTA shape
+#### CTA shape
 
 The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
 
@@ -596,9 +582,145 @@ The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Theme Support
+## Common Usage Patterns & Functional Examples
 
-The component may be restyled using the following code sample and changing the values of the following token(s).
+### Using role="button"
+
+Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below. Assuming the role of button, `auro-hyperlink` also will track the `aria-pressed` state.
+
+**Note:** Any `href` will be ignored when using `role="button"`. A click-event must be passed to the element as illustrated in the example below.
+
+**Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/role-button.html -->
+  <auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button-appearance-inverse.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/role-button-appearance-inverse.html -->
+  <auro-hyperlink appearance="inverse" href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/role-button.html -->
+
+```html
+<auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button-appearance-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/role-button-appearance-inverse.html -->
+
+```html
+<auro-hyperlink appearance="inverse" href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button.js) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/role-button.js -->
+
+```js
+export function roleButtonExample() {
+  const roleButton = document.getElementById("roleButton");
+  const roleButtonOndark = document.getElementById("roleButton-ondark");
+
+  roleButton.addEventListener("click", () => {
+    alert("You clicked the role button!");
+  });
+
+  roleButtonOndark.addEventListener("click", () => {
+    alert("You clicked the role button!");
+  });
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Unsupported types
+
+Not all URL types are supported for security reasons. Two common types that are worth mentioning are `javaScript:` and `data:`.
+
+The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/non-supported.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/non-supported.html -->
+  <p>
+    <auro-hyperlink>No href supplied</auro-hyperlink>
+  </p>
+  <p>
+    <auro-hyperlink href="javascript:;">JavaScript not supported</auro-hyperlink>
+  </p>
+  <p>
+    <auro-hyperlink href="data:text/plain;charset=utf-8,Hello%20World!">Data type not supported</auro-hyperlink>
+  </p>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/non-supported.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/non-supported.html -->
+
+```html
+<p>
+  <auro-hyperlink>No href supplied</auro-hyperlink>
+</p>
+<p>
+  <auro-hyperlink href="javascript:;">JavaScript not supported</auro-hyperlink>
+</p>
+<p>
+  <auro-hyperlink href="data:text/plain;charset=utf-8,Hello%20World!">Data type not supported</auro-hyperlink>
+</p>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Typography
+
+The `auro-hyperlink` component is designed to work with the typography classes provided by the Auro Design System. 
+
+The component will automatically inherit the typography styles from the parent element, allowing for consistent text styling across your application. Classes can also be applied directly onto the `auro-hyperlink` component.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/typography.html -->
+  <div class="body-xs">
+    Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  </div>
+  <div class="body-default">
+    Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  </div>
+  <div class="body-lg">
+    Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+  </div>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/typography.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/typography.html -->
+
+```html
+<div class="body-xs">
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+</div>
+<div class="body-default">
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+</div>
+<div class="body-lg">
+  Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
+</div>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Restyle Component with CSS Variables
+
+The component may be restyled by changing the values of the following token(s).
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->
