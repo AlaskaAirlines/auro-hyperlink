@@ -5,7 +5,6 @@ import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
 import { transportAllA11yAttributes } from "@aurodesignsystem/auro-library/scripts/runtime/a11yTransporter/a11yTransporter.mjs";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-// ---------------------------------------------------------------------
 import { LitElement } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -17,15 +16,20 @@ import iconVersion from "./iconVersion.js";
 import "./auro-hyperlink-button.js";
 
 import colorCss from "./styles/color.scss";
-// import the processed CSS file into the scope of the component
 import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * `<auro-hyperlink>` is a component that wraps an HTML `<a>` element, providing additional styling and behavior.
+ * The `auro-hyperlink` element is a wrapper for an HTML5 `<a>` anchor element. 
+ * This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
+ * @customElement auro-hyperlink
  *
- * @prop {String} role - Defines ARIA roles; currently supports `button` for extended experiences.
+ * @forcePrivate {'layout'}
+ * 
+ * "Role" property needs to stay in this jsdocs block to avoid conflicts with testing framework.
+ * @property {string} role - Defines ARIA roles; currently supports `button` for extended experiences.
+ * 
  * @csspart link - Allows styling to be applied to the `a` element.
  * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
  */
@@ -95,7 +99,7 @@ export class AuroHyperlink extends ComponentBase {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-hyperlink"] - The name of element that you want to register to.
+   * @param {string} [name="auro-hyperlink"] - The name of the element that you want to register.
    *
    * @example
    * AuroHyperlink.register("custom-hyperlink") // this will register this element to <custom-hyperlink/>

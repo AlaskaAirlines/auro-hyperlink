@@ -1,1 +1,1 @@
-`<auro-hyperlink>` is a wrapper components for an HTML `<a>` element containing styling and behavior.
+The `<auro-hyperlink>` element is a wrapper for an HTML5 `<a>` anchor element. This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.

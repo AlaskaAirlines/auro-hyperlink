@@ -11,11 +11,26 @@ import { html } from "lit/static-html.js";
 // ---------------------------------------------------------------------
 import { AuroElement } from "./layoutElement/auroElement.js";
 
-// build the component class
 export default class ComponentBase extends AuroElement {
   constructor() {
     super();
 
+    this._initializeDefaults();
+
+    /*
+      If the component requires a touch detection,
+      please use this function to determine if a user is
+      actively touching a device, versus detecting if
+      the device is touch enables or a handheld device.
+
+      Also uncomment the touch detection lib above
+    */
+    this.addEventListener("touchstart", function () {
+      this.classList.add("is-touching");
+    });
+  }
+
+  _initializeDefaults() {
     this.appearance = "default";
     this.download = false;
     this.ondark = false;
@@ -55,18 +70,6 @@ export default class ComponentBase extends AuroElement {
      * @private
      */
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
-
-    /*
-      If the component requires a touch detection,
-      please use this function to determine if a user is
-      actively touching a device, versus detecting if
-      the device is touch enables or a handheld device.
-
-      Also uncomment the touch detection lib above
-    */
-    this.addEventListener("touchstart", function () {
-      this.classList.add("is-touching");
-    });
   }
 
   // function to define props used within the scope of this component
@@ -76,36 +79,12 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * Defines whether the component will be on lighter or darker backgrounds.
-       * @property {'default', 'inverse'}
+       * @type {'default' | 'inverse'}
        * @default 'default'
        */
       appearance: {
         type: String,
-        reflect: true,
-      },
-
-      /**
-       * Defines the URL of the linked page.
-       */
-      href: {
-        type: String,
-        reflect: true,
-      },
-
-      /**
-       * Defines the relationship between the current document and the linked document.
-       */
-      rel: {
-        type: String,
-        reflect: true,
-      },
-
-      /**
-       * Defines where to open the linked document.
-       */
-      target: {
-        type: String,
-        reflect: true,
+        reflect: true
       },
 
       /**
@@ -113,20 +92,7 @@ export default class ComponentBase extends AuroElement {
        */
       download: {
         type: Boolean,
-        reflect: true,
-      },
-
-      /**
-       * DEPRECATED - use `appearance` instead.
-       */
-      ondark: { type: Boolean },
-
-      /**
-       * Defines the type of hyperlink; accepts `nav` or `cta`.
-       */
-      type: {
-        type: String,
-        reflect: true,
+        reflect: true
       },
 
       /**
@@ -135,20 +101,59 @@ export default class ComponentBase extends AuroElement {
       fluid: { type: Boolean },
 
       /**
+       * Defines the URL of the linked page.
+       */
+      href: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * DEPRECATED - use `appearance="inverse"` instead.
+       */
+      ondark: { type: Boolean },
+
+      /**
        * If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
        */
       referrerpolicy: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
 
       /**
-       * Sets button variant option.
-       * @default primary
+       * Defines the relationship between the current document and the linked document. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information.
+       */
+      rel: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * Defines where to open the linked document.
+       */
+      target: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * Defines the type of hyperlink.
+       * @type {'nav' | 'cta'}
+       */
+      type: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * Sets button variant option when using `type="cta"`.
+       * @type {'primary' | 'secondary' | 'tertiary' | 'ghost' | 'flat'}
+       * @default 'primary'
        */
       variant: {
         type: String,
-        reflect: true,
+        reflect: true
       },
     };
   }
