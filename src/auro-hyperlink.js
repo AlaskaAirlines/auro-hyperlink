@@ -1,4 +1,4 @@
-// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license TESTING
 // See LICENSE in the project root for license information.
 
 import { AuroIcon } from "@aurodesignsystem/auro-icon/class";
