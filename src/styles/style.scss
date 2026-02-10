@@ -39,7 +39,7 @@
 // apply focus outline to inline hyperlinks that aren't CTA, nav, or button
 :host(:not([type='cta']):not([type='nav'])) {
   .hyperlink{
-    display: inline-block;
+    display: flex;
     border-radius: 3px;
     outline-offset: unset;
     outline-style: solid;
@@ -48,6 +48,11 @@
     &:focus-visible {
       outline-offset: var(--ds-size-25, vac.$ds-size-25);
     }
+  }
+  
+  [auro-icon] {
+    position: relative;
+    top: 1px;
   }
 }
 

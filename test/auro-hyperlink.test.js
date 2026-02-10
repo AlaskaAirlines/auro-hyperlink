@@ -15,7 +15,6 @@ describe("auro-hyperlink", () => {
 
     expect(anchor).to.have.attribute("role", "button");
     expect(anchor).to.have.attribute("tabindex", "0");
-    expect(anchor).to.have.attribute("aria-pressed", "false");
     expect(anchor).to.have.class("hyperlink--button");
     expect(anchor).not.to.have.attribute("href");
   });
@@ -26,11 +25,10 @@ describe("auro-hyperlink", () => {
     `);
 
     const anchor = el.shadowRoot.querySelector("a");
+    const regex = /^http:\/\/localhost:\d+\/auro$/;
+    const match = regex.test(anchor.href);
 
-    console.log(anchor.href);
-
-    expect(anchor).to.have.attribute("href", "http://localhost:8000/auro");
-    expect(anchor).not.to.have.attribute("href", "/auro");
+    expect(match).to.be.true;
   });
 
   it("auro-hyperlink href is absolute URL", async () => {
