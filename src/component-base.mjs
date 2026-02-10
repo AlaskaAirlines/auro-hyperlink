@@ -393,65 +393,6 @@ export default class ComponentBase extends AuroElement {
     return undefined;
   }
 
-  /**
-   * Sets the ARIA pressed state based on user interactions.
-   *
-   * @example
-   * // Assuming ariaPressed = false and user performs a mousedown event
-   * this.ariaPressedState(ariaPressed); // Returns true
-   *
-   * @example
-   * // Assuming ariaPressed = true and user performs a mouseup event
-   * this.ariaPressedState(ariaPressed); // Returns false
-   *
-   * @example
-   * // Assuming ariaPressed = false and user performs a keydown event with 'Enter' or 'Space'
-   * this.ariaPressedState(ariaPressed); // Returns true
-   *
-   * @example
-   * // Assuming ariaPressed = true and user performs a keyup event
-   * this.ariaPressedState(ariaPressed); // Returns false
-   *
-   * @private
-   * @param {boolean} ariaPressed - The initial value of the ARIA pressed state.
-   * @returns {boolean} The updated ARIA pressed state.
-   */
-  ariaPressedState(ariaPressed) {
-    const ariaToggle = function (event) {
-      const ariaPressedNode = this.shadowRoot.querySelector("[aria-pressed]");
-      ariaPressedNode.setAttribute("aria-pressed", "false");
-
-      if (event.type === "mousedown") {
-        ariaPressedNode.ariaPressed = true;
-      } else {
-        ariaPressedNode.ariaPressed = false;
-      }
-
-      if (event.type === "keydown") {
-        if (event.code === "Enter") {
-          ariaPressedNode.ariaPressed = true;
-
-          if (
-            this.hyperlinkRef?.value &&
-            this.hyperlinkRef.value.role === "button"
-          ) {
-            this.click();
-          }
-        } else {
-          ariaPressedNode.ariaPressed = false;
-        }
-      }
-    };
-
-    // Add event listeners
-    this.addEventListener("mousedown", ariaToggle);
-    this.addEventListener("mouseup", ariaToggle);
-    this.addEventListener("keydown", ariaToggle);
-    this.addEventListener("keyup", ariaToggle);
-
-    return ariaPressed;
-  }
-
   // function renders HTML and CSS into the scope of the component
   render() {
     return this.getMarkup();
