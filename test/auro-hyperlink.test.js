@@ -15,7 +15,6 @@ describe("auro-hyperlink", () => {
 
     expect(anchor).to.have.attribute("role", "button");
     expect(anchor).to.have.attribute("tabindex", "0");
-    expect(anchor).to.have.attribute("aria-pressed", "false");
     expect(anchor).to.have.class("hyperlink--button");
     expect(anchor).not.to.have.attribute("href");
   });
