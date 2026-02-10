@@ -59,11 +59,6 @@ export default class ComponentBase extends AuroElement {
     /**
      * @private
      */
-    this.ariapressed = "false";
-
-    /**
-     * @private
-     */
     this.tabIsActive = "false";
 
     /**
