@@ -276,7 +276,7 @@ The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
 
 ### Using role="button"
 
-Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below. Assuming the role of button, `auro-hyperlink` also will track the `aria-pressed` state.
+Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below.
 
 **Note:** Any `href` will be ignored when using `role="button"`. A click-event must be passed to the element as illustrated in the example below.
 
