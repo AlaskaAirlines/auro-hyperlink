@@ -49,6 +49,11 @@
       outline-offset: var(--ds-size-25, vac.$ds-size-25);
     }
   }
+  
+  [auro-icon] {
+    position: relative;
+    top: 1px;
+  }
 }
 
 // component shape styles
