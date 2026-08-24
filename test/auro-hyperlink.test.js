@@ -123,6 +123,33 @@ describe("auro-hyperlink", () => {
 
     await expect(el).to.be.true;
   });
+
+  it("auro-hyperlink target icon sits directly beside the text with no extra gap", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" target="_blank" type="nav">Auro hyperlink spec</auro-hyperlink>
+    `);
+    await el.updateComplete;
+
+    const anchor = el.shadowRoot.querySelector("a");
+    const icon = anchor.querySelector('[part="targetIcon"]');
+    await icon.updateComplete;
+
+    const textNode = anchor
+      .querySelector("slot")
+      .assignedNodes()
+      .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+    const range = document.createRange();
+    range.selectNodeContents(textNode);
+
+    const textRight = range.getBoundingClientRect().right;
+    const iconLeft = icon.getBoundingClientRect().left;
+    const iconMargin = parseFloat(getComputedStyle(icon).marginLeft);
+
+    // The only space between the text and the icon should be the icon's own
+    // margin. A collapsed whitespace text node (the historical bug) adds several
+    // extra pixels, so anything beyond the margin means the gap has regressed.
+    expect(iconLeft - textRight).to.be.closeTo(iconMargin, 1);
+  });
 });
 
 describe("safeUrl function", () => {

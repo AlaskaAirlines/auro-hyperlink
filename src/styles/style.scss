@@ -75,7 +75,8 @@
   }
 
   &--nav {
-    display: block;
+    display: flex;
+    align-items: center;
     text-decoration: none;
 
     &:focus-visible {
