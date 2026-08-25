@@ -93,8 +93,23 @@
 
 [auro-icon] {
   --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
+}
 
-  margin-left: var(--ds-size-25, vac.$ds-size-25);
+// One spacing token separates the target icon from the link text across every
+// link type. Inline and nav space the icon via
+// their own flex container; CTA's icon is slotted into auro-hyperlink-button,
+// so we override that button's text-slot gap (exposed as `part="text"`) to
+// match instead of inheriting the button's larger default gap.
+.hyperlink--nav,
+:host(:not([type='cta']):not([type='nav'])) .hyperlink {
+  gap: var(--ds-size-25, vac.$ds-size-25);
+}
+
+// Kept as its own rule: grouping a ::part() selector with the regular selectors
+// above breaks var() resolution for those selectors in Blink, so the token
+// would silently fall back on inline/nav links.
+auro-hyperlink-button::part(text) {
+  gap: var(--ds-size-25, vac.$ds-size-25);
 }
 
 [fluid] {
