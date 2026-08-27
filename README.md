@@ -47,9 +47,7 @@ The `<auro-hyperlink>` elements should be used in situations where users may:
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-hyperlink?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 ![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
 
-```shell
-$ npm i @aurodesignsystem/auro-hyperlink
-```
+<pre class="language-shell"><code class="language-shell">$ npm i @aurodesignsystem/auro-hyperlink</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -61,9 +59,7 @@ Defining the dependency within each project that is using the `<auro-hyperlink>`
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImport.md) -->
 
-```js
-import "@aurodesignsystem/auro-hyperlink";
-```
+<pre class="language-js"><code class="language-js">import "@aurodesignsystem/auro-hyperlink";</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -72,9 +68,7 @@ import "@aurodesignsystem/auro-hyperlink";
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/bundleInstallDescription.md) -->
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Legacy browsers such as IE11 are no longer supported.
 
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-hyperlink@latest/+esm"></script>
-```
+<pre class="language-html"><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-hyperlink@latest/+esm"&gt;&lt;/script&gt;</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -83,10 +77,8 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
 
-```html
-<auro-hyperlink>No href supplied</auro-hyperlink><br>
-Welcome to <auro-hyperlink href="https://www.alaskaair.com">Alaska Airlines</auro-hyperlink>.
-```
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink&gt;No href supplied&lt;/auro-hyperlink&gt;&lt;br&gt;
+Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airlines&lt;/auro-hyperlink&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Custom Component Registration for Version Management
@@ -103,31 +95,27 @@ You can do this by importing only the component class and using the `register(na
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
 <!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
 
-```js
-// Import the class only
+<pre class="language-js"><code class="language-js">// Import the class only
 import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/class';
-
+​
 // Register with a custom name if desired
-AuroHyperlink.register('custom-hyperlink');
-```
+AuroHyperlink.register('custom-hyperlink');</code></pre>
 
 This will create a new custom element `<custom-hyperlink>` that behaves exactly like `<auro-hyperlink>`, allowing both to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./apiExamples/custom.html -->
-  <custom-hyperlink>No href supplied</custom-hyperlink><br>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
+<!-- The below content is automatically added from ./apiExamples/custom.html -->
+<custom-hyperlink>No href supplied</custom-hyperlink><br>
   Welcome to <custom-hyperlink href="https://www.alaskaair.com">Alaska Airlines</custom-hyperlink>.
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
 
-```html
-<custom-hyperlink>No href supplied</custom-hyperlink><br>
-Welcome to <custom-hyperlink href="https://www.alaskaair.com">Alaska Airlines</custom-hyperlink>.
-```
+<pre class="language-html"><code class="language-html">&lt;custom-hyperlink&gt;No href supplied&lt;/custom-hyperlink&gt;&lt;br&gt;
+Welcome to &lt;custom-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airlines&lt;/custom-hyperlink&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
