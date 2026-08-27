@@ -6,55 +6,49 @@
 <auro-header level="3">Base hyperlink</auro-header>
 <p>Apply the <code>.hyperlink</code> class to any <code>&lt;a&gt;</code> element:</p>
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/wcss-hyperlink.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/wcss-hyperlink.html -->
-  <a href="https://www.alaskaair.com" class="hyperlink">Alaska Airlines</a>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/wcss-hyperlink.html) -->
+<!-- The below content is automatically added from ./../apiExamples/wcss-hyperlink.html -->
+<a href="https://www.alaskaair.com" class="hyperlink">Alaska Airlines</a>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/wcss-hyperlink.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/wcss-hyperlink.html -->
 
-```html
-<a href="https://www.alaskaair.com" class="hyperlink">Alaska Airlines</a>
-```
+<pre class="language-html"><code class="language-html">&lt;a href="https://www.alaskaair.com" class="hyperlink"&gt;Alaska Airlines&lt;/a&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <auro-header level="3">Dark background (inverse) variant</auro-header>
 <p>Use the <code>.hyperlink--ondark</code> modifier for links on dark backgrounds:</p>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/wcss-hyperlink-ondark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/wcss-hyperlink-ondark.html -->
-  <a href="https://www.alaskaair.com" class="hyperlink hyperlink--ondark">Alaska Airlines</a>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/wcss-hyperlink-ondark.html) -->
+<!-- The below content is automatically added from ./../apiExamples/wcss-hyperlink-ondark.html -->
+<a href="https://www.alaskaair.com" class="hyperlink hyperlink--ondark">Alaska Airlines</a>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/wcss-hyperlink-ondark.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/wcss-hyperlink-ondark.html -->
 
-```html
-<a href="https://www.alaskaair.com" class="hyperlink hyperlink--ondark">Alaska Airlines</a>
-```
+<pre class="language-html"><code class="language-html">&lt;a href="https://www.alaskaair.com" class="hyperlink hyperlink--ondark"&gt;Alaska Airlines&lt;/a&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <auro-header level="3">Navigation variant</auro-header>
 <p>Use the <code>.hyperlink--nav</code> modifier for navigation-style links:</p>
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/wcss-hyperlink-nav.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/wcss-hyperlink-nav.html -->
-  <a href="https://www.alaskaair.com" class="hyperlink hyperlink--nav">Alaska Airlines</a>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/wcss-hyperlink-nav.html) -->
+<!-- The below content is automatically added from ./../apiExamples/wcss-hyperlink-nav.html -->
+<a href="https://www.alaskaair.com" class="hyperlink hyperlink--nav">Alaska Airlines</a>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/wcss-hyperlink-nav.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/wcss-hyperlink-nav.html -->
 
-```html
-<a href="https://www.alaskaair.com" class="hyperlink hyperlink--nav">Alaska Airlines</a>
-```
+<pre class="language-html"><code class="language-html">&lt;a href="https://www.alaskaair.com" class="hyperlink hyperlink--nav"&gt;Alaska Airlines&lt;/a&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <auro-header level="2">What you lose without auro-hyperlink</auro-header>
@@ -76,65 +70,65 @@
 <p><code>auro-hyperlink</code> uses <code>delegatesFocus</code> to ensure proper focus forwarding within its shadow DOM. This is a web component concern and does not apply to plain <code>&lt;a&gt;</code> elements, but it means WCSS-styled anchors cannot replicate the focus behavior of <code>auro-hyperlink</code> when used inside shadow DOM contexts.</p>
 <auro-header level="2">Summary</auro-header>
 <table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>WCSS <code>.hyperlink</code></th>
-      <th><code>auro-hyperlink</code></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Design-system-aligned styling</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Dark background support</td>
-      <td>Yes (<code>.hyperlink--ondark</code>)</td>
-      <td>Yes (<code>appearance="inverse"</code>)</td>
-    </tr>
-    <tr>
-      <td>Navigation variant</td>
-      <td>Yes (<code>.hyperlink--nav</code>)</td>
-      <td>Yes (<code>type="nav"</code>)</td>
-    </tr>
-    <tr>
-      <td>URL sanitization</td>
-      <td>No</td>
-      <td>Automatic</td>
-    </tr>
-    <tr>
-      <td>HTTPS enforcement</td>
-      <td>No</td>
-      <td>Automatic</td>
-    </tr>
-    <tr>
-      <td>External / new window icons</td>
-      <td>No</td>
-      <td>Automatic</td>
-    </tr>
-    <tr>
-      <td>Automatic <code>rel</code> attributes</td>
-      <td>No</td>
-      <td>Automatic</td>
-    </tr>
-    <tr>
-      <td>CTA button variants</td>
-      <td>No</td>
-      <td>Full variant support</td>
-    </tr>
-    <tr>
-      <td>ARIA attribute transportation</td>
-      <td>No</td>
-      <td>Automatic</td>
-    </tr>
-    <tr>
-      <td>Multi-brand theming</td>
-      <td>Partial (CSS only)</td>
-      <td>Full (design tokens + component logic)</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Feature</th>
+<th>WCSS <code>.hyperlink</code></th>
+<th><code>auro-hyperlink</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design-system-aligned styling</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Dark background support</td>
+<td>Yes (<code>.hyperlink--ondark</code>)</td>
+<td>Yes (<code>appearance="inverse"</code>)</td>
+</tr>
+<tr>
+<td>Navigation variant</td>
+<td>Yes (<code>.hyperlink--nav</code>)</td>
+<td>Yes (<code>type="nav"</code>)</td>
+</tr>
+<tr>
+<td>URL sanitization</td>
+<td>No</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>HTTPS enforcement</td>
+<td>No</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>External / new window icons</td>
+<td>No</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>Automatic <code>rel</code> attributes</td>
+<td>No</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>CTA button variants</td>
+<td>No</td>
+<td>Full variant support</td>
+</tr>
+<tr>
+<td>ARIA attribute transportation</td>
+<td>No</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>Multi-brand theming</td>
+<td>Partial (CSS only)</td>
+<td>Full (design tokens + component logic)</td>
+</tr>
+</tbody>
 </table>
 <auro-header level="2">Recommendation</auro-header>
 <p>Use <code>auro-hyperlink</code> whenever possible. Fall back to WCSS <code>.hyperlink</code> classes only in environments where custom elements are not supported or when integrating with third-party systems that require plain HTML.</p>
