@@ -123,6 +123,100 @@ describe("auro-hyperlink", () => {
 
     await expect(el).to.be.true;
   });
+
+  // Icon spacing is owned by the flex container's gap, never a margin on the
+  // icon itself. A collapsed whitespace text node (the historical bug) would
+  // add several extra pixels on top of the gap, so the measured space between
+  // the text and the icon must match the container gap exactly.
+  ["nav", "default"].forEach((type) => {
+    it(`auro-hyperlink ${type} target icon spacing comes only from the container gap`, async () => {
+      const el = await fixture(html`
+        <auro-hyperlink href="https://www.alaskaair.com" target="_blank" type="${type}">Auro hyperlink spec</auro-hyperlink>
+      `);
+      await el.updateComplete;
+
+      const anchor = el.shadowRoot.querySelector("a");
+      const icon = anchor.querySelector('[part="targetIcon"]');
+      await icon.updateComplete;
+
+      const textNode = anchor
+        .querySelector("slot")
+        .assignedNodes()
+        .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      const range = document.createRange();
+      range.selectNodeContents(textNode);
+
+      const textRight = range.getBoundingClientRect().right;
+      const iconLeft = icon.getBoundingClientRect().left;
+      const containerGap = parseFloat(getComputedStyle(anchor).columnGap);
+
+      expect(parseFloat(getComputedStyle(icon).marginLeft)).to.equal(0);
+      expect(iconLeft - textRight).to.be.closeTo(containerGap, 1);
+    });
+  });
+
+  it("auro-hyperlink CTA target icon uses the same 2px gap as the other link types", async () => {
+    const inline = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" target="_blank">Auro hyperlink spec</auro-hyperlink>
+    `);
+    await inline.updateComplete;
+    const expectedGap = parseFloat(getComputedStyle(inline.shadowRoot.querySelector("a")).columnGap);
+
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" target="_blank" type="cta">Auro hyperlink spec</auro-hyperlink>
+    `);
+    await el.updateComplete;
+
+    const icon = el.shadowRoot.querySelector('[part="targetIcon"]');
+    await icon.updateComplete;
+
+    const textNode = el.shadowRoot
+      .querySelector("slot")
+      .assignedNodes()
+      .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+    const range = document.createRange();
+    range.selectNodeContents(textNode);
+
+    const gap = icon.getBoundingClientRect().left - range.getBoundingClientRect().right;
+
+    // CTA's icon is slotted into auro-hyperlink-button. We override that button's
+    // text-slot gap so it matches the inline/nav spacing instead of the button's
+    // larger default gap. The icon itself must carry no margin.
+    expect(parseFloat(getComputedStyle(icon).marginLeft)).to.equal(0);
+    expect(gap).to.be.closeTo(expectedGap, 1);
+  });
+
+  // The gap must resolve from the --ds-size-25 design token, not a hardcoded value.
+  // Overriding the token at runtime should move the measured gap to the new value
+  // for every link type. This guards the Blink quirk where grouping a ::part()
+  // selector with regular selectors silently breaks var() resolution, leaving
+  // inline/nav stuck on the Sass fallback while only CTA responds.
+  ["nav", "default", "cta"].forEach((type) => {
+    it(`auro-hyperlink ${type} target icon gap resolves from the --ds-size-25 token`, async () => {
+      const el = await fixture(html`
+        <auro-hyperlink href="https://www.alaskaair.com" target="_blank" type="${type}">Auro hyperlink spec</auro-hyperlink>
+      `);
+      await el.updateComplete;
+
+      const icon = el.shadowRoot.querySelector('[part="targetIcon"]');
+      await icon.updateComplete;
+
+      const textNode = el.shadowRoot
+        .querySelector("slot")
+        .assignedNodes()
+        .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      const range = document.createRange();
+      range.selectNodeContents(textNode);
+      const measureGap = () =>
+        icon.getBoundingClientRect().left - range.getBoundingClientRect().right;
+
+      const override = 20;
+      el.style.setProperty("--ds-size-25", `${override}px`);
+      await el.updateComplete;
+
+      expect(measureGap()).to.be.closeTo(override, 1);
+    });
+  });
 });
 
 describe("safeUrl function", () => {
