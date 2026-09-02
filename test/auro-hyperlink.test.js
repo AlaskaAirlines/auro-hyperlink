@@ -217,6 +217,50 @@ describe("auro-hyperlink", () => {
       expect(measureGap()).to.be.closeTo(override, 1);
     });
   });
+
+  // Measure the slotted SVG, not the auro-icon wrapper. The wrapper resizes
+  // from --ds-auro-icon-size on its own, so measuring it hides a glyph that is
+  // still pinned to a fixed size by its own inline style.
+  const measureIcon = async (markup) => {
+    const el = await fixture(markup);
+    await el.updateComplete;
+
+    const icon = el.shadowRoot.querySelector('[part="targetIcon"]');
+    await icon.updateComplete;
+
+    return icon.querySelector("svg").getBoundingClientRect();
+  };
+
+  // The target icon is a fixed 24px and must not scale with the text beside it.
+  // `type` is bound as a property rather than an attribute so `undefined` can
+  // mean "an inline link with no type", which is the real API for inline links.
+  [undefined, "nav", "cta"].forEach((type) => {
+    ["12px", "16px", "28px"].forEach((fontSize) => {
+      it(`auro-hyperlink ${type ?? "inline"} target icon stays 24px beside ${fontSize} text`, async () => {
+        const svg = await measureIcon(html`
+          <auro-hyperlink style="font-size: ${fontSize}" .type=${type} href="https://www.alaskaair.com" target="_blank">Auro hyperlink spec</auro-hyperlink>
+        `);
+
+        expect(svg.width).to.be.closeTo(24, 1);
+        expect(svg.height).to.be.closeTo(24, 1);
+      });
+    });
+  });
+
+  // Small CTA links are the only variant with a different icon size: `size`
+  // drops the icon to 16px for xs and sm, and leaves it at 24px for md and up.
+  const ctaIconSizes = { xs: 16, sm: 16, md: 24, lg: 24, xl: 24 };
+
+  Object.entries(ctaIconSizes).forEach(([size, expected]) => {
+    it(`auro-hyperlink cta size="${size}" uses a ${expected}px target icon`, async () => {
+      const svg = await measureIcon(html`
+        <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="${size}">Auro hyperlink spec</auro-hyperlink>
+      `);
+
+      expect(svg.width).to.be.closeTo(expected, 1);
+      expect(svg.height).to.be.closeTo(expected, 1);
+    });
+  });
 });
 
 describe("safeUrl function", () => {
