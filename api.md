@@ -511,6 +511,33 @@ In the following example, see how the `size` attribute alters the size of the ct
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
+#### CTA sizes with external links
+
+When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attribute.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
+<!-- The below content is automatically added from ./../apiExamples/cta-size-external-link.html -->
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs">Extra Small</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="sm">Small</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="md">Medium</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="lg">Large</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl">Extra Large</auro-hyperlink>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size-external-link.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/cta-size-external-link.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs"&gt;Extra Small&lt;/auro-hyperlink&gt;
+&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="sm"&gt;Small&lt;/auro-hyperlink&gt;
+&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="md"&gt;Medium&lt;/auro-hyperlink&gt;
+&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="lg"&gt;Large&lt;/auro-hyperlink&gt;
+&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl"&gt;Extra Large&lt;/auro-hyperlink&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 #### CTA shape
 
 The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
