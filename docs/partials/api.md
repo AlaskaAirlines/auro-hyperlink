@@ -255,6 +255,23 @@ In the following example, see how the `size` attribute alters the size of the ct
 
 </auro-accordion>
 
+#### CTA sizes with external links
+
+When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attribute.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size-external-link.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 #### CTA shape
 
 The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
