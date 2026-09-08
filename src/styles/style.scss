@@ -49,9 +49,16 @@
       outline-offset: var(--ds-size-25, vac.$ds-size-25);
     }
   }
-  
+
   [auro-icon] {
     position: relative;
+
+    // The icon is taller than the text next to it — the visible icon is about
+    // 17px tall while capital letters are about 11px — so it has to stick out
+    // above the text, below it, or both. This nudge splits the difference so it
+    // sticks out a little on each side. Centering it with `align-items: center`
+    // instead puts the bottom of the icon on the baseline, which makes it look
+    // like it is sitting too low.
     top: 1px;
   }
 }
@@ -91,8 +98,35 @@
   }
 }
 
+// The target icon is 24px on every link type. Only `--ds-auro-icon-size` is set
+// here: the slotted SVG carries an inline `min-width`/`height` of
+// `var(--auro-size-lg, var(--ds-size-300, 1.5rem))`, so it already resolves to
+// 24px on its own. The 16px tier below is the only place that has to override
+// `--auro-size-lg` as well.
 [auro-icon] {
   --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
+}
+
+// Small CTA links drop the target icon to 16px, per the `size` attribute:
+//   xs, sm         16px
+//   md, lg, xl     24px (the rule above)
+// `size` is a reflected property, so this matches whether a consumer sets the
+// attribute or binds the property. A CTA with no `size` reflects no attribute
+// at all, so it falls through to the 24px rule above.
+// Both variables are required here. `--ds-auro-icon-size` sizes auro-icon's own
+// wrapper, but the icon SVG is slotted light-DOM content, so auro-icon's
+// internal `svg { width: ... !important }` rule never matches it. The slotted
+// SVG sizes itself from the inline style described above, and an inline style
+// outranks any stylesheet. Setting only the first leaves a 24px glyph inside a
+// box that resized around it.
+// The size attribute has to sit inside `:host()` — `:host([type='cta'])[size='xs']`
+// would put the attribute on the shadow-tree side of the boundary and never match.
+:host([type='cta'][size='xs']),
+:host([type='cta'][size='sm']) {
+  [auro-icon] {
+    --ds-auro-icon-size: var(--ds-size-200, #{vac.$ds-size-200});
+    --auro-size-lg: var(--ds-size-200, #{vac.$ds-size-200});
+  }
 }
 
 // One spacing token separates the target icon from the link text across every

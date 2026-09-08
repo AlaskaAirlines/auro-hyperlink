@@ -2,7 +2,6 @@ name: Story
 description: Define a body of work driven by Product goals.
 type: "Story"
 title: '...provide a title...'
-projects: ["AlaskaAirlines/19"]
 body:
   - type: textarea
     id: request

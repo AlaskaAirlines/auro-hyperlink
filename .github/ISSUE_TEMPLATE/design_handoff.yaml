@@ -2,7 +2,6 @@ name: Design Handoff
 description: Handoff design work to the development team.
 type: "Task"
 title: 'Design Handoff: [Feature Name]'
-projects: ["AlaskaAirlines/19"]
 body:
   - type: textarea
     id: description

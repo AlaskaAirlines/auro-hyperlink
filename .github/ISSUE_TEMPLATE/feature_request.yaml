@@ -2,7 +2,6 @@ name: Feature Request
 description: Suggest an idea for this project
 type: "Feature"
 title: '...provide a title...'
-projects: ["AlaskaAirlines/19"]
 body:
   - type: textarea
     id: request
