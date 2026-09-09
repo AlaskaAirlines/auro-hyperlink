@@ -29,6 +29,7 @@ This contains styling enabling multi-brand theme support as well as behavior and
 | type           | type           |           | `nav` \| `cta`                                              |           | Defines the type of hyperlink.                                                                                                                                                                        |
 | variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | Sets button variant option when using `type="cta"`.                                                                                                                                                   |
 | ondark         | ondark         |           | boolean                                                     |           | DEPRECATED - use `appearance="inverse"` instead.                                                                                                                                                      |
+| onDark         |                |           | boolean                                                     |           | DEPRECATED - use `appearance="inverse"` instead. Alias of `ondark`, kept for backward compatibility; scheduled for removal in the next major version.                                                 |
 
 ### Methods
 
