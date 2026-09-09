@@ -19,14 +19,17 @@ This contains styling enabling multi-brand theme support as well as behavior and
 | download       | download       |           | boolean                                                     |           | If true, the linked resource will be downloaded when the hyperlink is clicked.                                                                                                                        |
 | fluid          | fluid          |           | boolean                                                     |           | If true and `type="cta"`, the hyperlink will have a fluid-width UI.                                                                                                                                   |
 | href           | href           |           | string                                                      |           | Defines the URL of the linked page.                                                                                                                                                                   |
-| ondark         | ondark         |           | boolean                                                     |           | DEPRECATED - use `appearance="inverse"` instead.                                                                                                                                                      |
 | referrerpolicy | referrerpolicy |           | boolean                                                     |           | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.                                                                                               |
 | rel            | rel            |           | string                                                      |           | Defines the relationship between the current document and the linked document. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information. |
 | role           |                |           | string                                                      |           | Defines ARIA roles; currently supports `button` for extended experiences.                                                                                                                             |
 | safeUri        |                | readonly  | string                                                      |           | Returns a safe URI based on the provided `href`.<br>If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br>Otherwise, it returns an empty string.                              |
+| shape          | shape          |           | `rounded` \| `pill` \| `circle` \| `square`                 |           | Defines the shape of the button when using `type="cta"`.                                                                                                                                              |
+| size           | size           |           | `xs` \| `sm` \| `md` \| `lg` \| `xl`                        |           | Defines the size of the button when using `type="cta"`.                                                                                                                                               |
 | target         | target         |           | string                                                      |           | Defines where to open the linked document.                                                                                                                                                            |
 | type           | type           |           | `nav` \| `cta`                                              |           | Defines the type of hyperlink.                                                                                                                                                                        |
 | variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | Sets button variant option when using `type="cta"`.                                                                                                                                                   |
+| ondark         | ondark         |           | boolean                                                     |           | Deprecated in favor of `appearance="inverse"`; scheduled for removal in the next major version.                                                                                                       |
+| onDark         |                |           | boolean                                                     |           | Deprecated alias of `ondark`, kept for backward compatibility; scheduled for removal in the next major version.                                                                                       |
 
 ### Methods
 
@@ -365,7 +368,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alter
 
 ### Call to Action Buttons
 
-Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `ondark` attribute can be combined with any `type="cta"` option.
+Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `appearance="inverse"` attribute can be combined with any `type="cta"` option for use on dark backgrounds.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
@@ -540,7 +543,7 @@ When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attr
 
 #### CTA shape
 
-The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
+The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `square`. The `circle` and `square` shapes are sized for icon-only content.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-shape.html) -->
@@ -553,6 +556,9 @@ The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
 </auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle">
 <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
+</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square">
+<auro-icon customcolor category="interface" name="search" appearance="inverse"></auro-icon>
 </auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -569,6 +575,9 @@ The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
 &lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle"&gt;
   &lt;auro-icon customcolor category="interface" name="account-filled" appearance="inverse"&gt;&lt;/auro-icon&gt;
+&lt;/auro-hyperlink&gt;
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square"&gt;
+  &lt;auro-icon customcolor category="interface" name="search" appearance="inverse"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
