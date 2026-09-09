@@ -16,6 +16,7 @@ export default class ComponentBase extends AuroElement {
     super();
 
     this._initializeDefaults();
+    this._rescuePreUpgradeOnDark();
 
     /*
       If the component requires a touch detection,
@@ -30,6 +31,26 @@ export default class ComponentBase extends AuroElement {
     });
   }
 
+  /**
+   * Re-applies an `onDark` value that was assigned before the element upgraded.
+   *
+   * Lit's pre-upgrade rescue only covers names in `elementProperties`. `onDark` is a
+   * plain accessor rather than a reactive property, so a value assigned before upgrade
+   * stays behind as an own data property that permanently masks the prototype accessor
+   * — `ondark` never receives it and later writes to either name silently disagree.
+   * Deleting the own property and re-assigning routes the value through the setter.
+   *
+   * @private
+   */
+  _rescuePreUpgradeOnDark() {
+    if (Object.hasOwn(this, "onDark")) {
+      const preUpgradeValue = this.onDark;
+
+      Reflect.deleteProperty(this, "onDark");
+      this.onDark = preUpgradeValue;
+    }
+  }
+
   _initializeDefaults() {
     this.appearance = "default";
     this.download = false;
@@ -41,14 +62,8 @@ export default class ComponentBase extends AuroElement {
      */
     this.layout = this.type === "cta" ? "block" : null;
 
-    /**
-     * @private
-     */
     this.shape = this.type === "cta" ? "rounded" : null;
 
-    /**
-     * @private
-     */
     this.size = this.type === "cta" ? "md" : null;
 
     /**
@@ -104,9 +119,13 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * DEPRECATED - use `appearance="inverse"` instead.
+       * Deprecated in favor of `appearance="inverse"`; scheduled for removal in the next major version.
+       * @deprecated Use `appearance="inverse"` instead.
        */
-      ondark: { type: Boolean },
+      ondark: {
+        type: Boolean,
+        reflect: true
+      },
 
       /**
        * If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
@@ -151,6 +170,19 @@ export default class ComponentBase extends AuroElement {
         reflect: true
       },
     };
+  }
+
+  /**
+   * Deprecated alias of `ondark`, kept for backward compatibility; scheduled for removal in the next major version.
+   * @deprecated Use `appearance="inverse"` instead.
+   * @type {boolean}
+   */
+  get onDark() {
+    return this.ondark;
+  }
+
+  set onDark(value) {
+    this.ondark = value;
   }
 
   firstUpdated() {

@@ -172,7 +172,7 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alter
 
 ### Call to Action Buttons
 
-Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `ondark` attribute can be combined with any `type="cta"` option.
+Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `appearance="inverse"` attribute can be combined with any `type="cta"` option for use on dark backgrounds.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
@@ -274,7 +274,7 @@ When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attr
 
 #### CTA shape
 
-The `shape` attribute accepts three values: `rounded`, `pill`, or `circle`.
+The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `square`. The `circle` and `square` shapes are sized for icon-only content.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-shape.html) -->
