@@ -23,21 +23,23 @@ export class AuroElement extends LitElement {
         reflect: true,
       },
 
+      /**
+       * Defines the shape of the button when using `type="cta"`.
+       * @type {'rounded' | 'pill' | 'circle' | 'square'}
+       */
       shape: {
         type: String,
         attribute: "shape",
         reflect: true,
       },
 
+      /**
+       * Defines the size of the button when using `type="cta"`.
+       * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
+       */
       size: {
         type: String,
         attribute: "size",
-        reflect: true,
-      },
-
-      onDark: {
-        type: Boolean,
-        attribute: "ondark",
         reflect: true,
       },
     };

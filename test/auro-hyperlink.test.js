@@ -1,6 +1,7 @@
 import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 import { expect, fixture, html } from "@open-wc/testing";
 
+import { AuroHyperlink } from "../src/auro-hyperlink";
 import "../src/registered";
 
 useAccessibleIt();
@@ -260,6 +261,185 @@ describe("auro-hyperlink", () => {
       expect(svg.width).to.be.closeTo(expected, 1);
       expect(svg.height).to.be.closeTo(expected, 1);
     });
+  });
+});
+
+describe("ondark reflection", () => {
+  it("sets the ondark property from the attribute", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" ondark>Alaska air</auro-hyperlink>
+    `);
+
+    expect(el.ondark).to.be.true;
+    expect(el).to.have.attribute("ondark");
+  });
+
+  it("reflects the ondark attribute when the property is set", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com">Alaska air</auro-hyperlink>
+    `);
+
+    expect(el).not.to.have.attribute("ondark");
+
+    el.ondark = true;
+    await el.updateComplete;
+
+    // The `:host([ondark])` color rules only match when the attribute is present,
+    // so the property must reflect for JS-driven usage to be styled.
+    expect(el).to.have.attribute("ondark");
+  });
+
+  it("removes the ondark attribute when the property is unset", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" ondark>Alaska air</auro-hyperlink>
+    `);
+
+    el.ondark = false;
+    await el.updateComplete;
+
+    expect(el).not.to.have.attribute("ondark");
+  });
+});
+
+describe("onDark deprecated alias", () => {
+  it("reflects the ondark attribute when onDark is set", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com">Alaska air</auro-hyperlink>
+    `);
+
+    el.onDark = true;
+    await el.updateComplete;
+
+    expect(el).to.have.attribute("ondark");
+    expect(el.ondark).to.be.true;
+  });
+
+  it("removes the ondark attribute when onDark is unset", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" ondark>Alaska air</auro-hyperlink>
+    `);
+
+    el.onDark = false;
+    await el.updateComplete;
+
+    expect(el).not.to.have.attribute("ondark");
+    expect(el.ondark).to.be.false;
+  });
+
+  it("reads back the value set through ondark", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" ondark>Alaska air</auro-hyperlink>
+    `);
+
+    expect(el.onDark).to.be.true;
+
+    el.ondark = false;
+    await el.updateComplete;
+
+    expect(el.onDark).to.be.false;
+  });
+});
+
+describe("onDark pre-upgrade assignment", () => {
+  /**
+   * Creates an element for a tag name that is not yet defined, assigns properties to it
+   * while it is still an unknown element, and only then upgrades it. This is the path a
+   * framework takes when it sets properties before the component definition has loaded,
+   * and it is the one case Lit's own pre-upgrade rescue does not cover for a plain
+   * accessor like `onDark`.
+   */
+  const upgradeWith = async (tagName, assign) => {
+    const el = document.createElement(tagName);
+
+    el.setAttribute("href", "https://www.alaskaair.com");
+    assign(el);
+    document.body.appendChild(el);
+
+    // Sanity check: the element must be genuinely un-upgraded up to this point.
+    expect(el.updateComplete).to.be.undefined;
+
+    AuroHyperlink.register(tagName);
+    await el.updateComplete;
+
+    return el;
+  };
+
+  it("applies an onDark value assigned before upgrade", async () => {
+    const el = await upgradeWith("custom-hyperlink-pre-dark", (node) => {
+      node.onDark = true;
+    });
+
+    expect(el.ondark).to.be.true;
+    expect(el.onDark).to.be.true;
+    expect(el).to.have.attribute("ondark");
+
+    el.remove();
+  });
+
+  it("keeps onDark and ondark in sync after a pre-upgrade assignment", async () => {
+    const el = await upgradeWith("custom-hyperlink-pre-dark-sync", (node) => {
+      node.onDark = true;
+    });
+
+    el.ondark = false;
+    await el.updateComplete;
+
+    expect(el.onDark).to.be.false;
+    expect(el).not.to.have.attribute("ondark");
+
+    el.remove();
+  });
+
+  it("applies an ondark value assigned before upgrade", async () => {
+    const el = await upgradeWith("custom-hyperlink-pre-lower", (node) => {
+      node.ondark = true;
+    });
+
+    expect(el.ondark).to.be.true;
+    expect(el.onDark).to.be.true;
+    expect(el).to.have.attribute("ondark");
+
+    el.remove();
+  });
+
+  it("leaves ondark false when nothing is assigned before upgrade", async () => {
+    const el = await upgradeWith("custom-hyperlink-pre-dark-none", () => {});
+
+    expect(el.ondark).to.be.false;
+    expect(el.onDark).to.be.false;
+    expect(el).not.to.have.attribute("ondark");
+
+    el.remove();
+  });
+});
+
+describe("ondark propagation to the cta button", () => {
+  it("passes appearance=inverse to the inner button when ondark is set as a property", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" type="cta">Alaska air</auro-hyperlink>
+    `);
+
+    const button = el.shadowRoot.querySelector("auro-hyperlink-button");
+
+    expect(button).to.have.attribute("appearance", "default");
+
+    el.ondark = true;
+    await el.updateComplete;
+
+    expect(button).to.have.attribute("appearance", "inverse");
+  });
+
+  it("passes appearance=inverse to the inner button when onDark is set as a property", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://www.alaskaair.com" type="cta">Alaska air</auro-hyperlink>
+    `);
+
+    el.onDark = true;
+    await el.updateComplete;
+
+    const button = el.shadowRoot.querySelector("auro-hyperlink-button");
+
+    expect(button).to.have.attribute("appearance", "inverse");
   });
 });
 
