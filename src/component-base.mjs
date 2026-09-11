@@ -312,15 +312,16 @@ export default class ComponentBase extends AuroElement {
    * Generates an icon HTML element based on the target attribute.
    *
    * @example
-   * // Assuming target = '_blank' and this.safeUri = 'http://alaskaair.com'
+   * // Assuming target = '_blank' and this.href = '/relative/path', which resolves
+   * // to the current page's origin
    * this.targetIcon(target); // Returns HTML element containing the new window icon
    *
    * @example
-   * // Assuming target = '_blank' and this.safeUri = 'http://external.com'
+   * // Assuming target = '_blank' and this.safeUri = 'https://external.com'
    * this.targetIcon(target); // Returns HTML element containing the external link icon
    *
    * @example
-   * // Assuming target = '_self' or this.safeUri = '/relative/path'
+   * // Assuming target = '_self'
    * this.targetIcon(target); // Returns undefined
    *
    * @private
@@ -329,16 +330,21 @@ export default class ComponentBase extends AuroElement {
    */
   targetIcon(target) {
     /**
-     * Checks if a URL's domain is from the current domain or its subdomains.
+     * Checks whether a URL points at the exact host serving the current page.
+     *
+     * Matching is host-exact, so sibling subdomains are treated as external:
+     * on `auro.example.com`, a link to `www.example.com` is a different domain.
+     * Relative hrefs resolve against the current page, so they always match.
+     *
      * @param {string} url - The URL to check.
-     * @returns {boolean} Returns true if the URL's domain is equals to current domain or one of its subdomains, otherwise false.
+     * @returns {boolean} Returns true if the URL's hostname equals the current page's hostname, otherwise false.
      */
     const isCurrentDomain = (url) => {
       const urlObject = new URL(url);
       return urlObject.hostname === window.location.hostname;
     };
 
-    // If target is '_blank' and the URL's domain is equal to the current domain or one of its subdomains, return icon for new window
+    // If target is '_blank' and the URL's host is the current page's host, return icon for new window
     if (target === "_blank") {
       if (isCurrentDomain(this.safeUri)) {
         return this.generateIconHtml(newWindow.svg);

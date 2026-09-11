@@ -1,3 +1,5 @@
+import externalLink from "@alaskaairux/icons/dist/icons/interface/external-link-stroke.mjs";
+import newWindow from "@alaskaairux/icons/dist/icons/interface/new-window-stroke.mjs";
 import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 import { expect, fixture, html } from "@open-wc/testing";
 
@@ -478,5 +480,82 @@ describe("safeUrl function", () => {
   it("returns undefined when href is undefined", () => {
     const result = component.safeUrl(undefined);
     expect(result).to.be.undefined;
+  });
+});
+
+// `target="_blank"` picks the icon by comparing the link's host to the host
+// serving the page: same host gets the "new window" icon, anything else gets
+// the "external link" icon. Matching is host-exact, so a hardcoded absolute
+// href can only ever demonstrate the internal icon on one host -- which is why
+// the docs example uses a relative href instead.
+describe("target icon domain awareness", () => {
+  const renderTargetIcon = async (markup) => {
+    const el = await fixture(markup);
+    await el.updateComplete;
+
+    const icon = el.shadowRoot.querySelector('[part="targetIcon"]');
+
+    if (!icon) {
+      return undefined;
+    }
+
+    await icon.updateComplete;
+
+    return icon.querySelector("svg");
+  };
+
+  // Identify the glyph by its accessible name and path data rather than by
+  // snapshotting the whole SVG, which churns on every icon package bump.
+  const expectIcon = (svg, icon) => {
+    expect(svg.querySelector("title").textContent).to.equal(icon.title);
+    expect(svg.querySelector("path").getAttribute("d")).to.equal(
+      new DOMParser()
+        .parseFromString(icon.svg, "text/html")
+        .querySelector("path")
+        .getAttribute("d"),
+    );
+  };
+
+  it("uses the new window icon for a relative href, whatever host serves the page", async () => {
+    const svg = await renderTargetIcon(html`
+      <auro-hyperlink href="/" target="_blank">It's Auro!</auro-hyperlink>
+    `);
+
+    expectIcon(svg, newWindow);
+  });
+
+  it("uses the new window icon for an absolute href on the current host", async () => {
+    const svg = await renderTargetIcon(html`
+      <auro-hyperlink href="${window.location.origin}/auro" target="_blank">It's Auro!</auro-hyperlink>
+    `);
+
+    expectIcon(svg, newWindow);
+  });
+
+  it("uses the external link icon for another domain", async () => {
+    const svg = await renderTargetIcon(html`
+      <auro-hyperlink href="https://www.portseattle.org/sea-tac" target="_blank">Sea-Tac</auro-hyperlink>
+    `);
+
+    expectIcon(svg, externalLink);
+  });
+
+  // Host matching is exact, so a sibling subdomain is external. This pins the
+  // behavior deliberately chosen when the hardcoded alaskaair.com check was
+  // replaced with a host-relative one.
+  it("uses the external link icon for a subdomain of the current host", async () => {
+    const svg = await renderTargetIcon(html`
+      <auro-hyperlink href="https://auro.${window.location.hostname}" target="_blank">It's Auro!</auro-hyperlink>
+    `);
+
+    expectIcon(svg, externalLink);
+  });
+
+  it("renders no target icon without target='_blank'", async () => {
+    const svg = await renderTargetIcon(html`
+      <auro-hyperlink href="https://www.portseattle.org/sea-tac">Sea-Tac</auro-hyperlink>
+    `);
+
+    expect(svg).to.be.undefined;
   });
 });
