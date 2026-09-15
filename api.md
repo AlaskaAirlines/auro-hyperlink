@@ -170,7 +170,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
   Example link with
 <auro-hyperlink
     target="_blank"
-    href="https://auro.alaskaair.com">
+    href="/">
     external target
 </auro-hyperlink>
   but same domain
@@ -192,7 +192,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 <auro-hyperlink
     appearance="inverse"
     target="_blank"
-    href="https://auro.alaskaair.com">
+    href="/">
     external target
 </auro-hyperlink>
   but same domain
@@ -216,7 +216,7 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 <pre class="language-html"><code class="language-html">Example link with
 &lt;auro-hyperlink
   target="_blank"
-  href="https://auro.alaskaair.com"&gt;
+  href="/"&gt;
   external target
 &lt;/auro-hyperlink&gt;
 but same domain
@@ -237,7 +237,7 @@ Example link with
 &lt;auro-hyperlink
   appearance="inverse"
   target="_blank"
-  href="https://auro.alaskaair.com"&gt;
+  href="/"&gt;
   external target
 &lt;/auro-hyperlink&gt;
 but same domain
