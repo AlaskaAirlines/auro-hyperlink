@@ -21,17 +21,38 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The `auro-hyperlink` element is a wrapper for an HTML5 `<a>` anchor element. 
- * This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
+ * An accessible link that takes people to another page, a file, or an email or phone action.
+ * It wraps a standard HTML `<a>` element and adds brand-aware styling, safer handling of
+ * URLs, and a few accessibility improvements.
+ *
+ * **Key capabilities**
+ * - **Link styles**: a standard inline text link by default, `type="nav"` for navigation
+ *   links, and `type="cta"` for a link that looks like an `<auro-button>`.
+ * - **Safer URLs**: `http` links are upgraded to `https`, and `javascript:`, `data:`, and
+ *   `vbscript:` links are dropped so they can't run code.
+ * - **External links**: `target="_blank"` adds a new-window or external-link icon, and sets
+ *   a safe `rel` automatically for links that leave the site.
+ * - **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
+ *   dark backgrounds.
+ * - **Button look**: `role="button"` gives the link button behavior for actions such as
+ *   submitting a form.
+ *
+ * **Example**
+ * ```html
+ * <auro-hyperlink href="/trips">View your trips</auro-hyperlink>
+ * ```
+ *
+ * @summary Accessible link for navigating to a page or file, with safe URL handling and optional button styling.
  * @customElement auro-hyperlink
  *
  * @forcePrivate {'layout'}
- * 
+ *
  * "Role" property needs to stay in this jsdocs block to avoid conflicts with testing framework.
- * @property {string} role - Defines ARIA roles; currently supports `button` for extended experiences.
- * 
- * @csspart link - Allows styling to be applied to the `a` element.
- * @csspart targetIcon - Allows styling to be applied to the icon that appears next to the hyperlink.
+ * @property {string} role - Gives the link button behavior when set to `button`. The link then takes a keyboard tab stop and no longer navigates to `href`, so handle the click yourself. Other values are not supported. Ignored when `type="cta"`.
+ *
+ * @slot - The link's visible content: text, an icon, or both.
+ * @csspart link - The inner `<a>` element. Not available when `type="cta"`, where the link is drawn by an internal button instead.
+ * @csspart targetIcon - The new-window or external-link icon shown after the content when `target="_blank"`.
  */
 
 // build the component class
@@ -98,11 +119,11 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-hyperlink"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-hyperlink` on the same page.
+   * @param {string} [name="auro-hyperlink"] - The tag name to register the element under.
    *
    * @example
-   * AuroHyperlink.register("custom-hyperlink") // this will register this element to <custom-hyperlink/>
+   * AuroHyperlink.register("custom-hyperlink") // makes the element available as <custom-hyperlink>
    *
    */
   static register(name = "auro-hyperlink") {
@@ -110,7 +131,7 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
-   * Renders the default layout for the hyperlink.
+   * Renders the standard link: an `<a>` when there is a safe `href` or a `role`, or just the slotted content when there isn't.
    * @returns {TemplateResult}
    * @private
    */
@@ -149,7 +170,7 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
-   * Renders the cta layout for the hyperlink.
+   * Renders the `cta` layout: an internal button element that draws the link with button styling.
    * @returns {TemplateResult}
    * @private
    */
@@ -174,18 +195,18 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
-   * Generates an object containing CSS classes based on the properties of the component.
+   * Chooses which layout to render based on `type`.
    *
    * @example
-   * // Assuming this.safeUri = 'http://example.com', this.role = 'button', this.type = 'cta'
-   * this.getMarkup(); // Returns { 'hyperlink': true, 'hyperlink--nav': false, 'hyperlink--ondark': false, 'hyperlink--button': true, 'hyperlink--cta': true, 'hyperlink--secondary': false }
+   * // Assuming this.type = 'cta'
+   * this.getMarkup(); // Returns the result of renderLayoutCTA()
    *
    * @example
-   * // Assuming this.safeUri = '', this.role = '', this.type = 'nav', this.ondark = true, this.variant = 'secondary'
-   * this.getMarkup(); // Returns { 'hyperlink': false, 'hyperlink--nav': true, 'hyperlink--ondark': true, 'hyperlink--button': false, 'hyperlink--cta': false, 'hyperlink--secondary': true }
+   * // Assuming this.type = 'nav' or is not set
+   * this.getMarkup(); // Returns the result of renderLayoutDefault()
    *
    * @private
-   * @returns {object} An object containing CSS classes.
+   * @returns {TemplateResult} - The template for the chosen layout.
    */
   getMarkup() {
     switch (this.type) {

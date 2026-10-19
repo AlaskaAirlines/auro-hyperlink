@@ -90,7 +90,8 @@ export default class ComponentBase extends AuroElement {
       /**
        * Defines whether the component will be on lighter or darker backgrounds.
        * @type {'default' | 'inverse'}
-       * @default 'default'
+       * @default "default"
+       * @category ui
        */
       appearance: {
         type: String,
@@ -99,6 +100,8 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * If true, the linked resource will be downloaded when the hyperlink is clicked.
+       * @relevantWhen type !== "cta"
+       * @category behavior
        */
       download: {
         type: Boolean,
@@ -107,11 +110,14 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * If true and `type="cta"`, the hyperlink will have a fluid-width UI.
+       * @relevantWhen type === "cta"
+       * @category ui
        */
       fluid: { type: Boolean },
 
       /**
-       * Defines the URL of the linked page.
+       * The address the link goes to. Relative addresses resolve against the current page, and `http` addresses are upgraded to `https` (except on `localhost`). `tel:`, `sms:`, and `mailto:` addresses are kept as they are. Addresses that could run code (`javascript:`, `data:`, `vbscript:`) are dropped, and without a usable `href` the element shows its content as plain text instead of a link.
+       * @category behavior
        */
       href: {
         type: String,
@@ -121,6 +127,7 @@ export default class ComponentBase extends AuroElement {
       /**
        * Deprecated in favor of `appearance="inverse"`; scheduled for removal in the next major version.
        * @deprecated Use `appearance="inverse"` instead.
+       * @category ui
        */
       ondark: {
         type: Boolean,
@@ -129,6 +136,8 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.
+       * @relevantWhen type !== "cta"
+       * @category behavior
        */
       referrerpolicy: {
         type: Boolean,
@@ -137,6 +146,7 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * Defines the relationship between the current document and the linked document. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information.
+       * @category behavior
        */
       rel: {
         type: String,
@@ -145,6 +155,7 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * Defines where to open the linked document.
+       * @category behavior
        */
       target: {
         type: String,
@@ -154,6 +165,7 @@ export default class ComponentBase extends AuroElement {
       /**
        * Defines the type of hyperlink.
        * @type {'nav' | 'cta'}
+       * @category ui
        */
       type: {
         type: String,
@@ -163,7 +175,9 @@ export default class ComponentBase extends AuroElement {
       /**
        * Sets button variant option when using `type="cta"`.
        * @type {'primary' | 'secondary' | 'tertiary' | 'ghost' | 'flat'}
-       * @default 'primary'
+       * @default "primary"
+       * @relevantWhen type === "cta"
+       * @category ui
        */
       variant: {
         type: String,
@@ -175,6 +189,7 @@ export default class ComponentBase extends AuroElement {
   /**
    * Deprecated alias of `ondark`, kept for backward compatibility; scheduled for removal in the next major version.
    * @deprecated Use `appearance="inverse"` instead.
+   * @category ui
    * @type {boolean}
    */
   get onDark() {
@@ -191,19 +206,17 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
-   * Returns a safe URI based on the provided `href`.
-   * If `href` is truthy, it generates a safe URL using the `safeUrl` function.
-   * Otherwise, it returns an empty string.
+   * The address the link actually uses, after `href` has been made safe. It's an empty string when `href` isn't set, and `undefined` when `href` was dropped because it could run code.
    *
    * @example
-   * // Assuming this.href = 'http://example.com'
-   * this.safeUri; // Returns 'http://example.com'
+   * // Assuming this.href = 'http://example.com' (not on localhost)
+   * this.safeUri; // Returns 'https://example.com/'
    *
    * @example
    * // Assuming this.href = '' or this.href = null
    * this.safeUri; // Returns ''
    *
-   * @returns {string} The safe URI or an empty string.
+   * @returns {string | undefined} - The safe URL, an empty string when `href` isn't set, or `undefined` when `href` is dropped.
    */
   get safeUri() {
     return this.href ? this.safeUrl(this.href) : "";
