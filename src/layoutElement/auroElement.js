@@ -6,7 +6,8 @@ export class AuroElement extends LitElement {
       /**
        * Defines whether the component should be light colored for use on dark backgrounds.
        * @type {'default' | 'inverse'}
-       * @default 'default'
+       * @default "default"
+       * @category ui
        */
       appearance: {
         type: String,
@@ -14,8 +15,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the language of an element.
-       * @default 'default'
+       * Internal: selects the layout the component renders; not for direct use.
+       * @private
        */
       layout: {
         type: String,
@@ -26,6 +27,9 @@ export class AuroElement extends LitElement {
       /**
        * Defines the shape of the button when using `type="cta"`.
        * @type {'rounded' | 'pill' | 'circle' | 'square'}
+       * @default "rounded"
+       * @relevantWhen type === "cta"
+       * @category ui
        */
       shape: {
         type: String,
@@ -36,6 +40,9 @@ export class AuroElement extends LitElement {
       /**
        * Defines the size of the button when using `type="cta"`.
        * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
+       * @default "md"
+       * @relevantWhen type === "cta"
+       * @category ui
        */
       size: {
         type: String,
