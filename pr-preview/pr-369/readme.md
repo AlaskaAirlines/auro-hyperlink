@@ -21,7 +21,7 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/description.md) -->
 <!-- The below content is automatically added from ./docs/partials/description.md -->
-The `<auro-hyperlink>` element is a wrapper for an HTML5 `<a>` anchor element. This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
+The `<auro-hyperlink>` element is an accessible link that wraps a standard `<a>` anchor element. It adds brand styling for light and dark backgrounds, blocks addresses that could run code, and shows an icon when a link opens in a new tab.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
@@ -32,11 +32,11 @@ The `<auro-hyperlink>` element is a wrapper for an HTML5 `<a>` anchor element. T
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./docs/partials/useCases.md -->
-The `<auro-hyperlink>` elements should be used in situations where users may:
+Use `<auro-hyperlink>` in these situations:
 
-* stand-alone link element for navigation
-* inline link element for navigation
-* optional role as button when hyperlink UI is needed for submit action
+* Use a stand-alone link to take people to another page.
+* Use an inline link inside a sentence or paragraph to take people to another page.
+* Use `role="button"` when you need link styling for an action, such as opening a dialog. Pressing Enter or Space does not currently fire `click`, so keyboard users can't activate it unless you handle those keys too.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
