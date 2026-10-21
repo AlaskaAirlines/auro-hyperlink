@@ -15,36 +15,36 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 **Key capabilities**
 - **Link styles**: Leave `type` unset for a standard inline text link, use `type="nav"` for navigation
   links, or use `type="cta"` for a link that looks like an `<auro-button>`.
-- **URL safety**: Values that start with `javascript:`, `data:`, or `vbscript:` are dropped so they can't run code,
+- **URL safety**: `href` values that start with `javascript:`, `data:`, or `vbscript:` are dropped so they can't run code,
   and every other `href` except `tel:`, `sms:`, and `mailto:` is upgraded to `https` (unless the page is served from `localhost`).
 - **External links**: Setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites,
   and standard and `nav` links to other sites also get a `rel` value automatically, while `type="cta"` links use only the `rel` you provide.
 - **Light and dark backgrounds**: Setting `appearance="inverse"` switches the link to colors designed for
   dark backgrounds.
 - **Button behavior**: Setting `role="button"` gives the link a button role and a tab stop for actions such as
-  opening a dialog, but Enter and Space do not fire `click`, so handle those keys yourself.
+  opening a dialog, but Enter and Space do not currently fire `click`, so handle those keys yourself.
 
 **Example**
 <pre class="language-html"><code class="language-html">&lt;auro-hyperlink href="/trips"&gt;View your trips&lt;/auro-hyperlink&gt;</code></pre>
 
 ### Properties & Attributes
 
-| Properties     | Attributes     | Modifiers | Type                                                        | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance     | appearance     |           | `default` \| `inverse`                                      | `default` | Sets the color scheme to match the background behind the link. Use `default` on light backgrounds and `inverse` on dark backgrounds.                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| download       | download       |           | boolean                                                     |           | Downloads the linked file when you select the link, instead of navigating to it. Ignored when `type="cta"`.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| fluid          | fluid          |           | boolean                                                     |           | When using `type="cta"`, stretches the link to fill the width of its container.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| href           | href           |           | string                                                      |           | Sets the address the link goes to, such as `/trips` or `https://www.alaskaair.com` (the link's href). Without a usable `href`, a standard or `nav` link without a `role` shows its content as plain text, and a `cta` link renders as a button.<br><br>Security: addresses that could run code (`javascript:`, `data:`, and `vbscript:`) are dropped, so use a web page, `tel:`, `sms:`, or `mailto:` address instead. All other addresses except `tel:`, `sms:`, and `mailto:` are upgraded to `https`, unless the page is served from `localhost`. |
-| referrerpolicy | referrerpolicy |           | boolean                                                     |           | Limits how much of the current page's address the link shares with the page it opens. Links within the same origin send the full address, and links to other origins send only the origin (`strict-origin-when-cross-origin`). Ignored when `type="cta"`.                                                                                                                                                                                                                                                                                            |
-| rel            | rel            |           | string                                                      |           | Sets how the linked page relates to the current page, such as `nofollow` (the link's rel). When using `target="_blank"` to link to another site, standard and `nav` links get `noOpener noReferrer` unless you provide one, or `external` when `referrerpolicy` is on. Links to your own site get no automatic `rel`. `type="cta"` links get no automatic `rel`. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information.                                                              |
-| role           |                |           | string                                                      |           | Gives the link button behavior. Only `button` is supported; the link then takes a keyboard tab stop and no longer navigates to `href`, so handle the click yourself. Pressing Enter or Space does not currently fire `click`, so keyboard users can't activate it unless you handle those keys too. Ignored when `type="cta"`.                                                                                                                                                                                                                       |
-| shape          | shape          |           | `rounded` \| `pill` \| `circle` \| `square`                 | `rounded` | When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.                                                                                                                                                                                                                                                                                          |
-| size           | size           |           | `xs` \| `sm` \| `md` \| `lg` \| `xl`                        | `md`      | When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.                                                                                                                                                                                                                                                                                                                                                                          |
-| target         | target         |           | string                                                      |           | Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's target). `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites.                                                                                                                                                                                                                                                                                           |
-| type           | type           |           | `nav` \| `cta`                                              |           | Sets the style of link. Use `nav` for navigation links, which are underlined on hover and on focus, and `cta` for a link that looks like a button. Leave it unset for a regular underlined text link.                                                                                                                                                                                                                                                                                                                                                |
-| variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | When using `type="cta"`, sets the button style. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.                                                                                                                                                                                                                                                                                                                                                                  |
-| ondark         | ondark         |           | boolean                                                     |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| onDark         |                |           | boolean                                                     |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Properties     | Attributes     | Modifiers | Type                                                        | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance     | appearance     |           | `default` \| `inverse`                                      | `default` | Sets the color scheme to match the background behind the link. Use `default` on light backgrounds and `inverse` on dark backgrounds.                                                                                                                                                                                                                                                                                                                                                    |
+| download       | download       |           | boolean                                                     |           | Downloads the linked file when you select the link, instead of navigating to it. Ignored when `type="cta"`.                                                                                                                                                                                                                                                                                                                                                                             |
+| fluid          | fluid          |           | boolean                                                     |           | When using `type="cta"`, stretches the link to fill the width of its container.                                                                                                                                                                                                                                                                                                                                                                                                         |
+| href           | href           |           | string                                                      |           | Sets the address the link goes to, such as `/trips` or `https://www.alaskaair.com` (the link's `href`). Without a usable `href`, a standard or `nav` link without a `role` shows its content as plain text, and a `cta` link renders as a button.<br><br>Security: addresses that could run code (`javascript:`, `data:`, and `vbscript:`) are dropped, and every other address except `tel:`, `sms:`, and `mailto:` is upgraded to `https` unless the page is served from `localhost`. |
+| referrerpolicy | referrerpolicy |           | boolean                                                     |           | Limits how much of the current page's address the link shares with the page it opens. Links within the same origin send the full address, and links to other origins send only the origin (`strict-origin-when-cross-origin`). Ignored when `type="cta"`.                                                                                                                                                                                                                               |
+| rel            | rel            |           | string                                                      |           | Sets how the linked page relates to the current page, such as `nofollow` (the link's `rel`). When `rel` isn't set and `target="_blank"` points to another site, standard and `nav` links use `noOpener noReferrer`, or `external` when `referrerpolicy` is on; links to the same site and `type="cta"` links get no automatic `rel`. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information.                             |
+| role           |                |           | string                                                      |           | Gives the link button behavior. Only `button` is supported, and the link then takes a keyboard tab stop and no longer navigates to `href`. Enter and Space do not currently fire `click`, so handle those keys and the click yourself. Ignored when `type="cta"`.                                                                                                                                                                                                                       |
+| shape          | shape          |           | `rounded` \| `pill` \| `circle` \| `square`                 | `rounded` | When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.                                                                                                                                                                                                                             |
+| size           | size           |           | `xs` \| `sm` \| `md` \| `lg` \| `xl`                        | `md`      | When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.                                                                                                                                                                                                                                                                                                             |
+| target         | target         |           | string                                                      |           | Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's `target`). `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites.                                                                                                                                                                                                                            |
+| type           | type           |           | `nav` \| `cta`                                              |           | Sets the style of the link. Use `nav` for navigation links, which are underlined on hover and on focus, and `cta` for a link that looks like a button. Leave it unset for a regular underlined text link.                                                                                                                                                                                                                                                                               |
+| variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | When using `type="cta"`, sets the button style. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.                                                                                                                                                                                                                                                                                                     |
+| ondark         | ondark         |           | boolean                                                     |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                                           |
+| onDark         |                |           | boolean                                                     |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                                           |
 
 ### Methods
 
@@ -154,11 +154,11 @@ Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airline
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Appearance
 
-Difference appearance options through the `appearance` attribute. This example shows the `inverse` appearance.
+Use the `appearance` attribute to match the link to its background. This example shows the `inverse` appearance for dark backgrounds.
 
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/appearance-inverse.html) -->
@@ -177,11 +177,11 @@ Welcome to &lt;auro-hyperlink appearance="inverse" href="https://www.alaskaair.c
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Relative vs Absolute URLs and HTTPS Enforcement
+### Relative and absolute URLs and HTTPS enforcement
 
-#### HTTPS Enforcement
+#### HTTPS enforcement
 
-Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
+`auro-hyperlink` upgrades the `href` to `https`, except for `tel:`, `sms:`, and `mailto:` addresses, and except when the page is served from `localhost`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/https-enforcement.html) -->
@@ -206,7 +206,7 @@ no hypertext transfer protocol absolute URL to &lt;a class="hyperlink" href="htt
 
 #### Relative URLs
 
-Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
+You can use relative URLs when an absolute URL isn't practical. `auro-hyperlink` resolves a relative `href` against the current page and puts the full `https://` address in the inner `<a>` element in the shadow DOM.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relative-url.html) -->
@@ -226,7 +226,9 @@ Relative href converted to absolute URL to &lt;a class="hyperlink" href="https:/
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Using telephone/text/mailto URLs Schemes
+#### Telephone, text message, and email addresses
+
+Use `tel:`, `sms:`, and `mailto:` addresses to start a call, a text message, or an email. `auro-hyperlink` leaves these addresses as you write them.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
@@ -247,11 +249,11 @@ Example &lt;auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@al
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### External Links
+### External links
 
-Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain "new-window" icon, or an icon that communicates users will be taken to a new domain.
+When you use `target="_blank"`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
 
-For link security purposes, when using the `target="_blank"` attribute, browsers implicitly apply the same `rel` behavior as `rel="noopener"`. For additional security, standard and `nav` links to other sites also get `rel="noOpener noReferrer"` by default. Links to your own site and `type="cta"` links get no automatic `rel`.
+Browsers already apply `rel="noopener"` behavior to `target="_blank"` links. For additional security, standard and `nav` links to other sites also get `rel="noOpener noReferrer"` by default. Links to your own site and `type="cta"` links get no automatic `rel`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external.html) -->
@@ -341,13 +343,13 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### External Links with Referrerpolicy
+### External links with `referrerpolicy`
 
-When using the `target="_blank"` attribute, use the `referrerpolicy` attribute to override the default use of `rel="noreferrer"`.
+When you use `target="_blank"`, add the `referrerpolicy` attribute to share the page's origin with the linked site instead of using the default `rel="noOpener noReferrer"`.
 
-Using this attribute will use the `strict-origin-when-cross-origin` policy type. This sends a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
+The attribute applies the `strict-origin-when-cross-origin` policy. It sends the full URL for same-origin requests, sends only the origin when the protocol security level stays the same (HTTPS to HTTPS), and sends no referrer to a less secure destination (HTTPS to HTTP).
 
-This will also set the `rel` attribute to `external`.
+It also sets `rel="external"` unless you provide your own `rel`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer.html) -->
@@ -405,9 +407,9 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Navigation Links
+### Navigation links
 
-When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
+Use `type="nav"` for links in navigation. Navigation links appear without an underline and show it on hover and on focus.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nav.html) -->
@@ -453,9 +455,9 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alter
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Call to Action Buttons
+### Call to action buttons
 
-Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `appearance="inverse"` attribute can be combined with any `type="cta"` option for use on dark backgrounds.
+Call to action (CTA) links look like buttons but behave as hyperlinks. Use the `variant` attribute with `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to change their appearance, as shown below. Add `appearance="inverse"` to any `type="cta"` link on a dark background.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
@@ -499,11 +501,9 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### CTA External links
+#### CTA external links
 
-(CTA) buttons can also be used in combinaton with external links. In the following example, see how the `target="_blank"` attribute acts like external links.
-
-CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
+CTA links also work with external links. Add `target="_blank"` to show the same new-window or external-link icon that standard links get.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link.html) -->
@@ -549,7 +549,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 
 #### Fluid CTA links
 
-In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
+Add the `fluid` attribute to stretch a CTA link to the full width of its parent container.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-fluid.html) -->
@@ -576,7 +576,7 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 
 #### CTA sizes
 
-In the following example, see how the `size` attribute alters the size of the cta link. Available sizes are `xs`, `sm`, `md`, `lg`, `xl`.
+Use the `size` attribute to change the size of a CTA link. The available sizes are `xs`, `sm`, `md`, `lg`, and `xl`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size.html) -->
@@ -603,7 +603,7 @@ In the following example, see how the `size` attribute alters the size of the ct
 
 #### CTA sizes with external links
 
-When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attribute.
+When a CTA link uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
@@ -669,15 +669,15 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns and functional examples
 
-### Using role="button"
+### Using `role="button"`
 
-Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below.
+Use `role="button"` when you need link styling for an action, such as opening a dialog.
 
-**Note:** Any `href` will be ignored when using `role="button"`. A click-event must be passed to the element as illustrated in the example below.
+**Note:** `auro-hyperlink` ignores `href` when you use `role="button"`, so handle the `click` event yourself, as the following example shows.
 
-**Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
+**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script listens only for `click`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
@@ -721,9 +721,9 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 
 ### Unsupported types
 
-Not all URL types are supported for security reasons. Two common types that are worth mentioning are `javaScript:` and `data:`.
+For security, `auro-hyperlink` drops `javascript:`, `data:`, and `vbscript:` addresses so they can't run code.
 
-The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
+The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` address, and a `data:` address. In each case, the link renders only its slotted content as plain text instead of an `<a>` element.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/non-supported.html) -->
@@ -758,9 +758,7 @@ The following examples illustrate the use of `<auro-hyperlink>` with either no `
 
 ### Typography
 
-The `auro-hyperlink` component is designed to work with the typography classes provided by the Auro Design System. 
-
-The component will automatically inherit the typography styles from the parent element, allowing for consistent text styling across your application. Classes can also be applied directly onto the `auro-hyperlink` component.
+`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. You can also apply typography classes directly to the `auro-hyperlink` element.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->
@@ -793,9 +791,9 @@ The component will automatically inherit the typography styles from the parent e
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle the component with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+You can restyle the component by changing the values of the following custom properties.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->

@@ -11,7 +11,7 @@
 The `<auro-hyperlink>` element is an accessible link that wraps a standard `<a>` anchor element. It adds brand styling for light and dark backgrounds, blocks addresses that could run code, and shows an icon when a link opens in a new tab.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
