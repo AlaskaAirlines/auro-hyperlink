@@ -86,7 +86,7 @@ Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airline
 Every Auro component has two key parts: the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element definition.
 The class defines the component’s behavior, while the custom element registers it under a specific name so it can be used in HTML.
 
-When you install the component as described in the Install section, the class is imported automatically, and the component is registered globally for you.
+Installing the component as described in the Install section imports the class and registers the component globally for you.
 
 However, if you need to load multiple versions of the same component on a single page (for example, when two projects depend on different versions), register the class manually under a custom element name to avoid conflicts.
 
