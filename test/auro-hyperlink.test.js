@@ -145,15 +145,19 @@ describe("auro-hyperlink", () => {
       const textNode = anchor
         .querySelector("slot")
         .assignedNodes()
-        .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+        .find(
+          (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim(),
+        );
       const range = document.createRange();
       range.selectNodeContents(textNode);
 
       const textRight = range.getBoundingClientRect().right;
       const iconLeft = icon.getBoundingClientRect().left;
-      const containerGap = parseFloat(getComputedStyle(anchor).columnGap);
+      const containerGap = Number.parseFloat(
+        getComputedStyle(anchor).columnGap,
+      );
 
-      expect(parseFloat(getComputedStyle(icon).marginLeft)).to.equal(0);
+      expect(Number.parseFloat(getComputedStyle(icon).marginLeft)).to.equal(0);
       expect(iconLeft - textRight).to.be.closeTo(containerGap, 1);
     });
   });
@@ -163,7 +167,9 @@ describe("auro-hyperlink", () => {
       <auro-hyperlink href="https://www.alaskaair.com" target="_blank">Auro hyperlink spec</auro-hyperlink>
     `);
     await inline.updateComplete;
-    const expectedGap = parseFloat(getComputedStyle(inline.shadowRoot.querySelector("a")).columnGap);
+    const expectedGap = Number.parseFloat(
+      getComputedStyle(inline.shadowRoot.querySelector("a")).columnGap,
+    );
 
     const el = await fixture(html`
       <auro-hyperlink href="https://www.alaskaair.com" target="_blank" type="cta">Auro hyperlink spec</auro-hyperlink>
@@ -176,16 +182,19 @@ describe("auro-hyperlink", () => {
     const textNode = el.shadowRoot
       .querySelector("slot")
       .assignedNodes()
-      .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      .find(
+        (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim(),
+      );
     const range = document.createRange();
     range.selectNodeContents(textNode);
 
-    const gap = icon.getBoundingClientRect().left - range.getBoundingClientRect().right;
+    const gap =
+      icon.getBoundingClientRect().left - range.getBoundingClientRect().right;
 
     // CTA's icon is slotted into auro-hyperlink-button. We override that button's
     // text-slot gap so it matches the inline/nav spacing instead of the button's
     // larger default gap. The icon itself must carry no margin.
-    expect(parseFloat(getComputedStyle(icon).marginLeft)).to.equal(0);
+    expect(Number.parseFloat(getComputedStyle(icon).marginLeft)).to.equal(0);
     expect(gap).to.be.closeTo(expectedGap, 1);
   });
 
@@ -207,7 +216,9 @@ describe("auro-hyperlink", () => {
       const textNode = el.shadowRoot
         .querySelector("slot")
         .assignedNodes()
-        .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+        .find(
+          (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim(),
+        );
       const range = document.createRange();
       range.selectNodeContents(textNode);
       const measureGap = () =>
@@ -557,5 +568,129 @@ describe("target icon domain awareness", () => {
     `);
 
     expect(svg).to.be.undefined;
+  });
+});
+
+describe("malformed href", () => {
+  it("safeUrl returns undefined instead of throwing", async () => {
+    const el = await fixture(html`<auro-hyperlink></auro-hyperlink>`);
+
+    expect(el.safeUrl("http://")).to.be.undefined;
+    expect(el.safeUrl("https://[")).to.be.undefined;
+  });
+
+  it("renders only the slotted content for a malformed href", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="http://">Broken</auro-hyperlink>
+    `);
+
+    expect(el.safeUri).to.be.undefined;
+    expect(el.shadowRoot.querySelector("a")).to.be.null;
+  });
+});
+
+describe("isCurrentDomain", () => {
+  let el;
+
+  beforeEach(async () => {
+    el = await fixture(html`<auro-hyperlink></auro-hyperlink>`);
+  });
+
+  it("matches an absolute URL on the current host", () => {
+    expect(el.isCurrentDomain(`${window.location.origin}/auro`)).to.be.true;
+  });
+
+  it("never matches an empty, missing, or unparseable URL", () => {
+    expect(el.isCurrentDomain(undefined)).to.be.false;
+    expect(el.isCurrentDomain("")).to.be.false;
+    expect(el.isCurrentDomain("not a url")).to.be.false;
+    expect(el.isCurrentDomain("/relative/path")).to.be.false;
+  });
+
+  it("does not match when the current host only appears in the query string", () => {
+    expect(
+      el.isCurrentDomain(`https://evil.com/?q=${window.location.hostname}`),
+    ).to.be.false;
+  });
+
+  it("does not match when the current host only appears in the path", () => {
+    expect(el.isCurrentDomain(`https://evil.com/${window.location.hostname}`))
+      .to.be.false;
+  });
+});
+
+describe("rel for target='_blank'", () => {
+  it("adds noOpener noReferrer when the current host only appears in the query string", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="https://evil.com/?q=${window.location.hostname}" target="_blank">Link</auro-hyperlink>
+    `);
+
+    expect(el.shadowRoot.querySelector("a").rel).to.equal(
+      "noOpener noReferrer",
+    );
+  });
+
+  it("adds no rel for a link on the current host", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="${window.location.origin}/auro" target="_blank">Link</auro-hyperlink>
+    `);
+
+    expect(el.shadowRoot.querySelector("a").getAttribute("rel")).to.be.null;
+  });
+});
+
+describe("target icon without a usable href", () => {
+  it("renders no icon for a standard link with target='_blank' and no href", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink target="_blank">No destination</auro-hyperlink>
+    `);
+
+    expect(el.targetIcon("_blank")).to.be.undefined;
+    expect(el.shadowRoot.querySelector('[part="targetIcon"]')).to.be.null;
+  });
+
+  it("renders no icon for a cta link with target='_blank' and no href", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink type="cta" target="_blank">No destination</auro-hyperlink>
+    `);
+
+    expect(el.shadowRoot.querySelector('[part="targetIcon"]')).to.be.null;
+  });
+
+  it("renders no icon when the href is dropped as unsafe", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="javascript:;" target="_blank">Unsafe</auro-hyperlink>
+    `);
+
+    expect(el.targetIcon("_blank")).to.be.undefined;
+  });
+});
+
+describe("disconnectedCallback", () => {
+  it("cleans up the attribute watcher when the element is removed", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="/auro" aria-label="Auro">Auro</auro-hyperlink>
+    `);
+
+    expect(el.attributeWatcher).to.exist;
+
+    let cleanedUp = false;
+    const { cleanup } = el.attributeWatcher;
+
+    el.attributeWatcher.cleanup = () => {
+      cleanedUp = true;
+      cleanup();
+    };
+
+    el.remove();
+
+    expect(cleanedUp).to.be.true;
+    expect(el.attributeWatcher).to.be.null;
+  });
+
+  it("does not throw when an element without an inner link is removed", async () => {
+    const el = await fixture(html`<auro-hyperlink>Plain text</auro-hyperlink>`);
+
+    expect(() => el.remove()).not.to.throw();
   });
 });
