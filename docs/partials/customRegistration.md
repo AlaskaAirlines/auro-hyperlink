@@ -6,4 +6,4 @@ import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/class';
 AuroHyperlink.register('custom-hyperlink');
 ```
 
-This will create a new custom element `<custom-hyperlink>` that behaves exactly like `<auro-hyperlink>`, allowing both to coexist on the same page without interfering with each other.
+This creates a new custom element `<custom-hyperlink>` that behaves exactly like `<auro-hyperlink>`, allowing both to coexist on the same page without interfering with each other.

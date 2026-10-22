@@ -22,37 +22,101 @@ import tokensCss from "./styles/tokens.scss";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * An accessible link that takes people to another page, a file, or an email or phone action.
- * It wraps a standard HTML `<a>` element and adds brand-aware styling, safer handling of
- * URLs, and a few accessibility improvements.
+ * It wraps a standard HTML `<a>` element, adds brand-aware styling and safer handling of
+ * URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the inner link so screen reader users hear them.
  *
  * **Key capabilities**
- * - **Link styles**: a standard inline text link by default, `type="nav"` for navigation
- *   links, and `type="cta"` for a link that looks like an `<auro-button>`.
- * - **Safer URLs**: `http` links are upgraded to `https`, and `javascript:`, `data:`, and
- *   `vbscript:` links are dropped so they can't run code.
- * - **External links**: `target="_blank"` adds a new-window or external-link icon, and sets
- *   a safe `rel` automatically for links that leave the site.
- * - **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
+ * - **Link styles**: Leave `type` unset for a standard inline text link, use `type="nav"` for navigation
+ *   links, or use `type="cta"` for a link that looks like an `<auro-button>`.
+ * - **URL safety**: `href` values that start with `javascript:`, `data:`, or `vbscript:` are dropped so they can't run code,
+ *   and every other `href` except `tel:`, `sms:`, and `mailto:` is upgraded to `https` (unless the page is served from `localhost`).
+ * - **External links**: Setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites,
+ *   and standard and `nav` links to other sites also get a `rel` value automatically, while `type="cta"` links use only the `rel` you provide.
+ * - **Light and dark backgrounds**: Setting `appearance="inverse"` switches the link to colors designed for
  *   dark backgrounds.
- * - **Button look**: `role="button"` gives the link button behavior for actions such as
- *   submitting a form.
+ * - **Button behavior**: Setting `role="button"` gives the link a button role and a tab stop for actions such as
+ *   opening a dialog, but Enter and Space do not currently fire `click`, so handle those keys yourself.
  *
  * **Example**
  * ```html
  * <auro-hyperlink href="/trips">View your trips</auro-hyperlink>
  * ```
  *
- * @summary Accessible link for navigating to a page or file, with safe URL handling and optional button styling.
+ * @summary An accessible link with safe URL handling, external link icons, and optional button styling.
  * @customElement auro-hyperlink
  *
  * @forcePrivate {'layout'}
  *
  * "Role" property needs to stay in this jsdocs block to avoid conflicts with testing framework.
- * @property {string} role - Gives the link button behavior when set to `button`. The link then takes a keyboard tab stop and no longer navigates to `href`, so handle the click yourself. Other values are not supported. Ignored when `type="cta"`.
+ * @property {string} role - Gives the link button behavior. Only `button` is supported, and the link then takes a keyboard tab stop and no longer navigates to `href`. Enter and Space do not currently fire `click`, so handle those keys and the click yourself. Ignored when `type="cta"`.
  *
  * @slot - The link's visible content: text, an icon, or both.
- * @csspart link - The inner `<a>` element. Not available when `type="cta"`, where the link is drawn by an internal button instead.
+ * @csspart link - The inner `<a>` element, rendered when the link has a usable `href` or a `role` and `type` isn't `cta`.
  * @csspart targetIcon - The new-window or external-link icon shown after the content when `target="_blank"`.
+ * @cssprop --ds-auro-hyperlink-default-color-default - Text color of the link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-color-inverse - Text color of the link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-container-color-default - Background color of the link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-container-color-inverse - Background color of the link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-outline-color-default - Outline color of the link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-outline-color-inverse - Outline color of the link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-border-color-default - Border color of the link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-default-border-color-inverse - Border color of the link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-color-default - Text color of the link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-color-inverse - Text color of the link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-container-color-default - Background color of the link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-container-color-inverse - Background color of the link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-outline-color-default - Outline color of the link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-outline-color-inverse - Outline color of the link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-border-color-default - Border color of the link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-visited-border-color-inverse - Border color of the link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-color-default - Text color of the link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-color-inverse - Text color of the link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-container-color-default - Background color of the link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-container-color-inverse - Background color of the link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-outline-color-default - Outline color of the link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-outline-color-inverse - Outline color of the link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-border-color-default - Border color of the link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-focus-border-color-inverse - Border color of the link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-color-default - Text color of the link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-color-inverse - Text color of the link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-container-color-default - Background color of the link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-container-color-inverse - Background color of the link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-outline-color-default - Outline color of the link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-outline-color-inverse - Outline color of the link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-border-color-default - Border color of the link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-hover-border-color-inverse - Border color of the link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-color-default - Text color of the navigation link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-color-inverse - Text color of the navigation link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-container-color-default - Background color of the navigation link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-container-color-inverse - Background color of the navigation link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-outline-color-default - Outline color of the navigation link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-outline-color-inverse - Outline color of the navigation link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-border-color-default - Border color of the navigation link in its default state on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-default-border-color-inverse - Border color of the navigation link in its default state on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-color-default - Text color of the navigation link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-color-inverse - Text color of the navigation link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-container-color-default - Background color of the navigation link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-container-color-inverse - Background color of the navigation link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-outline-color-default - Outline color of the navigation link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-outline-color-inverse - Outline color of the navigation link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-border-color-default - Border color of the navigation link after it has been visited on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-visited-border-color-inverse - Border color of the navigation link after it has been visited on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-color-default - Text color of the navigation link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-color-inverse - Text color of the navigation link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-container-color-default - Background color of the navigation link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-container-color-inverse - Background color of the navigation link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-outline-color-default - Outline color of the navigation link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-outline-color-inverse - Outline color of the navigation link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-border-color-default - Border color of the navigation link when it has keyboard focus on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-focus-border-color-inverse - Border color of the navigation link when it has keyboard focus on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-color-default - Text color of the navigation link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-color-inverse - Text color of the navigation link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-container-color-default - Background color of the navigation link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-container-color-inverse - Background color of the navigation link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-outline-color-default - Outline color of the navigation link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-outline-color-inverse - Outline color of the navigation link when you hover over it on dark backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-border-color-default - Border color of the navigation link when you hover over it on light backgrounds.
+ * @cssprop --ds-auro-hyperlink-nav-hover-border-color-inverse - Border color of the navigation link when you hover over it on dark backgrounds.
  */
 
 // build the component class
@@ -88,7 +152,7 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
-   * Create usable refs to internal elements
+   * Creates references to the internal elements.
    * @returns {void}
    * @private
    */
@@ -131,8 +195,8 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   /**
-   * Renders the standard link: an `<a>` when there is a safe `href` or a `role`, or just the slotted content when there isn't.
-   * @returns {TemplateResult}
+   * Renders the standard link: an `<a>` when the link has a safe `href` or a `role`, or just the slotted content otherwise.
+   * @returns {TemplateResult} The template for the standard link.
    * @private
    */
   renderLayoutDefault() {
@@ -171,7 +235,7 @@ export class AuroHyperlink extends ComponentBase {
 
   /**
    * Renders the `cta` layout: an internal button element that draws the link with button styling.
-   * @returns {TemplateResult}
+   * @returns {TemplateResult} The template for the button-style link.
    * @private
    */
   renderLayoutCTA() {
@@ -206,7 +270,7 @@ export class AuroHyperlink extends ComponentBase {
    * this.getMarkup(); // Returns the result of renderLayoutDefault()
    *
    * @private
-   * @returns {TemplateResult} - The template for the chosen layout.
+   * @returns {TemplateResult} The template for the chosen layout.
    */
   getMarkup() {
     switch (this.type) {
