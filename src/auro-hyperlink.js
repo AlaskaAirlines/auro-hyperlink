@@ -48,7 +48,7 @@ import tokensCss from "./styles/tokens.scss";
  * @forcePrivate {'layout'}
  *
  * "Role" property needs to stay in this jsdocs block to avoid conflicts with testing framework.
- * @property {string} role - Gives the link button behavior. Only `button` is supported, and the link then takes a keyboard tab stop and no longer navigates to `href`. Enter and Space do not currently fire `click`, so handle those keys and the click yourself. Ignored when `type="cta"`.
+ * @property {string} role - Gives the link button behavior: any `role` value shows a pointer cursor and stops the link from navigating to `href`. The value `button` also gives the link the button role and a keyboard tab stop. Enter and Space do not currently fire `click`, so handle those keys yourself. Ignored when `type="cta"`.
  *
  * @slot - The link's visible content: text, an icon, or both.
  * @csspart link - The inner `<a>` element, rendered when the link has a usable `href` or a `role` and `type` isn't `cta`.
@@ -176,6 +176,8 @@ export class AuroHyperlink extends ComponentBase {
   }
 
   disconnectedCallback() {
+    super.disconnectedCallback();
+
     if (this.attributeWatcher) {
       this.attributeWatcher.cleanup();
       this.attributeWatcher = null;

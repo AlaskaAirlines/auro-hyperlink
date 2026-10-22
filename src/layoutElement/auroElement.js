@@ -15,7 +15,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Internal: passed to the inner button of a `cta` link; not for direct use.
+       * Internal: passed to the inner button; not for direct use.
        * @private
        */
       layout: {
@@ -25,10 +25,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.
+       * Sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.
        * @type {'rounded' | 'pill' | 'circle' | 'square'}
-       * @default "rounded"
-       * @relevantWhen type === "cta"
        * @category ui
        */
       shape: {
@@ -38,10 +36,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.
+       * Sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.
        * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
-       * @default "md"
-       * @relevantWhen type === "cta"
        * @category ui
        */
       size: {

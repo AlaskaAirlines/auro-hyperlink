@@ -51,20 +51,18 @@ export default class ComponentBase extends AuroElement {
     }
   }
 
+  /**
+   * Sets the starting values for the component's properties and internal helpers.
+   * @returns {void}
+   * @private
+   */
   _initializeDefaults() {
     this.appearance = "default";
     this.download = false;
     this.ondark = false;
     this.variant = "primary";
 
-    /**
-     * @private
-     */
-    this.layout = this.type === "cta" ? "block" : null;
-
-    this.shape = this.type === "cta" ? "rounded" : null;
-
-    this.size = this.type === "cta" ? "md" : null;
+    // `layout`, `shape`, and `size` stay unset: the inner button supplies its own defaults.
 
     /**
      * @private
@@ -95,56 +93,95 @@ export default class ComponentBase extends AuroElement {
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Downloads the linked file when you select the link, instead of navigating to it. Ignored when `type="cta"`.
+       * @default false
        * @relevantWhen type !== "cta"
        * @category behavior
        */
       download: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * When using `type="cta"`, stretches the link to fill the width of its container.
+       * @default false
        * @relevantWhen type === "cta"
        * @category ui
        */
       fluid: { type: Boolean },
 
       /**
+       * Internal: passed to the inner button of a `cta` link; not for direct use.
+       * @relevantWhen type === "cta"
+       * @category ui
+       * @private
+       */
+      layout: {
+        type: String,
+        attribute: "layout",
+        reflect: true,
+      },
+
+      /**
+       * When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.
+       * @type {'rounded' | 'pill' | 'circle' | 'square'}
+       * @relevantWhen type === "cta"
+       * @category ui
+       */
+      shape: {
+        type: String,
+        attribute: "shape",
+        reflect: true,
+      },
+
+      /**
+       * When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.
+       * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
+       * @relevantWhen type === "cta"
+       * @category ui
+       */
+      size: {
+        type: String,
+        attribute: "size",
+        reflect: true,
+      },
+
+      /**
        * Sets the address the link goes to, such as `/trips` or `https://www.alaskaair.com` (the link's `href`). Without a usable `href`, a standard or `nav` link without a `role` shows its content as plain text, and a `cta` link renders as a button.
        *
-       * Security: addresses that could run code (`javascript:`, `data:`, and `vbscript:`) are dropped, and every other address except `tel:`, `sms:`, and `mailto:` is upgraded to `https` unless the page is served from `localhost`.
+       * Security: don't pass untrusted input as `href`. Addresses that could run code (`javascript:`, `data:`, and `vbscript:`) are dropped, and every other address except `tel:`, `sms:`, and `mailto:` is upgraded to `https` unless the page is served from `localhost`.
        * @category behavior
        */
       href: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Deprecated: Use `appearance="inverse"` instead.
        * Switches the link to colors designed for dark backgrounds.
        * @deprecated Use `appearance="inverse"` instead.
+       * @default false
        * @category ui
        */
       ondark: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * Limits how much of the current page's address the link shares with the page it opens. Links within the same origin send the full address, and links to other origins send only the origin (`strict-origin-when-cross-origin`). Ignored when `type="cta"`.
+       * Limits how much of the current page's address the link shares with the page it opens. Links within the same origin send the full address, links to other origins send only the origin, and links to a less secure destination (HTTPS to HTTP) send nothing (`strict-origin-when-cross-origin`). Ignored when `type="cta"`.
        * @relevantWhen type !== "cta"
        * @category behavior
        */
       referrerpolicy: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -153,7 +190,7 @@ export default class ComponentBase extends AuroElement {
        */
       rel: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -162,21 +199,21 @@ export default class ComponentBase extends AuroElement {
        */
       target: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * Sets the style of the link. Use `nav` for navigation links, which are underlined on hover and on focus, and `cta` for a link that looks like a button. Leave it unset for a regular underlined text link.
+       * Sets whether the link looks like a regular text link, a navigation link, or a button. Use `nav` for navigation links, which are underlined on hover and on focus, and `cta` for a link that looks like a button. Leave it unset for a regular underlined text link.
        * @type {'nav' | 'cta'}
        * @category ui
        */
       type: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * When using `type="cta"`, sets the button style. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.
+       * When using `type="cta"`, sets how much emphasis the button gets. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.
        * @type {'primary' | 'secondary' | 'tertiary' | 'ghost' | 'flat'}
        * @default "primary"
        * @relevantWhen type === "cta"
@@ -184,7 +221,7 @@ export default class ComponentBase extends AuroElement {
        */
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
     };
   }
@@ -200,6 +237,13 @@ export default class ComponentBase extends AuroElement {
     return this.ondark;
   }
 
+  /**
+   * Deprecated: Use `appearance="inverse"` instead.
+   * Switches the link to colors designed for dark backgrounds.
+   * @deprecated Use `appearance="inverse"` instead.
+   * @category ui
+   * @type {boolean}
+   */
   set onDark(value) {
     this.ondark = value;
   }
@@ -210,7 +254,7 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
-   * Gets the address the link actually uses, after `href` is made safe. It's an empty string when `href` isn't set, and `undefined` when `href` is dropped because it could run code.
+   * Gets the address the link actually uses, after `href` is made safe. It's an empty string when `href` isn't set, and `undefined` when `href` is dropped because it could run code or can't be parsed.
    *
    * @example
    * // Assuming this.href = 'http://example.com' (not on localhost)
@@ -246,11 +290,11 @@ export default class ComponentBase extends AuroElement {
    * @returns {boolean} True if the safe address includes `http`; false otherwise.
    */
   get includesDomain() {
-    return this.href ? this.safeUri.includes("http") : false;
+    return this.href ? Boolean(this.safeUri?.includes("http")) : false;
   }
 
   /**
-   * Creates a safe version of `href` by upgrading `http` to `https` (except on `localhost`) and dropping addresses that could run code. Returns `undefined` when `href` is empty.
+   * Creates a safe version of `href` by resolving it against the current page, upgrading its protocol to `https` (except on `localhost`), and dropping addresses that could run code or can't be parsed. `tel:`, `sms:`, and `mailto:` addresses are returned unchanged. Returns `undefined` when `href` is empty.
    *
    * @example
    * // Assuming href = 'http://example.com'
@@ -266,7 +310,7 @@ export default class ComponentBase extends AuroElement {
    *
    * @private
    * @param {string} href - The original URL.
-   * @returns {string|undefined} The safe URL, or `undefined` if `href` is empty or could run code.
+   * @returns {string|undefined} The safe URL, or `undefined` if `href` is empty, malformed, or could run code.
    */
   safeUrl(href) {
     let safeUrl;
@@ -275,7 +319,14 @@ export default class ComponentBase extends AuroElement {
       return undefined;
     }
 
-    const url = new URL(href, window?.location?.href);
+    let url;
+
+    try {
+      url = new URL(href, window?.location?.href);
+    } catch {
+      // A malformed address can't be made safe, so drop it
+      return undefined;
+    }
 
     switch (url.protocol) {
       case "tel:":
@@ -304,7 +355,7 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
-   * Creates an HTML element containing an SVG icon based on the provided `svgContent`.
+   * Creates a template for an icon element that wraps the SVG in the provided `svgContent`.
    *
    * @example
    * // Assuming svgContent = '<svg><path d="..."/></svg>'
@@ -324,7 +375,39 @@ export default class ComponentBase extends AuroElement {
   }
 
   /**
-   * Creates an icon HTML element based on the target attribute.
+   * Checks whether a URL points at the exact host serving the current page.
+   *
+   * Matching is host-exact, so sibling subdomains are treated as external:
+   * on `auro.example.com`, a link to `www.example.com` is a different domain.
+   * The URL is parsed without a base, so it must be absolute. A relative URL can't be parsed
+   * and never matches; pass the resolved address (`safeUri`), which is always absolute.
+   * A URL that is empty, missing, or can't be parsed never matches.
+   *
+   * @example
+   * // Assuming the page is served from example.com
+   * this.isCurrentDomain('https://example.com/path'); // Returns true
+   * this.isCurrentDomain('https://evil.com/?q=example.com'); // Returns false
+   * this.isCurrentDomain(undefined); // Returns false
+   * this.isCurrentDomain('/path'); // Returns false, because a relative URL can't be parsed
+   *
+   * @private
+   * @param {string|undefined} url - The URL to check.
+   * @returns {boolean} True if the URL's hostname equals the current page's hostname; false otherwise.
+   */
+  isCurrentDomain(url) {
+    if (!url) {
+      return false;
+    }
+
+    try {
+      return new URL(url).hostname === window?.location?.hostname;
+    } catch {
+      return false;
+    }
+  }
+
+  /**
+   * Creates a template for the new-window or external-link icon when `target` is `_blank` and the link has a usable address. Returns `undefined` otherwise.
    *
    * @example
    * // Assuming target = '_blank' and this.href = '/relative/path', which resolves
@@ -344,24 +427,14 @@ export default class ComponentBase extends AuroElement {
    * @returns {TemplateResult|undefined} The template for the icon, or `undefined` if no icon is needed.
    */
   targetIcon(target) {
-    /**
-     * Checks whether a URL points at the exact host serving the current page.
-     *
-     * Matching is host-exact, so sibling subdomains are treated as external:
-     * on `auro.example.com`, a link to `www.example.com` is a different domain.
-     * Relative hrefs resolve against the current page, so they always match.
-     *
-     * @param {string} url - The URL to check.
-     * @returns {boolean} True if the URL's hostname equals the current page's hostname; false otherwise.
-     */
-    const isCurrentDomain = (url) => {
-      const urlObject = new URL(url);
-      return urlObject.hostname === window.location.hostname;
-    };
-
     // If target is '_blank' and the URL's host is the current page's host, return icon for new window
     if (target === "_blank") {
-      if (isCurrentDomain(this.safeUri)) {
+      // Without a usable href there is no destination to describe
+      if (!this.safeUri) {
+        return undefined;
+      }
+
+      if (this.isCurrentDomain(this.safeUri)) {
         return this.generateIconHtml(newWindow.svg);
       }
       return this.generateIconHtml(externalLink.svg);
@@ -397,7 +470,7 @@ export default class ComponentBase extends AuroElement {
    * this.getRelType(target, rel); // Returns 'noFollow'
    *
    * @example
-   * // Assuming target = '_blank', rel = undefined, this.safeUri = 'http://alaskaair.com', and the page's hostname (window.location.hostname) is contained in the safeUri, such as when the page is served from alaskaair.com
+   * // Assuming target = '_blank', rel = undefined, this.safeUri = 'http://alaskaair.com', and the page is served from alaskaair.com, so the safeUri's hostname matches the page's hostname
    * this.getRelType(target, rel); // Returns undefined
    *
    * @example
@@ -418,10 +491,7 @@ export default class ComponentBase extends AuroElement {
       return rel;
     }
 
-    if (
-      target === "_blank" &&
-      this.safeUri.includes(window?.location?.hostname)
-    ) {
+    if (target === "_blank" && this.isCurrentDomain(this.safeUri)) {
       return undefined;
     }
 

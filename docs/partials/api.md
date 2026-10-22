@@ -62,7 +62,7 @@ Use the `appearance` attribute to match the link to its background. This example
 
 #### Relative URLs
 
-You can use relative URLs when an absolute URL isn't practical. `auro-hyperlink` resolves a relative `href` against the current page and puts the full `https://` address in the inner `<a>` element in the shadow DOM.
+Use relative URLs when an absolute URL isn't practical. `auro-hyperlink` resolves a relative `href` against the current page and puts the full `https://` address in the inner `<a>` element in the shadow DOM.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relative-url.html) -->
@@ -126,7 +126,7 @@ When you use `target="_blank"`, add the `referrerpolicy` attribute to share the 
 
 The attribute applies the `strict-origin-when-cross-origin` policy. It sends the full URL for same-origin requests, sends only the origin when the protocol security level stays the same (HTTPS to HTTPS), and sends no referrer to a less secure destination (HTTPS to HTTP).
 
-It also sets `rel="external"` unless you provide your own `rel`.
+For links to other sites, it also sets `rel="external"` unless you provide your own `rel`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer.html) -->
@@ -288,7 +288,7 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 
 </auro-accordion>
 
-## Common usage patterns and functional examples
+## Common usage patterns
 
 ### Using `role="button"`
 
@@ -342,7 +342,7 @@ The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` a
 
 ### Typography
 
-`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. You can also apply typography classes directly to the `auro-hyperlink` element.
+`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes directly to the `auro-hyperlink` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->
@@ -357,9 +357,9 @@ The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` a
 
 </auro-accordion>
 
-## Restyle the component with CSS custom properties
+## Restyle with CSS custom properties
 
-You can restyle the component by changing the values of the following custom properties.
+Restyle the component by changing the values of the following custom properties.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->
