@@ -21,9 +21,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "install": "^0.13.0",
-    "lit": "^3.3.2",
-    "npm": "^11.21.1"
+    "lit": "^3.3.2"
   },
   "devDependencies": {
     "@alaskaairux/icons": "^5.30.0",
