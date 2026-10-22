@@ -296,7 +296,7 @@ Use `role="button"` when you need link styling for an action, such as opening a 
 
 **Note:** `auro-hyperlink` ignores `href` when you use `role="button"`, so handle the `click` event yourself, as the following example shows.
 
-**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script listens only for `click`.
+**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script handles `click` and the Enter and Space keys.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
