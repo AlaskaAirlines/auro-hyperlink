@@ -15,10 +15,8 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 **Key capabilities**
 - **Link styles**: Leave `type` unset for a standard inline text link, use `type="nav"` for navigation
   links, or use `type="cta"` for a link that looks like an `<auro-button>`.
-- **URL safety**: `href` values that start with `javascript:`, `data:`, or `vbscript:` are dropped so they can't run code,
-  and every other `href` except `tel:`, `sms:`, and `mailto:` is upgraded to `https` (unless the page is served from `localhost`).
-- **External links**: Setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites,
-  and standard and `nav` links to other sites also get a `rel` value automatically, while `type="cta"` links use only the `rel` you provide.
+- **URL safety**: Drops `href` values that could run code (`javascript:`, `data:`, and `vbscript:`) and upgrades the rest to `https`, except `tel:`, `sms:`, and `mailto:` addresses and pages served from `localhost`.
+- **External links**: Setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites.
 - **Light and dark backgrounds**: Setting `appearance="inverse"` switches the link to colors designed for
   dark backgrounds.
 - **Button behavior**: Setting `role="button"` gives the link a button role and a tab stop for actions such as
@@ -199,8 +197,8 @@ Welcome to &lt;auro-hyperlink appearance="inverse" href="https://www.alaskaair.c
 http absolute URL &lt;auro-hyperlink href="http://www.alaskaair.com/route-map"&gt;to route map&lt;/auro-hyperlink&gt; or
 no hypertext transfer protocol absolute URL to &lt;auro-hyperlink href="//www.alaskaair.com/route-map"&gt;route map&lt;/auro-hyperlink&gt;
 &#10;&lt;!-- Output code in shadow DOM element --&gt;
-http absolute URL &lt;a class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;to route map&lt;/slot&gt;&lt;/a&gt;
-no hypertext transfer protocol absolute URL to &lt;a class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;route map&lt;/slot&gt;&lt;/a&gt;</code></pre>
+http absolute URL &lt;a part="link" class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/a&gt;
+no hypertext transfer protocol absolute URL to &lt;a part="link" class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/a&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -222,7 +220,7 @@ Use relative URLs when an absolute URL isn't practical. `auro-hyperlink` resolve
 <pre class="language-html"><code class="language-html">&lt;!-- Web component example --&gt;
 Relative href converted to absolute URL to &lt;auro-hyperlink href="/components/hyperlink/api"&gt;Hyperlink API page&lt;/auro-hyperlink&gt;.
 &#10;&lt;!-- Output code in shadow DOM element --&gt;
-Relative href converted to absolute URL to &lt;a class="hyperlink" href="https://www.auro.alaskaair.com/components/hyperlink/api"&gt;&lt;slot&gt;Hyperlink API page&lt;/slot&gt;&lt;/a&gt;.</code></pre>
+Relative href converted to absolute URL to &lt;a part="link" class="hyperlink" href="https://www.auro.alaskaair.com/components/hyperlink/api"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/a&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -235,7 +233,7 @@ Use `tel:`, `sms:`, and `mailto:` addresses to start a call, a text message, or 
 <!-- The below content is automatically added from ./../apiExamples/URLscheme.html -->
   Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
   Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
-  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
+  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaair.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -245,7 +243,7 @@ Use `tel:`, `sms:`, and `mailto:` addresses to start a call, a text message, or 
 
 <pre class="language-html"><code class="language-html">Example &lt;auro-hyperlink href="sms:+18002527522"&gt;sms link&lt;/auro-hyperlink&gt;.
 Example &lt;auro-hyperlink href="tel:+18002527522"&gt;telephone link&lt;/auro-hyperlink&gt;.
-Example &lt;auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&amp;bcc=someone-else-else@alaskaiar.com&amp;subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email"&gt;email link&lt;/auro-hyperlink&gt;.</code></pre>
+Example &lt;auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&amp;bcc=someone-else-else@alaskaair.com&amp;subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email"&gt;email link&lt;/auro-hyperlink&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -361,7 +359,7 @@ Example link with
   href="https://www.portseattle.org/sea-tac">
   external target
 </auro-hyperlink>
- , external domain with referrerpolicy attribute
+, with an external domain and the referrerpolicy attribute
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
@@ -375,7 +373,7 @@ Example link with
   href="https://www.portseattle.org/sea-tac">
   external target
 </auro-hyperlink>
- , external domain with referrerpolicy attribute
+, with an external domain and the referrerpolicy attribute
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -390,7 +388,7 @@ Example link with
   href="https://www.portseattle.org/sea-tac"&gt;
   external target
 &lt;/auro-hyperlink&gt;
- , external domain with referrerpolicy attribute</code></pre>
+, with an external domain and the referrerpolicy attribute</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-appearance-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-appearance-inverse.html -->
@@ -403,7 +401,7 @@ Example link with
   href="https://www.portseattle.org/sea-tac"&gt;
   external target
 &lt;/auro-hyperlink&gt;
- , external domain with referrerpolicy attribute</code></pre>
+, with an external domain and the referrerpolicy attribute</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -555,9 +553,9 @@ Add the `fluid` attribute to stretch a CTA link to the full width of its parent 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-fluid.html) -->
 <!-- The below content is automatically added from ./../apiExamples/cta-fluid.html -->
 <div style="display: flex; flex-direction: column; gap: 1rem;">
-<auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-<auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-<auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com">CTA button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com">CTA button</auro-hyperlink>
 </div>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -567,9 +565,9 @@ Add the `fluid` attribute to stretch a CTA link to the full width of its parent 
 <!-- The below code snippet is automatically added from ./../apiExamples/cta-fluid.html -->
 
 <pre class="language-html"><code class="language-html">&lt;div style="display: flex; flex-direction: column; gap: 1rem;"&gt;
-  &lt;auro-hyperlink type="cta" fluid href="https://www.alaskaair.com"&gt;CTA Button&lt;/auro-hyperlink&gt;
-  &lt;auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com"&gt;CTA Button&lt;/auro-hyperlink&gt;
-  &lt;auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com"&gt;CTA Button&lt;/auro-hyperlink&gt;
+  &lt;auro-hyperlink type="cta" fluid href="https://www.alaskaair.com"&gt;CTA button&lt;/auro-hyperlink&gt;
+  &lt;auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com"&gt;CTA button&lt;/auro-hyperlink&gt;
+  &lt;auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com"&gt;CTA button&lt;/auro-hyperlink&gt;
 &lt;/div&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -581,11 +579,11 @@ Use the `size` attribute to change the size of a CTA link. The available sizes a
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size.html) -->
 <!-- The below content is automatically added from ./../apiExamples/cta-size.html -->
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs">Extra Small</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs">Extra small</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" size="sm">Small</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" size="md">Medium</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" size="lg">Large</auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl">Extra Large</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl">Extra large</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -593,11 +591,11 @@ Use the `size` attribute to change the size of a CTA link. The available sizes a
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/cta-size.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs"&gt;Extra Small&lt;/auro-hyperlink&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs"&gt;Extra small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="sm"&gt;Small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="md"&gt;Medium&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="lg"&gt;Large&lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl"&gt;Extra Large&lt;/auro-hyperlink&gt;</code></pre>
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl"&gt;Extra large&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -608,11 +606,11 @@ When a CTA link uses `target="_blank"`, the new-window or external-link icon fol
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
 <!-- The below content is automatically added from ./../apiExamples/cta-size-external-link.html -->
-<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs">Extra Small</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs">Extra small</auro-hyperlink>
 <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="sm">Small</auro-hyperlink>
 <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="md">Medium</auro-hyperlink>
 <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="lg">Large</auro-hyperlink>
-<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl">Extra Large</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl">Extra large</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -620,11 +618,11 @@ When a CTA link uses `target="_blank"`, the new-window or external-link icon fol
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size-external-link.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/cta-size-external-link.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs"&gt;Extra Small&lt;/auro-hyperlink&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs"&gt;Extra small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="sm"&gt;Small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="md"&gt;Medium&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="lg"&gt;Large&lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl"&gt;Extra Large&lt;/auro-hyperlink&gt;</code></pre>
+&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl"&gt;Extra large&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -637,11 +635,11 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 <!-- The below content is automatically added from ./../apiExamples/cta-shape.html -->
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="rounded">Rounded</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill">Pill</auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="in-flight" shape="pill">
-    Back to Top
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill">
+    Back to top
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle">
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Account" shape="circle">
 <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
 </auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square">
@@ -656,11 +654,11 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 
 <pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="rounded"&gt;Rounded&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill"&gt;Pill&lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="in-flight" shape="pill"&gt;
-  Back to Top
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill"&gt;
+  Back to top
   &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle"&gt;
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Account" shape="circle"&gt;
   &lt;auro-icon customcolor category="interface" name="account-filled" appearance="inverse"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square"&gt;
@@ -677,7 +675,7 @@ Use `role="button"` when you need link styling for an action, such as opening a 
 
 **Note:** `auro-hyperlink` ignores `href` when you use `role="button"`, so handle the `click` event yourself, as the following example shows.
 
-**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script listens only for `click`.
+**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script handles `click` and the Enter and Space keys.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
@@ -709,12 +707,20 @@ Use `role="button"` when you need link styling for an action, such as opening a 
 <pre class="language-js"><code class="language-js">export function roleButtonExample() {
   const roleButton = document.getElementById("roleButton");
   const roleButtonOndark = document.getElementById("roleButton-ondark");
-&#10;  roleButton.addEventListener("click", () =&gt; {
+&#10;  const handleAction = () =&gt; {
     alert("You clicked the role button!");
-  });
-&#10;  roleButtonOndark.addEventListener("click", () =&gt; {
-    alert("You clicked the role button!");
-  });
+  };
+&#10;  // Enter and Space don't fire `click` on the link, so handle those keys too.
+  const handleKeydown = (event) =&gt; {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleAction();
+    }
+  };
+&#10;  for (const button of [roleButton, roleButtonOndark]) {
+    button.addEventListener("click", handleAction);
+    button.addEventListener("keydown", handleKeydown);
+  }
 }</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
