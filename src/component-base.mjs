@@ -114,7 +114,7 @@ export default class ComponentBase extends AuroElement {
       fluid: { type: Boolean },
 
       /**
-       * Internal: passed to the inner button of a `cta` link; not for direct use.
+       * Internal: passed to the inner button of a `cta` link; not for direct use. Unset by default, so the inner `auro-button` uses its own layout ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
        * @relevantWhen type === "cta"
        * @category ui
        * @private
@@ -126,7 +126,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.
+       * When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Unset by default, so the inner `auro-button` uses its own shape ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
        * @type {'rounded' | 'pill' | 'circle' | 'square'}
        * @relevantWhen type === "cta"
        * @category ui
@@ -138,7 +138,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.
+       * When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match. Unset by default, so the inner `auro-button` uses its own size ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
        * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
        * @relevantWhen type === "cta"
        * @category ui
