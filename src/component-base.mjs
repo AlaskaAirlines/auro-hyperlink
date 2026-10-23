@@ -98,7 +98,6 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * Downloads the linked file when you select the link, instead of navigating to it. Ignored when `type="cta"`.
-       * @default false
        * @relevantWhen type !== "cta"
        * @category behavior
        */
@@ -109,7 +108,6 @@ export default class ComponentBase extends AuroElement {
 
       /**
        * When using `type="cta"`, stretches the link to fill the width of its container.
-       * @default false
        * @relevantWhen type === "cta"
        * @category ui
        */
@@ -166,7 +164,6 @@ export default class ComponentBase extends AuroElement {
        * Deprecated: Use `appearance="inverse"` instead.
        * Switches the link to colors designed for dark backgrounds.
        * @deprecated Use `appearance="inverse"` instead.
-       * @default false
        * @category ui
        */
       ondark: {
@@ -185,7 +182,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * Sets how the linked page relates to the current page, such as `nofollow` (the link's `rel`). When `rel` isn't set and `target="_blank"` points to another site, standard and `nav` links use `noOpener noReferrer`, or `external` when `referrerpolicy` is on; links to the same site and `type="cta"` links get no automatic `rel`. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information.
+       * Sets how the linked page relates to the current page, such as `nofollow` (the link's `rel`). When `rel` isn't set and a `target="_blank"` link's `href` points to another site, standard and `nav` links use `noOpener noReferrer`, or `external` when `referrerpolicy` is on; links to the same site and `type="cta"` links get no automatic `rel`. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information.
        * @category behavior
        */
       rel: {
