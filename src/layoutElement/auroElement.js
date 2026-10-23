@@ -4,9 +4,10 @@ export class AuroElement extends LitElement {
   static get properties() {
     return {
       /**
-       * Defines whether the component should be light colored for use on dark backgrounds.
+       * Sets the color scheme to match the background behind the link. Use `default` on light backgrounds and `inverse` on dark backgrounds.
        * @type {'default' | 'inverse'}
-       * @default 'default'
+       * @default "default"
+       * @category ui
        */
       appearance: {
         type: String,
@@ -14,8 +15,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the language of an element.
-       * @default 'default'
+       * Internal: passed to the inner button; not for direct use.
+       * @private
        */
       layout: {
         type: String,
@@ -24,8 +25,9 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the shape of the button when using `type="cta"`.
+       * Sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons.
        * @type {'rounded' | 'pill' | 'circle' | 'square'}
+       * @category ui
        */
       shape: {
         type: String,
@@ -34,8 +36,9 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the size of the button when using `type="cta"`.
+       * Sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match.
        * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
+       * @category ui
        */
       size: {
         type: String,

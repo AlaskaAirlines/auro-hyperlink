@@ -14,11 +14,11 @@ import styles from "./styles/hyperlink-button-style.scss";
  */
 export class AuroHyperlinkButton extends AuroButton {
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-hyperlink-button"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name.
+   * @param {string} [name="auro-hyperlink-button"] - The tag name to register the element under.
    *
    * @example
-   * AuroHyperlinkButton.register("custom-hyperlink-button") // this will register this element to <custom-hyperlink-button/>
+   * AuroHyperlinkButton.register("custom-hyperlink-button") // makes the element available as <custom-hyperlink-button>
    *
    */
   static register(name = "auro-hyperlink-button") {

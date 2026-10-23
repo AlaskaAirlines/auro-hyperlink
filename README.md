@@ -12,7 +12,7 @@ The following sections are editable by making changes to the following files:
 | SECTION                | DESCRIPTION                                       | FILE LOCATION                       |
 |------------------------|---------------------------------------------------|-------------------------------------|
 | Description            | Description of the component                      | `./docs/partials/description.md`    |
-| Use Cases              | Examples for when to use this component           | `./docs/partials/useCases.md`       |
+| Use cases              | Examples for when to use this component           | `./docs/partials/useCases.md`       |
 | Additional Information | For use to add any component specific information | `./docs/partials/readmeAddlInfo.md` |
 | Component Example Code | HTML sample code of the components use            | `./apiExamples/basic.html`          |
 -->
@@ -21,22 +21,22 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/description.md) -->
 <!-- The below content is automatically added from ./docs/partials/description.md -->
-The `<auro-hyperlink>` element is a wrapper for an HTML5 `<a>` anchor element. This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
+The `<auro-hyperlink>` element is an accessible link that wraps a standard `<a>` anchor element. It adds brand styling for light and dark backgrounds, blocks addresses that could run code, and shows an icon when a link opens in a new tab.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
 <!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./docs/partials/useCases.md -->
-The `<auro-hyperlink>` elements should be used in situations where users may:
+Use `<auro-hyperlink>` in these situations:
 
-* stand-alone link element for navigation
-* inline link element for navigation
-* optional role as button when hyperlink UI is needed for submit action
+* Use a stand-alone link to take people to another page.
+* Use an inline link inside a sentence or paragraph to take people to another page.
+* Use `role="button"` when you need link styling for an action, such as opening a dialog. Pressing Enter or Space does not currently fire `click`, so keyboard users can't activate it unless you handle those keys too.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
@@ -51,10 +51,10 @@ The `<auro-hyperlink>` elements should be used in situations where users may:
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-### Define Dependency in Project
+### Define dependency in project
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImportDescription.md) -->
-Defining the dependency within each project that is using the `<auro-hyperlink>` component.
+Import the component in each project that uses `<auro-hyperlink>`.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImport.md) -->
@@ -66,13 +66,13 @@ Defining the dependency within each project that is using the `<auro-hyperlink>`
 ### Use CDN
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/bundleInstallDescription.md) -->
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Legacy browsers such as IE11 are no longer supported.
+If your project can't process JS assets, use the pre-processed assets. Legacy browsers, such as IE11, aren't supported.
 
 <pre class="language-html"><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-hyperlink@latest/+esm"&gt;&lt;/script&gt;</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Basic Example
+## Basic example
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
@@ -81,27 +81,26 @@ In cases where the project is not able to process JS assets, there are pre-proce
 Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airlines&lt;/auro-hyperlink&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Custom Component Registration for Version Management
+## Custom component registration for version management
 
-There are two key parts to every Auro component: the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element definition.
+Every Auro component has two key parts: the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element definition.
 The class defines the component’s behavior, while the custom element registers it under a specific name so it can be used in HTML.
 
-When you install the component as described on the `Install` page, the class is imported automatically, and the component is registered globally for you.
+Installing the component as described in the Install section imports the class and registers the component globally for you.
 
-However, if you need to load multiple versions of the same component on a single page (for example, when two projects depend on different versions), you can manually register the class under a custom element name to avoid conflicts.
+However, if you need to load multiple versions of the same component on a single page (for example, when two projects depend on different versions), register the class manually under a custom element name to avoid conflicts.
 
-You can do this by importing only the component class and using the `register(name)` method with a unique name:
+To do this, import only the component class and call the `register(name)` method with a unique name:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
 <!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
 
 <pre class="language-js"><code class="language-js">// Import the class only
 import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/class';
-​
-// Register with a custom name if desired
+&#10;// Register with a custom name if desired
 AuroHyperlink.register('custom-hyperlink');</code></pre>
 
-This will create a new custom element `<custom-hyperlink>` that behaves exactly like `<auro-hyperlink>`, allowing both to coexist on the same page without interfering with each other.
+This creates a new custom element `<custom-hyperlink>` that behaves exactly like `<auro-hyperlink>`, allowing both to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
