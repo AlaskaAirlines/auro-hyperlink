@@ -23,8 +23,8 @@
 <p>Native anchors provide no visual indication of whether a link navigates to an external site or opens a new window. Users are left without context about what happens when they click.</p>
 <p><code>auro-hyperlink</code> handles this automatically:</p>
 <ul>
-<li><strong>External link icon</strong>: When <code>target="_blank"</code> points to a domain different from the current site, an external-link icon is displayed</li>
-<li><strong>New window icon</strong>: When <code>target="_blank"</code> points to the same domain, a new-window icon is displayed instead</li>
+<li><strong>External link icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to a domain different from the current site, an external-link icon is displayed</li>
+<li><strong>New window icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to the same domain, a new-window icon is displayed instead</li>
 <li><strong>Contextual <code>rel</code> attributes</strong>: The <code>rel</code> attribute is set appropriately based on whether the link is internal or external, with or without a referrer policy</li>
 </ul>
 <auro-header level="2">Call-to-action variant</auro-header>
