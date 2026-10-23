@@ -36,8 +36,8 @@
 <p><code>auro-hyperlink</code> handles this automatically:</p>
 
 <ul>
-  <li><strong>External link icon</strong>: When <code>target="_blank"</code> points to a domain different from the current site, an external-link icon is displayed</li>
-  <li><strong>New window icon</strong>: When <code>target="_blank"</code> points to the same domain, a new-window icon is displayed instead</li>
+  <li><strong>External link icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to a domain different from the current site, an external-link icon is displayed</li>
+  <li><strong>New window icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to the same domain, a new-window icon is displayed instead</li>
   <li><strong>Contextual <code>rel</code> attributes</strong>: The <code>rel</code> attribute is set appropriately based on whether the link is internal or external, with or without a referrer policy</li>
 </ul>
 
