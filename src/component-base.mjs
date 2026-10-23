@@ -210,6 +210,15 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
+       * Gives the link button behavior: any `role` value shows a pointer cursor and stops the link from navigating to `href`. The value `button` also gives the link the button role and a keyboard tab stop. Enter and Space do not currently fire `click`, so handle those keys yourself. Ignored when `type="cta"`.
+       * @relevantWhen type !== "cta"
+       * @category behavior
+       */
+      role: {
+        type: String,
+      },
+
+      /**
        * When using `type="cta"`, sets how much emphasis the button gets. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.
        * @type {'primary' | 'secondary' | 'tertiary' | 'ghost' | 'flat'}
        * @default "primary"

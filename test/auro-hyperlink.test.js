@@ -694,3 +694,53 @@ describe("disconnectedCallback", () => {
     expect(() => el.remove()).not.to.throw();
   });
 });
+
+describe('role="button" across re-renders', () => {
+  const expectButtonLink = (el) => {
+    const anchor = el.shadowRoot.querySelector("a");
+
+    expect(anchor).to.have.attribute("role", "button");
+    expect(anchor).to.have.attribute("tabindex", "0");
+    expect(anchor).to.have.class("hyperlink--button");
+    expect(anchor).not.to.have.attribute("href");
+  };
+
+  it("keeps button behavior after a forced re-render", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="alaska.com" role="button">Alaska air</auro-hyperlink>
+    `);
+
+    el.requestUpdate();
+    await el.updateComplete;
+
+    expectButtonLink(el);
+  });
+
+  it("keeps button behavior after another property changes", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="alaska.com" role="button">Alaska air</auro-hyperlink>
+    `);
+
+    el.appearance = "inverse";
+    await el.updateComplete;
+
+    expectButtonLink(el);
+    expect(el.shadowRoot.querySelector("a")).to.have.class("hyperlink--ondark");
+  });
+
+  it("applies a role set after the element upgrades", async () => {
+    const el = await fixture(html`
+      <auro-hyperlink href="alaska.com">Alaska air</auro-hyperlink>
+    `);
+
+    el.setAttribute("role", "button");
+    await el.updateComplete;
+    el.requestUpdate();
+    await el.updateComplete;
+
+    expect(el.shadowRoot.querySelector("a")).to.have.attribute(
+      "role",
+      "button",
+    );
+  });
+});
