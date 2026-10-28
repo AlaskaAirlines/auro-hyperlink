@@ -16,7 +16,7 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 - **Link styles**: Leave `type` unset for a standard inline text link, use `type="nav"` for navigation
   links, or use `type="cta"` for a link that looks like an `<auro-button>`.
 - **URL safety**: Drops `href` values that could run code (`javascript:`, `data:`, and `vbscript:`) and upgrades the rest to `https`, except `tel:`, `sms:`, and `mailto:` addresses and pages served from `localhost`.
-- **External links**: Setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites.
+- **External links**: When the link has a usable `href`, setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites.
 - **Light and dark backgrounds**: Setting `appearance="inverse"` switches the link to colors designed for
   dark backgrounds.
 - **Button behavior**: Setting `role="button"` gives the link a button role and a tab stop for actions such as
@@ -38,7 +38,7 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 | role           | role           |           | string                                                      |           | Gives the link button behavior: any `role` value shows a pointer cursor and stops the link from navigating to `href`. The value `button` also gives the link the button role and a keyboard tab stop. Enter and Space do not currently fire `click`, so handle those keys yourself. Ignored when `type="cta"`.                                                                                                                                                                                                                |
 | shape          | shape          |           | `rounded` \| `pill` \| `circle` \| `square`                 |           | When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Unset by default, so the inner `auro-button` uses its own shape ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).                                                                                                                                     |
 | size           | size           |           | `xs` \| `sm` \| `md` \| `lg` \| `xl`                        |           | When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match. Unset by default, so the inner `auro-button` uses its own size ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).                                                                                                                                                                                                        |
-| target         | target         |           | string                                                      |           | Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's `target`). `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites.                                                                                                                                                                                                                                                                  |
+| target         | target         |           | string                                                      |           | Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's `target`). When the link has a usable `href`, `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites.                                                                                                                                                                                                                               |
 | type           | type           |           | `nav` \| `cta`                                              |           | Sets whether the link looks like a regular text link, a navigation link, or a button. Use `nav` for navigation links, which are underlined on hover and on focus, and `cta` for a link that looks like a button. Leave it unset for a regular underlined text link.                                                                                                                                                                                                                                                           |
 | variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | When using `type="cta"`, sets how much emphasis the button gets. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.                                                                                                                                                                                                                                                                                                                          |
 | ondark         | ondark         |           | boolean                                                     |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -58,10 +58,10 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 
 ### CSS Shadow Parts
 
-| Name       | Description                                                                                             |
-| ---------- | ------------------------------------------------------------------------------------------------------- |
-| link       | The inner `<a>` element, rendered when the link has a usable `href` or a `role` and `type` isn't `cta`. |
-| targetIcon | The new-window or external-link icon shown after the content when `target="_blank"`.                    |
+| Name       | Description                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| link       | The inner `<a>` element, rendered when the link has a usable `href` or a `role`, unless `type` is `cta`.              |
+| targetIcon | The new-window or external-link icon shown after the content when `target="_blank"` and the link has a usable `href`. |
 
 ### CSS Custom Properties
 
@@ -249,7 +249,7 @@ Example &lt;auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@al
 
 ### External links
 
-When you use `target="_blank"`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
+When you use `target="_blank"` on a link with a usable `href`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
 
 Browsers already apply `rel="noopener"` behavior to `target="_blank"` links. For additional security, standard and `nav` links to other sites also get `rel="noOpener noReferrer"` by default. Links to your own site and `type="cta"` links get no automatic `rel`.
 
@@ -501,7 +501,7 @@ Call to action (CTA) links look like buttons but behave as hyperlinks. Use the `
 
 #### CTA external links
 
-CTA links also work with external links. Add `target="_blank"` to show the same new-window or external-link icon that standard links get.
+CTA links also work with external links. When the link has a usable `href`, add `target="_blank"` to show the same new-window or external-link icon that standard links get.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link.html) -->
@@ -601,7 +601,7 @@ Use the `size` attribute to change the size of a CTA link. The available sizes a
 
 #### CTA sizes with external links
 
-When a CTA link uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
+When a CTA link with a usable `href` uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
@@ -639,11 +639,11 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
     Back to top
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Account" shape="circle">
-<auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com/account/overview" aria-label="Go to your account" shape="circle">
+<auro-icon customColor category="interface" name="account-filled" appearance="inverse"></auro-icon>
 </auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square">
-<auro-icon customcolor category="interface" name="search" appearance="inverse"></auro-icon>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search flights" shape="square">
+<auro-icon customColor category="interface" name="search" appearance="inverse"></auro-icon>
 </auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -658,11 +658,11 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
   Back to top
   &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Account" shape="circle"&gt;
-  &lt;auro-icon customcolor category="interface" name="account-filled" appearance="inverse"&gt;&lt;/auro-icon&gt;
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com/account/overview" aria-label="Go to your account" shape="circle"&gt;
+  &lt;auro-icon customColor category="interface" name="account-filled" appearance="inverse"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square"&gt;
-  &lt;auro-icon customcolor category="interface" name="search" appearance="inverse"&gt;&lt;/auro-icon&gt;
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search flights" shape="square"&gt;
+  &lt;auro-icon customColor category="interface" name="search" appearance="inverse"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -680,13 +680,13 @@ Use `role="button"` when you need link styling for an action, such as opening a 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
 <!-- The below content is automatically added from ./../apiExamples/role-button.html -->
-<auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
+<auro-hyperlink role="button" id="roleButton">Cancel button</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button-appearance-inverse.html) -->
 <!-- The below content is automatically added from ./../apiExamples/role-button-appearance-inverse.html -->
-<auro-hyperlink appearance="inverse" href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
+<auro-hyperlink appearance="inverse" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -694,12 +694,12 @@ Use `role="button"` when you need link styling for an action, such as opening a 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/role-button.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink role="button" id="roleButton"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button-appearance-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/role-button-appearance-inverse.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink appearance="inverse" href="http://www.alaskaair.com" role="button" id="roleButton-ondark"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink appearance="inverse" role="button" id="roleButton-ondark"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button.js) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/role-button.js -->
@@ -764,7 +764,7 @@ The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` a
 
 ### Typography
 
-`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes directly to the `auro-hyperlink` element.
+`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes to the element that contains the link, as shown below.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->
