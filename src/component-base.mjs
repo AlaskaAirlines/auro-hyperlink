@@ -191,7 +191,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's `target`). `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites.
+       * Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's `target`). When the link has a usable `href`, `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites.
        * @category behavior
        */
       target: {
