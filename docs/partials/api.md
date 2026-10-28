@@ -96,7 +96,7 @@ Use `tel:`, `sms:`, and `mailto:` addresses to start a call, a text message, or 
 
 ### External links
 
-When you use `target="_blank"`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
+When you use `target="_blank"` on a link with a usable `href`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
 
 Browsers already apply `rel="noopener"` behavior to `target="_blank"` links. For additional security, standard and `nav` links to other sites also get `rel="noOpener noReferrer"` by default. Links to your own site and `type="cta"` links get no automatic `rel`.
 
@@ -198,7 +198,7 @@ Call to action (CTA) links look like buttons but behave as hyperlinks. Use the `
 
 #### CTA external links
 
-CTA links also work with external links. Add `target="_blank"` to show the same new-window or external-link icon that standard links get.
+CTA links also work with external links. When the link has a usable `href`, add `target="_blank"` to show the same new-window or external-link icon that standard links get.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link.html) -->
@@ -256,7 +256,7 @@ Use the `size` attribute to change the size of a CTA link. The available sizes a
 
 #### CTA sizes with external links
 
-When a CTA link uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
+When a CTA link with a usable `href` uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
@@ -342,7 +342,7 @@ The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` a
 
 ### Typography
 
-`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes directly to the `auro-hyperlink` element.
+`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes to the element that contains the link, as shown below.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->

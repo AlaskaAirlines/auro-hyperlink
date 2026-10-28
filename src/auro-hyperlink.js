@@ -29,7 +29,7 @@ import tokensCss from "./styles/tokens.scss";
  * - **Link styles**: Leave `type` unset for a standard inline text link, use `type="nav"` for navigation
  *   links, or use `type="cta"` for a link that looks like an `<auro-button>`.
  * - **URL safety**: Drops `href` values that could run code (`javascript:`, `data:`, and `vbscript:`) and upgrades the rest to `https`, except `tel:`, `sms:`, and `mailto:` addresses and pages served from `localhost`.
- * - **External links**: Setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites.
+ * - **External links**: When the link has a usable `href`, setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites.
  * - **Light and dark backgrounds**: Setting `appearance="inverse"` switches the link to colors designed for
  *   dark backgrounds.
  * - **Button behavior**: Setting `role="button"` gives the link a button role and a tab stop for actions such as
@@ -46,8 +46,8 @@ import tokensCss from "./styles/tokens.scss";
  * @forcePrivate {'layout'}
  *
  * @slot - The link's visible content: text, an icon, or both.
- * @csspart link - The inner `<a>` element, rendered when the link has a usable `href` or a `role` and `type` isn't `cta`.
- * @csspart targetIcon - The new-window or external-link icon shown after the content when `target="_blank"`.
+ * @csspart link - The inner `<a>` element, rendered when the link has a usable `href` or a `role`, unless `type` is `cta`.
+ * @csspart targetIcon - The new-window or external-link icon shown after the content when `target="_blank"` and the link has a usable `href`.
  * @cssprop --ds-auro-hyperlink-default-color-default - Text color of the link in its default state on light backgrounds.
  * @cssprop --ds-auro-hyperlink-default-color-inverse - Text color of the link in its default state on dark backgrounds.
  * @cssprop --ds-auro-hyperlink-default-container-color-default - Background color of the link in its default state on light backgrounds.
