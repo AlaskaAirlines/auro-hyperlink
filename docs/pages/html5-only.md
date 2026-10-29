@@ -73,7 +73,7 @@
 
 <auro-header level="3">Automatic rel security attributes</auro-header>
 
-<p><code>auro-hyperlink</code> automatically adds <code>rel="noOpener noReferrer"</code> to external links opened in new tabs to prevent reverse tabnapping. With a plain <code>&lt;a&gt;</code> element, you must remember to add these attributes yourself on every external link.</p>
+<p><code>auro-hyperlink</code> adds <code>rel="noOpener noReferrer"</code> to standard and navigation links to other sites that open in a new tab, which prevents reverse tabnapping. With a plain <code>&lt;a&gt;</code> element, you must add the attribute yourself on every external link.</p>
 
 <auro-header level="3">Referrer policy management</auro-header>
 
