@@ -210,7 +210,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * Gives the link button behavior: any `role` value shows a pointer cursor and stops the link from navigating to `href`. The value `button` also gives the link the button role and a keyboard tab stop. Enter and Space do not currently fire `click`, so handle those keys yourself. Ignored when `type="cta"`.
+       * Gives the link button behavior: any `role` value is passed to the inner link, shows a pointer cursor, and stops the link from navigating to `href`. The value `button` also adds a keyboard tab stop. Enter and Space do not currently fire `click`, so handle those keys yourself. The pointer cursor, `href` handling, and tab stop don't apply when `type="cta"`.
        * @relevantWhen type !== "cta"
        * @category behavior
        */
@@ -219,7 +219,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * Sets how much emphasis a CTA link's button gets. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis. Applies only when `type="cta"`.
+       * Sets how much emphasis a CTA link's button gets, from `primary` (strongest) to `ghost` and `flat` (lowest). Applies only when `type="cta"`.
        * @type {'primary' | 'secondary' | 'tertiary' | 'ghost' | 'flat'}
        * @default "primary"
        * @relevantWhen type === "cta"
