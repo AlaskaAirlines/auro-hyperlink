@@ -65,7 +65,7 @@
 
 <auro-header level="3">URL sanitization and HTTPS enforcement</auro-header>
 
-<p><code>auro-hyperlink</code> automatically blocks dangerous URL protocols (<code>javascript:</code>, <code>data:</code>, <code>vbscript:</code>) and upgrades URLs to <code>https:</code>. A plain <code>&lt;a&gt;</code> element with WCSS classes renders whatever <code>href</code> value is provided, including potentially dangerous URLs. You must sanitize URLs manually.</p>
+<p><code>auro-hyperlink</code> blocks dangerous URL protocols (<code>javascript:</code>, <code>data:</code>, <code>vbscript:</code>) and upgrades URLs to <code>https:</code> except on <code>localhost</code>. A plain <code>&lt;a&gt;</code> element with WCSS classes renders whatever <code>href</code> value is provided, including potentially dangerous URLs. You must sanitize URLs manually.</p>
 
 <auro-header level="3">Automatic external link and new window icons</auro-header>
 
