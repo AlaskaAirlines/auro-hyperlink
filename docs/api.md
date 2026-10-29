@@ -19,7 +19,7 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 <auro-hyperlink href="/trips">View your trips</auro-hyperlink>
 ```
 
-### Properties and attributes
+### Properties & Attributes
 
 | Properties     | Attributes     | Modifiers | Type                                                        | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,14 +50,14 @@ URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the in
 | --------- | --------------------------------------------------- |
 | (default) | The link's visible content: text, an icon, or both. |
 
-### CSS shadow parts
+### CSS Shadow Parts
 
 | Name       | Description                                                                                                           |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
 | link       | The inner `<a>` element, rendered when the link has a usable `href` or a `role`, unless `type` is `cta`.              |
 | targetIcon | The new-window or external-link icon shown after the content when `target="_blank"` and the link has a usable `href`. |
 
-### CSS custom properties
+### CSS Custom Properties
 
 | Name                                                    | Description                                                                              |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
