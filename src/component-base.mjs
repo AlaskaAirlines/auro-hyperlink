@@ -107,7 +107,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * When using `type="cta"`, stretches the link to fill the width of its container.
+       * Stretches the link to fill the width of its container. Applies only when `type="cta"`.
        * @relevantWhen type === "cta"
        * @category ui
        */
@@ -126,7 +126,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * When using `type="cta"`, sets the shape of the button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Uses `auro-button`'s default, `rounded`, when not set ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
+       * Sets the shape of a CTA link's button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Applies only when `type="cta"`, and uses `auro-button`'s default, `rounded`, when not set ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
        * @type {'rounded' | 'pill' | 'circle' | 'square'}
        * @relevantWhen type === "cta"
        * @category ui
@@ -138,7 +138,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * When using `type="cta"`, sets the size of the button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match. Uses `auro-button`'s default, `md`, when not set ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
+       * Sets the size of a CTA link's button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match. Applies only when `type="cta"`, and uses `auro-button`'s default, `md`, when not set ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).
        * @type {'xs' | 'sm' | 'md' | 'lg' | 'xl'}
        * @relevantWhen type === "cta"
        * @category ui
@@ -172,7 +172,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * Limits how much of the current page's address the link shares with the page it opens. Links within the same origin send the full address, links to other origins send only the origin, and links to a less secure destination (HTTPS to HTTP) send nothing (`strict-origin-when-cross-origin`). Ignored when `type="cta"`.
+       * Sets the link's referrer policy to `strict-origin-when-cross-origin`: links within the same origin send the full address, links to other origins send only the origin, and links to a less secure destination (HTTPS to HTTP) send nothing. On a `target="_blank"` link to another site, it also shares the origin instead of the default `rel="noOpener noReferrer"` behavior, which sends nothing. Ignored when `type="cta"`.
        * @relevantWhen type !== "cta"
        * @category behavior
        */
@@ -219,7 +219,7 @@ export default class ComponentBase extends AuroElement {
       },
 
       /**
-       * When using `type="cta"`, sets how much emphasis the button gets. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis.
+       * Sets how much emphasis a CTA link's button gets. Use `primary` for the main action, `secondary` or `tertiary` for supporting actions, and `ghost` or `flat` for the lowest emphasis. Applies only when `type="cta"`.
        * @type {'primary' | 'secondary' | 'tertiary' | 'ghost' | 'flat'}
        * @default "primary"
        * @relevantWhen type === "cta"
