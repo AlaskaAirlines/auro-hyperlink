@@ -1,21 +1,21 @@
 <auro-header level="1">Why auro-hyperlink?</auro-header>
 <p>The native HTML <code>&lt;a&gt;</code> anchor element provides basic linking, but it falls short for the needs of a secure, accessible, and branded application. <code>auro-hyperlink</code> bridges those gaps with a purpose-built component designed for real-world use.</p>
 <auro-header level="2">Security</auro-header>
-<p>Native anchor elements accept any value in the <code>href</code> attribute, including potentially dangerous protocols like <code>javascript:</code>, <code>data:</code>, and <code>vbscript:</code>. Developers must remember to sanitize URLs manually every time.</p>
+<p>Native anchor elements accept any value in the <code>href</code> attribute, including potentially dangerous protocols like <code>javascript:</code>, <code>data:</code>, and <code>vbscript:</code>. You must remember to sanitize URLs manually every time.</p>
 <p><code>auro-hyperlink</code> provides:</p>
 <ul>
-<li><strong>URL sanitization</strong>: Dangerous protocols (<code>javascript:</code>, <code>data:</code>, <code>vbscript:</code>) are blocked automatically. <code>tel:</code>, <code>sms:</code>, and <code>mailto:</code> addresses are kept as written, and every other address is upgraded to <code>https:</code></li>
-<li><strong>HTTPS enforcement</strong>: Non-localhost URLs are automatically upgraded to <code>https:</code> to prevent accidental insecure links</li>
-<li><strong>Referrer policy control</strong>: The <code>referrerpolicy</code> attribute sets <code>strict-origin-when-cross-origin</code> to limit referrer information sent with requests</li>
-<li><strong>Automatic <code>rel</code> attributes</strong>: External links opened in a new tab (<code>target="_blank"</code>) automatically receive <code>rel="noOpener noReferrer"</code> to prevent reverse tabnapping attacks</li>
+<li><strong>URL sanitization</strong>: <code>auro-hyperlink</code> blocks dangerous protocols (<code>javascript:</code>, <code>data:</code>, <code>vbscript:</code>), leaves <code>tel:</code>, <code>sms:</code>, and <code>mailto:</code> addresses as written, and upgrades every other address to <code>https:</code> except on <code>localhost</code></li>
+<li><strong>HTTPS enforcement</strong>: <code>auro-hyperlink</code> upgrades URLs to <code>https:</code> to prevent accidental insecure links, except on <code>localhost</code></li>
+<li><strong>Referrer policy control</strong>: The <code>referrerpolicy</code> attribute sets the <code>strict-origin-when-cross-origin</code> policy. On <code>target="_blank"</code> links to other sites, it shares the origin instead of the default <code>rel="noOpener noReferrer"</code> behavior</li>
+<li><strong>Automatic <code>rel</code> attributes</strong>: When a standard or <code>nav</code> link to another site uses <code>target="_blank"</code>, <code>auro-hyperlink</code> adds <code>rel="noOpener noReferrer"</code> to prevent reverse tabnapping attacks. It doesn't add it when you set <code>rel</code> or <code>referrerpolicy</code></li>
 </ul>
 <auro-header level="2">Accessibility</auro-header>
 <p>Native anchor elements require manual ARIA attribute management, and focus behavior is inconsistent across browsers and contexts.</p>
 <p><code>auro-hyperlink</code> provides:</p>
 <ul>
-<li><strong>ARIA attribute transportation</strong>: Accessibility attributes set on the host element are automatically transported to the inner <code>&lt;a&gt;</code> element inside the shadow DOM, ensuring screen readers receive the correct semantics</li>
-<li><strong>Delegated focus</strong>: <code>delegatesFocus</code> is enabled on the shadow root, so focus is properly forwarded to the interactive element inside the component</li>
-<li><strong>Focus-visible styling</strong>: Clear, high-contrast focus indicators are applied only on keyboard navigation, following the <code>:focus-visible</code> pattern</li>
+<li><strong>ARIA attribute transportation</strong>: <code>auro-hyperlink</code> transports accessibility attributes set on the host element to the inner <code>&lt;a&gt;</code> element inside the shadow DOM, so screen readers receive the correct semantics</li>
+<li><strong>Delegated focus</strong>: <code>auro-hyperlink</code> enables <code>delegatesFocus</code> on the shadow root, so focus moves to the interactive element inside the component</li>
+<li><strong>Focus-visible styling</strong>: <code>auro-hyperlink</code> shows focus indicators for keyboard users, following the <code>:focus-visible</code> pattern</li>
 <li><strong>Role support</strong>: The <code>role="button"</code> attribute gives the hyperlink the button role for screen readers when you use it for actions rather than navigation. Enter and Space do not currently fire <code>click</code>, so handle those keys yourself</li>
 </ul>
 <p>By contrast, a plain <code>&lt;a&gt;</code> element inside a shadow DOM would require manual focus management and custom ARIA handling that is easy to get wrong.</p>
@@ -23,9 +23,9 @@
 <p>Native anchors provide no visual indication of whether a link navigates to an external site or opens a new window. Users are left without context about what happens when they click.</p>
 <p><code>auro-hyperlink</code> handles this automatically:</p>
 <ul>
-<li><strong>External link icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to a domain different from the current site, an external-link icon is displayed</li>
-<li><strong>New window icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to the same domain, a new-window icon is displayed instead</li>
-<li><strong>Contextual <code>rel</code> attributes</strong>: The <code>rel</code> attribute is set appropriately based on whether the link is internal or external, with or without a referrer policy</li>
+<li><strong>External link icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to a different site, <code>auro-hyperlink</code> shows an external-link icon</li>
+<li><strong>New window icon</strong>: When a link has <code>target="_blank"</code> and its <code>href</code> points to the same site, <code>auro-hyperlink</code> shows a new-window icon instead</li>
+<li><strong>Contextual <code>rel</code> attributes</strong>: <code>auro-hyperlink</code> sets the <code>rel</code> attribute based on whether the link is internal or external, with or without a referrer policy</li>
 </ul>
 <auro-header level="2">Call-to-action variant</auro-header>
 <p>HTML has no native concept of a link styled as a prominent call-to-action button. Building one from an <code>&lt;a&gt;</code> element requires custom CSS and careful attention to accessibility.</p>
@@ -47,9 +47,9 @@
 <p>Native anchors support <code>tel:</code>, <code>mailto:</code>, and <code>sms:</code> links, but offer no safeguards against misuse of other protocols.</p>
 <p><code>auro-hyperlink</code> handles protocol-specific behavior:</p>
 <ul>
-<li><strong>Safe protocols</strong>: <code>tel:</code>, <code>sms:</code>, and <code>mailto:</code> links are rendered as-is</li>
-<li><strong>Dangerous protocols</strong>: <code>javascript:</code>, <code>data:</code>, and <code>vbscript:</code> links are blocked entirely, rendering no interactive element</li>
-<li><strong>Relative URLs</strong>: Relative paths are resolved against the current page and upgraded to <code>https:</code></li>
+<li><strong>Safe protocols</strong>: <code>tel:</code>, <code>sms:</code>, and <code>mailto:</code> links stay as written</li>
+<li><strong>Dangerous protocols</strong>: <code>auro-hyperlink</code> blocks <code>javascript:</code>, <code>data:</code>, and <code>vbscript:</code> links entirely and renders no interactive element</li>
+<li><strong>Relative URLs</strong>: <code>auro-hyperlink</code> resolves relative paths against the current page and upgrades them to <code>https:</code> except on <code>localhost</code></li>
 </ul>
 <auro-header level="2">Design system integration</auro-header>
 <p>A native <code>&lt;a&gt;</code> element can't be styled to match a design system across brands without significant custom CSS. Shadow DOM encapsulation makes this even harder.</p>
@@ -89,7 +89,7 @@
 <tr>
 <td><code>rel</code> security attributes</td>
 <td>Manual</td>
-<td>Automatic for external <code>_blank</code> links</td>
+<td>Automatic for standard and <code>nav</code> links to other sites that open in a new tab</td>
 </tr>
 <tr>
 <td>ARIA in shadow DOM</td>

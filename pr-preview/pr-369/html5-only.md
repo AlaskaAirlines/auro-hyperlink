@@ -58,7 +58,7 @@
 <auro-header level="3">Automatic external link and new window icons</auro-header>
 <p><code>auro-hyperlink</code> detects <code>target="_blank"</code> links and automatically displays the appropriate icon: an external-link icon for cross-domain links or a new-window icon for same-domain links. With WCSS classes, you must add these icons manually.</p>
 <auro-header level="3">Automatic rel security attributes</auro-header>
-<p><code>auro-hyperlink</code> automatically adds <code>rel="noOpener noReferrer"</code> to external links opened in new tabs to prevent reverse tabnapping. With a plain <code>&lt;a&gt;</code> element, you must remember to add these attributes yourself on every external link.</p>
+<p><code>auro-hyperlink</code> adds <code>rel="noOpener noReferrer"</code> to standard and navigation links to other sites that open in a new tab, which prevents reverse tabnapping. With a plain <code>&lt;a&gt;</code> element, you must add the attribute yourself on every external link.</p>
 <auro-header level="3">Referrer policy management</auro-header>
 <p><code>auro-hyperlink</code> provides a <code>referrerpolicy</code> attribute that sets <code>strict-origin-when-cross-origin</code> and adjusts the <code>rel</code> attribute accordingly. With WCSS, you must manage the <code>referrerpolicy</code> and <code>rel</code> attributes manually and keep them in sync.</p>
 <auro-header level="3">ARIA attribute transportation</auro-header>
