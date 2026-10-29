@@ -22,11 +22,11 @@
 
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Appearance
 
-Difference appearance options through the `appearance` attribute. This example shows the `inverse` appearance.
+Use the `appearance` attribute to match the link to its background. This example shows the `inverse` appearance for dark backgrounds.
 
 <div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/appearance-inverse.html) -->
@@ -41,11 +41,11 @@ Difference appearance options through the `appearance` attribute. This example s
 
 </auro-accordion>
 
-### Relative vs Absolute URLs and HTTPS Enforcement
+### Relative and absolute URLs and HTTPS enforcement
 
-#### HTTPS Enforcement
+#### HTTPS enforcement
 
-Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
+`auro-hyperlink` upgrades the `href` to `https`, except for `tel:`, `sms:`, and `mailto:` addresses, and except when the page is served from `localhost`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/https-enforcement.html) -->
@@ -62,7 +62,7 @@ Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite
 
 #### Relative URLs
 
-Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
+Use relative URLs when an absolute URL isn't practical. `auro-hyperlink` resolves a relative `href` against the current page and puts the full `https://` address in the inner `<a>` element in the shadow DOM.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relative-url.html) -->
@@ -77,7 +77,9 @@ Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink
 
 </auro-accordion>
 
-#### Using telephone/text/mailto URLs Schemes
+#### Telephone, text message, and email addresses
+
+Use `tel:`, `sms:`, and `mailto:` addresses to start a call, a text message, or an email. `auro-hyperlink` leaves these addresses as you write them.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
@@ -92,11 +94,11 @@ Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink
 
 </auro-accordion>
 
-### External Links
+### External links
 
-Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain "new-window" icon, or an icon that communicates users will be taken to a new domain.
+When you use `target="_blank"` on a link with a usable `href`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
 
-For link security purposes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
+Browsers already apply `rel="noopener"` behavior to `target="_blank"` links. For additional security, standard and `nav` links to other sites also get `rel="noOpener noReferrer"` by default. Links to your own site and `type="cta"` links get no automatic `rel`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external.html) -->
@@ -118,13 +120,13 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 
 </auro-accordion>
 
-### External Links with Referrerpolicy
+### External links with `referrerpolicy`
 
-When using the `target="_blank"` attribute, use the `referrerpolicy` attribute to override the default use of `rel="noreferrer"`.
+When you use `target="_blank"`, add the `referrerpolicy` attribute to share the page's origin with the linked site instead of using the default `rel="noOpener noReferrer"`.
 
-Using this attribute will use the `strict-origin-when-cross-origin` policy type. This sends a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
+The attribute applies the `strict-origin-when-cross-origin` policy. It sends the full URL for same-origin requests, sends only the origin when the protocol security level stays the same (HTTPS to HTTPS), and sends no referrer to a less secure destination (HTTPS to HTTP).
 
-This will also set the `rel` attribute to `external`.
+For links to other sites, it also sets `rel="external"` unless you provide your own `rel`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer.html) -->
@@ -146,9 +148,9 @@ This will also set the `rel` attribute to `external`.
 
 </auro-accordion>
 
-### Navigation Links
+### Navigation links
 
-When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
+Use `type="nav"` for links in navigation. Navigation links appear without an underline and show it on hover and on focus.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nav.html) -->
@@ -170,9 +172,9 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alter
 
 </auro-accordion>
 
-### Call to Action Buttons
+### Call to action buttons
 
-Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `appearance="inverse"` attribute can be combined with any `type="cta"` option for use on dark backgrounds.
+Call to action (CTA) links look like buttons but behave as hyperlinks. Use the `variant` attribute with `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to change their appearance, as shown below. Add `appearance="inverse"` to any `type="cta"` link on a dark background.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
@@ -194,12 +196,9 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 
 </auro-accordion>
 
-#### CTA External links
+#### CTA external links
 
-(CTA) buttons can also be used in combinaton with external links. In the following example, see how the `target="_blank"` attribute acts like external links.
-
-
-CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
+CTA links also work with external links. When the link has a usable `href`, add `target="_blank"` to show the same new-window or external-link icon that standard links get.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link.html) -->
@@ -223,7 +222,7 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 
 #### Fluid CTA links
 
-In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
+Add the `fluid` attribute to stretch a CTA link to the full width of its parent container.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-fluid.html) -->
@@ -240,7 +239,7 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 
 #### CTA sizes
 
-In the following example, see how the `size` attribute alters the size of the cta link. Available sizes are `xs`, `sm`, `md`, `lg`, `xl`.
+Use the `size` attribute to change the size of a CTA link. The available sizes are `xs`, `sm`, `md`, `lg`, and `xl`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size.html) -->
@@ -257,7 +256,7 @@ In the following example, see how the `size` attribute alters the size of the ct
 
 #### CTA sizes with external links
 
-When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attribute.
+When a CTA link with a usable `href` uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
@@ -289,15 +288,15 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Using role="button"
+### Using `role="button"`
 
-Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below.
+Use `role="button"` when you need link styling for an action, such as opening a dialog.
 
-**Note:** Any `href` will be ignored when using `role="button"`. A click-event must be passed to the element as illustrated in the example below.
+**Note:** `auro-hyperlink` ignores `href` when you use `role="button"`, so handle the `click` event yourself, as the following example shows.
 
-**Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
+**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script handles `click` and the Enter and Space keys.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
@@ -324,9 +323,9 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 
 ### Unsupported types
 
-Not all URL types are supported for security reasons. Two common types that are worth mentioning are `javaScript:` and `data:`.
+For security, `auro-hyperlink` drops `javascript:`, `data:`, and `vbscript:` addresses so they can't run code.
 
-The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
+The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` address, and a `data:` address. In each case, the link renders only its slotted content as plain text instead of an `<a>` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/non-supported.html) -->
@@ -343,9 +342,7 @@ The following examples illustrate the use of `<auro-hyperlink>` with either no `
 
 ### Typography
 
-The `auro-hyperlink` component is designed to work with the typography classes provided by the Auro Design System. 
-
-The component will automatically inherit the typography styles from the parent element, allowing for consistent text styling across your application. Classes can also be applied directly onto the `auro-hyperlink` component.
+`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes to the element that contains the link, as shown below.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->
@@ -360,9 +357,9 @@ The component will automatically inherit the typography styles from the parent e
 
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following custom properties.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->

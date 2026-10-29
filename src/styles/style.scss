@@ -26,7 +26,7 @@
 // applying a focus UI when using .focus()
 :host([type='nav']) {
   .hyperlink {
-    &:focus {
+    &:focus-visible {
       text-decoration: underline;
     }
   }
