@@ -359,7 +359,7 @@ The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` a
 
 ## Restyle with CSS custom properties
 
-Restyle the component by changing the values of the following custom properties.
+Restyle the component by changing the values of the following tokens.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->
