@@ -8,41 +8,129 @@
 
 # auro-hyperlink
 
-The `auro-hyperlink` element is a wrapper for an HTML5 `<a>` anchor element. 
-This contains styling enabling multi-brand theme support as well as behavior and accessibility improvements over the HTML5 standard anchor element.
+An accessible link that takes people to another page, a file, or an email or phone action.
+It wraps a standard HTML `<a>` element, adds brand-aware styling and safer handling of
+URLs, and passes ARIA attributes, `role`, and `tabindex` from the host to the inner link so screen reader users hear them.
 
-### Properties & Attributes
+**Key capabilities**
+- **Link styles**: Leave `type` unset for a standard inline text link, use `type="nav"` for navigation
+  links, or use `type="cta"` for a link that looks like an `<auro-button>`.
+- **URL safety**: Drops `href` values that could run code (`javascript:`, `data:`, and `vbscript:`) and upgrades the rest to `https`, except `tel:`, `sms:`, and `mailto:` addresses and pages served from `localhost`.
+- **External links**: When the link has a usable `href`, setting `target="_blank"` adds a new-window icon for links to the same site or an external-link icon for other sites.
+- **Light and dark backgrounds**: Setting `appearance="inverse"` switches the link to colors designed for
+  dark backgrounds.
+- **Button behavior**: Setting `role="button"` gives the link a button role and a tab stop for actions such as
+  opening a dialog, but Enter and Space do not currently fire `click`, so handle those keys yourself.
 
-| Properties     | Attributes     | Modifiers | Type                                                        | Default   | Description                                                                                                                                                                                           |
-| -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance     | appearance     |           | `default` \| `inverse`                                      | `default` | Defines whether the component will be on lighter or darker backgrounds.                                                                                                                               |
-| download       | download       |           | boolean                                                     |           | If true, the linked resource will be downloaded when the hyperlink is clicked.                                                                                                                        |
-| fluid          | fluid          |           | boolean                                                     |           | If true and `type="cta"`, the hyperlink will have a fluid-width UI.                                                                                                                                   |
-| href           | href           |           | string                                                      |           | Defines the URL of the linked page.                                                                                                                                                                   |
-| referrerpolicy | referrerpolicy |           | boolean                                                     |           | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.                                                                                               |
-| rel            | rel            |           | string                                                      |           | Defines the relationship between the current document and the linked document. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information. |
-| role           |                |           | string                                                      |           | Defines ARIA roles; currently supports `button` for extended experiences.                                                                                                                             |
-| safeUri        |                | readonly  | string                                                      |           | Returns a safe URI based on the provided `href`.<br>If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br>Otherwise, it returns an empty string.                              |
-| shape          | shape          |           | `rounded` \| `pill` \| `circle` \| `square`                 |           | Defines the shape of the button when using `type="cta"`.                                                                                                                                              |
-| size           | size           |           | `xs` \| `sm` \| `md` \| `lg` \| `xl`                        |           | Defines the size of the button when using `type="cta"`.                                                                                                                                               |
-| target         | target         |           | string                                                      |           | Defines where to open the linked document.                                                                                                                                                            |
-| type           | type           |           | `nav` \| `cta`                                              |           | Defines the type of hyperlink.                                                                                                                                                                        |
-| variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | Sets button variant option when using `type="cta"`.                                                                                                                                                   |
-| ondark         | ondark         |           | boolean                                                     |           | Deprecated in favor of `appearance="inverse"`; scheduled for removal in the next major version.                                                                                                       |
-| onDark         |                |           | boolean                                                     |           | Deprecated alias of `ondark`, kept for backward compatibility; scheduled for removal in the next major version.                                                                                       |
+**Example**
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink href="/trips"&gt;View your trips&lt;/auro-hyperlink&gt;</code></pre>
+
+### Properties and attributes
+
+| Properties     | Attributes     | Modifiers | Type                                                        | Default   | Category | Relevant when    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------- | -------------- | --------- | ----------------------------------------------------------- | --------- | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance     | appearance     |           | "default" \| "inverse"                                      | `default` | ui       |                  | Sets the color scheme to match the background behind the link. Use `default` on light backgrounds and `inverse` on dark backgrounds.                                                                                                                                                                                                                                                                                                                                        |
+| fluid          | fluid          |           | boolean                                                     |           | ui       | `type === 'cta'` | Stretches the link to fill the width of its container. Applies only when `type="cta"`.                                                                                                                                                                                                                                                                                                                                                                                      |
+| shape          | shape          |           | "rounded" \| "pill" \| "circle" \| "square"                 |           | ui       | `type === 'cta'` | Sets the shape of a CTA link's button: `rounded` corners, a `pill` with fully rounded ends, a `circle`, or a `square`. Use `rounded` or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Applies only when `type="cta"`, and uses `auro-button`'s default, `rounded`, when not set ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).                                                                         |
+| size           | size           |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        |           | ui       | `type === 'cta'` | Sets the size of a CTA link's button, from `xs` (smallest) to `xl` (largest). At `xs` and `sm`, the new-window or external-link icon also shrinks to match. Applies only when `type="cta"`, and uses `auro-button`'s default, `md`, when not set ([auro-button API](https://auro.alaskaair.com/components/auro/button/api)).                                                                                                                                                |
+| type           | type           |           | `nav` \| `cta`                                              |           | ui       |                  | Sets whether the link looks like a regular text link, a navigation link, or a button. Use `nav` for navigation links, which are underlined on hover and on focus, and `cta` for a link that looks like a button. Leave it unset for a regular underlined text link.                                                                                                                                                                                                         |
+| variant        | variant        |           | `primary` \| `secondary` \| `tertiary` \| `ghost` \| `flat` | `primary` | ui       | `type === 'cta'` | Sets how much emphasis a CTA link's button gets, from `primary` (strongest) to `ghost` and `flat` (lowest). Applies only when `type="cta"`.                                                                                                                                                                                                                                                                                                                                 |
+| ondark         | ondark         |           | boolean                                                     |           | ui       |                  | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                               |
+| onDark         | ondark         |           | boolean                                                     | `false`   | ui       |                  | Deprecated: Use `appearance="inverse"` instead.<br>Switches the link to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                               |
+| download       | download       |           | boolean                                                     |           | behavior | `type !== 'cta'` | Downloads the linked file when you select the link, instead of navigating to it. Ignored when `type="cta"`.                                                                                                                                                                                                                                                                                                                                                                 |
+| href           | href           |           | string                                                      |           | behavior |                  | Sets the address the link goes to, such as `/trips` or `https://www.alaskaair.com` (the link's `href`). Without a usable `href`, a standard or `nav` link without a `role` shows its content as plain text, and a `cta` link renders as a button.<br><br>Security: a `javascript:`, `data:`, or `vbscript:` address could run code, so the link drops it, but don't pass untrusted input as `href`.                                                                         |
+| referrerpolicy | referrerpolicy |           | boolean                                                     |           | behavior | `type !== 'cta'` | Sets the link's referrer policy to `strict-origin-when-cross-origin`: links within the same origin send the full address, links to other origins send only the origin, and links to a less secure destination (HTTPS to HTTP) send nothing. On a `target="_blank"` link to another site, it also shares the origin instead of the default `rel="noOpener noReferrer"` behavior, which sends nothing. Ignored when `type="cta"`.                                             |
+| rel            | rel            |           | string                                                      |           | behavior |                  | Sets how the linked page relates to the current page, such as `nofollow` (the link's `rel`). When `rel` isn't set and a `target="_blank"` link's `href` points to another site, standard and `nav` links use `noOpener noReferrer`, or `external` when `referrerpolicy` is on; links to the same site and `type="cta"` links get no automatic `rel`. Visit [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel) for more information. |
+| role           | role           |           | string                                                      |           | behavior | `type !== 'cta'` | Gives the link button behavior: any `role` value is passed to the inner link, shows a pointer cursor, and stops the link from navigating to `href`. The value `button` also adds a keyboard tab stop. Enter and Space do not currently fire `click`, so handle those keys yourself. The pointer cursor, `href` handling, and tab stop don't apply when `type="cta"`.                                                                                                        |
+| target         | target         |           | string                                                      |           | behavior |                  | Sets where the linked page opens, such as `_blank` for a new tab or `_self` for the current tab (the link's `target`). When the link has a usable `href`, `_blank` also adds an icon after the content: a new-window icon for links to the same site, or an external-link icon for other sites. Links count as another site unless the hostname matches exactly, so `www.` and other subdomains count as other sites.                                                       |
 
 ### Methods
 
-| Name     | Parameters                                                           | Return | Description                                       |
-| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
+| Name     | Parameters                                                    | Return | Description                                                                                                                                                    |
+| -------- | ------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-hyperlink` on the same page. |
 
-### CSS Shadow Parts
+### Slots
 
-| Name       | Description                                                                  |
-| ---------- | ---------------------------------------------------------------------------- |
-| link       | Allows styling to be applied to the `a` element.                             |
-| targetIcon | Allows styling to be applied to the icon that appears next to the hyperlink. |
+| Name      | Description                                         |
+| --------- | --------------------------------------------------- |
+| (default) | The link's visible content: text, an icon, or both. |
+
+### CSS shadow parts
+
+| Name       | Description                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| link       | The inner `<a>` element, rendered when the link has a usable `href` or a `role`, unless `type` is `cta`.              |
+| targetIcon | The new-window or external-link icon shown after the content when `target="_blank"` and the link has a usable `href`. |
+
+### CSS custom properties
+
+| Name                                                    | Relevant when    | Description                                                                              |
+| ------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------- |
+| --ds-auro-hyperlink-default-color-default               | `type !== 'cta'` | Text color of the link in its default state on light backgrounds.                        |
+| --ds-auro-hyperlink-default-color-inverse               | `type !== 'cta'` | Text color of the link in its default state on dark backgrounds.                         |
+| --ds-auro-hyperlink-default-container-color-default     | `type !== 'cta'` | Background color of the link in its default state on light backgrounds.                  |
+| --ds-auro-hyperlink-default-container-color-inverse     | `type !== 'cta'` | Background color of the link in its default state on dark backgrounds.                   |
+| --ds-auro-hyperlink-default-outline-color-default       | `type !== 'cta'` | Outline color of the link in its default state on light backgrounds.                     |
+| --ds-auro-hyperlink-default-outline-color-inverse       | `type !== 'cta'` | Outline color of the link in its default state on dark backgrounds.                      |
+| --ds-auro-hyperlink-default-border-color-default        | `type !== 'cta'` | Border color of the link in its default state on light backgrounds.                      |
+| --ds-auro-hyperlink-default-border-color-inverse        | `type !== 'cta'` | Border color of the link in its default state on dark backgrounds.                       |
+| --ds-auro-hyperlink-visited-color-default               | `type !== 'cta'` | Text color of the link after it has been visited on light backgrounds.                   |
+| --ds-auro-hyperlink-visited-color-inverse               | `type !== 'cta'` | Text color of the link after it has been visited on dark backgrounds.                    |
+| --ds-auro-hyperlink-visited-container-color-default     | `type !== 'cta'` | Background color of the link after it has been visited on light backgrounds.             |
+| --ds-auro-hyperlink-visited-container-color-inverse     | `type !== 'cta'` | Background color of the link after it has been visited on dark backgrounds.              |
+| --ds-auro-hyperlink-visited-outline-color-default       | `type !== 'cta'` | Outline color of the link after it has been visited on light backgrounds.                |
+| --ds-auro-hyperlink-visited-outline-color-inverse       | `type !== 'cta'` | Outline color of the link after it has been visited on dark backgrounds.                 |
+| --ds-auro-hyperlink-visited-border-color-default        | `type !== 'cta'` | Border color of the link after it has been visited on light backgrounds.                 |
+| --ds-auro-hyperlink-visited-border-color-inverse        | `type !== 'cta'` | Border color of the link after it has been visited on dark backgrounds.                  |
+| --ds-auro-hyperlink-focus-color-default                 | `type !== 'cta'` | Text color of the link when it has keyboard focus on light backgrounds.                  |
+| --ds-auro-hyperlink-focus-color-inverse                 | `type !== 'cta'` | Text color of the link when it has keyboard focus on dark backgrounds.                   |
+| --ds-auro-hyperlink-focus-container-color-default       | `type !== 'cta'` | Background color of the link when it has keyboard focus on light backgrounds.            |
+| --ds-auro-hyperlink-focus-container-color-inverse       | `type !== 'cta'` | Background color of the link when it has keyboard focus on dark backgrounds.             |
+| --ds-auro-hyperlink-focus-outline-color-default         | `type !== 'cta'` | Outline color of the link when it has keyboard focus on light backgrounds.               |
+| --ds-auro-hyperlink-focus-outline-color-inverse         | `type !== 'cta'` | Outline color of the link when it has keyboard focus on dark backgrounds.                |
+| --ds-auro-hyperlink-focus-border-color-default          | `type !== 'cta'` | Border color of the link when it has keyboard focus on light backgrounds.                |
+| --ds-auro-hyperlink-focus-border-color-inverse          | `type !== 'cta'` | Border color of the link when it has keyboard focus on dark backgrounds.                 |
+| --ds-auro-hyperlink-hover-color-default                 | `type !== 'cta'` | Text color of the link when you hover over it on light backgrounds.                      |
+| --ds-auro-hyperlink-hover-color-inverse                 | `type !== 'cta'` | Text color of the link when you hover over it on dark backgrounds.                       |
+| --ds-auro-hyperlink-hover-container-color-default       | `type !== 'cta'` | Background color of the link when you hover over it on light backgrounds.                |
+| --ds-auro-hyperlink-hover-container-color-inverse       | `type !== 'cta'` | Background color of the link when you hover over it on dark backgrounds.                 |
+| --ds-auro-hyperlink-hover-outline-color-default         | `type !== 'cta'` | Outline color of the link when you hover over it on light backgrounds.                   |
+| --ds-auro-hyperlink-hover-outline-color-inverse         | `type !== 'cta'` | Outline color of the link when you hover over it on dark backgrounds.                    |
+| --ds-auro-hyperlink-hover-border-color-default          | `type !== 'cta'` | Border color of the link when you hover over it on light backgrounds.                    |
+| --ds-auro-hyperlink-hover-border-color-inverse          | `type !== 'cta'` | Border color of the link when you hover over it on dark backgrounds.                     |
+| --ds-auro-hyperlink-nav-default-color-default           | `type !== 'cta'` | Text color of the navigation link in its default state on light backgrounds.             |
+| --ds-auro-hyperlink-nav-default-color-inverse           | `type !== 'cta'` | Text color of the navigation link in its default state on dark backgrounds.              |
+| --ds-auro-hyperlink-nav-default-container-color-default | `type !== 'cta'` | Background color of the navigation link in its default state on light backgrounds.       |
+| --ds-auro-hyperlink-nav-default-container-color-inverse | `type !== 'cta'` | Background color of the navigation link in its default state on dark backgrounds.        |
+| --ds-auro-hyperlink-nav-default-outline-color-default   | `type !== 'cta'` | Outline color of the navigation link in its default state on light backgrounds.          |
+| --ds-auro-hyperlink-nav-default-outline-color-inverse   | `type !== 'cta'` | Outline color of the navigation link in its default state on dark backgrounds.           |
+| --ds-auro-hyperlink-nav-default-border-color-default    | `type !== 'cta'` | Border color of the navigation link in its default state on light backgrounds.           |
+| --ds-auro-hyperlink-nav-default-border-color-inverse    | `type !== 'cta'` | Border color of the navigation link in its default state on dark backgrounds.            |
+| --ds-auro-hyperlink-nav-visited-color-default           | `type !== 'cta'` | Text color of the navigation link after it has been visited on light backgrounds.        |
+| --ds-auro-hyperlink-nav-visited-color-inverse           | `type !== 'cta'` | Text color of the navigation link after it has been visited on dark backgrounds.         |
+| --ds-auro-hyperlink-nav-visited-container-color-default | `type !== 'cta'` | Background color of the navigation link after it has been visited on light backgrounds.  |
+| --ds-auro-hyperlink-nav-visited-container-color-inverse | `type !== 'cta'` | Background color of the navigation link after it has been visited on dark backgrounds.   |
+| --ds-auro-hyperlink-nav-visited-outline-color-default   | `type !== 'cta'` | Outline color of the navigation link after it has been visited on light backgrounds.     |
+| --ds-auro-hyperlink-nav-visited-outline-color-inverse   | `type !== 'cta'` | Outline color of the navigation link after it has been visited on dark backgrounds.      |
+| --ds-auro-hyperlink-nav-visited-border-color-default    | `type !== 'cta'` | Border color of the navigation link after it has been visited on light backgrounds.      |
+| --ds-auro-hyperlink-nav-visited-border-color-inverse    | `type !== 'cta'` | Border color of the navigation link after it has been visited on dark backgrounds.       |
+| --ds-auro-hyperlink-nav-focus-color-default             | `type !== 'cta'` | Text color of the navigation link when it has keyboard focus on light backgrounds.       |
+| --ds-auro-hyperlink-nav-focus-color-inverse             | `type !== 'cta'` | Text color of the navigation link when it has keyboard focus on dark backgrounds.        |
+| --ds-auro-hyperlink-nav-focus-container-color-default   | `type !== 'cta'` | Background color of the navigation link when it has keyboard focus on light backgrounds. |
+| --ds-auro-hyperlink-nav-focus-container-color-inverse   | `type !== 'cta'` | Background color of the navigation link when it has keyboard focus on dark backgrounds.  |
+| --ds-auro-hyperlink-nav-focus-outline-color-default     | `type !== 'cta'` | Outline color of the navigation link when it has keyboard focus on light backgrounds.    |
+| --ds-auro-hyperlink-nav-focus-outline-color-inverse     | `type !== 'cta'` | Outline color of the navigation link when it has keyboard focus on dark backgrounds.     |
+| --ds-auro-hyperlink-nav-focus-border-color-default      | `type !== 'cta'` | Border color of the navigation link when it has keyboard focus on light backgrounds.     |
+| --ds-auro-hyperlink-nav-focus-border-color-inverse      | `type !== 'cta'` | Border color of the navigation link when it has keyboard focus on dark backgrounds.      |
+| --ds-auro-hyperlink-nav-hover-color-default             | `type !== 'cta'` | Text color of the navigation link when you hover over it on light backgrounds.           |
+| --ds-auro-hyperlink-nav-hover-color-inverse             | `type !== 'cta'` | Text color of the navigation link when you hover over it on dark backgrounds.            |
+| --ds-auro-hyperlink-nav-hover-container-color-default   | `type !== 'cta'` | Background color of the navigation link when you hover over it on light backgrounds.     |
+| --ds-auro-hyperlink-nav-hover-container-color-inverse   | `type !== 'cta'` | Background color of the navigation link when you hover over it on dark backgrounds.      |
+| --ds-auro-hyperlink-nav-hover-outline-color-default     | `type !== 'cta'` | Outline color of the navigation link when you hover over it on light backgrounds.        |
+| --ds-auro-hyperlink-nav-hover-outline-color-inverse     | `type !== 'cta'` | Outline color of the navigation link when you hover over it on dark backgrounds.         |
+| --ds-auro-hyperlink-nav-hover-border-color-default      | `type !== 'cta'` | Border color of the navigation link when you hover over it on light backgrounds.         |
+| --ds-auro-hyperlink-nav-hover-border-color-inverse      | `type !== 'cta'` | Border color of the navigation link when you hover over it on dark backgrounds.          |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Basic
@@ -64,11 +152,11 @@ Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airline
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Appearance
 
-Difference appearance options through the `appearance` attribute. This example shows the `inverse` appearance.
+Use the `appearance` attribute to match the link to its background. This example shows the `inverse` appearance for dark backgrounds.
 
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/appearance-inverse.html) -->
@@ -87,17 +175,17 @@ Welcome to &lt;auro-hyperlink appearance="inverse" href="https://www.alaskaair.c
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Relative vs Absolute URLs and HTTPS Enforcement
+### Relative and absolute URLs and HTTPS enforcement
 
-#### HTTPS Enforcement
+#### HTTPS enforcement
 
-Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite the final reference with the correct `https` protocol.
+`auro-hyperlink` upgrades the `href` to `https`, except for `tel:`, `sms:`, and `mailto:` addresses, and except when the page is served from `localhost`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/https-enforcement.html) -->
 <!-- The below content is automatically added from ./../apiExamples/https-enforcement.html -->
-  http absolute URL <auro-hyperlink href="http://www.alaskaair.com/route-map">to route map</auro-hyperlink> or
-  no hypertext transfer protocol absolute URL to <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>
+  A link with an <code>http://</code> address: <auro-hyperlink href="http://www.alaskaair.com/route-map">route map</auro-hyperlink>.
+  A link with an address that starts with <code>//</code>: <auro-hyperlink href="//www.alaskaair.com/route-map">route map</auro-hyperlink>.
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -106,17 +194,17 @@ Regardless of protocol used with `href` attribute, `auro-hyperlink` will rewrite
 <!-- The below code snippet is automatically added from ./../apiExamples/https-enforcement_code.html -->
 
 <pre class="language-html"><code class="language-html">&lt;!-- Web component example --&gt;
-http absolute URL &lt;auro-hyperlink href="http://www.alaskaair.com/route-map"&gt;to route map&lt;/auro-hyperlink&gt; or
-no hypertext transfer protocol absolute URL to &lt;auro-hyperlink href="//www.alaskaair.com/route-map"&gt;route map&lt;/auro-hyperlink&gt;
-&lt;!-- Output code in shadow DOM element --&gt;
-http absolute URL &lt;a class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;to route map&lt;/slot&gt;&lt;/a&gt;
-no hypertext transfer protocol absolute URL to &lt;a class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;route map&lt;/slot&gt;&lt;/a&gt;</code></pre>
+A link with an &lt;code&gt;http://&lt;/code&gt; address: &lt;auro-hyperlink href="http://www.alaskaair.com/route-map"&gt;route map&lt;/auro-hyperlink&gt;.
+A link with an address that starts with &lt;code&gt;//&lt;/code&gt;: &lt;auro-hyperlink href="//www.alaskaair.com/route-map"&gt;route map&lt;/auro-hyperlink&gt;.
+&#10;&lt;!-- Output code in shadow DOM element --&gt;
+A link with an &lt;code&gt;http://&lt;/code&gt; address: &lt;a part="link" class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/a&gt;.
+A link with an address that starts with &lt;code&gt;//&lt;/code&gt;: &lt;a part="link" class="hyperlink" href="https://www.alaskaair.com/route-map"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/a&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### Relative URLs
 
-Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink` will insert the `https://` protocol and hostname into the `<a>` element in the shadowDOM.
+Use relative URLs when an absolute URL isn't practical. `auro-hyperlink` resolves a relative `href` against the current page and puts the full `https://` address in the inner `<a>` element in the shadow DOM.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/relative-url.html) -->
@@ -131,20 +219,21 @@ Absolute URLs are not always preferred. When using relative URLs `auro-hyperlink
 
 <pre class="language-html"><code class="language-html">&lt;!-- Web component example --&gt;
 Relative href converted to absolute URL to &lt;auro-hyperlink href="/components/hyperlink/api"&gt;Hyperlink API page&lt;/auro-hyperlink&gt;.
-​
-&lt;!-- Output code in shadow DOM element --&gt;
-Relative href converted to absolute URL to &lt;a class="hyperlink" href="https://www.auro.alaskaair.com/components/hyperlink/api"&gt;&lt;slot&gt;Hyperlink API page&lt;/slot&gt;&lt;/a&gt;.</code></pre>
+&#10;&lt;!-- Output code in shadow DOM element --&gt;
+Relative href converted to absolute URL to &lt;a part="link" class="hyperlink" href="https://auro.alaskaair.com/components/hyperlink/api"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/a&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Using telephone/text/mailto URLs Schemes
+#### Telephone, text message, and email addresses
+
+Use `tel:`, `sms:`, and `mailto:` addresses to start a call, a text message, or an email. `auro-hyperlink` leaves these addresses as you write them.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/URLscheme.html) -->
 <!-- The below content is automatically added from ./../apiExamples/URLscheme.html -->
   Example <auro-hyperlink href="sms:+18002527522">sms link</auro-hyperlink>.
   Example <auro-hyperlink href="tel:+18002527522">telephone link</auro-hyperlink>.
-  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaiar.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
+  Example <auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&bcc=someone-else-else@alaskaair.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">email link</auro-hyperlink>.
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -154,58 +243,52 @@ Relative href converted to absolute URL to &lt;a class="hyperlink" href="https:/
 
 <pre class="language-html"><code class="language-html">Example &lt;auro-hyperlink href="sms:+18002527522"&gt;sms link&lt;/auro-hyperlink&gt;.
 Example &lt;auro-hyperlink href="tel:+18002527522"&gt;telephone link&lt;/auro-hyperlink&gt;.
-Example &lt;auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&amp;bcc=someone-else-else@alaskaiar.com&amp;subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email"&gt;email link&lt;/auro-hyperlink&gt;.</code></pre>
+Example &lt;auro-hyperlink href="mailto:someone@alaskaair.com?cc=someone-else@alaskaair.com&amp;bcc=someone-else-else@alaskaair.com&amp;subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email"&gt;email link&lt;/auro-hyperlink&gt;.</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### External Links
+### External links
 
-Hyperlinks when used with the `target="_blank"` attribute are domain aware and return either an internal domain "new-window" icon, or an icon that communicates users will be taken to a new domain.
+When you use `target="_blank"` on a link with a usable `href`, the link shows a new-window icon for links to the same site and an external-link icon for links to other sites.
 
-For link security purposes, when using the `target="_blank"` attribute, this implicitly provides the same `rel` behavior as setting `rel="noopener"`. For additional security, Auro applies `noreferrer` to the `rel` attribute by default.
+Browsers already apply `rel="noopener"` behavior to `target="_blank"` links. For additional security, standard and `nav` links to other sites also get `rel="noOpener noReferrer"` by default. Links to your own site and `type="cta"` links get no automatic `rel`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external.html) -->
 <!-- The below content is automatically added from ./../apiExamples/external.html -->
-  Example link with
+  Example of a link to the same site
 <auro-hyperlink
     target="_blank"
     href="/">
-    external target
+    that opens in a new tab
 </auro-hyperlink>
-  but same domain
-
 <br>
-  Example link with
+  Example of a link to another site
 <auro-hyperlink
     target="_blank"
     href="https://www.portseattle.org/sea-tac">
-    external target
+    that opens in a new tab
 </auro-hyperlink>
-   with external domain
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-appearance-inverse.html) -->
 <!-- The below content is automatically added from ./../apiExamples/external-appearance-inverse.html -->
-  Example link with
+  Example of a link to the same site
 <auro-hyperlink
     appearance="inverse"
     target="_blank"
     href="/">
-    external target
+    that opens in a new tab
 </auro-hyperlink>
-  but same domain
-
 <br>
-  Example link with
+  Example of a link to another site
 <auro-hyperlink
     appearance="inverse"
     target="_blank"
     href="https://www.portseattle.org/sea-tac">
-    external target
+    that opens in a new tab
 </auro-hyperlink>
-   with external domain
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -213,80 +296,74 @@ For link security purposes, when using the `target="_blank"` attribute, this imp
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/external.html -->
 
-<pre class="language-html"><code class="language-html">Example link with
+<pre class="language-html"><code class="language-html">Example of a link to the same site
 &lt;auro-hyperlink
   target="_blank"
   href="/"&gt;
-  external target
+  that opens in a new tab
 &lt;/auro-hyperlink&gt;
-but same domain
-​
-&lt;br&gt;
-Example link with
+&#10;&lt;br&gt;
+Example of a link to another site
 &lt;auro-hyperlink
   target="_blank"
   href="https://www.portseattle.org/sea-tac"&gt;
-  external target
-&lt;/auro-hyperlink&gt;
- with external domain</code></pre>
+  that opens in a new tab
+&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-appearance-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/external-appearance-inverse.html -->
 
-<pre class="language-html"><code class="language-html">Example link with
+<pre class="language-html"><code class="language-html">Example of a link to the same site
 &lt;auro-hyperlink
   appearance="inverse"
   target="_blank"
   href="/"&gt;
-  external target
+  that opens in a new tab
 &lt;/auro-hyperlink&gt;
-but same domain
-​
-&lt;br&gt;
-Example link with
+&#10;&lt;br&gt;
+Example of a link to another site
 &lt;auro-hyperlink
   appearance="inverse"
   target="_blank"
   href="https://www.portseattle.org/sea-tac"&gt;
-  external target
-&lt;/auro-hyperlink&gt;
- with external domain</code></pre>
+  that opens in a new tab
+&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### External Links with Referrerpolicy
+### External links with `referrerpolicy`
 
-When using the `target="_blank"` attribute, use the `referrerpolicy` attribute to override the default use of `rel="noreferrer"`.
+When you use `target="_blank"`, add the `referrerpolicy` attribute to share the page's origin with the linked site instead of using the default `rel="noOpener noReferrer"`.
 
-Using this attribute will use the `strict-origin-when-cross-origin` policy type. This sends a full URL when performing a same-origin request, only sends the origin when the protocol security level stays the same (HTTPS→HTTPS), and sends no header to a less secure destination (HTTPS→HTTP).
+The attribute applies the `strict-origin-when-cross-origin` policy. It sends the full URL for same-origin requests, sends only the origin when the protocol security level stays the same (HTTPS to HTTPS), and sends no referrer to a less secure destination (HTTPS to HTTP).
 
-This will also set the `rel` attribute to `external`.
+For links to other sites, it also sets `rel="external"` unless you provide your own `rel`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer.html) -->
 <!-- The below content is automatically added from ./../apiExamples/external-referrer.html -->
-Example link with
+Example of a link to another site
 <auro-hyperlink
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac">
-  external target
+  that opens in a new tab
 </auro-hyperlink>
- , external domain with referrerpolicy attribute
+with the <code>referrerpolicy</code> attribute
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/external-referrer-appearance-inverse.html) -->
 <!-- The below content is automatically added from ./../apiExamples/external-referrer-appearance-inverse.html -->
-Example link with
+Example of a link to another site
 <auro-hyperlink
   appearance="inverse"
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac">
-  external target
+  that opens in a new tab
 </auro-hyperlink>
- , external domain with referrerpolicy attribute
+with the <code>referrerpolicy</code> attribute
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -294,33 +371,33 @@ Example link with
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/external-referrer.html -->
 
-<pre class="language-html"><code class="language-html">Example link with
+<pre class="language-html"><code class="language-html">Example of a link to another site
 &lt;auro-hyperlink
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac"&gt;
-  external target
+  that opens in a new tab
 &lt;/auro-hyperlink&gt;
- , external domain with referrerpolicy attribute</code></pre>
+with the &lt;code&gt;referrerpolicy&lt;/code&gt; attribute</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/external-referrer-appearance-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/external-referrer-appearance-inverse.html -->
 
-<pre class="language-html"><code class="language-html">Example link with
+<pre class="language-html"><code class="language-html">Example of a link to another site
 &lt;auro-hyperlink
   appearance="inverse"
   target="_blank"
   referrerpolicy
   href="https://www.portseattle.org/sea-tac"&gt;
-  external target
+  that opens in a new tab
 &lt;/auro-hyperlink&gt;
- , external domain with referrerpolicy attribute</code></pre>
+with the &lt;code&gt;referrerpolicy&lt;/code&gt; attribute</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Navigation Links
+### Navigation links
 
-When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alternate UI. With this type, links will appear without an underline, but present the underline feedback on hover.
+Use `type="nav"` for links in navigation. Navigation links appear without an underline and show it on hover and on focus.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nav.html) -->
@@ -366,9 +443,9 @@ When using `auro-hyperlink` as a navigation style, use `type="nav"` for an alter
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Call to Action Buttons
+### Call to action buttons
 
-Call to action (CTA) buttons combine hyperlink functionality with button styling. While semantically these are hyperlinks, they visually appear as buttons. Use the `variant` attribute with values `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to modify their appearance as shown below. The `appearance="inverse"` attribute can be combined with any `type="cta"` option for use on dark backgrounds.
+Call to action (CTA) links look like buttons but behave as hyperlinks. Use the `variant` attribute with `primary`, `secondary`, `tertiary`, `ghost`, or `flat` to change their appearance, as shown below. Add `appearance="inverse"` to any `type="cta"` link on a dark background.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta.html) -->
@@ -412,11 +489,9 @@ Call to action (CTA) buttons combine hyperlink functionality with button styling
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### CTA External links
+#### CTA external links
 
-(CTA) buttons can also be used in combinaton with external links. In the following example, see how the `target="_blank"` attribute acts like external links.
-
-CTA buttons share the same icon support as the standard hyperlink for targets that open new browser tabs.
+CTA links also work with external links. When the link has a usable `href`, add `target="_blank"` to show the same new-window or external-link icon that standard links get.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-external-link.html) -->
@@ -462,15 +537,15 @@ CTA buttons share the same icon support as the standard hyperlink for targets th
 
 #### Fluid CTA links
 
-In the following example, see how the `fluid` attribute alters the shape of the button to take up the full width of its parent container.
+Add the `fluid` attribute to stretch a CTA link to the full width of its parent container.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-fluid.html) -->
 <!-- The below content is automatically added from ./../apiExamples/cta-fluid.html -->
 <div style="display: flex; flex-direction: column; gap: 1rem;">
-<auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-<auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
-<auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com">CTA Button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid href="https://www.alaskaair.com">CTA button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com">CTA button</auro-hyperlink>
+<auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com">CTA button</auro-hyperlink>
 </div>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -480,25 +555,25 @@ In the following example, see how the `fluid` attribute alters the shape of the 
 <!-- The below code snippet is automatically added from ./../apiExamples/cta-fluid.html -->
 
 <pre class="language-html"><code class="language-html">&lt;div style="display: flex; flex-direction: column; gap: 1rem;"&gt;
-  &lt;auro-hyperlink type="cta" fluid href="https://www.alaskaair.com"&gt;CTA Button&lt;/auro-hyperlink&gt;
-  &lt;auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com"&gt;CTA Button&lt;/auro-hyperlink&gt;
-  &lt;auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com"&gt;CTA Button&lt;/auro-hyperlink&gt;
+  &lt;auro-hyperlink type="cta" fluid href="https://www.alaskaair.com"&gt;CTA button&lt;/auro-hyperlink&gt;
+  &lt;auro-hyperlink type="cta" fluid variant="secondary" href="https://www.alaskaair.com"&gt;CTA button&lt;/auro-hyperlink&gt;
+  &lt;auro-hyperlink type="cta" fluid variant="tertiary" href="https://www.alaskaair.com"&gt;CTA button&lt;/auro-hyperlink&gt;
 &lt;/div&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### CTA sizes
 
-In the following example, see how the `size` attribute alters the size of the cta link. Available sizes are `xs`, `sm`, `md`, `lg`, `xl`.
+Use the `size` attribute to change the size of a CTA link. The available sizes are `xs`, `sm`, `md`, `lg`, and `xl`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size.html) -->
 <!-- The below content is automatically added from ./../apiExamples/cta-size.html -->
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs">Extra Small</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs">Extra small</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" size="sm">Small</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" size="md">Medium</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" size="lg">Large</auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl">Extra Large</auro-hyperlink>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl">Extra large</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -506,26 +581,26 @@ In the following example, see how the `size` attribute alters the size of the ct
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/cta-size.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs"&gt;Extra Small&lt;/auro-hyperlink&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xs"&gt;Extra small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="sm"&gt;Small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="md"&gt;Medium&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="lg"&gt;Large&lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl"&gt;Extra Large&lt;/auro-hyperlink&gt;</code></pre>
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" size="xl"&gt;Extra large&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### CTA sizes with external links
 
-When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attribute.
+When a CTA link with a usable `href` uses `target="_blank"`, the new-window or external-link icon follows the `size` attribute.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/cta-size-external-link.html) -->
 <!-- The below content is automatically added from ./../apiExamples/cta-size-external-link.html -->
-<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs">Extra Small</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs">Extra small</auro-hyperlink>
 <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="sm">Small</auro-hyperlink>
 <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="md">Medium</auro-hyperlink>
 <auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="lg">Large</auro-hyperlink>
-<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl">Extra Large</auro-hyperlink>
+<auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl">Extra large</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -533,11 +608,11 @@ When a CTA link uses `target="_blank"`, the new-tab icon follows the `size` attr
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/cta-size-external-link.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/cta-size-external-link.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs"&gt;Extra Small&lt;/auro-hyperlink&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xs"&gt;Extra small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="sm"&gt;Small&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="md"&gt;Medium&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="lg"&gt;Large&lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl"&gt;Extra Large&lt;/auro-hyperlink&gt;</code></pre>
+&lt;auro-hyperlink type="cta" target="_blank" href="https://www.alaskaair.com" size="xl"&gt;Extra large&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -550,15 +625,15 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 <!-- The below content is automatically added from ./../apiExamples/cta-shape.html -->
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="rounded">Rounded</auro-hyperlink>
 <auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill">Pill</auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="in-flight" shape="pill">
-    Back to Top
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill">
+    Back to top
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle">
-<auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com/account/overview" aria-label="Go to your account" shape="circle">
+<auro-icon customColor category="interface" name="account-filled" appearance="inverse"></auro-icon>
 </auro-hyperlink>
-<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square">
-<auro-icon customcolor category="interface" name="search" appearance="inverse"></auro-icon>
+<auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search flights" shape="square">
+<auro-icon customColor category="interface" name="search-stroke" appearance="inverse"></auro-icon>
 </auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -569,39 +644,39 @@ The `shape` attribute accepts four values: `rounded`, `pill`, `circle`, or `squa
 
 <pre class="language-html"><code class="language-html">&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="rounded"&gt;Rounded&lt;/auro-hyperlink&gt;
 &lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill"&gt;Pill&lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="in-flight" shape="pill"&gt;
-  Back to Top
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="pill"&gt;
+  Back to top
   &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" shape="circle"&gt;
-  &lt;auro-icon customcolor category="interface" name="account-filled" appearance="inverse"&gt;&lt;/auro-icon&gt;
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com/account/overview" aria-label="Go to your account" shape="circle"&gt;
+  &lt;auro-icon customColor category="interface" name="account-filled" appearance="inverse"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;
-&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search" shape="square"&gt;
-  &lt;auro-icon customcolor category="interface" name="search" appearance="inverse"&gt;&lt;/auro-icon&gt;
+&lt;auro-hyperlink type="cta" href="https://www.alaskaair.com" aria-label="Search flights" shape="square"&gt;
+  &lt;auro-icon customColor category="interface" name="search-stroke" appearance="inverse"&gt;&lt;/auro-icon&gt;
 &lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Using role="button"
+### Using `role="button"`
 
-Aside from the standard hyperlink use-case, the `auro-hyperlink` element is intended to be used for button situations as illustrated below.
+Use `role="button"` when you need link styling for an action, such as opening a dialog.
 
-**Note:** Any `href` will be ignored when using `role="button"`. A click-event must be passed to the element as illustrated in the example below.
+**Note:** `auro-hyperlink` ignores `href` when you use `role="button"`, so handle the `click` event yourself, as the following example shows.
 
-**Accessibility:** Review the code examples, the user of this element are responsible for keyboard support when using `role="button"`.
+**Accessibility:** Enter and Space don't currently fire `click` on the link, so keyboard users can't activate it unless you handle those keys yourself. The example's script handles `click` and the Enter and Space keys.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button.html) -->
 <!-- The below content is automatically added from ./../apiExamples/role-button.html -->
-<auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton">Cancel button</auro-hyperlink>
+<auro-hyperlink role="button" id="roleButton">Cancel button</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/role-button-appearance-inverse.html) -->
 <!-- The below content is automatically added from ./../apiExamples/role-button-appearance-inverse.html -->
-<auro-hyperlink appearance="inverse" href="http://www.alaskaair.com" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
+<auro-hyperlink appearance="inverse" role="button" id="roleButton-ondark">Cancel button</auro-hyperlink>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -609,12 +684,12 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/role-button.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink href="http://www.alaskaair.com" role="button" id="roleButton"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink role="button" id="roleButton"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button-appearance-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/role-button-appearance-inverse.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-hyperlink appearance="inverse" href="http://www.alaskaair.com" role="button" id="roleButton-ondark"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-hyperlink appearance="inverse" role="button" id="roleButton-ondark"&gt;Cancel button&lt;/auro-hyperlink&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/role-button.js) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/role-button.js -->
@@ -622,23 +697,29 @@ Aside from the standard hyperlink use-case, the `auro-hyperlink` element is inte
 <pre class="language-js"><code class="language-js">export function roleButtonExample() {
   const roleButton = document.getElementById("roleButton");
   const roleButtonOndark = document.getElementById("roleButton-ondark");
-​
-  roleButton.addEventListener("click", () =&gt; {
+&#10;  const handleAction = () =&gt; {
     alert("You clicked the role button!");
-  });
-​
-  roleButtonOndark.addEventListener("click", () =&gt; {
-    alert("You clicked the role button!");
-  });
+  };
+&#10;  // Enter and Space don't fire `click` on the link, so handle those keys too.
+  const handleKeydown = (event) =&gt; {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleAction();
+    }
+  };
+&#10;  for (const button of [roleButton, roleButtonOndark]) {
+    button.addEventListener("click", handleAction);
+    button.addEventListener("keydown", handleKeydown);
+  }
 }</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Unsupported types
 
-Not all URL types are supported for security reasons. Two common types that are worth mentioning are `javaScript:` and `data:`.
+For security, `auro-hyperlink` drops `javascript:`, `data:`, and `vbscript:` addresses so they can't run code.
 
-The following examples illustrate the use of `<auro-hyperlink>` with either no `href`, `javaScript:` or `data:` protocols being used. Note that `javascript` returns a shadowDOM as simple text. Using an unsupported protocol like `data:`, the protocol is removed from the provided `href` value.
+The following examples show `<auro-hyperlink>` with no `href`, a `javascript:` address, and a `data:` address. In each case, the link renders only its slotted content as plain text instead of an `<a>` element.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/non-supported.html) -->
@@ -673,9 +754,7 @@ The following examples illustrate the use of `<auro-hyperlink>` with either no `
 
 ### Typography
 
-The `auro-hyperlink` component is designed to work with the typography classes provided by the Auro Design System. 
-
-The component will automatically inherit the typography styles from the parent element, allowing for consistent text styling across your application. Classes can also be applied directly onto the `auro-hyperlink` component.
+`auro-hyperlink` works with the typography classes from the Auro Design System. It inherits typography styles from its parent element, so text stays consistent across your application. Apply typography classes to the element that contains the link, as shown below.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/typography.html) -->
@@ -699,111 +778,90 @@ The component will automatically inherit the typography styles from the parent e
 <pre class="language-html"><code class="language-html">&lt;div class="body-xs"&gt;
   Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airlines&lt;/auro-hyperlink&gt;.
 &lt;/div&gt;
-&lt;div class="body-default"&gt;
+&#10;&lt;div class="body-default"&gt;
   Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airlines&lt;/auro-hyperlink&gt;.
 &lt;/div&gt;
-&lt;div class="body-lg"&gt;
+&#10;&lt;div class="body-lg"&gt;
   Welcome to &lt;auro-hyperlink href="https://www.alaskaair.com"&gt;Alaska Airlines&lt;/auro-hyperlink&gt;.
 &lt;/div&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following tokens.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->
 
 <pre class="language-scss"><code class="language-scss">/* stylelint-disable custom-property-empty-line-before */
-​
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-​
-:host(:not([type='cta'])) {
+&#10;@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+&#10;:host(:not([type='cta'])) {
   // default hyperlink
-​
-  --ds-auro-hyperlink-default-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
+  &#10;  --ds-auro-hyperlink-default-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
   --ds-auro-hyperlink-default-container-color-default: transparent;
   --ds-auro-hyperlink-default-outline-color-default: transparent;
   --ds-auro-hyperlink-default-border-color-default: transparent;
-​
-  --ds-auro-hyperlink-visited-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
+&#10;  --ds-auro-hyperlink-visited-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
   --ds-auro-hyperlink-visited-container-color-default: transparent;
   --ds-auro-hyperlink-visited-outline-color-default: transparent;
   --ds-auro-hyperlink-visited-border-color-default: transparent;
-​
-  --ds-auro-hyperlink-focus-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
+&#10;  --ds-auro-hyperlink-focus-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
   --ds-auro-hyperlink-focus-container-color-default: transparent;
   --ds-auro-hyperlink-focus-outline-color-default: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
   --ds-auro-hyperlink-focus-border-color-default: transparent;
-​
-  --ds-auro-hyperlink-hover-color-default: var(--ds-advanced-color-hyperlink-text-hover, #{v.$ds-advanced-color-hyperlink-text-hover});
+&#10;  --ds-auro-hyperlink-hover-color-default: var(--ds-advanced-color-hyperlink-text-hover, #{v.$ds-advanced-color-hyperlink-text-hover});
   --ds-auro-hyperlink-hover-container-color-default: transparent;
   --ds-auro-hyperlink-hover-outline-color-default: transparent;
   --ds-auro-hyperlink-hover-border-color-default: transparent;
-​
-  // default ondark hyperlink
-​
-  --ds-auro-hyperlink-default-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  // default ondark hyperlink
+&#10;  --ds-auro-hyperlink-default-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-default-container-color-inverse: transparent;
   --ds-auro-hyperlink-default-outline-color-inverse: transparent;
   --ds-auro-hyperlink-default-border-color-inverse: transparent;
-​
-  --ds-auro-hyperlink-visited-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  --ds-auro-hyperlink-visited-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-visited-container-color-inverse: transparent;
   --ds-auro-hyperlink-visited-outline-color-inverse: transparent;
   --ds-auro-hyperlink-visited-border-color-inverse: transparent;
-​
-  --ds-auro-hyperlink-focus-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  --ds-auro-hyperlink-focus-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-focus-container-color-inverse: transparent;
   --ds-auro-hyperlink-focus-outline-color-inverse: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-hyperlink-focus-border-color-inverse: transparent;
-​
-  --ds-auro-hyperlink-hover-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  --ds-auro-hyperlink-hover-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-hover-container-color-inverse: transparent;
   --ds-auro-hyperlink-hover-outline-color-inverse: transparent;
   --ds-auro-hyperlink-hover-border-color-inverse: transparent;
-​
-  // nav hyperlink
-​
-  --ds-auro-hyperlink-nav-default-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
+&#10;  // nav hyperlink
+&#10;  --ds-auro-hyperlink-nav-default-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
   --ds-auro-hyperlink-nav-default-container-color-default: transparent;
   --ds-auro-hyperlink-nav-default-outline-color-default: transparent;
   --ds-auro-hyperlink-nav-default-border-color-default: transparent;
-​
-  --ds-auro-hyperlink-nav-visited-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
+&#10;  --ds-auro-hyperlink-nav-visited-color-default: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
   --ds-auro-hyperlink-nav-visited-container-color-default: transparent;
   --ds-auro-hyperlink-nav-visited-outline-color-default: transparent;
   --ds-auro-hyperlink-nav-visited-border-color-default: transparent;
-​
-  --ds-auro-hyperlink-nav-focus-color-default: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  --ds-auro-hyperlink-nav-focus-color-default: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-nav-focus-container-color-default: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
   --ds-auro-hyperlink-nav-focus-outline-color-default: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
   --ds-auro-hyperlink-nav-focus-border-color-default: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
-​
-  --ds-auro-hyperlink-nav-hover-color-default: var(--ds-advanced-color-hyperlink-text-hover, #{v.$ds-advanced-color-hyperlink-text-hover});
+&#10;  --ds-auro-hyperlink-nav-hover-color-default: var(--ds-advanced-color-hyperlink-text-hover, #{v.$ds-advanced-color-hyperlink-text-hover});
   --ds-auro-hyperlink-nav-hover-container-color-default: transparent;
   --ds-auro-hyperlink-nav-hover-outline-color-default: transparent;
   --ds-auro-hyperlink-nav-hover-border-color-default: transparent;
-​
-  // nav ondark hyperlink
-​
-  --ds-auro-hyperlink-nav-default-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  // nav ondark hyperlink
+  &#10;  --ds-auro-hyperlink-nav-default-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-nav-default-container-color-inverse: transparent;
   --ds-auro-hyperlink-nav-default-outline-color-inverse: transparent;
   --ds-auro-hyperlink-nav-default-border-color-inverse: transparent;
-​
-  --ds-auro-hyperlink-nav-visited-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  --ds-auro-hyperlink-nav-visited-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-nav-visited-container-color-inverse: transparent;
   --ds-auro-hyperlink-nav-visited-outline-color-inverse: transparent;
   --ds-auro-hyperlink-nav-visited-border-color-inverse: transparent;
-​
-  --ds-auro-hyperlink-nav-focus-color-inverse: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
+&#10;  --ds-auro-hyperlink-nav-focus-color-inverse: var(--ds-advanced-color-hyperlink-text, #{v.$ds-advanced-color-hyperlink-text});
   --ds-auro-hyperlink-nav-focus-container-color-inverse: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-hyperlink-nav-focus-outline-color-inverse: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-hyperlink-nav-focus-border-color-inverse: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
-​
-  --ds-auro-hyperlink-nav-hover-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
+&#10;  --ds-auro-hyperlink-nav-hover-color-inverse: var(--ds-advanced-color-hyperlink-text-inverse, #{v.$ds-advanced-color-hyperlink-text-inverse});
   --ds-auro-hyperlink-nav-hover-container-color-inverse: transparent;
   --ds-auro-hyperlink-nav-hover-outline-color-inverse: transparent;
   --ds-auro-hyperlink-nav-hover-border-color-inverse: transparent;
